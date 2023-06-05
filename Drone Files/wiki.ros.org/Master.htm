@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4" />
+<link rel="shortcut icon" href="http://wiki.ros.org/custom/favicon.ico" type="image/ico" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/sorttable.js"></script>
+<script type="text/javascript" src="http://wiki.ros.org/custom/libraries/jquery.min.js"></script>                         
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/seesaw.js"></script> 
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/rosversion.js"></script> 
+<!--script type="text/javascript" src="/custom/libraries/RGraph.common.core.js" ></script Used for metrics only, should be conditional, not at the top-->
+<!--script type="text/javascript" src="/custom/libraries/RGraph.bar.js" ></script same as above -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17821189-2']);
+  _gaq.push(['_setDomainName', 'wiki.ros.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>Master - ROS Wiki</title>
+<script type="text/javascript" src="http://wiki.ros.org/moin_static197/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://wiki.ros.org/moin_static197/rostheme/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="http://wiki.ros.org/moin_static197/rostheme/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="http://wiki.ros.org/moin_static197/rostheme/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="http://wiki.ros.org/moin_static197/rostheme/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static197/rostheme/css/msie.css">
+<![endif]-->
+
+
+
+
+<link rel="canonical" href="Master.htm" />
+
+<link rel="Start" href="http://wiki.ros.org/Documentation">
+<link rel="Alternate" title="Wiki Markup" href="http://wiki.ros.org/Master?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://wiki.ros.org/Master?action=print">
+<link rel="Appendix" title="ROS_master_example_english_1.dia" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_1.dia">
+<link rel="Appendix" title="ROS_master_example_english_1.png" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_1.png">
+<link rel="Appendix" title="ROS_master_example_english_2.dia" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_2.dia">
+<link rel="Appendix" title="ROS_master_example_english_2.png" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_2.png">
+<link rel="Appendix" title="ROS_master_example_english_3.dia" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_3.dia">
+<link rel="Appendix" title="ROS_master_example_english_3.png" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_3.png">
+<link rel="Search" href="http://wiki.ros.org/FindPage">
+<link rel="Index" href="http://wiki.ros.org/TitleIndex">
+<link rel="Glossary" href="http://wiki.ros.org/WordIndex">
+<link rel="Help" href="http://wiki.ros.org/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5950817-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+if(f) f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+if(e) {
+  searchChange(e);
+  searchBlur(e);
+}
+
+function handleSubmit() {
+  var f = document.getElementById('searchform');
+  var t = document.getElementById('searchinput');
+  var r = document.getElementById('real_searchinput');
+
+  //alert("handleSubmit "+ t.value);
+  if(t.value.match(/review/)) {
+    r.value = t.value;
+  } else {
+    //r.value = t.value + " -PackageReviewCategory -StackReviewCategory -M3Review -DocReview -ApiReview -HelpOn -BadContent -LocalSpellingWords";
+    r.value = t.value + " -PackageReviewCategory -StackReviewCategory -DocReview -ApiReview";
+  }
+  //return validate(f);
+}
+//-->
+</script>
+
+<div id="dpage">
+  <div id="dpage-inner">
+    <div id="header"><div id="topnav">
+
+<!-- Alert box -->
+<!-- To enable/disable the alert box, uncomment/comment the block below and update the content below the button. -->
+<!--
+    <div class="alert alert-info alert-dismissable" style="text-align: center;">
+<script>
+jQuery(function( $ ){
+    alert_box_name = 'roswiki_roscon'
+    state = localStorage.getItem(alert_box_name);
+    if (!state) {
+      localStorage.setItem(alert_box_name, 'open');
+    }
+    state = localStorage.getItem(alert_box_name);
+    if (state == 'closed') {
+        $( '#topnav .alert' ).hide();
+    }
+    $( '.close' ).click(function () {
+	console.log('in .close.click');
+        localStorage.setItem(alert_box_name, 'closed');
+        $( '#topnav .alert' ).hide();
+  });
+});
+</script>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <a href="http://roscon.ros.org">ROSCon 2017</a> will be in Vancouver, September 21-22! <br>
+      The last few years have sold out: register now and take advantage of discounted hotel rates</a>.
+    </div>
+-->
+<!-- End Alert box -->
+
+      <table id="topnav-table">
+        <tr>
+          <td width="300" valign="top"><a href="wiki_ros_default.html"><img border="0" src="http://wiki.ros.org/custom/images/ros_org.png" alt="ros.org" width="238" height="51"/></a></td>
+          <td width="500" valign="middle">
+            <a href="http://www.ros.org/about-ros">About</a>
+            |
+            <a href="http://wiki.ros.org/Support">Support</a>
+            |
+            <a href="http://discourse.ros.org/">Discussion Forum</a>
+            |
+            <a href="http://status.ros.org/">Service Status</a>
+            |
+            <a href="http://answers.ros.org/">Q&A answers.ros.org</a>
+          </td>
+
+          <td valign="middle" align="right">
+
+<script language="Javascript">
+
+function Searchy(theButton){
+
+theForm = theButton.form;
+newID = theForm.input.value;
+theForm.q.value = newID;
+theForm.input.value=theForm.input.value
+
+}
+</script>
+
+
+<form action="https://www.ros.org/search/index.html" id="cse">
+  <div>
+    <label>Search:</label>
+    <input type="hidden" name="cx" value="005596761048178735851:_ejygd2ukbe" />
+    <input type="hidden" name="cof" value="FORID:11;NB:1" />
+    <input type="hidden" name="filter" value="0" />
+    <input type="hidden" name="num" value="10" />
+
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="input" id="input" autocomplete="on" style="width: 35%"/>
+    <input type="hidden" name="q" value="" />
+    <input type="submit" name="sa" value="Submit" onClick="Searchy(this)"/>
+
+  </div>
+</form>
+
+         </td>
+      </tr>
+      <tr>
+        <td colspan="3" height="53" width="1024"><nobr><img src="http://wiki.ros.org/custom/images/menu_left.png" width="17" height="53" alt=""/><a href="wiki_ros_default.html"><img
+        border="0" src="http://wiki.ros.org/custom/images/menu_documentation.png" width="237" height="53" alt="Documentation" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="https://index.ros.org/packages"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_browse_software.png" width="268" height="53" alt="Browse Software" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="https://discourse.ros.org/c/general"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_news.png" width="84" height="53" alt="News" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="http://wiki.ros.org/ROS/Installation"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_download.png" width="151" height="53" alt="Download" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_right.png" width="60" height="53" /></nobr></td>
+
+      </tr>
+    </table> <!-- topnav-table -->
+
+    </div> <!-- /#topav -->
+  </div> <!-- /#header -->
+
+
+<div id="header2">
+
+<ul id="pagelocation">
+<li><a class="backlink" href="http://wiki.ros.org/action/fullsearch/Master?action=fullsearch&amp;context=180&amp;value=linkto%3A%22Master%22" rel="nofollow" title="Click to do a full-text search for this title">Master</a></li>
+</ul>
+
+<div id="locationline">
+</div>
+</div>
+
+<div id="sidebar">
+<h4>ROS 2 Documentation</h4><p>The ROS Wiki is for ROS 1. Are you using ROS 2 (Dashing/Foxy/Rolling)? <a href="http://docs.ros.org/en/rolling/">Check out the ROS 2 Documentation</a></p>
+<div class="sidepanel">
+<h1>Wiki</h1>
+
+<ul id="navibar">
+<li class="wikilink"><a href="Distributions.htm">Distributions</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Installation">ROS/Installation</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Tutorials">ROS/Tutorials</a></li><li class="wikilink"><a href="http://wiki.ros.org/RecentChanges">RecentChanges</a></li><li class="current"><a href="Master.htm">Master</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Page</h1>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="Master.htm#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.ros.org/action/info/Master?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.ros.org/action/AttachFile/Master?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="Master.htm">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="show" disabled class="disabled">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="CopyPage">Copy Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="MyPages">My Pages</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="CreatePdfDocument">CreatePdfDocument</option>
+<option value="Load">Load</option>
+<option value="RawFile">RawFile</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>User</h1>
+<ul id="username"><li><a href="http://wiki.ros.org/action/login/Master?action=login" id="login" rel="nofollow">Login</a></li></ul>
+</div>
+</div>
+
+<div id="page" lang="en" dir="ltr">
+
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867"><div dir="ltr" id="Menus.2FROSGraphConcepts.content" lang="en"><span class="anchor" id="Menus.2FROSGraphConcepts.top"></span>
+<span class="anchor" id="Menus.2FROSGraphConcepts.line-1"></span><p class="line867"><a href="http://wiki.ros.org/ROS/Concepts">ROS Graph Concepts</a>:  <a href="Nodes.htm">Nodes</a> | <a href="Topics.htm">Topics</a> | <a href="Services.htm">Services</a> | <a href="Messages.htm">Messages</a> | <a href="http://wiki.ros.org/Bags">Bags</a> | <a href="Master.htm">Master</a> | <a href="Parameter Server.htm">Parameter Server</a> <span class="anchor" id="Menus.2FROSGraphConcepts.line-2"></span><span class="anchor" id="Menus.2FROSGraphConcepts.bottom"></span></div> <span class="anchor" id="line-2"></span><div class="table-of-contents"><p class="table-of-contents-heading">Contents<ol><li>
+<a href="Master.htm#Overview">Overview</a></li><li>
+<a href="Master.htm#XMLRPC_API">XMLRPC API</a></li><li>
+<a href="http://wiki.ros.org/Master.htm#Master_Name_Service_Example">Master Name Service Example</a></li><li>
+<a href="http://wiki.ros.org/Master.htm#Implementation">Implementation</a></li></ol></li></ol></div><p class="line874"> <span class="anchor" id="line-3"></span><span class="anchor" id="line-4"></span><p class="line867">
+<h2 id="Overview">Overview</h2>
+<span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span><p class="line862">The ROS Master provides naming and registration services to the rest of the <a href="http://wiki.ros.org/Nodes.htm">nodes</a> in the ROS system. It tracks publishers and subscribers to <a href="http://wiki.ros.org/Topics.htm">topics</a> as well as <a href="http://wiki.ros.org/Services.htm">services</a>. The role of the Master is to enable individual ROS nodes to locate one another. Once these nodes have located each other they communicate with each other peer-to-peer. <span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><p class="line862">The Master also provides the <a href="http://wiki.ros.org/Parameter%20Server.htm">Parameter Server</a>. <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><p class="line862">The Master is most commonly run using the <tt class="backtick">roscore</tt> command, which loads the ROS Master along with other essential components.  <span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><p class="line867">
+<h2 id="XMLRPC_API">XMLRPC API</h2>
+<span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><p class="line867"><em>Advanced Users Only</em> <span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><p class="line862">The ROS Master provides an XMLRPC-based API, which ROS client libraries, such as <a href="http://wiki.ros.org/roscpp">roscpp</a> and <a href="http://wiki.ros.org/rospy.htm">rospy</a>, call to store and retrieve information. For a detailed API listing, please see the <a href="http://wiki.ros.org/ROS/Master_API">Master API</a> page. Most ROS users will not need to interact with this API directly. <span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><p class="line867">
+<h2 id="Master_Name_Service_Example">Master Name Service Example</h2>
+<span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span><p class="line874">For instance, let's say we have two Nodes; a Camera node and an Image_viewer node. A typical sequence of events would start with Camera notifying the master that it wants to publish images on the topic "images": <span class="anchor" id="line-21"></span><span class="anchor" id="line-22"></span><p class="line867"><img alt="ROS_master_example_english_1.png" class="attachment" src="http://wiki.ros.org/Master?action=AttachFile&amp;do=get&amp;target=ROS_master_example_english_1.png" title="ROS_master_example_english_1.png" /> <a class="attachment" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_1.dia" title="DIA version">DIA version</a> <span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><p class="line874">Now, Camera publishes images to the "images" topic, but nobody is subscribing to that topic yet so no data is actually sent. Now, Image_viewer wants to subscribe to the topic "images" to see if there's maybe some images there: <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><p class="line867"><img alt="ROS_master_example_english_2.png" class="attachment" src="http://wiki.ros.org/Master?action=AttachFile&amp;do=get&amp;target=ROS_master_example_english_2.png" title="ROS_master_example_english_2.png" /> <a class="attachment" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_2.dia" title="DIA version">DIA version</a> <span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span><p class="line874">Now that the topic "images" has both a publisher and a subscriber, the master node notifies Camera and Image_viewer about each others existence so that they can start transferring images to one another: <span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><p class="line867"><img alt="ROS_master_example_english_3.png" class="attachment" src="http://wiki.ros.org/Master?action=AttachFile&amp;do=get&amp;target=ROS_master_example_english_3.png" title="ROS_master_example_english_3.png" /> <a class="attachment" href="http://wiki.ros.org/Master?action=AttachFile&amp;do=view&amp;target=ROS_master_example_english_3.dia" title="DIA version">DIA version</a> <span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><p class="line867">
+<h2 id="Implementation">Implementation</h2>
+<span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span><p class="line862">In ROS 1.1, the implementation of the ROS Master is provided by the <a href="http://wiki.ros.org/rosmaster">rosmaster</a> package. Prior to this release, the Master was part of the <a href="http://wiki.ros.org/rospy.htm">rospy</a> package. <span class="anchor" id="line-35"></span><span class="anchor" id="bottom"></span></div></div>
+<div id="pagebottom"></div>
+</div>
+
+<p id="pageinfo" class="info" lang="en" dir="ltr">Wiki: Master  (last edited 2018-01-15 20:41:38 by <span title="YanqingWu @ 184.150.237.222[184.150.237.222]"><a class="nonexistent" href="http://wiki.ros.org/YanqingWu" title="YanqingWu @ 184.150.237.222[184.150.237.222]">YanqingWu</a></span>)</p>
+
+
+
+
+<div style="margin-top: 9px;" class="footer">
+Except where otherwise noted, the ROS wiki is licensed under the <br /><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>
+<hr style="margin-top: 10px;">
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+<a href="https://www.openrobotics.org/"><img style="margin-top: -1px;" src="http://wiki.ros.org/custom/images/brought_by_horiz.png"></p></a>
+  </div>
+</div>
+</div>
+
+  </div></div> <!-- /#dpage-inner, /#dpage -->
+
+
+</body>
+</html>
+

@@ -1,0 +1,393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4" />
+<link rel="shortcut icon" href="http://wiki.ros.org/custom/favicon.ico" type="image/ico" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/sorttable.js"></script>
+<script type="text/javascript" src="http://wiki.ros.org/custom/libraries/jquery.min.js"></script>                         
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/seesaw.js"></script> 
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/rosversion.js"></script> 
+<!--script type="text/javascript" src="/custom/libraries/RGraph.common.core.js" ></script Used for metrics only, should be conditional, not at the top-->
+<!--script type="text/javascript" src="/custom/libraries/RGraph.bar.js" ></script same as above -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17821189-2']);
+  _gaq.push(['_setDomainName', 'wiki.ros.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>ROS/Tutorials/UnderstandingNodes - ROS Wiki</title>
+<script type="text/javascript" src="http://wiki.ros.org/moin_static197/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://wiki.ros.org/moin_static197/rostheme/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="http://wiki.ros.org/moin_static197/rostheme/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="http://wiki.ros.org/moin_static197/rostheme/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="http://wiki.ros.org/moin_static197/rostheme/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static197/rostheme/css/msie.css">
+<![endif]-->
+
+
+
+
+<link rel="canonical" href="UnderstandingNodes.htm" />
+
+<link rel="Start" href="http://wiki.ros.org/Documentation">
+<link rel="Alternate" title="Wiki Markup" href="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes?action=print">
+<link rel="Up" href="http://wiki.ros.org/ROS/Tutorials">
+<link rel="Appendix" title="rxgraph(node_tutorial).png" href="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes?action=AttachFile&amp;do=view&amp;target=rxgraph(node_tutorial).png">
+<link rel="Appendix" title="rxgraph(node_tutorial)0.png" href="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes?action=AttachFile&amp;do=view&amp;target=rxgraph(node_tutorial)0.png">
+<link rel="Appendix" title="turtlesim.png" href="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes?action=AttachFile&amp;do=view&amp;target=turtlesim.png">
+<link rel="Search" href="http://wiki.ros.org/FindPage">
+<link rel="Index" href="http://wiki.ros.org/TitleIndex">
+<link rel="Glossary" href="http://wiki.ros.org/WordIndex">
+<link rel="Help" href="http://wiki.ros.org/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5950817-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+if(f) f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+if(e) {
+  searchChange(e);
+  searchBlur(e);
+}
+
+function handleSubmit() {
+  var f = document.getElementById('searchform');
+  var t = document.getElementById('searchinput');
+  var r = document.getElementById('real_searchinput');
+
+  //alert("handleSubmit "+ t.value);
+  if(t.value.match(/review/)) {
+    r.value = t.value;
+  } else {
+    //r.value = t.value + " -PackageReviewCategory -StackReviewCategory -M3Review -DocReview -ApiReview -HelpOn -BadContent -LocalSpellingWords";
+    r.value = t.value + " -PackageReviewCategory -StackReviewCategory -DocReview -ApiReview";
+  }
+  //return validate(f);
+}
+//-->
+</script>
+
+<div id="dpage">
+  <div id="dpage-inner">
+    <div id="header"><div id="topnav">
+
+<!-- Alert box -->
+<!-- To enable/disable the alert box, uncomment/comment the block below and update the content below the button. -->
+<!--
+    <div class="alert alert-info alert-dismissable" style="text-align: center;">
+<script>
+jQuery(function( $ ){
+    alert_box_name = 'roswiki_roscon'
+    state = localStorage.getItem(alert_box_name);
+    if (!state) {
+      localStorage.setItem(alert_box_name, 'open');
+    }
+    state = localStorage.getItem(alert_box_name);
+    if (state == 'closed') {
+        $( '#topnav .alert' ).hide();
+    }
+    $( '.close' ).click(function () {
+	console.log('in .close.click');
+        localStorage.setItem(alert_box_name, 'closed');
+        $( '#topnav .alert' ).hide();
+  });
+});
+</script>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <a href="http://roscon.ros.org">ROSCon 2017</a> will be in Vancouver, September 21-22! <br>
+      The last few years have sold out: register now and take advantage of discounted hotel rates</a>.
+    </div>
+-->
+<!-- End Alert box -->
+
+      <table id="topnav-table">
+        <tr>
+          <td width="300" valign="top"><a href="../../wiki_ros_default.html"><img border="0" src="http://wiki.ros.org/custom/images/ros_org.png" alt="ros.org" width="238" height="51"/></a></td>
+          <td width="500" valign="middle">
+            <a href="http://www.ros.org/about-ros">About</a>
+            |
+            <a href="http://wiki.ros.org/Support">Support</a>
+            |
+            <a href="http://discourse.ros.org/">Discussion Forum</a>
+            |
+            <a href="http://status.ros.org/">Service Status</a>
+            |
+            <a href="http://answers.ros.org/">Q&A answers.ros.org</a>
+          </td>
+
+          <td valign="middle" align="right">
+
+<script language="Javascript">
+
+function Searchy(theButton){
+
+theForm = theButton.form;
+newID = theForm.input.value;
+theForm.q.value = newID;
+theForm.input.value=theForm.input.value
+
+}
+</script>
+
+
+<form action="https://www.ros.org/search/index.html" id="cse">
+  <div>
+    <label>Search:</label>
+    <input type="hidden" name="cx" value="005596761048178735851:_ejygd2ukbe" />
+    <input type="hidden" name="cof" value="FORID:11;NB:1" />
+    <input type="hidden" name="filter" value="0" />
+    <input type="hidden" name="num" value="10" />
+
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="input" id="input" autocomplete="on" style="width: 35%"/>
+    <input type="hidden" name="q" value="" />
+    <input type="submit" name="sa" value="Submit" onClick="Searchy(this)"/>
+
+  </div>
+</form>
+
+         </td>
+      </tr>
+      <tr>
+        <td colspan="3" height="53" width="1024"><nobr><img src="http://wiki.ros.org/custom/images/menu_left.png" width="17" height="53" alt=""/><a href="../../wiki_ros_default.html"><img
+        border="0" src="http://wiki.ros.org/custom/images/menu_documentation.png" width="237" height="53" alt="Documentation" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="https://index.ros.org/packages"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_browse_software.png" width="268" height="53" alt="Browse Software" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="https://discourse.ros.org/c/general"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_news.png" width="84" height="53" alt="News" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="http://wiki.ros.org/ROS/Installation"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_download.png" width="151" height="53" alt="Download" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_right.png" width="60" height="53" /></nobr></td>
+
+      </tr>
+    </table> <!-- topnav-table -->
+
+    </div> <!-- /#topav -->
+  </div> <!-- /#header -->
+
+
+<div id="header2">
+
+<ul id="pagelocation">
+<li><a href="http://wiki.ros.org/ROS">ROS</a></li><li><a href="http://wiki.ros.org/ROS/Tutorials">Tutorials</a></li><li><a class="backlink" href="http://wiki.ros.org/action/fullsearch/ROS/Tutorials/UnderstandingNodes?action=fullsearch&amp;context=180&amp;value=linkto%3A%22ROS%2FTutorials%2FUnderstandingNodes%22" rel="nofollow" title="Click to do a full-text search for this title">UnderstandingNodes</a></li>
+</ul>
+
+<div id="locationline">
+</div>
+</div>
+
+<div id="sidebar">
+<h4>ROS 2 Documentation</h4><p>The ROS Wiki is for ROS 1. Are you using ROS 2 (Dashing/Foxy/Rolling)? <a href="http://docs.ros.org/en/rolling/">Check out the ROS 2 Documentation</a></p>
+<div class="sidepanel">
+<h1>Wiki</h1>
+
+<ul id="navibar">
+<li class="wikilink"><a href="../../Distributions.htm">Distributions</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Installation">ROS/Installation</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Tutorials">ROS/Tutorials</a></li><li class="wikilink"><a href="http://wiki.ros.org/RecentChanges">RecentChanges</a></li><li class="current"><a href="UnderstandingNodes.htm">UnderstandingNodes</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Page</h1>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="UnderstandingNodes.htm#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.ros.org/action/info/ROS/Tutorials/UnderstandingNodes?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.ros.org/action/AttachFile/ROS/Tutorials/UnderstandingNodes?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="UnderstandingNodes.htm">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="show" disabled class="disabled">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="CopyPage">Copy Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="MyPages">My Pages</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="CreatePdfDocument">CreatePdfDocument</option>
+<option value="Load">Load</option>
+<option value="RawFile">RawFile</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>User</h1>
+<ul id="username"><li><a href="http://wiki.ros.org/action/login/ROS/Tutorials/UnderstandingNodes?action=login" id="login" rel="nofollow">Login</a></li></ul>
+</div>
+</div>
+
+<div id="page" lang="en" dir="ltr">
+
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line867"><span class="anchor" id="line-1-1"></span><span class="anchor" id="line-2-1"></span><div><table><tbody><tr>  <td style="background-color: #cce0ff"><strong>Note:</strong> This tutorial assumes that you have completed the previous tutorials:   <a href="http://wiki.ros.org/ROS/Tutorials/BuildingPackages">building a ROS package</a>. </td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-3-1"></span><span class="anchor" id="line-4-1"></span><span class="anchor" id="line-5-1"></span><span class="anchor" id="line-6-1"></span><div><table><tbody><tr>  <td style="background-color: #bbceee"> <img alt="(!)" height="15" src="http://wiki.ros.org/moin_static197/rostheme/img/idea.png" title="(!)" width="15" /> Please ask about problems and questions regarding this tutorial on <a class="http" href="http://answers.ros.org">answers.ros.org</a>. Don't forget to include in your question the link to this page, the versions of your OS &amp; ROS, and also add appropriate tags.</td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-7-1"></span><span class="anchor" id="line-8-1"></span><span class="anchor" id="line-9-1"></span>
+<h1 id="Understanding_ROS_Nodes">Understanding ROS Nodes</h1>
+<span class="anchor" id="line-10-1"></span><strong>Description:</strong> This tutorial introduces ROS graph concepts and discusses the use of <a href="../../roscore.htm">roscore</a>, <a href="http://wiki.ros.org/rosnode">rosnode</a>, and <a href="http://wiki.ros.org/rosrun">rosrun</a> commandline tools.<br>
+<br>
+ <span class="anchor" id="line-11-1"></span><span class="anchor" id="line-12-1"></span><span class="anchor" id="line-13-1"></span><span class="anchor" id="line-14-1"></span><strong>Tutorial Level:</strong> BEGINNER<br>
+ <br>
+ <span class="anchor" id="line-15-1"></span><span class="anchor" id="line-16-1"></span><strong>Next Tutorial:</strong>   <a href="UnderstandingTopics.htm">Understanding ROS topics</a><br>
+ <br>
+  <span class="anchor" id="line-17-1"></span><p class="line874"> <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line867"><div class="table-of-contents"><p class="table-of-contents-heading">Contents<ol><li>
+<a href="UnderstandingNodes.htm#Prerequisites">Prerequisites</a></li><li>
+<a href="UnderstandingNodes.htm#Quick_Overview_of_Graph_Concepts">Quick Overview of Graph Concepts</a></li><li>
+<a href="UnderstandingNodes.htm#Nodes">Nodes</a></li><li>
+<a href="UnderstandingNodes.htm#Client_Libraries">Client Libraries</a></li><li>
+<a href="UnderstandingNodes.htm#roscore">roscore</a></li><li>
+<a href="UnderstandingNodes.htm#Using_rosnode">Using rosnode</a></li><li>
+<a href="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes.htm#Using_rosrun">Using rosrun</a></li><li>
+<a href="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes.htm#Review">Review</a></li></ol></li></ol></div><p class="line874"> <span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><p class="line867">
+<h2 id="Prerequisites">Prerequisites</h2>
+<span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><p class="line874">For this tutorial we'll use a lighweight simulator, to install it run the following command: <span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span><pre><span class="anchor" id="line-1-2"></span>$ sudo apt-get install ros-&lt;distro&gt;-ros-tutorials</pre><span class="anchor" id="line-27"></span><span class="anchor" id="line-28"></span><p class="line862">Replace '&lt;distro&gt;' with the name of your ROS distribution (e.g. indigo, jade, kinetic) <span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><p class="line867">
+<h2 id="Quick_Overview_of_Graph_Concepts">Quick Overview of Graph Concepts</h2>
+<span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><ul><li><p class="line891"><a href="http://wiki.ros.org/Nodes.htm">Nodes</a>: A node is an executable that uses ROS to communicate with other nodes. <span class="anchor" id="line-33"></span></li><li><p class="line891"><a href="http://wiki.ros.org/Messages.htm">Messages</a>: ROS data type used when subscribing or publishing to a topic. <span class="anchor" id="line-34"></span></li><li><p class="line891"><a href="http://wiki.ros.org/Topics.htm">Topics</a>:  Nodes can <em>publish</em> messages to a topic as well as <em>subscribe</em> to a topic to receive messages.  <span class="anchor" id="line-35"></span></li><li><p class="line891"><a href="http://wiki.ros.org/Master.htm">Master</a>: Name service for ROS (i.e. helps nodes find each other) <span class="anchor" id="line-36"></span></li><li><p class="line891"><a href="http://wiki.ros.org/rosout">rosout</a>: ROS equivalent of stdout/stderr <span class="anchor" id="line-37"></span></li><li><p class="line891"><a href="http://wiki.ros.org/roscore.htm">roscore</a>: Master + rosout + parameter server (parameter server will be introduced later) <span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span></li></ul><p class="line867">
+<h2 id="Nodes">Nodes</h2>
+<span class="anchor" id="line-40"></span><p class="line874">A node really isn't much more than an executable file within a ROS package.  ROS  nodes use a ROS client library to communicate with other nodes.  Nodes can publish or subscribe to a Topic.  Nodes can also provide or use a Service.   <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><p class="line867">
+<h2 id="Client_Libraries">Client Libraries</h2>
+<span class="anchor" id="line-43"></span><p class="line874">ROS client libraries allow nodes written in different programming languages to communicate: <span class="anchor" id="line-44"></span><ul><li>rospy = python client library <span class="anchor" id="line-45"></span></li><li>roscpp = c++ client library  <span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span></li></ul><p class="line867">
+<h2 id="roscore">roscore</h2>
+<span class="anchor" id="line-48"></span><p class="line867"><tt>roscore</tt> is the first thing you should run when using ROS.   <span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><p class="line874">Please run: <span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><pre><span class="anchor" id="line-1-3"></span>$ roscore</pre><span class="anchor" id="line-54"></span><p class="line874">You will see something similar to: <span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><pre><span class="anchor" id="line-1-4"></span>... logging to ~/.ros/log/9cf88ce4-b14d-11df-8a75-00251148e8cf/roslaunch-machine_name-13039.log
+<span class="anchor" id="line-2-2"></span>Checking log directory for disk usage. This may take awhile.
+<span class="anchor" id="line-3-2"></span>Press Ctrl-C to interrupt
+<span class="anchor" id="line-4-2"></span>Done checking log file disk usage. Usage is &lt;1GB.
+<span class="anchor" id="line-5-2"></span>
+<span class="anchor" id="line-6-2"></span>started roslaunch server http://machine_name:33919/
+<span class="anchor" id="line-7-2"></span>ros_comm version 1.4.7
+<span class="anchor" id="line-8-2"></span>
+<span class="anchor" id="line-9-2"></span>SUMMARY
+<span class="anchor" id="line-10-2"></span>======
+<span class="anchor" id="line-11-2"></span>
+<span class="anchor" id="line-12-2"></span>PARAMETERS
+<span class="anchor" id="line-13-2"></span> * /rosversion
+<span class="anchor" id="line-14-2"></span> * /rosdistro
+<span class="anchor" id="line-15-2"></span>
+<span class="anchor" id="line-16-2"></span>NODES
+<span class="anchor" id="line-17-2"></span>
+<span class="anchor" id="line-18-1"></span>auto-starting new master
+<span class="anchor" id="line-19-1"></span>process[master]: started with pid [13054]
+<span class="anchor" id="line-20-1"></span>ROS_MASTER_URI=http://machine_name:11311/
+<span class="anchor" id="line-21-1"></span>
+<span class="anchor" id="line-22-1"></span>setting /run_id to 9cf88ce4-b14d-11df-8a75-00251148e8cf
+<span class="anchor" id="line-23-1"></span>process[rosout-1]: started with pid [13067]
+<span class="anchor" id="line-24-1"></span>started core service [/rosout]</pre><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span></li></ul><p class="line862">If <tt class="backtick">roscore</tt> does not initialize, you probably have a network configuration issue. See <a class="http" href="http://www.ros.org/wiki/ROS/NetworkSetup#Single_machine_configuration">Network Setup - Single Machine Configuration</a> <span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span><p class="line862">If <tt class="backtick">roscore</tt> does not initialize and sends a message about lack of permissions, probably the <tt class="backtick">~/.ros</tt> folder is owned by <tt class="backtick">root</tt>, change recursively the ownership of that folder with: <span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span><p class="line867"><span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span><pre><span class="anchor" id="line-1-5"></span>$ sudo chown -R &lt;your_username&gt; ~/.ros</pre><span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><p class="line867">
+<h2 id="Using_rosnode">Using rosnode</h2>
+<span class="anchor" id="line-92"></span><p class="line862">Open up a <strong>new terminal</strong>, and let's use <strong>rosnode</strong> to see what running <tt class="backtick">roscore</tt> did... <span class="anchor" id="line-93"></span>Bear in mind to keep the previous terminal open either by opening a new tab or simply minimizing it. <span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span><span class="anchor" id="line-96"></span><div class="blue solid"><span class="anchor" id="line-1-6"></span><p class="line867"><strong>Note:</strong> When opening a new terminal your environment is reset and your <tt class="backtick">~/.bashrc</tt> file is sourced. If you have trouble running commands like <tt class="backtick">rosnode</tt> then you might need to add some environment setup files to your <tt class="backtick">~/.bashrc</tt> or manually re-source them. </div><span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span><p class="line867"><tt class="backtick">rosnode</tt>  displays information about the ROS nodes that are currently running. The <tt class="backtick">rosnode&nbsp;list</tt> command lists these active nodes: <span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><p class="line867"><span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span><pre><span class="anchor" id="line-1-7"></span>$ rosnode list</pre><span class="anchor" id="line-103"></span><ul><li style="list-style-type:none">You will see: <span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span></li><li class="gap" style="list-style-type:none"><span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><pre><span class="anchor" id="line-1-8"></span>/rosout</pre><span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span></li></ul><p class="line862">This showed us that there is only one node running: <a href="http://wiki.ros.org/rosout">rosout</a>. This is always running as it collects and logs nodes' debugging output. <span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><p class="line862">The <tt class="backtick">rosnode&nbsp;info</tt> command returns information about a specific node. <span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span><p class="line867"><span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span><pre><span class="anchor" id="line-1-9"></span>$ rosnode info /rosout</pre><span class="anchor" id="line-116"></span><p class="line862">This gave us some more information about <tt class="backtick">rosout</tt>, such as the fact that it publishes <tt class="backtick">/rosout_agg</tt>. <span class="anchor" id="line-117"></span><span class="anchor" id="line-118"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span><span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span><span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span><span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span><span class="anchor" id="line-133"></span><pre><span class="anchor" id="line-1-10"></span>------------------------------------------------------------------------
+<span class="anchor" id="line-2-3"></span>Node [/rosout]
+<span class="anchor" id="line-3-3"></span>Publications:
+<span class="anchor" id="line-4-3"></span> * /rosout_agg [rosgraph_msgs/Log]
+<span class="anchor" id="line-5-3"></span>
+<span class="anchor" id="line-6-3"></span>Subscriptions:
+<span class="anchor" id="line-7-3"></span> * /rosout [unknown type]
+<span class="anchor" id="line-8-3"></span>
+<span class="anchor" id="line-9-3"></span>Services:
+<span class="anchor" id="line-10-3"></span> * /rosout/get_loggers
+<span class="anchor" id="line-11-3"></span> * /rosout/set_logger_level
+<span class="anchor" id="line-12-3"></span>
+<span class="anchor" id="line-13-3"></span>contacting node http://machine_name:54614/ ...
+<span class="anchor" id="line-14-3"></span>Pid: 5092</pre><span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span></li></ul><p class="line862">Now, let's see some more nodes. For this, we're going to use <tt class="backtick">rosrun</tt> to bring up another node. <span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><p class="line867">
+<h2 id="Using_rosrun">Using rosrun</h2>
+<span class="anchor" id="line-138"></span><p class="line867"><tt class="backtick">rosrun</tt>  allows you to use the package name to directly run a node within a package (without having to know the package path). <span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><p class="line874">Usage: <span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><p class="line867"><span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span><pre><span class="anchor" id="line-1-11"></span>$ rosrun [package_name] [node_name]</pre><span class="anchor" id="line-145"></span><p class="line874">So now we can run the turtlesim_node in the turtlesim package.  <span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><p class="line862">Then, in a <strong>new terminal</strong>: <span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span><p class="line867"><span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span><pre><span class="anchor" id="line-1-12"></span>$ rosrun turtlesim turtlesim_node</pre><span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><p class="line874">You will see the turtlesim window: <span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span><ul><li style="list-style-type:none"><p class="line891"><img alt="turtlesim.png" class="attachment" src="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes?action=AttachFile&amp;do=get&amp;target=turtlesim.png" title="turtlesim.png" /> <span class="anchor" id="line-156"></span><span class="anchor" id="line-157"></span></li></ul><p class="line867"><strong>NOTE:</strong> The turtle may look different in your turtlesim window.  Don't worry about it - there are <a href="http://wiki.ros.org/Distributions.htm#Current_Distribution_Releases">many types of turtle</a> and yours is a surprise! <span class="anchor" id="line-158"></span><span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><p class="line862">In a <strong>new terminal</strong>: <span class="anchor" id="line-161"></span><span class="anchor" id="line-162"></span><p class="line867"><span class="anchor" id="line-163"></span><span class="anchor" id="line-164"></span><pre><span class="anchor" id="line-1-13"></span>$ rosnode list</pre><span class="anchor" id="line-165"></span><p class="line874">You will see something similar to: <span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-168"></span><span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><pre><span class="anchor" id="line-1-14"></span>/rosout
+<span class="anchor" id="line-2-4"></span>/turtlesim</pre><span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span></li></ul><p class="line874">One powerful feature of ROS is that you can reassign Names from the command-line. <span class="anchor" id="line-173"></span><span class="anchor" id="line-174"></span><p class="line862">Close the turtlesim window to stop the node (or go back to the <tt class="backtick">rosrun&nbsp;turtlesim</tt> terminal and use <tt class="backtick">ctrl-C</tt>). Now let's re-run it, but this time use a <a href="http://wiki.ros.org/Remapping%20Arguments">Remapping Argument</a> to change the node's name: <span class="anchor" id="line-175"></span><span class="anchor" id="line-176"></span><p class="line867"><span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span><pre><span class="anchor" id="line-1-15"></span>$ rosrun turtlesim turtlesim_node __name:=my_turtle</pre><span class="anchor" id="line-179"></span><p class="line862">Now, if we go back and use <tt class="backtick">rosnode&nbsp;list</tt>: <span class="anchor" id="line-180"></span><span class="anchor" id="line-181"></span><p class="line867"><span class="anchor" id="line-182"></span><span class="anchor" id="line-183"></span><pre><span class="anchor" id="line-1-16"></span>$ rosnode list</pre><span class="anchor" id="line-184"></span><ul><li style="list-style-type:none">You will see something similar to: <span class="anchor" id="line-185"></span><span class="anchor" id="line-186"></span></li><li class="gap" style="list-style-type:none"><span class="anchor" id="line-187"></span><span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span><pre><span class="anchor" id="line-1-17"></span>/my_turtle
+<span class="anchor" id="line-2-5"></span>/rosout</pre><span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span></li></ul><p class="line867"><span class="anchor" id="line-192"></span><span class="anchor" id="line-193"></span><span class="anchor" id="line-194"></span><span class="anchor" id="line-195"></span><div class="blue solid"><span class="anchor" id="line-1-18"></span><p class="line862">Note: If you still see /turtlesim in the list, it might mean that you stopped the node in the terminal using <tt class="backtick">ctrl-C</tt> instead of closing the window, or that you don't have the $ROS_HOSTNAME environment variable defined as described in <a class="http" href="http://www.ros.org/wiki/ROS/NetworkSetup#Single_machine_configuration">Network Setup - Single Machine Configuration</a>. You can try cleaning the rosnode list with:  <span class="anchor" id="line-2-6"></span>$ rosnode cleanup </div><span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span><span class="anchor" id="line-198"></span><p class="line862">We see our new <tt class="backtick">/my_turtle</tt> node. Let's use another <tt class="backtick">rosnode</tt> command, <tt class="backtick">ping</tt>, to test that it's up: <span class="anchor" id="line-199"></span><span class="anchor" id="line-200"></span><p class="line867"><span class="anchor" id="line-201"></span><span class="anchor" id="line-202"></span><pre><span class="anchor" id="line-1-19"></span>$ rosnode ping my_turtle</pre><span class="anchor" id="line-203"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-204"></span><span class="anchor" id="line-205"></span><span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span><span class="anchor" id="line-208"></span><span class="anchor" id="line-209"></span><span class="anchor" id="line-210"></span><pre><span class="anchor" id="line-1-20"></span>rosnode: node is [/my_turtle]
+<span class="anchor" id="line-2-7"></span>pinging /my_turtle with a timeout of 3.0s
+<span class="anchor" id="line-3-4"></span>xmlrpc reply from http://aqy:42235/     time=1.152992ms
+<span class="anchor" id="line-4-4"></span>xmlrpc reply from http://aqy:42235/     time=1.120090ms
+<span class="anchor" id="line-5-4"></span>xmlrpc reply from http://aqy:42235/     time=1.700878ms
+<span class="anchor" id="line-6-4"></span>xmlrpc reply from http://aqy:42235/     time=1.127958ms</pre><span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span></li></ul><p class="line867">
+<h2 id="Review">Review</h2>
+<span class="anchor" id="line-213"></span><p class="line874">What was covered: <span class="anchor" id="line-214"></span><ul><li>roscore = ros+core : master (provides name service for ROS) + rosout (stdout/stderr) + parameter server (parameter server will be introduced later) <span class="anchor" id="line-215"></span></li><li>rosnode = ros+node : ROS tool to get information about a node. <span class="anchor" id="line-216"></span></li><li>rosrun = ros+run :  runs a node from a given package. <span class="anchor" id="line-217"></span><span class="anchor" id="line-218"></span><span class="anchor" id="line-219"></span></li></ul><p class="line862">Now that you understand how ROS nodes work, let's look at <a href="http://wiki.ros.org/ROS/Tutorials/UnderstandingTopics.htm">how ROS topics work</a>. Also, feel free to press <tt class="backtick">Ctrl-C</tt> to stop turtlesim_node. <span class="anchor" id="line-220"></span><span class="anchor" id="line-221"></span><p class="line867"><span class="anchor" id="line-222"></span><p class="line867"><span class="anchor" id="line-223"></span><p class="line867"><span class="anchor" id="line-224"></span><p class="line867"><span class="anchor" id="line-225"></span><span class="anchor" id="bottom"></span></div></div>
+<div id="pagebottom"></div>
+</div>
+
+<p id="pageinfo" class="info" lang="en" dir="ltr">Wiki: ROS/Tutorials/UnderstandingNodes  (last edited 2019-06-05 23:41:12 by <span title="LukeMeier @ 96-8-131-202.block0.gvtc.com[96.8.131.202]"><a class="nonexistent" href="http://wiki.ros.org/LukeMeier" title="LukeMeier @ 96-8-131-202.block0.gvtc.com[96.8.131.202]">LukeMeier</a></span>)</p>
+
+
+
+
+<div style="margin-top: 9px;" class="footer">
+Except where otherwise noted, the ROS wiki is licensed under the <br /><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>
+<hr style="margin-top: 10px;">
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+<a href="https://www.openrobotics.org/"><img style="margin-top: -1px;" src="http://wiki.ros.org/custom/images/brought_by_horiz.png"></p></a>
+  </div>
+</div>
+</div>
+
+  </div></div> <!-- /#dpage-inner, /#dpage -->
+
+
+</body>
+</html>
+

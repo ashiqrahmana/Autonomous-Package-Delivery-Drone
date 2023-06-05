@@ -1,0 +1,524 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4" />
+<link rel="shortcut icon" href="http://wiki.ros.org/custom/favicon.ico" type="image/ico" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/sorttable.js"></script>
+<script type="text/javascript" src="http://wiki.ros.org/custom/libraries/jquery.min.js"></script>                         
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/seesaw.js"></script> 
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/rosversion.js"></script> 
+<!--script type="text/javascript" src="/custom/libraries/RGraph.common.core.js" ></script Used for metrics only, should be conditional, not at the top-->
+<!--script type="text/javascript" src="/custom/libraries/RGraph.bar.js" ></script same as above -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17821189-2']);
+  _gaq.push(['_setDomainName', 'wiki.ros.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>catkin/CMakeLists.txt - ROS Wiki</title>
+<script type="text/javascript" src="http://wiki.ros.org/moin_static197/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://wiki.ros.org/moin_static197/rostheme/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="http://wiki.ros.org/moin_static197/rostheme/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="http://wiki.ros.org/moin_static197/rostheme/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="http://wiki.ros.org/moin_static197/rostheme/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static197/rostheme/css/msie.css">
+<![endif]-->
+
+
+
+
+<link rel="canonical" href="CMakeLists.htm" />
+
+<link rel="Start" href="http://wiki.ros.org/Documentation">
+<link rel="Alternate" title="Wiki Markup" href="http://wiki.ros.org/catkin/CMakeLists.txt?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://wiki.ros.org/catkin/CMakeLists.txt?action=print">
+<link rel="Up" href="http://wiki.ros.org/catkin">
+<link rel="Search" href="http://wiki.ros.org/FindPage">
+<link rel="Index" href="http://wiki.ros.org/TitleIndex">
+<link rel="Glossary" href="http://wiki.ros.org/WordIndex">
+<link rel="Help" href="http://wiki.ros.org/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5950817-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+if(f) f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+if(e) {
+  searchChange(e);
+  searchBlur(e);
+}
+
+function handleSubmit() {
+  var f = document.getElementById('searchform');
+  var t = document.getElementById('searchinput');
+  var r = document.getElementById('real_searchinput');
+
+  //alert("handleSubmit "+ t.value);
+  if(t.value.match(/review/)) {
+    r.value = t.value;
+  } else {
+    //r.value = t.value + " -PackageReviewCategory -StackReviewCategory -M3Review -DocReview -ApiReview -HelpOn -BadContent -LocalSpellingWords";
+    r.value = t.value + " -PackageReviewCategory -StackReviewCategory -DocReview -ApiReview";
+  }
+  //return validate(f);
+}
+//-->
+</script>
+
+<div id="dpage">
+  <div id="dpage-inner">
+    <div id="header"><div id="topnav">
+
+<!-- Alert box -->
+<!-- To enable/disable the alert box, uncomment/comment the block below and update the content below the button. -->
+<!--
+    <div class="alert alert-info alert-dismissable" style="text-align: center;">
+<script>
+jQuery(function( $ ){
+    alert_box_name = 'roswiki_roscon'
+    state = localStorage.getItem(alert_box_name);
+    if (!state) {
+      localStorage.setItem(alert_box_name, 'open');
+    }
+    state = localStorage.getItem(alert_box_name);
+    if (state == 'closed') {
+        $( '#topnav .alert' ).hide();
+    }
+    $( '.close' ).click(function () {
+	console.log('in .close.click');
+        localStorage.setItem(alert_box_name, 'closed');
+        $( '#topnav .alert' ).hide();
+  });
+});
+</script>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <a href="http://roscon.ros.org">ROSCon 2017</a> will be in Vancouver, September 21-22! <br>
+      The last few years have sold out: register now and take advantage of discounted hotel rates</a>.
+    </div>
+-->
+<!-- End Alert box -->
+
+      <table id="topnav-table">
+        <tr>
+          <td width="300" valign="top"><a href="../wiki_ros_default.html"><img border="0" src="http://wiki.ros.org/custom/images/ros_org.png" alt="ros.org" width="238" height="51"/></a></td>
+          <td width="500" valign="middle">
+            <a href="http://www.ros.org/about-ros">About</a>
+            |
+            <a href="http://wiki.ros.org/Support">Support</a>
+            |
+            <a href="http://discourse.ros.org/">Discussion Forum</a>
+            |
+            <a href="http://status.ros.org/">Service Status</a>
+            |
+            <a href="http://answers.ros.org/">Q&A answers.ros.org</a>
+          </td>
+
+          <td valign="middle" align="right">
+
+<script language="Javascript">
+
+function Searchy(theButton){
+
+theForm = theButton.form;
+newID = theForm.input.value;
+theForm.q.value = newID;
+theForm.input.value=theForm.input.value
+
+}
+</script>
+
+
+<form action="https://www.ros.org/search/index.html" id="cse">
+  <div>
+    <label>Search:</label>
+    <input type="hidden" name="cx" value="005596761048178735851:_ejygd2ukbe" />
+    <input type="hidden" name="cof" value="FORID:11;NB:1" />
+    <input type="hidden" name="filter" value="0" />
+    <input type="hidden" name="num" value="10" />
+
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="input" id="input" autocomplete="on" style="width: 35%"/>
+    <input type="hidden" name="q" value="" />
+    <input type="submit" name="sa" value="Submit" onClick="Searchy(this)"/>
+
+  </div>
+</form>
+
+         </td>
+      </tr>
+      <tr>
+        <td colspan="3" height="53" width="1024"><nobr><img src="http://wiki.ros.org/custom/images/menu_left.png" width="17" height="53" alt=""/><a href="../wiki_ros_default.html"><img
+        border="0" src="http://wiki.ros.org/custom/images/menu_documentation.png" width="237" height="53" alt="Documentation" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="https://index.ros.org/packages"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_browse_software.png" width="268" height="53" alt="Browse Software" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="https://discourse.ros.org/c/general"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_news.png" width="84" height="53" alt="News" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="http://wiki.ros.org/ROS/Installation"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_download.png" width="151" height="53" alt="Download" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_right.png" width="60" height="53" /></nobr></td>
+
+      </tr>
+    </table> <!-- topnav-table -->
+
+    </div> <!-- /#topav -->
+  </div> <!-- /#header -->
+
+
+<div id="header2">
+
+<ul id="pagelocation">
+<li><a href="http://wiki.ros.org/catkin">catkin</a></li><li><a class="backlink" href="http://wiki.ros.org/action/fullsearch/catkin/CMakeLists.txt?action=fullsearch&amp;context=180&amp;value=linkto%3A%22catkin%2FCMakeLists.txt%22" rel="nofollow" title="Click to do a full-text search for this title">CMakeLists.txt</a></li>
+</ul>
+
+<div id="locationline">
+</div>
+</div>
+
+<div id="sidebar">
+<h4>ROS 2 Documentation</h4><p>The ROS Wiki is for ROS 1. Are you using ROS 2 (Dashing/Foxy/Rolling)? <a href="http://docs.ros.org/en/rolling/">Check out the ROS 2 Documentation</a></p>
+<div class="sidepanel">
+<h1>Wiki</h1>
+
+<ul id="navibar">
+<li class="wikilink"><a href="../Distributions.htm">Distributions</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Installation">ROS/Installation</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Tutorials">ROS/Tutorials</a></li><li class="wikilink"><a href="http://wiki.ros.org/RecentChanges">RecentChanges</a></li><li class="current"><a href="CMakeLists.htm">catkin/CMakeLists.txt</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Page</h1>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="CMakeLists.htm#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.ros.org/action/info/catkin/CMakeLists.txt?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.ros.org/action/AttachFile/catkin/CMakeLists.txt?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="CMakeLists.htm">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="show" disabled class="disabled">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="CopyPage">Copy Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="MyPages">My Pages</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="CreatePdfDocument">CreatePdfDocument</option>
+<option value="Load">Load</option>
+<option value="RawFile">RawFile</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>User</h1>
+<ul id="username"><li><a href="http://wiki.ros.org/action/login/catkin/CMakeLists.txt?action=login" id="login" rel="nofollow">Login</a></li></ul>
+</div>
+</div>
+
+<div id="page" lang="en" dir="ltr">
+
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867"><div class="table-of-contents"><p class="table-of-contents-heading">Contents<ol><li>
+<a href="CMakeLists.htm#Overview">Overview</a></li><li>
+<a href="CMakeLists.htm#Overall_Structure_and_Ordering">Overall Structure and Ordering</a></li><li>
+<a href="CMakeLists.htm#CMake_Version">CMake Version</a></li><li>
+<a href="CMakeLists.htm#Package_name">Package name</a></li><li>
+<a href="CMakeLists.htm#Finding_Dependent_CMake_Packages">Finding Dependent CMake Packages</a><ol><li>
+<a href="CMakeLists.htm#What_Does_find_package.28.29_Do.3F">What Does find_package() Do?</a></li><li>
+<a href="CMakeLists.htm#Why_Are_Catkin_Packages_Specified_as_Components.3F">Why Are Catkin Packages Specified as Components?</a></li><li>
+<a href="CMakeLists.htm#Boost">Boost</a></li></ol></li><li>
+<a href="CMakeLists.htm#catkin_package.28.29">catkin_package()</a></li><li>
+<a href="CMakeLists.htm#Specifying_Build_Targets">Specifying Build Targets</a><ol><li>
+<a href="CMakeLists.htm#Target_Naming">Target Naming</a></li><li>
+<a href="CMakeLists.htm#Custom_output_directory">Custom output directory</a></li><li>
+<a href="CMakeLists.htm#Include_Paths_and_Library_Paths">Include Paths and Library Paths</a></li><li>
+<a href="CMakeLists.htm#Executable_Targets">Executable Targets</a></li><li>
+<a href="CMakeLists.htm#Library_Targets">Library Targets</a></li><li>
+<a href="CMakeLists.htm#target_link_libraries">target_link_libraries</a></li></ol></li><li>
+<a href="CMakeLists.htm#Messages.2C_Services.2C_and_Action_Targets">Messages, Services, and Action Targets</a><ol><li>
+<a href="CMakeLists.htm#Important_Prerequisites.2FConstraints">Important Prerequisites/Constraints</a></li><li>
+<a href="CMakeLists.htm#Example">Example</a></li></ol></li><li>
+<a href="CMakeLists.htm#Enabling_Python_module_support">Enabling Python module support</a></li><li>
+<a href="CMakeLists.htm#Unit_Tests">Unit Tests</a></li><li>
+<a href="CMakeLists.htm#Optional_Step:_Specifying_Installable_Targets">Optional Step: Specifying Installable Targets</a><ol><li>
+<a href="CMakeLists.htm#Installing_Python_Executable_Scripts">Installing Python Executable Scripts</a></li><li>
+<a href="CMakeLists.htm#Installing_header_files">Installing header files</a></li><li>
+<a href="CMakeLists.htm#Installing_roslaunch_Files_or_Other_Resources">Installing roslaunch Files or Other Resources</a></li></ol></li></ol></li></ol></div><p class="line874"> <span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line867">
+<h2 id="Overview">Overview</h2>
+<span class="anchor" id="line-4"></span><p class="line862">The file <strong>CMakeLists.txt</strong> is the input to the CMake build system for building software packages. Any CMake-compliant package contains one or more CMakeLists.txt file that describe how to build the code and where to install it to. The CMakeLists.txt file used for a catkin project is a standard vanilla CMakeLists.txt file with a few additional constraints. <span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span><p class="line867">
+<h2 id="Overall_Structure_and_Ordering">Overall Structure and Ordering</h2>
+<span class="anchor" id="line-7"></span><p class="line862">Your CMakeLists.txt file <strong>MUST</strong> follow this format otherwise your packages will not build correctly. The order in the configuration <strong>DOES</strong> count. <span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><ol type="1"><li><p class="line891"><strong>Required CMake Version</strong> (<tt>cmake_minimum_required</tt>) <span class="anchor" id="line-10"></span></li><li><p class="line891"><strong>Package Name</strong> (<tt>project()</tt>) <span class="anchor" id="line-11"></span></li><li><p class="line891"><strong>Find other CMake/Catkin packages needed for build</strong> (<tt>find_package()</tt>) <span class="anchor" id="line-12"></span></li><li><p class="line891"><strong>Enable Python module support</strong> (<tt>catkin_python_setup()</tt>) <span class="anchor" id="line-13"></span></li><li><p class="line891"><strong>Message/Service/Action Generators</strong> (<tt>add_message_files(),&nbsp;add_service_files(),&nbsp;add_action_files()</tt>) <span class="anchor" id="line-14"></span></li><li><p class="line891"><strong>Invoke message/service/action generation</strong> (<tt>generate_messages()</tt>) <span class="anchor" id="line-15"></span></li><li><p class="line891"><strong>Specify package build info export</strong> (<tt>catkin_package()</tt>) <span class="anchor" id="line-16"></span></li><li><p class="line891"><strong>Libraries/Executables to build</strong> (<tt>add_library()/add_executable()/target_link_libraries()</tt>) <span class="anchor" id="line-17"></span></li><li><p class="line891"><strong>Tests to build</strong> (<tt>catkin_add_gtest()</tt>) <span class="anchor" id="line-18"></span></li><li><p class="line891"><strong>Install rules</strong> (<tt>install()</tt>) <span class="anchor" id="line-19"></span><span class="anchor" id="line-20"></span></li></ol><p class="line867">
+<h2 id="CMake_Version">CMake Version</h2>
+<span class="anchor" id="line-21"></span><p class="line874">Every catkin CMakeLists.txt file must start with the required version of CMake needed. Catkin requires version 2.8.3 or higher. <span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><p class="line867"><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><pre><span class="anchor" id="line-1-1"></span>cmake_minimum_required(VERSION 2.8.3)</pre><span class="anchor" id="line-26"></span><p class="line867">
+<h2 id="Package_name">Package name</h2>
+<span class="anchor" id="line-27"></span><p class="line862">The next item is the name of the package which is specified by the CMake <tt>project</tt> function. Let us say we are making a package called <em>robot_brain</em>. <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><p class="line867"><span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span><pre><span class="anchor" id="line-1-2"></span>project(robot_brain)</pre><span class="anchor" id="line-32"></span><p class="line862">Note in CMake you can reference the project name anywhere later in the CMake script by using the variable <tt>${PROJECT_NAME</tt>} wherever needed. <span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span><p class="line867">
+<h2 id="Finding_Dependent_CMake_Packages">Finding Dependent CMake Packages</h2>
+<span class="anchor" id="line-35"></span><p class="line862">We need to then specify which other CMake packages that need to be found to build our project using the CMake <tt>find_package</tt> function. There is always at least one dependency on catkin: <span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><p class="line867"><span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><pre><span class="anchor" id="line-1-3"></span>find_package(catkin REQUIRED)</pre><span class="anchor" id="line-40"></span><p class="line862">If your project depends on other wet packages, they are automatically turned into components (in terms of CMake) of catkin. Instead of using find_package on those packages, if you specify them as components, it will make life easier. For example, if you use the package <em>nodelet</em>. <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><p class="line867"><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><pre><span class="anchor" id="line-1-4"></span>find_package(catkin REQUIRED COMPONENTS nodelet)</pre><span class="anchor" id="line-45"></span><p class="line867"><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><div class="yellow"><span class="anchor" id="line-1-5"></span><p class="line874">NB: You should only find_package components for which you want build flags. You should not add runtime dependencies. </div><span class="anchor" id="line-48"></span><p class="line874">You could also do: <span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span><p class="line867"><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><pre><span class="anchor" id="line-1-6"></span>find_package(catkin REQUIRED)
+<span class="anchor" id="line-2-1"></span>find_package(nodelet REQUIRED)</pre><span class="anchor" id="line-54"></span><p class="line874">However, you will see that this is an inconvenient way of doing things. <span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><p class="line867">
+<h3 id="What_Does_find_package.28.29_Do.3F">What Does find_package() Do?</h3>
+<span class="anchor" id="line-57"></span><p class="line862">If a package is found by CMake through find_package, it results in the creation of several CMake environment variables that give information about the found package. These environment variables can be utilized later in the CMake script. The environment variables describe where the packages exported header files are, where source files are, what libraries the package depends on, and the paths of those libraries. The names always follow the convention of &lt;PACKAGE NAME&gt;_&lt;PROPERTY&gt;: <span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><ul><li><p class="line891">&lt;NAME&gt;_FOUND - Set to true if the library is found, otherwise false <span class="anchor" id="line-60"></span></li><li><p class="line891">&lt;NAME&gt;_INCLUDE_DIRS or &lt;NAME&gt;_INCLUDES - The include paths exported by the package <span class="anchor" id="line-61"></span></li><li><p class="line891">&lt;NAME&gt;_LIBRARIES or &lt;NAME&gt;_LIBS - The libraries exported by the package <span class="anchor" id="line-62"></span></li><li><p class="line891">&lt;NAME&gt;_DEFINITIONS - ? <span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span></li></ul><p class="line867">
+<h3 id="Why_Are_Catkin_Packages_Specified_as_Components.3F">Why Are Catkin Packages Specified as Components?</h3>
+<span class="anchor" id="line-65"></span><p class="line874">Catkin packages are not really components of catkin. Rather the components feature of CMake was utilized in the design of catkin to save you significant typing time. <span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><p class="line862">For catkin packages, if you find_package them as components of catkin, this is advantageous as a single set of environment variables is created with the <tt>catkin_</tt> prefix. For example, let us say you were using the package <em>nodelet</em> in your code. The recommended way of finding the package is: <span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><p class="line867"><span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><pre><span class="anchor" id="line-1-7"></span>find_package(catkin REQUIRED COMPONENTS nodelet)</pre><span class="anchor" id="line-72"></span><p class="line874">This means that the include paths, libraries, etc exported by nodelet are also appended to the catkin_ variables. For example, catkin_INCLUDE_DIRS contains the include paths not only for catkin but also for nodelet as well! This will come in handy later. <span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><p class="line874">We could alternatively find_package nodelet on its own: <span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><p class="line867"><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><pre><span class="anchor" id="line-1-8"></span>find_package(nodelet)</pre><span class="anchor" id="line-79"></span><p class="line874">This means the nodelet paths, libraries and so on would not be added to catkin_ variables. <span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><p class="line874">This results in nodelet_INCLUDE_DIRS, nodelet_LIBRARIES, and so on. The same variables are also created using <span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span><p class="line867"><span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span><pre><span class="anchor" id="line-1-9"></span>find_package(catkin REQUIRED COMPONENTS nodelet)</pre><span class="anchor" id="line-86"></span><p class="line867">
+<h3 id="Boost">Boost</h3>
+<span class="anchor" id="line-87"></span><p class="line862">If using C++ and Boost, you need to invoke <tt>find_package()</tt> on Boost and specify which aspects of Boost you are using as components. For example, if you wanted to use Boost threads, you would say: <span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span><p class="line867"><span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><pre><span class="anchor" id="line-1-10"></span>find_package(Boost REQUIRED COMPONENTS thread)</pre><span class="anchor" id="line-92"></span><p class="line867">
+<h2 id="catkin_package.28.29">catkin_package()</h2>
+<span class="anchor" id="line-93"></span><p class="line867"><strong>catkin_package()</strong> is a catkin-provided CMake macro. This is required to specify catkin-specific information to the build system which in turn is used to generate pkg-config and CMake files. <span class="anchor" id="line-94"></span><span class="anchor" id="line-95"></span><p class="line862">This function <em><strong>must be called before</em></strong> declaring any targets with <tt>add_library()</tt> or <tt>add_executable()</tt>. The function has 5 <strong>optional</strong> arguments: <span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><ul><li><p class="line891"><tt>INCLUDE_DIRS</tt> - The exported include paths (i.e. cflags) for the package <span class="anchor" id="line-98"></span></li><li><p class="line891"><tt>LIBRARIES</tt> - The exported libraries from the project <span class="anchor" id="line-99"></span></li><li><p class="line891"><tt>CATKIN_DEPENDS</tt> - Other catkin projects that this project depends on <span class="anchor" id="line-100"></span></li><li><p class="line891"><tt>DEPENDS</tt> - Non-catkin CMake projects that this project depends on. For a better understanding, see <a class="http" href="http://answers.ros.org/question/58498/what-is-the-purpose-of-catkin_depends/">this explanation</a>. <span class="anchor" id="line-101"></span></li><li><p class="line891"><tt>CFG_EXTRAS</tt> - Additional configuration options <span class="anchor" id="line-102"></span><span class="anchor" id="line-103"></span></li></ul><p class="line862">Full macro documentation can be found <a class="http" href="http://ros.org/doc/groovy/api/catkin/html/dev_guide/generated_cmake_api.html#catkin-package">here</a>. <span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span><p class="line874">As an example: <span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><p class="line867"><span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span><pre><span class="anchor" id="line-1-11"></span>catkin_package(
+<span class="anchor" id="line-2-2"></span>   INCLUDE_DIRS include
+<span class="anchor" id="line-3-1"></span>   LIBRARIES ${PROJECT_NAME}
+<span class="anchor" id="line-4-1"></span>   CATKIN_DEPENDS roscpp nodelet
+<span class="anchor" id="line-5-1"></span>   DEPENDS eigen opencv)</pre><span class="anchor" id="line-114"></span><p class="line862">This indicates that the folder "include" within the package folder is where exported headers go. The CMake environment variable ${PROJECT_NAME} evaluates to whatever you passed to the <tt>project()</tt> function earlier, in this case it will be "robot_brain". "roscpp" + "nodelet" are packages that need to be present to build/run this package, and "eigen" + "opencv" are system dependencies that need to be present to build/run this package. <span class="anchor" id="line-115"></span><span class="anchor" id="line-116"></span><p class="line867">
+<h2 id="Specifying_Build_Targets">Specifying Build Targets</h2>
+<span class="anchor" id="line-117"></span><p class="line874">Build targets can take many forms, but usually they represent one of two possibilties: <span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><ul><li>Executable Target - programs we can run <span class="anchor" id="line-120"></span></li><li>Library Target - libraries that can be used by executable targets at build and/or runtime <span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span></li></ul><p class="line867">
+<h3 id="Target_Naming">Target Naming</h3>
+<span class="anchor" id="line-123"></span><p class="line862">It is very important to note that <strong>the names of build targets in catkin must be unique regardless of the folders they are built/installed to.</strong> This is a requirement of CMake. However, unique names of targets are only necessary internally to CMake. One can have a target renamed to something else using the <tt>set_target_properties()</tt> function: <span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><p class="line874">Example: <span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span><p class="line867"><span class="anchor" id="line-128"></span><span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span><span class="anchor" id="line-131"></span><pre><span class="anchor" id="line-1-12"></span>set_target_properties(rviz_image_view
+<span class="anchor" id="line-2-3"></span>                      PROPERTIES OUTPUT_NAME image_view
+<span class="anchor" id="line-3-2"></span>                      PREFIX "")</pre><span class="anchor" id="line-132"></span><p class="line862">This will change the name of the target <em>rviz_image_view</em> to <em>image_view</em> in the build and install outputs. <span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span><p class="line867">
+<h3 id="Custom_output_directory">Custom output directory</h3>
+<span class="anchor" id="line-135"></span><p class="line874">While the default output directory for executables and libraries is usual set to a reasonable value it must be customized in certain cases. I.e. a library containing Python bindings must be placed in a different folder to be importable in Python: <span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><p class="line874">Example: <span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span><p class="line867"><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><pre><span class="anchor" id="line-1-13"></span>set_target_properties(python_module_library
+<span class="anchor" id="line-2-4"></span>  PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_PYTHON_DESTINATION})</pre><span class="anchor" id="line-143"></span><p class="line867">
+<h3 id="Include_Paths_and_Library_Paths">Include Paths and Library Paths</h3>
+<span class="anchor" id="line-144"></span><p class="line874">Prior to specifying targets, you need to specify where resources can be found for said targets, specifically header files and libraries: <span class="anchor" id="line-145"></span><span class="anchor" id="line-146"></span><ul><li>Include Paths - Where can header files be found for the code (most common in C/C++) being built <span class="anchor" id="line-147"></span></li><li>Library Paths - Where are libraries located that executable target build against? <span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span></li><li class="gap"><p class="line891"><tt>include_directories(&lt;dir1&gt;,&nbsp;&lt;dir2&gt;,&nbsp;...,&nbsp;&lt;dirN&gt;)</tt> <span class="anchor" id="line-150"></span></li><li><p class="line891"><tt>link_directories(&lt;dir1&gt;,&nbsp;&lt;dir2&gt;,&nbsp;...,&nbsp;&lt;dirN&gt;)</tt> <span class="anchor" id="line-151"></span><span class="anchor" id="line-152"></span></li></ul><p class="line867">
+<h4 id="include_directories.28.29">include_directories()</h4>
+<span class="anchor" id="line-153"></span><p class="line874">The argument to include_directories should be the *_INCLUDE_DIRS variables generated by your find_package calls and any additional directories that need to be included. If you are using catkin and Boost, your include_directories() call should look like: <span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span><p class="line867"><span class="anchor" id="line-156"></span><span class="anchor" id="line-157"></span><pre><span class="anchor" id="line-1-14"></span>include_directories(include ${Boost_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})</pre><span class="anchor" id="line-158"></span><p class="line862">The first argument "include" indicates that the <tt>include/</tt> directory within the package is also part of the path. <span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><p class="line867">
+<h4 id="link_directories.28.29">link_directories()</h4>
+<span class="anchor" id="line-161"></span><p class="line862">The CMake <tt>link_directories()</tt> function can be used to add additional library paths, however, this is not recommended. All catkin and CMake packages automatically have their link information added when they are find_packaged. Simply link against the libraries in <tt>target_link_libraries()</tt> <span class="anchor" id="line-162"></span><span class="anchor" id="line-163"></span><p class="line874">Example: <span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span><p class="line867"><span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span><pre><span class="anchor" id="line-1-15"></span>link_directories(~/my_libs)</pre><span class="anchor" id="line-168"></span><p class="line862">Please see <a class="http" href="http://www.cmake.org/pipermail/cmake/2011-May/044295.html">this cmake thread</a> to see a detailed example of using <tt>target_link_libraries()</tt> over <tt>link_directories()</tt>. <span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><p class="line867">
+<h3 id="Executable_Targets">Executable Targets</h3>
+<span class="anchor" id="line-171"></span><p class="line862">To specify an executable target that must be built, we must use the <tt>add_executable()</tt> CMake function. <span class="anchor" id="line-172"></span><span class="anchor" id="line-173"></span><p class="line867"><span class="anchor" id="line-174"></span><span class="anchor" id="line-175"></span><pre><span class="anchor" id="line-1-16"></span>add_executable(myProgram src/main.cpp src/some_file.cpp src/another_file.cpp)</pre><span class="anchor" id="line-176"></span><p class="line862">This will build a target executable called <em>myProgram</em> which is built from 3 source files: src/main.cpp, src/some_file.cpp and src/another_file.cpp. <span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span><p class="line867">
+<h3 id="Library_Targets">Library Targets</h3>
+<span class="anchor" id="line-179"></span><p class="line862">The <tt>add_library()</tt> CMake function is used to specify libraries to build. By default catkin builds shared libraries. <span class="anchor" id="line-180"></span><span class="anchor" id="line-181"></span><p class="line867"><span class="anchor" id="line-182"></span><span class="anchor" id="line-183"></span><pre><span class="anchor" id="line-1-17"></span>add_library(${PROJECT_NAME} ${${PROJECT_NAME}_SRCS})</pre><span class="anchor" id="line-184"></span><p class="line867">
+<h3 id="target_link_libraries">target_link_libraries</h3>
+<span class="anchor" id="line-185"></span><p class="line862">Use the <tt>target_link_libraries()</tt> function to specify which libraries an executable target links against. This is done typically after an <tt>add_executable()</tt> call. Add <tt class="backtick">${catkin_LIBRARIES}</tt> if <a class="http" href="http://answers.ros.org/question/63656/how-to-solve-undefined-reference-to-rosinit-on-groovy/?answer=63674#post-id-63674">ros is not found</a>. <span class="anchor" id="line-186"></span><span class="anchor" id="line-187"></span><p class="line874">Syntax: <span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span><p class="line867"><span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span><pre><span class="anchor" id="line-1-18"></span>target_link_libraries(&lt;executableTargetName&gt;, &lt;lib1&gt;, &lt;lib2&gt;, ... &lt;libN&gt;)</pre><span class="anchor" id="line-192"></span><p class="line874">Example: <span class="anchor" id="line-193"></span><span class="anchor" id="line-194"></span><p class="line867"><span class="anchor" id="line-195"></span><span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span><span class="anchor" id="line-198"></span><pre><span class="anchor" id="line-1-19"></span>add_executable(foo src/foo.cpp)
+<span class="anchor" id="line-2-5"></span>add_library(moo src/moo.cpp)
+<span class="anchor" id="line-3-3"></span>target_link_libraries(foo moo)  -- This links foo against libmoo.so</pre><span class="anchor" id="line-199"></span><p class="line862">Note that there is no need to use <tt>link_directories()</tt> in most use cases as that information is automatically pulled in via <tt>find_package()</tt>. <span class="anchor" id="line-200"></span><span class="anchor" id="line-201"></span><p class="line867"><span class="anchor" id="msgs_srvs_actions"></span> <span class="anchor" id="line-202"></span><span class="anchor" id="line-203"></span><p class="line867">
+<h2 id="Messages.2C_Services.2C_and_Action_Targets">Messages, Services, and Action Targets</h2>
+<span class="anchor" id="line-204"></span><p class="line874">Messages (.msg), services (.srv), and actions (.action) files in ROS require a special preprocessor build step before being built and used by ROS packages. The point of these macros is to generate programming language-specific files so that one can utilize messages, services, and actions in their programming language of choice. The build system will generate bindings using all available generators (e.g. gencpp, genpy, genlisp, etc). <span class="anchor" id="line-205"></span><span class="anchor" id="line-206"></span><p class="line874">There are three macros provided to handle messages, services, and actions respectively: <span class="anchor" id="line-207"></span><span class="anchor" id="line-208"></span><ul><li><p class="line891"><tt>add_message_files</tt> <span class="anchor" id="line-209"></span></li><li><p class="line891"><tt>add_service_files</tt> <span class="anchor" id="line-210"></span></li><li><p class="line891"><tt>add_action_files</tt> <span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span></li></ul><p class="line874">These macros must then be followed by a call to the macro that invokes generation: <span class="anchor" id="line-213"></span><span class="anchor" id="line-214"></span><p class="line867"><span class="anchor" id="line-215"></span><span class="anchor" id="line-216"></span><pre><span class="anchor" id="line-1-20"></span> generate_messages()</pre><span class="anchor" id="line-217"></span><p class="line867">
+<h3 id="Important_Prerequisites.2FConstraints">Important Prerequisites/Constraints</h3>
+<span class="anchor" id="line-218"></span><ul><li><p class="line891"><strong>These macros must come BEFORE the catkin_package() macro in order for generation to work correctly.</strong> <span class="anchor" id="line-219"></span><span class="anchor" id="line-220"></span></li></ul><p class="line867"><span class="anchor" id="line-221"></span><span class="anchor" id="line-222"></span><span class="anchor" id="line-223"></span><span class="anchor" id="line-224"></span><span class="anchor" id="line-225"></span><span class="anchor" id="line-226"></span><span class="anchor" id="line-227"></span><span class="anchor" id="line-228"></span><pre><span class="anchor" id="line-1-21"></span> find_package(catkin REQUIRED COMPONENTS ...)
+<span class="anchor" id="line-2-6"></span> add_message_files(...)
+<span class="anchor" id="line-3-4"></span> add_service_files(...)
+<span class="anchor" id="line-4-2"></span> add_action_files(...)
+<span class="anchor" id="line-5-2"></span> generate_messages(...)
+<span class="anchor" id="line-6-1"></span> catkin_package(...)
+<span class="anchor" id="line-7-1"></span> ...</pre><span class="anchor" id="line-229"></span><ul><li><p class="line891"><strong>Your catkin_package() macro must have a CATKIN_DEPENDS dependency on message_runtime.</strong> <span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span></li></ul><p class="line867"><span class="anchor" id="line-232"></span><span class="anchor" id="line-233"></span><span class="anchor" id="line-234"></span><span class="anchor" id="line-235"></span><span class="anchor" id="line-236"></span><pre><span class="anchor" id="line-1-22"></span>catkin_package(
+<span class="anchor" id="line-2-7"></span> ...
+<span class="anchor" id="line-3-5"></span> CATKIN_DEPENDS message_runtime ...
+<span class="anchor" id="line-4-3"></span> ...)</pre><span class="anchor" id="line-237"></span><ul><li><p class="line891"><strong>You must use find_package() for the package message_generation, either alone or as a component of catkin:</strong> <span class="anchor" id="line-238"></span><span class="anchor" id="line-239"></span></li></ul><p class="line867"><span class="anchor" id="line-240"></span><span class="anchor" id="line-241"></span><pre><span class="anchor" id="line-1-23"></span>find_package(catkin REQUIRED COMPONENTS message_generation)</pre><span class="anchor" id="line-242"></span><ul><li><p class="line891"><strong>Your <a href="http://wiki.ros.org/catkin/package.xml">package.xml</a> file must contain a build dependency on <a href="http://wiki.ros.org/message_generation">message_generation</a> and a runtime dependency on <a href="http://wiki.ros.org/message_runtime">message_runtime</a>. This is not necessary if the dependencies are pulled in transitively from other packages.</strong> <span class="anchor" id="line-243"></span><span class="anchor" id="line-244"></span></li><li class="gap"><p class="line891"><strong>If you have a target which (even transitively) depends on some other target that needs messages/services/actions to be built, you need to add an explicit dependency on target catkin_EXPORTED_TARGETS, so that they are built in the correct order. This case applies almost always, unless your package really doesn't use any part of ROS. Unfortunately, this dependency cannot be automatically propagated. (</strong>some_target<strong> is the name of the target set by add_executable()):</strong> <span class="anchor" id="line-245"></span><span class="anchor" id="line-246"></span></li></ul><p class="line867"><span class="anchor" id="line-247"></span><span class="anchor" id="line-248"></span><pre><span class="anchor" id="line-1-24"></span>  add_dependencies(some_target ${catkin_EXPORTED_TARGETS})</pre><span class="anchor" id="line-249"></span><span class="anchor" id="line-250"></span><ul><li><p class="line891"><strong>If you have a package which builds messages and/or services as well as executables that use these, you need to create an explicit dependency on the automatically-generated message target so that they are built in the correct order. (</strong>some_target<strong> is the name of the target set by add_executable()):</strong> <span class="anchor" id="line-251"></span><span class="anchor" id="line-252"></span></li></ul><p class="line867"><span class="anchor" id="line-253"></span><span class="anchor" id="line-254"></span><pre><span class="anchor" id="line-1-25"></span>  add_dependencies(some_target ${${PROJECT_NAME}_EXPORTED_TARGETS})</pre><span class="anchor" id="line-255"></span><span class="anchor" id="line-256"></span><ul><li><p class="line891"><strong>If you your package satisfies both of the above conditions, you need to add both dependencies, i.e.:</strong> <span class="anchor" id="line-257"></span><span class="anchor" id="line-258"></span></li></ul><p class="line867"><span class="anchor" id="line-259"></span><span class="anchor" id="line-260"></span><pre><span class="anchor" id="line-1-26"></span>  add_dependencies(some_target ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})</pre><span class="anchor" id="line-261"></span><span class="anchor" id="line-262"></span><p class="line867">
+<h3 id="Example">Example</h3>
+<span class="anchor" id="line-263"></span><p class="line862">If your package has two messages in a directory called "msg" named "<tt class="backtick">MyMessage1.msg</tt>" and "<tt class="backtick">MyMessage2.msg</tt>" and these messages depend on <a href="http://wiki.ros.org/std_msgs">std_msgs</a> and <a href="http://wiki.ros.org/sensor_msgs">sensor_msgs</a>, a service in a directory called "srv" named "<tt class="backtick">MyService.srv</tt>", defines executable message_program that uses these messages and service, and executable does_not_use_local_messages_program, which uses some parts of ROS, but not the messages/service defined in this package, then you will need the following in your <tt class="backtick">CMakeLists.txt</tt>: <span class="anchor" id="line-264"></span><span class="anchor" id="line-265"></span><p class="line867"><span class="anchor" id="line-266"></span><span class="anchor" id="line-267"></span><span class="anchor" id="line-268"></span><span class="anchor" id="line-269"></span><span class="anchor" id="line-270"></span><span class="anchor" id="line-271"></span><span class="anchor" id="line-272"></span><span class="anchor" id="line-273"></span><span class="anchor" id="line-274"></span><span class="anchor" id="line-275"></span><span class="anchor" id="line-276"></span><span class="anchor" id="line-277"></span><span class="anchor" id="line-278"></span><span class="anchor" id="line-279"></span><span class="anchor" id="line-280"></span><span class="anchor" id="line-281"></span><span class="anchor" id="line-282"></span><span class="anchor" id="line-283"></span><span class="anchor" id="line-284"></span><span class="anchor" id="line-285"></span><span class="anchor" id="line-286"></span><span class="anchor" id="line-287"></span><span class="anchor" id="line-288"></span><span class="anchor" id="line-289"></span><span class="anchor" id="line-290"></span><span class="anchor" id="line-291"></span><span class="anchor" id="line-292"></span><span class="anchor" id="line-293"></span><span class="anchor" id="line-294"></span><span class="anchor" id="line-295"></span><span class="anchor" id="line-296"></span><span class="anchor" id="line-1-27"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+function isnumbered(obj) {
+  return obj.childNodes.length && obj.firstChild.childNodes.length && obj.firstChild.firstChild.className == 'LineNumber';
+}
+function nformat(num,chrs,add) {
+  var nlen = Math.max(0,chrs-(''+num).length), res = '';
+  while (nlen>0) { res += ' '; nlen-- }
+  return res+num+add;
+}
+function addnumber(did, nstart, nstep) {
+  var c = document.getElementById(did), l = c.firstChild, n = 1;
+  if (!isnumbered(c)) {
+    if (typeof nstart == 'undefined') nstart = 1;
+    if (typeof nstep  == 'undefined') nstep = 1;
+    var n = nstart;
+    while (l != null) {
+      if (l.tagName == 'SPAN') {
+        var s = document.createElement('SPAN');
+        var a = document.createElement('A');
+        s.className = 'LineNumber';
+        a.appendChild(document.createTextNode(nformat(n,4,'')));
+        a.href = '#' + did + '_' + n;
+        s.appendChild(a);
+        s.appendChild(document.createTextNode(' '));
+        n += nstep;
+        if (l.childNodes.length) {
+          l.insertBefore(s, l.firstChild);
+        }
+        else {
+          l.appendChild(s);
+        }
+      }
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function remnumber(did) {
+  var c = document.getElementById(did), l = c.firstChild;
+  if (isnumbered(c)) {
+    while (l != null) {
+      if (l.tagName == 'SPAN' && l.firstChild.className == 'LineNumber') l.removeChild(l.firstChild);
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function togglenumber(did, nstart, nstep) {
+  var c = document.getElementById(did);
+  if (isnumbered(c)) {
+    remnumber(did);
+  } else {
+    addnumber(did,nstart,nstep);
+  }
+  return false;
+}
+</script>
+
+<script type="text/javascript">
+document.write('<a href="CMakeLists.htm#" onclick="return togglenumber(\'CA-f198884651029d4728753808a67bbc6391be286a\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-f198884651029d4728753808a67bbc6391be286a" lang="en"><span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_1">   1</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_1"></span><span class="anchor" id="line-1-28"></span>  <span class="Comment"># Get the information about this package's buildtime dependencies</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_2">   2</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_2"></span><span class="anchor" id="line-2-8"></span>  <span class="ID">find_package</span>(<span class="ID">catkin</span> <span class="ID">REQUIRED</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_3">   3</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_3"></span><span class="anchor" id="line-3-6"></span>    <span class="ID">COMPONENTS</span> <span class="ID">message_generation</span> <span class="ID">std_msgs</span> <span class="ID">sensor_msgs</span>)</span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_4">   4</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_4"></span><span class="anchor" id="line-4-4"></span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_5">   5</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_5"></span><span class="anchor" id="line-5-3"></span>  <span class="Comment"># Declare the message files to be built</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_6">   6</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_6"></span><span class="anchor" id="line-6-2"></span>  <span class="ID">add_message_files</span>(<span class="ID">FILES</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_7">   7</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_7"></span><span class="anchor" id="line-7-2"></span>    <span class="ID">MyMessage1</span>.<span class="ID">msg</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_8">   8</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_8"></span><span class="anchor" id="line-8-1"></span>    <span class="ID">MyMessage2</span>.<span class="ID">msg</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_9">   9</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_9"></span><span class="anchor" id="line-9-1"></span>  )</span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_10">  10</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_10"></span><span class="anchor" id="line-10-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_11">  11</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_11"></span><span class="anchor" id="line-11-1"></span>  <span class="Comment"># Declare the service files to be built</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_12">  12</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_12"></span><span class="anchor" id="line-12-1"></span>  <span class="ID">add_service_files</span>(<span class="ID">FILES</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_13">  13</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_13"></span><span class="anchor" id="line-13-1"></span>    <span class="ID">MyService</span>.<span class="ID">srv</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_14">  14</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_14"></span><span class="anchor" id="line-14-1"></span>  )</span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_15">  15</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_15"></span><span class="anchor" id="line-15-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_16">  16</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_16"></span><span class="anchor" id="line-16-1"></span>  <span class="Comment"># Actually generate the language-specific message and service files</span></span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_17">  17</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_17"></span><span class="anchor" id="line-17-1"></span>  <span class="ID">generate_messages</span>(<span class="ID">DEPENDENCIES</span> <span class="ID">std_msgs</span> <span class="ID">sensor_msgs</span>)</span>
+<span class="line"><span class="LineNumber"><a href="CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_18">  18</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_18"></span><span class="anchor" id="line-18-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_19">  19</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_19"></span><span class="anchor" id="line-19-1"></span>  <span class="Comment"># Declare that this catkin package's runtime dependencies</span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_20">  20</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_20"></span><span class="anchor" id="line-20-1"></span>  <span class="ID">catkin_package</span>(</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_21">  21</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_21"></span><span class="anchor" id="line-21-1"></span>   <span class="ID">CATKIN_DEPENDS</span> <span class="ID">message_runtime</span> <span class="ID">std_msgs</span> <span class="ID">sensor_msgs</span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_22">  22</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_22"></span><span class="anchor" id="line-22-1"></span>  )</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_23">  23</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_23"></span><span class="anchor" id="line-23-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_24">  24</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_24"></span><span class="anchor" id="line-24-1"></span>  <span class="Comment"># define executable using MyMessage1 etc.</span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_25">  25</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_25"></span><span class="anchor" id="line-25-1"></span>  <span class="ID">add_executable</span>(<span class="ID">message_program</span> <span class="ID">src</span>/<span class="ID">main</span>.<span class="ID">cpp</span>)</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_26">  26</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_26"></span><span class="anchor" id="line-26-1"></span>  <span class="ID">add_dependencies</span>(<span class="ID">message_program</span> ${${<span class="ID">PROJECT_NAME</span>}<span class="ID">_EXPORTED_TARGETS</span>} ${<span class="ID">catkin_EXPORTED_TARGETS</span>})</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_27">  27</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_27"></span><span class="anchor" id="line-27-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_28">  28</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_28"></span><span class="anchor" id="line-28-1"></span>  <span class="Comment"># define executable not using any messages/services provided by this package</span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_29">  29</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_29"></span><span class="anchor" id="line-29-1"></span>  <span class="ID">add_executable</span>(<span class="ID">does_not_use_local_messages_program</span> <span class="ID">src</span>/<span class="ID">main</span>.<span class="ID">cpp</span>)</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/catkin/CMakeLists.htm#CA-f198884651029d4728753808a67bbc6391be286a_30">  30</a> </span><span class="LineAnchor" id="CA-f198884651029d4728753808a67bbc6391be286a_30"></span><span class="anchor" id="line-30-1"></span>  <span class="ID">add_dependencies</span>(<span class="ID">does_not_use_local_messages_program</span> ${<span class="ID">catkin_EXPORTED_TARGETS</span>})</span>
+</pre></div></div><span class="anchor" id="line-297"></span><p class="line862">If, additionally, you want to build <a href="http://wiki.ros.org/actionlib">actionlib</a> actions, and have an action specification file called "<tt class="backtick">MyAction.action</tt>" in the "action" directory, you must add <tt class="backtick">actionlib_msgs</tt> to the list of components which are find_packaged with catkin and add the following call before the call to <tt class="backtick">generate_messages(...)</tt>: <span class="anchor" id="line-298"></span><span class="anchor" id="line-299"></span><p class="line867"><span class="anchor" id="line-300"></span><span class="anchor" id="line-301"></span><span class="anchor" id="line-302"></span><span class="anchor" id="line-303"></span><pre><span class="anchor" id="line-1-29"></span>add_action_files(FILES
+<span class="anchor" id="line-2-9"></span>  MyAction.action
+<span class="anchor" id="line-3-7"></span>)</pre><span class="anchor" id="line-304"></span><p class="line874">Furthermore the package must have a build dependency on actionlib_msgs. <span class="anchor" id="line-305"></span><span class="anchor" id="line-306"></span><p class="line867">
+<h2 id="Enabling_Python_module_support">Enabling Python module support</h2>
+<span class="anchor" id="line-307"></span><p class="line862">If your ROS package provides some Python modules, you should create a <a class="http" href="http://docs.ros.org/api/catkin/html/user_guide/setup_dot_py.html">setup.py</a> file and call <span class="anchor" id="line-308"></span><span class="anchor" id="line-309"></span><p class="line867"><span class="anchor" id="line-310"></span><span class="anchor" id="line-311"></span><pre><span class="anchor" id="line-1-30"></span>catkin_python_setup()</pre><span class="anchor" id="line-312"></span><p class="line862">before the call to <tt>generate_messages()</tt> and <tt>catkin_package()</tt>. <span class="anchor" id="line-313"></span><span class="anchor" id="line-314"></span><p class="line867">
+<h2 id="Unit_Tests">Unit Tests</h2>
+<span class="anchor" id="line-315"></span><p class="line862">There is a catkin-specific macro for handling gtest-based unit tests called <tt>catkin_add_gtest()</tt>. <span class="anchor" id="line-316"></span><span class="anchor" id="line-317"></span><p class="line867"><span class="anchor" id="line-318"></span><span class="anchor" id="line-319"></span><span class="anchor" id="line-320"></span><span class="anchor" id="line-321"></span><pre><span class="anchor" id="line-1-31"></span>if(CATKIN_ENABLE_TESTING)
+<span class="anchor" id="line-2-10"></span>  catkin_add_gtest(myUnitTest test/utest.cpp)
+<span class="anchor" id="line-3-8"></span>endif()</pre><span class="anchor" id="line-322"></span><p class="line867">
+<h2 id="Optional_Step:_Specifying_Installable_Targets">Optional Step: Specifying Installable Targets</h2>
+<span class="anchor" id="line-323"></span><p class="line862">After build time, targets are placed into the devel space of the catkin workspace. However, often we want to install targets to the system (information about installation paths can be found in  <a class="http" href="http://ros.org/reps/rep-0122.html">REP 122</a>) so that they can be used by others or to a local folder to test a system-level installation. In other words, if you want to be able to do a "make install" of your code, you need to specify where targets should end up. <span class="anchor" id="line-324"></span><span class="anchor" id="line-325"></span><p class="line862">This is done using the CMake <tt>install()</tt> function which takes as arguments: <span class="anchor" id="line-326"></span><span class="anchor" id="line-327"></span><ul><li><p class="line891"><tt>TARGETS</tt> - which targets to install <span class="anchor" id="line-328"></span></li><li><p class="line891"><tt>ARCHIVE&nbsp;DESTINATION</tt> - Static libraries and DLL (Windows) .lib stubs <span class="anchor" id="line-329"></span></li><li><p class="line891"><tt>LIBRARY&nbsp;DESTINATION</tt> - Non-DLL shared libraries and modules <span class="anchor" id="line-330"></span></li><li><p class="line891"><tt>RUNTIME&nbsp;DESTINATION</tt> - Executable targets and DLL (Windows) style shared libraries <span class="anchor" id="line-331"></span><span class="anchor" id="line-332"></span></li></ul><p class="line874">Take as an example for a shared library: <span class="anchor" id="line-333"></span><span class="anchor" id="line-334"></span><p class="line867"><span class="anchor" id="line-335"></span><span class="anchor" id="line-336"></span><span class="anchor" id="line-337"></span><span class="anchor" id="line-338"></span><span class="anchor" id="line-339"></span><span class="anchor" id="line-340"></span><pre><span class="anchor" id="line-1-32"></span>install(TARGETS ${PROJECT_NAME}
+<span class="anchor" id="line-2-11"></span>  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+<span class="anchor" id="line-3-9"></span>  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+<span class="anchor" id="line-4-5"></span>  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+<span class="anchor" id="line-5-4"></span>)</pre><span class="anchor" id="line-341"></span><span class="anchor" id="line-342"></span><p class="line874">Here is another example for an executable: <span class="anchor" id="line-343"></span><span class="anchor" id="line-344"></span><p class="line867"><span class="anchor" id="line-345"></span><span class="anchor" id="line-346"></span><span class="anchor" id="line-347"></span><span class="anchor" id="line-348"></span><pre><span class="anchor" id="line-1-33"></span>install(TARGETS ${PROJECT_NAME}_node
+<span class="anchor" id="line-2-12"></span>  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+<span class="anchor" id="line-3-10"></span>)</pre><span class="anchor" id="line-349"></span><span class="anchor" id="line-350"></span><p class="line874">Besides these standard destination some files must be installed to special folders. I.e. a library containing Python bindings must be installed to a different folder to be importable in Python: <span class="anchor" id="line-351"></span><span class="anchor" id="line-352"></span><p class="line867"><span class="anchor" id="line-353"></span><span class="anchor" id="line-354"></span><span class="anchor" id="line-355"></span><span class="anchor" id="line-356"></span><span class="anchor" id="line-357"></span><pre><span class="anchor" id="line-1-34"></span>install(TARGETS python_module_library
+<span class="anchor" id="line-2-13"></span>  ARCHIVE DESTINATION ${CATKIN_PACKAGE_PYTHON_DESTINATION}
+<span class="anchor" id="line-3-11"></span>  LIBRARY DESTINATION ${CATKIN_PACKAGE_PYTHON_DESTINATION}
+<span class="anchor" id="line-4-6"></span>)</pre><span class="anchor" id="line-358"></span><p class="line867">
+<h3 id="Installing_Python_Executable_Scripts">Installing Python Executable Scripts</h3>
+<span class="anchor" id="line-359"></span><p class="line862">For Python code, the install rule looks different as there is no use of the <tt>add_library()</tt> and <tt>add_executable()</tt> functions so as for CMake to determine which files are targets and what type of targets they are. Instead, use the following in your CMakeLists.txt file: <span class="anchor" id="line-360"></span><span class="anchor" id="line-361"></span><p class="line867"><span class="anchor" id="line-362"></span><span class="anchor" id="line-363"></span><span class="anchor" id="line-364"></span><pre><span class="anchor" id="line-1-35"></span>catkin_install_python(PROGRAMS scripts/myscript
+<span class="anchor" id="line-2-14"></span>  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})</pre><span class="anchor" id="line-365"></span><span class="anchor" id="line-366"></span><p class="line862">Detailed information about installing python scripts and modules, as well as best practices for folder layout can be found in the <a class="http" href="http://docs.ros.org/api/catkin/html/howto/format2/installing_python.html">catkin manual</a>. <span class="anchor" id="line-367"></span><span class="anchor" id="line-368"></span><p class="line862">If you only install Python scripts and do not provide any modules, you need neither to create the above mentioned <tt>setup.py</tt> file, nor to call <tt>catkin_python_setup()</tt>. <span class="anchor" id="line-369"></span><span class="anchor" id="line-370"></span><p class="line867">
+<h3 id="Installing_header_files">Installing header files</h3>
+<span class="anchor" id="line-371"></span><p class="line874">Header files must also be installed to the "include" folder, This is often done by installing the files of an entire folder (optionally filtered by filename patterns and excluding SVN subfolders). This can be done with an install rule that looks as follows: <span class="anchor" id="line-372"></span><span class="anchor" id="line-373"></span><p class="line867"><span class="anchor" id="line-374"></span><span class="anchor" id="line-375"></span><span class="anchor" id="line-376"></span><span class="anchor" id="line-377"></span><span class="anchor" id="line-378"></span><pre><span class="anchor" id="line-1-36"></span>install(DIRECTORY include/${PROJECT_NAME}/
+<span class="anchor" id="line-2-15"></span>  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+<span class="anchor" id="line-3-12"></span>  PATTERN ".svn" EXCLUDE
+<span class="anchor" id="line-4-7"></span>)</pre><span class="anchor" id="line-379"></span><p class="line874">or if the subfolder under include does not match the package name: <span class="anchor" id="line-380"></span><span class="anchor" id="line-381"></span><p class="line867"><span class="anchor" id="line-382"></span><span class="anchor" id="line-383"></span><span class="anchor" id="line-384"></span><span class="anchor" id="line-385"></span><span class="anchor" id="line-386"></span><pre><span class="anchor" id="line-1-37"></span>install(DIRECTORY include/
+<span class="anchor" id="line-2-16"></span>  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
+<span class="anchor" id="line-3-13"></span>  PATTERN ".svn" EXCLUDE
+<span class="anchor" id="line-4-8"></span>)</pre><span class="anchor" id="line-387"></span><p class="line867">
+<h3 id="Installing_roslaunch_Files_or_Other_Resources">Installing roslaunch Files or Other Resources</h3>
+<span class="anchor" id="line-388"></span><p class="line862">Other resources like launchfiles can be installed to <tt class="backtick">${CATKIN_PACKAGE_SHARE_DESTINATION}</tt>: <span class="anchor" id="line-389"></span><span class="anchor" id="line-390"></span><p class="line867"><span class="anchor" id="line-391"></span><span class="anchor" id="line-392"></span><span class="anchor" id="line-393"></span><span class="anchor" id="line-394"></span><pre><span class="anchor" id="line-1-38"></span>install(DIRECTORY launch/
+<span class="anchor" id="line-2-17"></span>  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+<span class="anchor" id="line-3-14"></span>  PATTERN ".svn" EXCLUDE)</pre><span class="anchor" id="line-395"></span><span class="anchor" id="bottom"></span></div></div>
+<div id="pagebottom"></div>
+</div>
+
+<p id="pageinfo" class="info" lang="en" dir="ltr">Wiki: catkin/CMakeLists.txt  (last edited 2019-07-25 23:30:47 by <span title="seanyen @ 2001:4898:80e8:0:cdd0:3da8:146a:2886[2001:4898:80e8:0:cdd0:3da8:146a:2886]"><a class="nonexistent" href="http://wiki.ros.org/seanyen" title="seanyen @ 2001:4898:80e8:0:cdd0:3da8:146a:2886[2001:4898:80e8:0:cdd0:3da8:146a:2886]">seanyen</a></span>)</p>
+
+
+
+
+<div style="margin-top: 9px;" class="footer">
+Except where otherwise noted, the ROS wiki is licensed under the <br /><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>
+<hr style="margin-top: 10px;">
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+<a href="https://www.openrobotics.org/"><img style="margin-top: -1px;" src="http://wiki.ros.org/custom/images/brought_by_horiz.png"></p></a>
+  </div>
+</div>
+</div>
+
+  </div></div> <!-- /#dpage-inner, /#dpage -->
+
+
+</body>
+</html>
+

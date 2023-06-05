@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Unix / Linux - File Permission / Access Modes - Tutorialspoint</title>
+<meta charset="utf-8">
+<meta name="description" content="Unix / Linux - File Permission / Access Modes - In this chapter, we will discuss in detail about file permission and access modes in Unix. File ownership is an important component of Unix that provides a secu"/>
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code"/>
+<link rel="canonical" href="unix-file-permission.htm" />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="https://www.tutorialspoint.com/themes/css/style-min-v1.css?v=3.1.2.336">
+<script src="https://www.tutorialspoint.com/themes/js/script-min-v1.js?v=3.0.2040229"></script>
+<script>
+function printPage() { window.print(); }
+function readCookie(name) {
+     var nameEQ = name + "=";
+     var ca = document.cookie.split(';');
+     for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+     }
+     return null;
+}
+</script>
+<script id="adp1" data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
+<script id="adp2" data-cfasync="false" type="text/javascript">(function(w, d) {var cval = readCookie('subscription_purchased');if(cval == '1'){ return; } var s = d.createElement('script'); s.src = '//delivery.adrecover.com/18107/adRecover.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
+<style>
+.butnn-save a{color:#fff;} .notes_msg{color:green; margin-left:20px; margin-top:15px;}
+.right-menu .mui-btn {
+    background-color:#01adb9;
+}
+a.demo {
+    background:#01adb9;
+}
+li.heading {
+    background:#01adb9;
+}
+.course-box{background:#01adb9}
+.home-intro-sub p{color:#01adb9}
+a.demo{
+   top: 12px;
+   float:right;
+}
+.prettyprint{
+   width: 99%;
+}
+</style>
+</head>
+<body>
+<header id="header">
+<!-- pop-up -->
+<div class="pop-modal overlay-pop popdiv">
+<div class="modal-window small">
+<span class="close" title="close">×</span>
+<div class="pop-content">
+</div>
+<span class="msg" ></span>
+</div>
+</div>
+<div class="wrap_loader">
+<div class="imgLoader"><img src="https://www.tutorialspoint.com/videotutorials/images/loader.gif" alt="Tutorialspoint" width="70" height="70"></div>
+</div>
+<input type="hidden" id="vu" name="vu" value="" />
+<!-- pop-up -->
+
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="https://www.tutorialspoint.com/current_affairs.htm" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item articles">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fal fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> 
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>        
+<div class="top-menu-item qa login">
+<a href="https://www.tutorialspoint.com/videotutorials/login.php" target="_blank" title="Tutorials Point - Login"><i class="fa fa-sign-in-alt"></i> <span>Login</span></a> 
+</div>        
+<div class="top-menu-item qa login">
+<a href="https://www.tutorialspoint.com/videotutorials/subscription.php" target="_blank" title="Paid Package"><i class="fa fa-book-reader"></i> <span>Packages</span></a> 
+</div>        
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="https://www.tutorialspoint.com/unix/images/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="https://www.tutorialspoint.com/academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="https://www.tutorialspoint.com/database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="https://www.tutorialspoint.com/devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="https://www.tutorialspoint.com/digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="https://www.tutorialspoint.com/engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="https://www.tutorialspoint.com/famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="https://www.tutorialspoint.com/gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="https://www.tutorialspoint.com/mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="https://www.tutorialspoint.com/management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="https://www.tutorialspoint.com/java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="https://www.tutorialspoint.com/selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="https://www.tutorialspoint.com/software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="https://www.tutorialspoint.com/soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="https://www.tutorialspoint.com/telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="https://www.tutorialspoint.com/web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="https://www.tutorialspoint.com/sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="https://www.tutorialspoint.com/questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="https://www.tutorialspoint.com/index.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box">
+<script async src="https://cse.google.com/cse.js?cx=000263362972888060243:yfed6eu421q"></script>
+<div class='gcse-search'></div>
+</div>
+<div class="menu-btn library-btn">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="mui-dropdown">
+<button class="mui-btn mui-btn--primary mobile-menu" data-mui-toggle="dropdown">
+<span class="mui-caret"></span>
+</button>
+<ul class="mui-dropdown__menu">
+<li class="login"><a href="https://www.tutorialspoint.com/videotutorials/login.php"><i class="fal fa-sign-in-alt"></i> <span>Login</span></a></li>
+<li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a></li>
+<li><a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a></li>
+<li><a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<div class="mini-logo">
+<img src="https://www.tutorialspoint.com/unix/images/unix-mini-logo.jpg" alt="UNIX Tutorial" />
+</div>
+<ul class="toc chapters">
+<li class="heading">Unix / Linux for Beginners</li>
+<li><a href="https://www.tutorialspoint.com/unix/index.htm">Unix / Linux - Home</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-getting-started.htm">Unix / Linux - Getting Started</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-file-management.htm">Unix / Linux - File Management</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-directories.htm">Unix / Linux - Directories</a></li>
+<li><a href="unix-file-permission.htm">Unix / Linux - File Permission</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-environment.htm">Unix / Linux - Environment</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-basic-utilities.htm">Unix / Linux - Basic Utilities</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-pipes-filters.htm">Unix / Linux - Pipes &amp; Filters</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-processes.htm">Unix / Linux - Processes</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-communication.htm">Unix / Linux - Communication</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-vi-editor.htm">Unix / Linux - The vi Editor</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">Unix / Linux Shell Programming</li>
+<li><a href="https://www.tutorialspoint.com/unix/shell_scripting.htm">Unix / Linux - Shell Scripting</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-what-is-shell.htm">Unix / Linux - What is Shell?</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-using-variables.htm">Unix / Linux - Using Variables</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-special-variables.htm">Unix / Linux - Special Variables</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-using-arrays.htm">Unix / Linux - Using Arrays</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-basic-operators.htm">Unix / Linux - Basic Operators</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-decision-making.htm">Unix / Linux - Decision Making</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-shell-loops.htm">Unix / Linux - Shell Loops</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-loop-control.htm">Unix / Linux - Loop Control</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-shell-substitutions.htm">Unix / Linux - Shell Substitutions</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-quoting-mechanisms.htm">Unix / Linux - Quoting Mechanisms</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-io-redirections.htm">Unix / Linux - IO Redirections</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-shell-functions.htm">Unix / Linux - Shell Functions</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-manpage-help.htm">Unix / Linux - Manpage Help</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">Advanced Unix / Linux</li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-regular-expressions.htm">Unix / Linux - Regular Expressions</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-file-system.htm">Unix / Linux - File System Basics</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-user-administration.htm">Unix / Linux - User Administration</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-system-performance.htm">Unix / Linux - System Performance</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-system-logging.htm">Unix / Linux - System Logging</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-signals-traps.htm">Unix / Linux - Signals and Traps</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">Unix / Linux Useful Resources</li>
+<li><a href="https://www.tutorialspoint.com/unix/unix_questions_answers.htm">Unix / Linux - Questions &amp; Answers</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-useful-commands.htm">Unix / Linux - Useful Commands</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-quick-guide.htm">Unix / Linux - Quick Guide</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-builtin-functions.htm">Unix / Linux - Builtin Functions</a></li>
+<li><a href="https://www.tutorialspoint.com/unix_system_calls/index.htm">Unix / Linux - System Calls</a></li>
+<li><a href="https://www.tutorialspoint.com/unix_commands/index.htm">Unix / Linux - Commands List</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-useful-resources.htm">Unix / Linux - Useful Resources</a></li>
+<li><a href="https://www.tutorialspoint.com/unix/unix-discussion.htm">Unix / Linux - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div id="stickyparent">
+<div style="height:250px;width:300px;" id="sticky-ad">
+<div id="430c9911-782f-495d-88f9-69f58ca8c9a4" class="_ap_apex_ad" >
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("430c9911-782f-495d-88f9-69f58ca8c9a4");
+});
+</script>
+</div>
+</div>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content">
+<h1>Unix / Linux - File Permission / Access Modes</h1>
+<hr />
+<div id="google-top-ads">
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="adp_top_ads" style="text-align:center!important;min-height:90px!important"></div>
+<script>
+     var adPos = document.getElementById('adp_top_ads');
+     var ad_id_720 = "8014640d-fd34-4b2e-9b1b-cc67234a2325";
+     var ad_id_650 = "2d1bb2c4-eb72-471d-9c80-1bf5514728c1";
+     var ad_id_300 = "df94a1a9-ae2f-432d-9a92-d93823ff4503";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+     var adpushup = adpushup || {};
+     adpushup.que = adpushup.que || [];
+     adpushup.que.push(function() {
+     adpushup.triggerAd(ad_id);
+     });
+</script>
+</div>
+</div>
+<br>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/unix/unix-directories.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/unix/unix-environment.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clearer"></div>
+<p>In this chapter, we will discuss in detail about file permission and access modes in Unix. File ownership is an important component of Unix that provides a secure method for storing files. Every file in Unix has the following attributes &minus;</p>
+<ul class="list">
+<li><p><b>Owner permissions</b> &minus; The owner's permissions determine what actions the owner of the file can perform on the file.</p></li>
+<li><p><b>Group permissions</b> &minus; The group's permissions determine what actions a user, who is a member of the group that a file belongs to, can perform on the file.</p></li>
+<li><p><b>Other (world) permissions</b> &minus; The permissions for others indicate what action all other users can perform on the file.</p></li>
+</ul>
+<h2>The Permission Indicators</h2>
+<p>While using <b>ls -l</b> command, it displays various information related to file permission as follows &minus;</p>
+<pre class="result notranslate">
+$ls -l /home/amrood
+-rwxr-xr--  1 amrood   users 1024  Nov 2 00:10  myfile
+drwxr-xr--- 1 amrood   users 1024  Nov 2 00:10  mydir
+</pre>
+<p>Here, the first column represents different access modes, i.e., the permission associated with a file or a directory.</p>
+<p>The permissions are broken into groups of threes, and each position in the group denotes a specific permission, in this order: read (r), write (w), execute (x) &minus;</p>
+<ul class="list">
+<li><p>The first three characters (2-4) represent the permissions for the file's owner. For example, <b>-rwxr-xr--</b> represents that the owner has read (r), write (w) and execute (x) permission.</p></li>
+<li><p>The second group of three characters (5-7) consists of the permissions for the group to which the file belongs. For example, <b>-rwxr-xr--</b> represents that the group has read (r) and execute (x) permission, but no write permission.</p></li>
+<li><p>The last group of three characters (8-10) represents the permissions for everyone else. For example, <b>-rwxr-xr--</b> represents that there is <b>read (r)</b> only permission.</p></li>
+</ul>
+<h2>File Access Modes</h2>
+<p>The permissions of a file are the first line of defense in the security of a Unix system. The basic building blocks of Unix permissions are the <b>read</b>, <b>write</b>, and <b>execute</b> permissions, which have been described below &minus;</p>
+<h3>Read</h3>
+<p>Grants the capability to read, i.e., view the contents of the file.</p>
+<h3>Write</h3>
+<p>Grants the capability to modify, or remove the content of the file.</p>
+<h3>Execute</h3>
+<p>User with execute permissions can run a file as a program.</p>
+<h2>Directory Access Modes</h2>
+<p>Directory access modes are listed and organized in the same manner as any other file. There are a few differences that need to be mentioned &minus;</p>
+<h3>Read</h3>
+<p>Access to a directory means that the user can read the contents. The user can look at the <b>filenames</b> inside the directory.</p>
+<h3>Write</h3>
+<p>Access means that the user can add or delete files from the directory.</p>
+<h3>Execute</h3>
+<p>Executing a directory doesn't really make sense, so think of this as a traverse permission.</p>
+<p>A user must have <b>execute</b> access to the <b>bin</b> directory in order to execute the <b>ls</b> or the <b>cd</b> command.</p>
+<h2>Changing Permissions</h2>
+<p>To change the file or the directory permissions, you use the <b>chmod</b> (change mode) command. There are two ways to use chmod — the symbolic mode and the absolute mode.</p>
+<h3>Using chmod in Symbolic Mode</h3>
+<p>The easiest way for a beginner to modify file or directory permissions is to use the symbolic mode. With symbolic permissions you can add, delete, or specify the permission set you want by using the operators in the following table.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Sr.No.</th>
+<th style="text-align:center;">Chmod operator &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td>
+<p><b>+</b></p>
+<p>Adds the designated permission(s) to a file or directory.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td>
+<p><b>-</b></p>
+<p>Removes the designated permission(s) from a file or directory.</p>
+</td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td>
+<p><b>=</b></p>
+<p>Sets the designated permission(s).</p>
+</td>
+</tr>
+</table>
+<p>Here's an example using <b>testfile</b>. Running <b>ls -1</b> on the testfile shows that the file's permissions are as follows &minus;</p>
+<pre class="result notranslate">
+$ls -l testfile
+-rwxrwxr--  1 amrood   users 1024  Nov 2 00:10  testfile
+</pre>
+<p>Then each example <b>chmod</b> command from the preceding table is run on the testfile, followed by <b>ls –l</b>, so you can see the permission changes &minus;</p>
+<pre class="result notranslate">
+$chmod o+wx testfile
+$ls -l testfile
+-rwxrwxrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+$chmod u-x testfile
+$ls -l testfile
+-rw-rwxrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+$chmod g = rx testfile
+$ls -l testfile
+-rw-r-xrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+</pre>
+<p>Here's how you can combine these commands on a single line &minus;</p>
+<pre class="result notranslate">
+$chmod o+wx,u-x,g = rx testfile
+$ls -l testfile
+-rw-r-xrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+</pre>
+<h2>Using chmod with Absolute Permissions</h2>
+<p>The second way to modify permissions with the chmod command is to use a number to specify each set of permissions for the file.</p>
+<p>Each permission is assigned a value, as the following table shows, and the total of each set of permissions provides a number for that set.</p>
+<table class="table table-bordered">
+<tr>
+<th style="text-align:center;">Number</th>
+<th style="text-align:center;">Octal Permission Representation</th>
+<th style="text-align:center;width:15%">Ref</th>
+</tr>
+<tr>
+<td style="text-align:center;"><b>0</b></td>
+<td>No permission</td>
+<td style="text-align:center;">---</td>
+</tr>
+<tr>
+<td style="text-align:center;"><b>1</b></td>
+<td>Execute permission</td>
+<td style="text-align:center;">--x</td>
+</tr>
+<tr>
+<td style="text-align:center;"><b>2</b></td>
+<td>Write permission</td>
+<td style="text-align:center;">-w-</td>
+</tr>
+<tr>
+<td style="text-align:center;"><b>3</b></td>
+<td>Execute and write permission: 1 (execute) + 2 (write) = 3</td>
+<td style="text-align:center;">-wx</td>
+</tr>
+<tr>
+<td style="text-align:center;"><b>4</b></td>
+<td>Read permission</td>
+<td style="text-align:center;">r--</td>
+</tr>
+<tr>
+<td style="text-align:center;"><b>5</b></td>
+<td>Read and execute permission: 4 (read) &plus; 1 (execute) = 5 </td>
+<td style="text-align:center;">r-x</td>
+</tr>
+<tr>
+<td style="text-align:center;"><b>6</b></td>
+<td>Read and write permission: 4 (read) &plus; 2 (write) = 6</td>
+<td style="text-align:center;">rw-</td>
+</tr>
+<tr>
+<td style="text-align:center;"><b>7</b></td>
+<td>All permissions: 4 (read) &plus; 2 (write) &plus; 1 (execute) = 7</td>
+<td style="text-align:center;">rwx</td>
+</tr>
+</table>
+<p>Here's an example using the testfile. Running <b>ls -1</b> on the testfile shows that the file's permissions are as follows &minus;</p>
+<pre class="result notranslate">
+$ls -l testfile
+-rwxrwxr--  1 amrood   users 1024  Nov 2 00:10  testfile
+</pre>
+<p>Then each example <b>chmod</b> command from the preceding table is run on the testfile, followed by <b>ls –l</b>, so you can see the permission changes &minus;</p>
+<pre class="result notranslate">
+$ chmod 755 testfile
+$ls -l testfile
+-rwxr-xr-x  1 amrood   users 1024  Nov 2 00:10  testfile
+$chmod 743 testfile
+$ls -l testfile
+-rwxr---wx  1 amrood   users 1024  Nov 2 00:10  testfile
+$chmod 043 testfile
+$ls -l testfile
+----r---wx  1 amrood   users 1024  Nov 2 00:10  testfile
+</pre>
+<h2>Changing Owners and Groups</h2>
+<p>While creating an account on Unix, it assigns a <b>owner ID</b> and a <b>group ID</b> to each user. All the permissions mentioned above are also assigned based on the Owner and the Groups.</p>
+<p>Two commands are available to change the owner and the group of files &minus;</p>
+<ul class="list">
+<li><p><b>chown</b> &minus; The <b>chown</b> command stands for <b>"change owner"</b> and is used to change the owner of a file.</p></li>
+<li><p><b>chgrp</b> &minus; The <b>chgrp</b> command stands for <b>"change group"</b> and is used to change the group of a file.</p></li>
+</ul>
+<h2>Changing Ownership</h2>
+<p>The <b>chown</b> command changes the ownership of a file. The basic syntax is as follows &minus;</p>
+<pre class="result notranslate">
+$ chown user filelist
+</pre>
+<p>The value of the user can be either the <b>name of a user</b> on the system or the <b>user id (uid)</b> of a user on the system.</p>
+<p>The following example will help you understand the concept &minus;</p>
+<pre class="result notranslate">
+$ chown amrood testfile
+$
+</pre>
+<p>Changes the owner of the given file to the user <b>amrood</b>.</p>
+<p><b>NOTE</b> &minus; The super user, root, has the unrestricted capability to change the ownership of any file but normal users can change the ownership of only those files that they own.</p>
+<h2>Changing Group Ownership</h2>
+<p>The <b>chgrp</b> command changes the group ownership of a file. The basic syntax is as follows &minus;</p>
+<pre class="result notranslate">
+$ chgrp group filelist
+</pre>
+<p>The value of group can be the <b>name of a group</b> on the system or <b>the group ID (GID)</b> of a group on the system.</p>
+<p>Following example helps you understand the concept &minus;</p>
+<pre class="result notranslate">
+$ chgrp special testfile
+$
+</pre>
+<p>Changes the group of the given file to <b>special</b> group.</p>
+<h2>SUID and SGID File Permission</h2>
+<p>Often when a command is executed, it will have to be executed with special privileges in order to accomplish its task.</p>
+<p>As an example, when you change your password with the <b>passwd</b> command, your new password is stored in the file <b>/etc/shadow</b>.</p>
+<p>As a regular user, you do not have <b>read</b> or <b>write</b> access to this file for security reasons, but when you change your password, you need to have the write permission to this file. This means that the <b>passwd</b> program has to give you additional permissions so that you can write to the file <b>/etc/shadow</b>.</p>
+<p>Additional permissions are given to programs via a mechanism known as the <b>Set User ID (SUID)</b> and <b>Set Group ID (SGID)</b> bits.</p>
+<p>When you execute a program that has the SUID bit enabled, you inherit the permissions of that program's owner. Programs that do not have the SUID bit set are run with the permissions of the user who started the program.</p>
+<p>This is the case with SGID as well. Normally, programs execute with your group permissions, but instead your group will be changed just for this program to the group owner of the program.</p>
+<p>The SUID and SGID bits will appear as the letter <b>"s"</b> if the permission is available. The SUID <b>"s"</b> bit will be located in the permission bits where the owners’ <b>execute</b> permission normally resides.</p>
+<p>For example, the command &minus;</p>
+<pre class="result notranslate">
+$ ls -l /usr/bin/passwd
+-r-sr-xr-x  1   root   bin  19031 Feb 7 13:47  /usr/bin/passwd*
+$
+</pre>
+<p>Shows that the SUID bit is set and that the command is owned by the root. A capital letter <b>S</b> in the execute position instead of a lowercase <b>s</b> indicates that the execute bit is not set.</p>
+<p>If the sticky bit is enabled on the directory, files can only be removed if you are one of the following users &minus;</p>
+<ul class="list">
+<li>The owner of the sticky directory</li>
+<li>The owner of the file being removed</li>
+<li>The super user, root</li>
+</ul>
+<p>To set the SUID and SGID bits for any directory try the following command &minus;</p>
+<pre class="result notranslate">
+$ chmod ug+s dirname
+$ ls -l
+drwsr-sr-x 2 root root  4096 Jun 19 06:45 dirname
+$
+</pre>
+<div class="mui-container-fluid button-borders show" id="bottom_navigation">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/unix/unix-directories.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/unix/unix-environment.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="space-bottom" style="margin-bottom:20px;"></div>
+<div class="google-bottom-ads" id="google-bottom-ads">
+<div>Advertisements</div>
+<div>
+<div id="adp_bottom_ads"></div>
+<script>
+var adPos = document.getElementById('adp_bottom_ads');
+var mobile_ad_id = "a8a632a6-046e-4f5c-b25f-8bc82ac89fb2";
+var desktop_ad_id = "e7ddd6f7-1ab0-494a-bade-887daa4373a0";
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+var ad_id = window.innerWidth <= 768 ? mobile_ad_id : desktop_ad_id;
+adPos.innerHTML = '<div id="' + ad_id + '" class="_ap_apex_ad"></div>';
+adpushup.triggerAd(ad_id);
+});
+</script>
+</div>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2 google-right-ads" id="chapter-menu" style="display: none;">
+<input type="hidden" id="vu" name="vu" value=""/>
+<div class="space-top"></div>
+<div class="mui-panel">
+<ul class="paid-menu" id="div-right-menu">
+<li><a class="hide-on-mobile" href="javascript:printPage();" title="Print this page"><i class="fa fa-print"></i> Print</a></li>
+<li><a href="javascript:void(0)" class="add_notes" title="Add Custom Notes" onclick="add_notes();"><i class="fa fa-edit"></i>&nbsp;Add Notes</a></li>
+<li><a href="javascript:void(0)" class="clsPage text-bookmark" id="text-bookmark" title="Add Bookmark" onclick="text_bookmark()"><i class="fal fa-bookmark"></i>&nbsp;Bookmark this page </a></li>
+<li><a href="javascript:void(0);" id="report_error_popup" onclick="report_error_popup();" title="Report Error"><i class="fal fa-bell"></i>&nbsp;Report Error</a></li>
+<li><a href="javascript:void(0);" id="suggestion_popup" title="Give Suggestions" onclick="suggestion_popup();"><i class="fal fa-badge-check"></i>&nbsp;Suggestions</a></li>
+</ul>
+<div class="profile-my-notes" id="text_notes_div" style="display:none;">
+<textarea rows="10" class="text_notes" id="text_notes" name="text_notes" placeholder="Enter your custom notes..."></textarea>
+<br>
+<a href="javascript:void(0);" id="submit_text_notes" class="butn-save" onclick="submit_text_notes();"> Save</a>
+<a href="javascript:void(0);" class="pop-no butn-cancel" onclick="notesClose();"> Close</a>
+<p class="notes_msg"  ></p>
+</div>
+<div class="bottom-menu">
+<button class="tp-btn"><i class="fal fa-box-up"></i> <a href="https://www.tutorialspoint.com/videotutorials/dashboard.php">Dashboard</a></button>
+<button class="tp-btn"><i class="fal fa-sign-out-alt"></i> <a href="https://www.tutorialspoint.com/videotutorials/userlogout.php">Logout</a></button>
+</div>
+</div>
+</div>
+<div class="mui-col-md-2 google-right-ads" id="google-right-ads">
+<div class="space-top"></div>
+<div class="google-right-ad" style="margin: 0px auto !important;margin-top:5px;min-height:250px!important">
+<div id="f0f6cff6-393d-4170-b63a-d9ff06ca9f25" class="_ap_apex_ad">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("f0f6cff6-393d-4170-b63a-d9ff06ca9f25");
+});
+</script>
+</div>
+</div>
+<div class="google-right-ad" style="margin-top:16px;min-height:250px!important">
+<div id="5c0affd5-724a-475c-bfcd-cecbc7660c36" class="_ap_apex_ad">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("5c0affd5-724a-475c-bfcd-cecbc7660c36");
+});
+</script>
+</div>
+</div>
+<div class="google-right-ad" style="margin-top:16px;margin-bottom:15px;min-height:600px!important">
+<div id="8f8814c2-d64c-4d26-9cb9-543653c0b48f" class="_ap_apex_ad">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("8f8814c2-d64c-4d26-9cb9-543653c0b48f");
+});
+</script>
+</div>
+</div>
+<div class="space-bottom" style="margin-bottom:15px;"></div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"><img class="img-responsive" src="https://www.tutorialspoint.com/images/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="https://www.tutorialspoint.com/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="https://www.tutorialspoint.com/about/return_refund_policy.htm"> <i class="fal fa-asterisk"></i> Refund Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="https://www.tutorialspoint.com/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">&copy; Copyright 2021. All Rights Reserved.</div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-6"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+<script src="https://www.tutorialspoint.com/videotutorials/js/text_menu.js?v=1"></script>
+<script>
+$(document).ready(function (){
+    var cval = readCookie('subscription_purchased');
+    if(cval == '1'){
+          // logged in and purchased subscription.
+          $('#google-right-ads').remove();
+          $('#adp1').remove();
+          $('#adp2').remove();
+          $('#stickyparent').remove();
+          $('#google-top-ads').remove();
+          $('#adp_top_ads').remove();
+          $('#google-bottom-ads').remove();
+          $('.tutorial-content hr').remove();
+          $('.login').remove();
+          $('#chapter-menu').show();
+          $('.content h1').css("border-bottom", "none");
+          $('.google-right-ads').css("padding-right", "0px");
+          $('.tutorial-content').css("border-radius", "10px");
+          $('#chapter-menu .mui-panel').css("border-radius", "10px");
+     }
+});
+</script>
+</footer>
+</body>
+</html>

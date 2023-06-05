@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME, e-Yantra</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="robotics,iitb,eyrtc,eyrc,elsi,eys,engineering">
+  <meta name="author" content="e-Yantra Web Team">
+  <!-- Bootstrap 3.3.5 CSS -->
+  <!--  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Bootflat 2.0.4 CSS -->
+  <!--  <link href="bower_components/Bootflat/bootflat/css/bootflat.css" rel="stylesheet">-->
+  <link href="https://www.e-yantra.org/bower_components/Bootflat/bootflat/css/bootflat.min.css" rel="stylesheet">
+  <link href="https://www.e-yantra.org/bower_components/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+<link href="https://www.e-yantra.org/bower_components/toastr/toastr.css" rel="stylesheet">
+
+<style>
+/*
+  .body{
+    position: relative;
+  }
+*/
+  #toast-container > div {
+    opacity: 1;
+    margin-top: 53px;
+  }
+  #eYRC{
+    padding-top:30px;
+  }
+  #eYRC,#eLSI,#eYS{
+    margin-top:40px;
+    margin-bottom:60px;
+  }
+  .vertical {
+  transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    white-space:nowrap;
+    display:block;
+    margin-left:20px;
+    margin-right:20px;
+  }
+/*
+  .vertical {
+     writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    -webkit-writing-mode: vertical-lr;
+    -moz-writing-mode: vertical-lr;
+    -ms-writing-mode: vertical-lr;
+    margin-left:20px;
+    margin-right:20px;
+  }
+*/
+  .btn {
+    font-size: 24px;
+    margin:10px;
+  }
+  
+  .btn-sm{
+    background-color:transparent;
+    color: #333;
+    border:4px solid;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-sm:hover{
+    border:4px solid #333;
+  }
+  
+  .btn-xs{
+    background-color:transparent;
+    color: #3bafda;
+    border:0px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-xs:hover,
+  .btn-xs:active,
+  .btn-xs:focus{
+    background-color:transparent !important;
+    color:#333;
+  }
+  
+  .mfp-fade {
+    overflow-y: show !important;
+  }
+ /**
+ * Simple fade transition,
+ */
+  .mfp-fade.mfp-bg {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  .mfp-fade.mfp-bg.mfp-ready {
+    opacity: 0.8;
+  }
+  .mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
+  }
+  .mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+  }
+  .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+  }
+  .about-initiatives a {
+    color: white;
+  }
+  /* Styles for dialog window */
+  #small-dialog-students,
+  #small-dialog-colleges,
+  #small-dialog-teachers {
+    background: white;
+    padding: 20px 30px;
+    text-align: left;
+    max-width: 400px;
+    margin: 40px auto;
+    position: relative;
+  }
+  /**
+   * Fade-move animation for second dialog
+   */
+  /* at start */
+  .my-mfp-slide-bottom .zoom-anim-dialog {
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    -webkit-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -moz-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -ms-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    -o-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+    transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+  }
+  /* animate in */
+  .my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+    opacity: 1;
+    -webkit-transform: translateY(0) perspective( 600px ) rotateX( 0 );
+    -moz-transform: translateY(0) perspective( 600px ) rotateX( 0 );
+    -ms-transform: translateY(0) perspective( 600px ) rotateX( 0 );
+    -o-transform: translateY(0) perspective( 600px ) rotateX( 0 );
+    transform: translateY(0) perspective( 600px ) rotateX( 0 );
+  }
+  /* animate out */
+  .my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+    opacity: 0;
+    -webkit-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+    -moz-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+    -ms-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+    -o-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+    transform: translateY(-10px) perspective( 600px ) rotateX( 10deg );
+  }
+  /* Dark overlay, start state */
+  .my-mfp-slide-bottom.mfp-bg {
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-out;
+    -moz-transition: opacity 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+  }
+  /* animate in */
+  .my-mfp-slide-bottom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+  }
+  /* animate out */
+  .my-mfp-slide-bottom.mfp-removing.mfp-bg {
+    opacity: 0;
+  }
+  /* padding-bottom and top for image */
+  .mfp-no-margins img.mfp-img {
+    padding: 0;
+  }
+  /* position of shadow behind the image */
+  .mfp-no-margins .mfp-figure:after {
+    top: 0;
+    bottom: 0;
+  }
+  /* padding for main container */
+  .mfp-no-margins .mfp-container {
+    padding: 0;
+  }
+  .img-thumbnail {
+      margin: 5px;
+      cursor: pointer;
+      -webkit-transition: .2s all;
+      transition: .2s all;
+  }
+  .img-thumbnail:hover {
+      -webkit-filter: brightness(50%);
+      filter: brightness(50%);
+  }
+  .about-workshop a{
+      color: white;
+  }
+</style>
+  <!-- Fonts -->
+  <!--  <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">-->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom CSS -->
+  <link href="https://www.e-yantra.org/css/style.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.e-yantra.org/apple-touch-icon-57x57.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www.e-yantra.org/apple-touch-icon-60x60.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.e-yantra.org/apple-touch-icon-72x72.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.e-yantra.org/apple-touch-icon-76x76.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.e-yantra.org/apple-touch-icon-114x114.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.e-yantra.org/apple-touch-icon-120x120.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.e-yantra.org/apple-touch-icon-144x144.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.e-yantra.org/apple-touch-icon-152x152.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.e-yantra.org/apple-touch-icon-180x180.png?v2.0.0=JynG3lNP45">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-32x32.png?v2.0.0=JynG3lNP45" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/android-chrome-192x192.png?v2.0.0=JynG3lNP45" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-96x96.png?v2.0.0=JynG3lNP45" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-16x16.png?v2.0.0=JynG3lNP45" sizes="16x16">
+  <link rel="manifest" href="https://www.e-yantra.org/manifest.json?v2.0.0=JynG3lNP45">
+  <link rel="shortcut icon" href="https://www.e-yantra.org/favicon.ico?v2.0.0=JynG3lNP45">
+  <meta name="msapplication-TileColor" content="#f20000">
+  <meta name="msapplication-TileImage" content="https://www.e-yantra.org/mstile-144x144.png?v2.0.0=JynG3lNP45">
+  <meta name="theme-color" content="#333">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body data-spy="scroll" data-target=".navbar-custom"  data-offset="500">
+  <!-- <nav class="navbar navbar-inverse navbar-custom navbar-fixed-top"> -->
+    <nav class="navbar navbar-inverse navbar-custom ">
+    <div class="container col-md-12">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header col-md-2">
+        <a class="navbar-brand" href="www_e-yantra_default.html">
+          <img alt="Brand" src="https://www.e-yantra.org/img/eYantra_logo.svg" width="170" height="50">
+        </a>
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"><a href="index">Home</a></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> -->
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 col-md-4">
+        <ul class="nav navbar-nav">
+          <li class="dropdown hidden-xs">
+            <a href="www_e-yantra_default.html#" aria-haspopup="true" aria-expanded="false"><span class="visible-xs-inline">Initiative </span><span class="sr-only">Initiative</span><span class="glyphicon glyphicon-menu-down"></span></a>
+            <ul class="dropdown-menu">
+              <li class="active"><a href="https://www.e-yantra.org/index">Home</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Direct Links</li>
+              <li ><a href="https://www.e-yantra.org/elsi.htm">e-Yantra Lab Setup Initiative <small class="pull-right">(eLSI)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrc">e-Yantra Robotics Competition <small class="pull-right">(eYRC)</small></a>
+              </li>
+               <li ><a href="https://www.e-yantra.org/eyic.htm">e-Yantra Ideas Competition <small class="pull-right">(eYIC)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eysip">e-Yantra Summer Internship Program <small class="pull-right">(eYSIP)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrtc">e-Yantra Robotics Teacher Competition <small class="pull-right">(eYRTC)</small></a>
+              </li>
+               <!-- <li ><a href="eyic">e-Yantra Ideas Competition <small class="pull-right">(eYIC)</small></a>
+              </li> -->
+              <li ><a href="https://www.e-yantra.org/efsi">e-Yantra Farm Setup Initiative <small class="pull-right">(eFSI)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrdc">e-Yantra Resource Development Center<small class="pull-right">(eYRDC)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eys">e-Yantra Symposium <small class="pull-right">(eYS)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/tbt">Task Based Training<small class="pull-right">(TBT)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/workshop">Two-day Workshop  <small class="pull-right"></small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/News">News Articles <small class="pull-right"></small></a>
+              </li>
+               <li ><a href="https://www.e-yantra.org/jobs">Careers/Jobs<small class="pull-right"></small></a></li>
+              <!-- <li ><a href="achievements">eLSI College Achievements<small class="pull-right"><br><br></small></a>
+              </li> -->
+            </ul>
+          </li>
+          <li class="nav-small"><a  href="https://www.e-yantra.org/gallery">GALLERY</a> &#8226;<a  href="https://www.e-yantra.org/team">TEAM</a> &#8226;  <a  href="https://www.e-yantra.org/contact-us">CONTACT US</a>  <!-- &#8226; <a  href="faq">FAQ</a>  -->&#8226;
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right col-md-6">
+          <li data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="e-Yantra Robotics Competition"><a href="https://www.e-yantra.org/www_e-yantra_default.html#eYRC">eYRC</a>
+            </li>
+            <li data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="e-Yantra Ideas Competition"><a href="https://www.e-yantra.org/www_e-yantra_default.html#eYIC">eYIC</a>
+            </li>
+
+            <li data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="e-Yantra Lab Setup Initiative"><a href="https://www.e-yantra.org/www_e-yantra_default.html#eLSI">eLSI</a>
+            </li>
+
+            <li data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="e-Yantra Farm Setup Initiative"><a href="https://www.e-yantra.org/www_e-yantra_default.html#eFSI">eFSI</a>
+
+            </li>
+            <li data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="e-Yantra Resource Development Center"><a href="https://www.e-yantra.org/www_e-yantra_default.html#eYRDC">eYRDC</a>
+            </li>
+            <li data-toggle="tooltip" data-trigger="hover" data-placement="bottom" title="Publications"><a href="https://www.e-yantra.org/publications">Publication</a>
+            </li>        </ul>
+      </div>
+  <!-- /.navbar-collapse -->
+
+    </div>
+<!-- /.container-fluid -->
+  </nav>
+  <main>
+  <div id="">
+  <!-- Above the fold -->
+<header id="bg" class="section">
+  <div class="container-fluid home">
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <img class="logolarge img-responsive" src="https://www.e-yantra.org/img/eYantra_logo.svg" alt="e-Yantra Logo" />
+         
+        <h5>Sponsored by <a href="https://www.education.gov.in/en/ict-initiatives" class="topical" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" title="Ministry of Education" target="_blank">MoE</a> under the <a href="https://www.education.gov.in/en/ict-initiatives" class="topical" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" title="Information and Communication Technologies" target="_blank">National Mission on Education through ICT</a> program.</h5>
+        <h5>Please visit to check other initiatives by MoE:` <a href="https://www.education.gov.in/en/ict-initiatives" target="_blank">https://www.education.gov.in/en/ict-initiatives</a> </h5>
+      </div>
+    </div>
+    <!-- <div class="col-sm-2">
+    </div>
+    <div class="col-sm-4">
+      <button type="button" class="about-video btn btn-primary btn-block btn-md" style="padding-left: 12px;padding-right: 12px;padding-top: 12px;padding-bottom: 12px;margin-bottom: 5px;margin-top: 5px;margin-right: 0px;margin-left: 0px;">Watch our video</button>
+    </div>
+    <div class="col-sm-4">
+      <button type="button" class="about-workshop btn btn-primary btn-block btn-md" style="padding-left: 12px;padding-right: 12px;padding-top: 12px;padding-bottom: 12px;margin-bottom: 5px;margin-top: 5px;margin-right: 0px;margin-left: 0px;" data-toggle="modal" data-target=".bs-example-modal-lg">Upcoming Workshops</button>
+    </div>
+    <div class="col-sm-2">
+    </div> -->
+  </div>
+<!--   <div class="row text-center" style="padding-bottom: 10px;">
+    <div class="col-sm-3 col-md-offset-3">
+      <a href="https://portal.e-yantra.org/" target="_blank"><img class=" img-responsive" src="img/eyrc.jpg" alt="e-Yantra Logo" /></a> 
+    </div> 
+    <div class="col-sm-3">
+      <a href="http://eyic.e-yantra.org/" target="_blank"><img class=" img-responsive" src="img/eyic.jpg" alt="e-Yantra Logo" /></a> 
+    </div>    
+  </div> -->
+  <h3 class="text-center" style="color: #e23736;">AMAZING NEWS!!!<br/>
+ e-Yantra MOOC: Software Foundation Course (Part I) Launched!</h3>
+  <p class="lead text-center">
+    <b>Want to know about the Course? Visit: <a href="https://mooc.e-yantra.org/sfc_intro" target="_blank">mooc.e-yantra.org</a></b><br/>
+  </p>
+<!--   <div class="col-sm-2 col-md-offset-5 text-center">
+      <a href="img/Benefits_eYRC_eYIC.pdf" target="_blank"><button type="button" class=" btn btn-primary btn-block btn-md" style="padding-left: 12px;padding-right: 12px;padding-top: 12px;padding-bottom: 12px;margin-bottom: 5px;margin-top: 5px;margin-right: 0px;margin-left: 0px;"><i class="fa fa-share"></i>Click Here!</button></a>
+  </div> -->
+  <!-- </div> -->
+    <div class="row"> 
+        <div class="col-md-4 col-md-offset-4">
+          <!-- <h3 class="text-center"><button type="button" class="btn btn-primary btn-block btn-md" style="padding-left: 12px;padding-right: 12px;padding-top: 12px;padding-bottom: 12px;margin-bottom: 5px;margin-top: 5px;margin-right: 0px;margin-left: 0px;font-size: 22px;" data-toggle="modal" data-target=".eYIC_modal">  eYIC-2017 Poster</button></h3> -->
+          <!-- <sup><img src="img/home/new_blink.gif"></sup> -->
+        </div><br><br><br><br><br><br>
+     </div>
+      <div class="modal-content">
+        <div class="modal fade eYIC_modal">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="https://www.e-yantra.org/img/eyic/Final_eYIC_Poster.jpg" width="100%" height="100%">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="container-fluid" style="background-color:rgba(51, 51, 51, 0.6); color:white;min-height: 252px; text-shadow: 0px 0px 6px rgba(255,255,255,0.7);">
+
+    <div class="row text-center about-initiatives">
+      <h3>INITIATIVES FOR</h3>
+      <div class="col-sm-4">
+        <a class="popup-with-move-anim" href="https://www.e-yantra.org/www_e-yantra_default.html#small-dialog-students">
+          <h3><i class="fa fa-graduation-cap"></i></h3>
+          <h3>STUDENTS</h3>
+        </a>
+        <div id="small-dialog-students" class="zoom-anim-dialog mfp-hide">
+          <h4 class="text-center">e-Yantra Initiatives for Students</h4>
+          <hr>
+          <p class="text-justify"><strong>e-Yantra Robotics Competition:</strong> Annual Robotics competition for Engineering/ Science/ Polytechnic colleges.<br/>
+          <strong>e-Yantra Summer Internship Program:</strong> We give an internship opportunity at e-Yantra Lab, IIT Bombay to the <strong>winners</strong> of e-Yantra Robotics Competition.</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <a class="popup-with-move-anim" href="https://www.e-yantra.org/www_e-yantra_default.html#small-dialog-colleges">
+          <h3 class="abc"><i class="fa fa-university"></i></h3>
+          <h3>COLLEGES</h3>
+        </a>
+        <div id="small-dialog-colleges" class="zoom-anim-dialog mfp-hide">
+          <h4 class="text-center">e-Yantra Initiatives for Colleges</h4>
+          <hr>
+          <p class="text-justify"><strong>e-Yantra Lab Setup Initiative:</strong> Enable colleges to set up robotics labs and provide trainning to teachers.<br>
+          <strong>e-Yantra Ideas Competition:</strong> Provides a platform for eLSI college studens to implement and showcase their innovative ideas.<br>
+          <strong>e-Yantra Symposium:</strong> Brings together all eLSI colleges for discussions and seminars on how to turn these labs into Innovation Hubs.</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <a class="popup-with-move-anim" href="https://www.e-yantra.org/www_e-yantra_default.html#small-dialog-teachers">
+          <h3><i class="fa fa-users"></i></h3>
+          <h3>TEACHERS</h3>
+        </a>
+        <div id="small-dialog-teachers" class="zoom-anim-dialog mfp-hide">
+          <h4 class="text-center">e-Yantra Initiatives for Teachers</h4>
+          <hr>
+          <p class="text-justify"><strong>Two-day Workshop on Introduction to Robotics:</strong> An introductory workshop on robotics and embedded systems involving hands-on training exclusively for teachers.<br>
+          <strong>Task Based Training:</strong> A series of interesting tasks based on Firebird V platform blend theory and practical experimentation.<br>
+          <strong>Task Based Training Challenge:</strong> Here, teachers trained by the TBT test their skills by implementing a project based on the abstraction of a real life scenario.<br></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ./Above the fold -->
+<div id="myModal-modal-lg">
+ <!-- <div class="modal-dialog">
+    <div class="modal-content"> -->
+  <div class="modal fade bs-example-modal-lg">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="well" style="background-color:#E7E7E7">
+          <div class="modal-header">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+            <h3 class="modal-title" style="text-align:center; color:red;">Upcoming Principal Meet And Two-Day Teacher Training Workshops</h3><h4 style="text-align:center; color:red;">(Conducted as a part of e-Yantra Lab Setup Initiative)</h4>
+          </div>
+        </div>
+        <div class="modal-body" style="text-align:center;">
+          <div class="box-body table-responsive no-padding">
+  <table class="table table-bordered table-hover table-condensed table table-striped">
+    <thead>
+      
+     <!--  <th style="text-align:center;">Coming Soon</th> -->
+   <!--   <tr>
+        <th style="text-align:center;">Sr.No.</th>
+        <th style="text-align:center;">Region</th>
+        <th style="text-align:center;">College Name</th>
+        <th style="text-align:center;">Date</th>
+      </tr> -->
+    </thead>
+    <tbody>
+      <h3 style="color: green;">Upcoming workshops will be updated soon...</h3>
+      <div style="background-color:#E7E7E7">                  
+        <!-- <tr>
+          <td>1</td>
+          <td><strong>Mumbai</strong></td>
+          <td><strong>Indian Institute of Technology, Bombay</strong><br>
+            <p style="text-align:center"><strong>To Register For Principal Meet cum Workshop:<a href="http://elsi.e-yantra.org/meetWorkshop/form" target="_blank"> <font color="red"><strong> Click here</strong></font></a></p>
+          </br>
+          </td>
+          <td><strong> 15th &amp; 16th March, 2019 <br>(Friday &amp; Saturday)</strong></td>
+        </tr> -->
+               
+        <!--  <tr>
+          <td>1</td>
+          <td><strong>Haryana</strong></td>
+          <td><strong>Government Polytechnic, Sonipat  </strong>
+             
+            <p style="text-align:center"><strong>To Register For Principal Meet:<a href="https://tinyurl.com/elsimeetregistration" target="_blank"> <font color="red"><strong> Click here</strong></font>(26th September 2019)</a></p>
+
+            <p ><strong>To Register For the Workshop:</strong><a href="http://elsi.e-yantra.org/meetWorkshop/form" target="_blank"> <font color="red"><strong> Click here</strong></font></a></p>
+        
+          </td>
+          <td><strong> 27th &amp; 28th September, 2019 <br>(Friday &amp; Saturday)</strong></td>
+        </tr>   -->
+               
+       <!--  <tr>
+          <td>1</td>
+          <td><strong>Mumbai</strong></td>
+          <td><strong>Indian Institute of Technology Bombay</strong>       
+            <p ><strong>To Register For the Workshop:</strong><a href="http://elsi.e-yantra.org/meetWorkshop/form" target="_blank"> <font color="red"><strong> Click here</strong></font></a></p>
+          </td>
+          <td><strong> 31st January &amp; 1st February, 2020 <br>(Friday &amp; Saturday)</strong></td>
+        </tr> -->
+   <!--      <tr>
+          <td>1</td>
+          <td><strong>Mangaluru</strong></td>
+          <td><strong>  National Institute of Technology Karnataka</strong>       
+            <p ><strong>To Register For the Workshop:</strong><a href="http://elsi.e-yantra.org/meetWorkshop/form" target="_blank"> <font color="red"><strong> Click here</strong></font></a></p>
+          </td>
+          <td><strong> 14th &amp; 15th February, 2020 <br>(Friday &amp; Saturday)</strong></td>
+        </tr> -->
+        <!-- <tr>
+          <td>1</td>
+          <td><strong>Hyderabad</strong></td>
+          <td><strong>Matrusri Engineering College</strong>       
+            <p ><strong>To Register For the Workshop:</strong><a href="http://elsi.e-yantra.org/meetWorkshop/form" target="_blank"> <font color="red"><strong> Click here</strong></font></a></p>
+          </td>
+          <td><strong> 28th &amp; 29th February, 2020 <br>(Friday &amp; Saturday)</strong></td>
+        </tr> -->
+         <!-- <tr>
+          <td>2</td>
+          <td><strong>Andhra Pradesh</strong></td>
+          <td><strong>KKR & KSR Institute of Technology & Sciences, Vinjanampadu</strong>       
+            <p ><strong>To Register For the Workshop:</strong><a href="http://elsi.e-yantra.org/meetWorkshop/form" target="_blank"> <font color="red"><strong> Click here</strong></font></a></p>
+          </td>
+          <td><strong> 6th &amp; 7th March, 2020 <br>(Friday &amp; Saturday)</strong></td>
+        </tr> -->
+        <!-- <tr>
+          <td>1</td>
+          <td><strong>Andhra Pradesh</strong></td>
+          <td><strong>Srinivasa Ramanujan Institute of Technology, Anantapur</strong>       
+            <p ><strong>To Register For the Workshop:</strong><a href="http://elsi.e-yantra.org/meetWorkshop/form" target="_blank"> <font color="red"><strong> Click here</strong></font></a></p>
+          </td>
+          <td><strong><strike> 16th &amp; 17th April, 2020 <br>(Friday &amp; Saturday)</strike></strong></td>
+        </tr> -->
+      <!--   <tr>
+          <td>2</td>
+          <td><strong>Mumbai</strong></td>
+          <td><strong>Indian Institute of Technology Bombay</strong>       
+            <p ><strong>To Register For the Workshop:</strong><a href="http://elsi.e-yantra.org/meetWorkshop/form" target="_blank"> <font color="red"><strong> Click here</strong></font></a></p>
+          </td>
+          <td><strong> 20th &amp; 21st March, 2020 <br>(Friday &amp; Saturday)</strong></td>
+        </tr> -->
+      </div>
+    </tbody>       
+  </table>
+  <div class="row">
+  <!-- <div class="col-md-4">
+  <p ><strong>For Workshop Schedule:<a href="workshops_schedule"> <font color="red"> Click here</font></a></strong>
+   </p>
+   </div> -->
+  <!--  <p style="text-align: center;"><h3>No workshops are announced. Workshop details will be updated soon</h3></p> -->
+<!-- <div class="col-md-6">   
+   </div> -->
+</div>
+   </br>
+
+  <p style="text-align:left;"><strong>Please Note:</strong><ol style="text-align:left;"><li>ONE team of four teachers from a college can attend this workshop.</li><li>There will be no registration fee for attending the workshop.</li></ol>
+     <br>
+    If you are interested in attending any of the above workshops, write to us at <a href="mailto:support@e-yantra.org">support@e-yantra.org</a> or call us at - 022-25764986.     
+  </p><br>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- eYRC -->
+<section class="section" id="eYRC">
+  <div class="container banner">
+    <div class="row">
+      <div class="col-md-7 col-sm-12">
+        <a href="https://www.e-yantra.org/eyrc"><h2>e-Yantra Robotics Competition</h2></a>
+        <h3 class="space text-muted">eYRC</h3>
+        <p class="lead text-justify">e-Yantra Robotics Competition (eYRC) is a unique annual competition launched in the month of August every year for undergraduate students in science and engineering colleges, polytechnic. Selected teams are given a robotic kit complete with accessories and video tutorials to help them learn basic concepts in embedded systems and microcontroller programming. Abstracts of real world problems assigned as "themes" are then implemented by the teams using the robotic kits. <strong>The winners of this competition will be eligible for summer internship at IITB through <a href='https://www.e-yantra.org/eysip' target=blank><u>e-Yantra Summer Internship Program </u></a></strong>.</p>
+         <br>   
+        <a role="button" href="https://www.e-yantra.org/eYRC2020Poster" target="_blank" class="btn btn-default btn-xs" type="submit"><i class="fa fa-download"></i> eYRC 2020-21 Poster</a>
+         <a role="button" href="https://youtu.be/l9tB7MrQxoU" target="_blank" class="btn btn-default btn-xs" type="submit"><i class="fa fa-youtube"></i> eYRC 2020-21 Launch Film</a>
+        
+      </div><br><br>
+      <div class="col-md-4 col-sm-10 hidden-xs text-right text-muted">
+        <h3>34,340 Total Registrations</h3>
+        <h3>8,585 Total Teams</h3>
+        <!-- <h3>44 Finalist Teams</h3> -->
+        <!-- <a button type="button" data-toggle="modal" data-target="#dignitaries"><img class="img-thumbnail" src="img/home/eyrc2015stat.png" width="50%" height="50%"></a>
+        <div id="dignitaries" class="modal fade" role="dialog">
+          <div  class="modal-dialog">
+            <div class="modal-body">
+              <img src="img/home/eyrc2015_pi-chart.jpg">
+            </div>
+          </div>
+        </div> -->
+        <!-- <h3 class="text-success">Finals on 18 & 19 March 2016...</h3> -->
+      </div>
+      <div class="col-md-1 col-sm-2 hidden-xs">
+        <h3 class="vertical text-muted">eYRC 2019-20</h3>
+      </div>
+    </div>
+    <div class="col-lg-12">
+    </div>
+    <div class="col-sm-4">
+        <a href="https://www.e-yantra.org/eyrc2018_videos"><img src="https://www.e-yantra.org/img/home/eyrc18.png" class="img-thumbnail eyrc2018" width="100%" height="100%" target="_blank"></a>
+    </div>
+    <div class="col-sm-4">
+        <a href="https://www.e-yantra.org/eyrc2017_videos"><img src="https://www.e-yantra.org/img/home/eyrc17.png" class="img-thumbnail eyrc2017" width="100%" height="100%" target="_blank"></a>
+    </div>
+    <div class="col-sm-4">
+        <a href="https://www.e-yantra.org/eyrc2016_videos"><img src="https://www.e-yantra.org/img/home/eyrc16.png" class="img-thumbnail eyrc2016" width="100%" height="100%" target="_blank"></a>
+    </div>
+    <!-- <div class="col-sm-4">
+        <a href="eyrc2015_videos"><img src="img/home/eyrc15.png" class="img-thumbnail eyrc2015" width="100%" height="100%" target="_blank"></a>
+    </div> -->
+   <!--  <div class="col-sm-4">
+        <img src="img/home/eyrc14.png" class="img-thumbnail eyrc2014" width="100%" height="100%" target="_blank">
+    </div> -->
+   <!--  <div class="col-sm-4">
+        <img src="img/home/eyrc13.png" class="img-thumbnail eyrc2013" width="100%" height="100%">
+    </div> -->
+    <!-- <div class="col-sm-3">
+        <img src="img/home/eyrc12.png" class="img-thumbnail eyrc2012" width="100%" height="100%">
+    </div> -->
+    <!-- get any one random winner -->
+    <!--<div class="col-md-7">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/z5Srn_AQk_U?modestbranding=1&rel=0&showinfo=0" allowfullscreen=""></iframe>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h3>Care Taking Robot</h3>
+        <p class="lead">By <b>Raj Kumar, Sadashiv Raj Bhardwaj, Avinash Kumar Shudhanshu, Saksham Tyagi</b>
+          <br>
+          <br> from <b><small>Acharya Narendra Dev College, New Delhi</small></b>
+        </p>
+        <div class="row">
+          <div class="col-sm-12">
+            <p><b><i class="fa fa-5x fa-trophy" style="color:#FFD700; text-shadow: 2px 1px 1px #ccc;"></i> <span style="font-size: 2.5em;">6<sup>th</sup></span> eYRTC-2014</b>
+            </p>
+          </div>
+        </div>
+      </div>-->
+
+    <div class="col-lg-12">
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+       <!--  <a href="http://portal.e-yantra.org" class="btn btn-primary btn-lg"> eYRC - 2015 <i class="fa fa-fw fa-external-link"></i></a> -->
+        <a href="https://www.e-yantra.org/eyrc" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-share-alt"></i>All eYRC Winners</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="col-lg-12">
+     <hr style="border: 0;height: 3px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+  </div>
+<!-- ./eYRC -->
+<!-- eYIC -->
+<section class="section" id="eYIC">
+  <div class="container banner">
+    <div class="row">
+      <div class="col-md-7 col-sm-12">
+        <a href="https://www.e-yantra.org/eyic.htm"><h2>e-Yantra Innovation Challenge</h2></a>
+        <h3 class="space text-muted">eYIC</h3>
+        <p class="lead text-justify">
+          <b>e-Yantra Innovation Challenge</b> (formerly known as e-Yantra Ideas Competition) is a competition to encourage innovative projects from robotics labs set up through the e-Yantra Lab Setup Initiative (eLSI) in colleges across the world.<br>
+
+          This initiative aims at:
+          <ul>
+            <li>Ensure sustained use of robotics labs set up through the e-Yantra Lab Setup Initiative (eLSI).</li>
+            <li>Solicit innovative ideas from students in eLSI colleges articulating solutions to real problems.</li>
+            <li>Provide a platform for teams to showcase their projects.</li>            
+            <li>Encourage startup culture in e-Yantra Labs.</li>
+          </ul>
+          <strong>The winners of this competition will be eligible for summer internship at IITB through <a href='https://www.e-yantra.org/eysip' target=blank><u>e-Yantra Summer Internship Program </u></a></strong>.
+        </p>
+         <br>   
+        <a role="button" href="https://www.e-yantra.org/img/eYIC2020_21.pdf" target="_blank" class="btn btn-default btn-xs" type="submit"><i class="fa fa-download"></i> eYIC 2020-21 Poster</a>
+         <a role="button" href="https://youtu.be/eXLDCL3H0mU" target="_blank" class="btn btn-default btn-xs" type="submit"><i class="fa fa-youtube"></i> eYIC 2020-21 Launch Film</a>
+        
+      </div><br><br>
+         <div class="col-md-4 col-sm-10 hidden-xs text-right text-muted">
+        <br><br>
+        <h3>1,346 Total Teams</h3>
+       
+      </div>
+      <div class="col-md-1 col-sm-2 hidden-xs">
+        <h3 class="vertical text-muted">eYIC 2019-20</h3>
+      </div>
+      <!-- <div class="col-md-1 col-sm-2 hidden-xs">
+        <h3 class="vertical text-muted">eYIC - 2019</h3>
+      </div> -->
+    </div>
+    <div class="col-lg-12">
+    </div>
+    <div class="col-lg-12">
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <a href="https://www.e-yantra.org/eyic.htm" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-share-alt"></i>All eYIC Winners</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <div class="col-lg-12">
+     <hr style="border: 0;height: 3px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+  </div>
+
+<!-- eLSI -->
+<section class="section" id="eLSI">
+  <div class="container banner">
+    <div class="row">
+      <div class="col-md-7">
+        <a href="https://www.e-yantra.org/elsi.htm"><h2>e-Yantra Lab Setup Initiative</h2></a>
+        <h3 class="space text-muted">eLSI</h3>
+        <p class="lead text-justify">e-Yantra Lab Setup Initiative (eLSI) is a college level program under which colleges are encouraged to setup robotics labs. It is designed as a scalable and sustainable approach that addresses infrastructure creation and teacher training – to create an eco-system at the colleges to impart effective engineering education. eLSI provides: (i) guidance and support for establishing robotics labs - three robotic kits are given to each participating college and
+         (ii) a two-phased training for teachers: <br>
+          <a class="lead text-justify" href="https://www.e-yantra.org/workshop"><u><strong>Two-day Workshop </strong></u></a>&nbsp;and&nbsp;<a class="lead text-justify" href="https://www.e-yantra.org/tbt"><u><strong>Task Based Training.</strong></u></a>
+        </p>
+        <a role="button" href="https://www.e-yantra.org/img/Pamphlet2020.pdf" target="_blank" class="btn btn-default btn-xs" type="submit"><i class="fa fa-download"></i> Our Pamphlet</a>
+        <a role="button" href="mailto:support@e-yantra.org?subject=Initiate eLSI&body=Hi, our college (insert name here) would like to be a part of eLSI." target="_blank" class="btn btn-default btn-xs" type="submit"><i class="fa fa-envelope-o"></i> Mail Us</a><br>
+       <h4>For More Information on eLSI:
+        <a href="http://elsi.e-yantra.org/registration/knowMoreAboutElsi" target="_blank"class="btn btn-primary btn-xs">
+          <span class="glyphicon glyphicon-share-alt"></span><strong>Click Me!!</strong></a>
+      </h4>
+      
+      </div>
+      <div class="col-md-4 col-sm-10 hidden-xs text-right text-muted">
+       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=197kxgh4hJ86LVuQR39tTx2XEeRWCuwnf&amp;z=4&amp;ll=24,81" width="400" height="480"></iframe>
+      </div>
+      <div class="col-md-1 col-sm-2 hidden-xs">
+        <h3 class="vertical text-muted">eLSI Labs</h3>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <br>
+    </div>
+    <div class="row">
+      <!--<div class="col-md-7">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.google.com/maps/d/embed?mid=zmK_zXlOg2vY.kSspI9fO1u94"></iframe>
+          </div>
+      </div>-->
+      <div class="col-md-6">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CUJ3tFEWvSo?modestbranding=1&amp;rel=0&amp;showinfo=0" allowfullscreen=""></iframe>
+        </div>
+      </div>
+      <!-- <div class="col-md-4 col-sm-10 hidden-xs text-right text-muted">
+        <h3>17 regions</h3>
+        <h3>76 colleges being initiated</h3>
+        <h3>25 more in pipeline</h3>
+      </div>
+      <div class="col-md-1 col-sm-2 hidden-xs">
+        <h3 class="vertical text-muted">Current Status</h3>
+      </div> -->
+      <div class="col-md-4 col-sm-10 col-sm-offset-1 hidden-xs text-left text-muted">
+        <h3>371 Labs Inaugurated</h3>
+        <h3>Present over 44+ regions</h3>
+        <h3>Numerous Workshops</h3>
+        <h3>Over 5600 Teachers trained</h3>
+      </div>
+      <div class="col-md-1 col-sm-2 hidden-xs">
+        <h3 class="vertical text-muted">eLSI Status</h3>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <a href="https://www.e-yantra.org/elsi.htm" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-share-alt">All Labs</span></a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- /eLSI -->
+
+  <div class="col-lg-12">
+      <hr style="border: 0;height: 3px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+  </div>
+
+<!-- eYS -->
+<section class="section" id="eYS">
+  <div class="container banner">
+    <div class="row">
+      <div class="col-md-7">
+        <h2><a href="https://www.e-yantra.org/eys">e-Yantra Symposium</a></h2>
+        <h3 class="space text-muted">eYS</h3>
+        <p class="lead text-justify">e-Yantra  Symposium(eYS) is an annual event at IIT-Bombay -- to bring together colleges which have set up robotics labs through the e-Yantra Lab Setup Initiative (eLSI).
+          The goal is to share projects and brainstorm new ideas for improving pedagogy and the quality of BE projects. This event ensures sustainable use of Robotics labs set up through the e-Yantra Lab Setup Initiative (eLSI). No registration fee is charged from teachers and students from colleges who attend the symposium.
+          This event acts as a platform for :
+           <!-- (i) Demonstrating the solutions of the finalist teacher teams participating in<br/> -->
+          </br>
+           (i) Showcasing selected projects from the e-Yantra labs through the
+          <a href="https://www.e-yantra.org/eyic.htm" target=blank><strong><u></br>e-Yantra Ideas Competition (eYIC).</u></strong>
+          </a>
+        </p>
+        <a href="https://www.e-yantra.org/eys" class="btn btn-block btn-primary btn-lg"><span class="glyphicon glyphicon-share-alt"></span> eYS</a>
+        <p class="lead text-justify">Other e-Yantra initiative :<br><a href="https://www.e-yantra.org/eyrtc" target=blank><strong><u>e-Yantra Robotics Teacher Competition (eYRTC).</u></strong>
+          </a></p>
+      </div>
+      <div class="col-md-5">
+        <h4 class="text-center">Testimonials</h4>
+        <div class="col-xs-6 col-sm-6">
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=4VkGcQM-FUk">
+            <img src="https://img.youtube.com/vi/4VkGcQM-FUk/default.jpg"  class="img-thumbnail" width="100%" height="100%">
+          </a>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=KqQ_GMyqWmU">
+            <img src="https://img.youtube.com/vi/KqQ_GMyqWmU/2.jpg"  class="img-thumbnail" width="100%" height="100%">
+          </a>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=gLa4BQQQplM">
+            <img src="https://img.youtube.com/vi/gLa4BQQQplM/default.jpg"  class="img-thumbnail" width="100%" height="100%">
+          </a>
+        </div>
+        <div class="col-xs-6 col-sm-6">
+          <a class="popup-youtube" href="https://www.youtube.com/watch?v=iW0YFxeQbyw">
+            <img src="https://img.youtube.com/vi/iW0YFxeQbyw/default.jpg"  class="img-thumbnail" width="100%" height="100%">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ./eYS -->
+
+  <div class="col-lg-12">
+      <hr style="border: 0;height: 3px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+  </div>
+
+<!-- eYRDC -->
+<section class="section" id="eYRDC">
+  <div class="container banner">
+    <div class="row">
+      <div class="col-md-7">
+        <h2 style="color: #09f">e-Yantra Resource Development Center</h2>
+        <h3 class="space text-muted">eYRDC</h3>
+        <p class="lead text-justify">e-Yantra Resource Development Center (eYRDC) is a portal designed exclusively for <a href="https://www.e-yantra.org/elsifamily"> eLSI colleges </a>through which we share resources for teachers to help them use their e-Yantra labs in an effective manner.</p>
+        <h4 class="lead text-justify">Motivation</h4>
+        <p class="lead text-justify">Transforming e-Yantra labs at colleges to:<br>
+        &nbsp;(i) Innovation hubs for incubating exciting B.E. projects<br>
+        &nbsp;(ii) Labs for ALL to conduct hands-on experiments
+              through Lesson Plans, Lab Experiments, Tutorials, ......<br/><br/>
+        If you have the login credentials for eYRDC portal, then log on to :<br/><strong><a href="https://www.e-yantra.org/content.htm" target="_blank"><u>http://content.e-yantra.org/content</u></a></strong></p>
+        <h5 class="lead text-justify">To find out how to become an eLSI college please click below.</h5> 
+        </p>
+        <a href="https://www.e-yantra.org/www_e-yantra_default.html#eLSI" class="btn btn-block btn-primary btn-lg"><span class="glyphicon glyphicon-share-alt"></span> eLSI</a>
+      </div>   
+      <div class="col-md-5"><br><br>
+        <h4 class="text-center">Introduction</h4>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" width="100%" height="100%" src="https://www.youtube.com/embed/8hNQIpS_VY4?modestbranding=1&amp;rel=0&amp;showinfo=0" allowfullscreen=""></iframe>
+        </div>       
+      </div>
+    </div>     
+  </div>
+</section>
+<!-- ./eYRDC -->
+<div class="col-lg-12">
+      <hr style="border: 0;height: 3px;background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+  </div>
+
+<section class="section" id="eFSI">
+  <div class="container banner">
+    <div class="row">
+      <div class="col-md-7">
+        <h2 style="color: #09f">e-Yantra Farm Setup Initiative</h2>
+        <h3 class="space text-muted">eFSI</h3>
+       
+        <h4 class="lead text-justify">Overview</h4>
+        <p class="lead text-justify">k-Yantra project develops a know-how for setting up an automated agriculture project – test bed for addressing real world problem and hands-on learning for students on application of what they learnt in theory through a fun and productive exercise</p>
+        <ul>
+  <li>This entails first generating the soil through a recycling waste and resource recovery of garden and kitchen waste which is in sync with the municipal solid waste management agenda of both central and state government.</li>
+   <li> Plan and execute the creation of beds for growing plants</li>
+    <li>Making the little gadgets, tools, the networking for maintaining and monitoring the growth of plants.</li>
+</ul>
+        </p>
+        <a href="https://www.e-yantra.org/efsi" class="btn btn-block btn-primary btn-lg"><span class="glyphicon glyphicon-share-alt"></span> eFSI</a>
+      </div>   
+      <div class="col-md-5"><br><br>
+        <h4 class="text-center">Introduction</h4>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" width="100%" height="100%" src="https://www.youtube.com/embed/lFPqtHBHpSk" allowfullscreen=""></iframe>
+        </div>       
+      </div>
+    </div>     
+  </div>
+</section>
+<!-- ./eFSI -->
+
+
+<section class="section">
+  <div class="container banner">
+</section>
+
+
+
+  
+    </main>
+
+  <footer class="section foot page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" style="">
+          <!-- <div>
+            <strong><font margin-left:50px; size="4px" style ="height:50px";>VISITORS</font></strong>
+          </div> -->
+          <div class="address-footer">
+                   <!--                        <font size="2px">No of visitors: 1 </font><br>
+
+
+                      
+                      <font size="2px">Unique visitors: 15324 </font><br> -->
+          </div>
+        </div>
+        <div class="col-md-12 text-center">
+          <p>IIT Bombay envisages the <strong>'e-Yantra'</strong> platform to harness the intellectual talent of young India to create utility based robotic applications for usage across variety of applications such as: agriculture, manufacturing, defense, home, city maintenance and services industries. <!-- <a href="http://wwww.iitb.ac.in/CSEYantra/Yantra.html" target="_blank">Read More<i class="fa fa-fw fa-external-link"></i></a> -->
+          </p>
+
+         <!--  <div class="col-sm-3 col-md-3">
+            <img width="200" height="150" src="img/IITBlogo.png" alt="IITB Logo">
+          </div>  -->
+         
+        </div>
+        <div class="col-md-4">
+        <p>
+            <address>
+             <strong>ERTS Lab</strong>
+             SIC 102, KReSIT Building,<br>
+             CSE Department<br>
+             IIT Bombay, Powai,<br>
+             Mumbai - 400076, Maharashtra.
+            </address> 
+        </p>
+             
+              <!-- <address>For eYIC:<a href="mailto:eyic@e-yantra.org">eyic@e-yantra.org</a></address>
+              <address >For eYRC:<a href="mailto:helpdesk@e-yantra.org">helpdesk@e-yantra.org</a></address>
+              <address >For other queries:<a href="mailto:support@e-yantra.org">support@e-yantra.org</a></address>   -->     
+        </div>
+      </div>
+      <!-- e-Yantra Logo in Footer -->
+       <div class="row">
+        <div class="col-md-6 text-center">
+            <!-- <img width="250" height="120" src="img/eYantra_logo.svg" alt="e-Yantra Logo"> -->
+            <img alt="Brand" src="https://www.e-yantra.org/img/MoE.png" width="" >
+        </div>
+        <div class="col-md-6 text-center">
+            <img width="120" height="120" src="https://www.e-yantra.org/img/iitblogo.png" alt="IITB Logo">
+        </div>
+      </div>
+
+     <!--  <div class="row">
+        <div class="col-md-12 text-center">
+          <img alt="Brand" src="img/mhrd.png" width="500" >
+        </div>
+      </div> -->
+      <!-- MHRD and IITB Logo -->
+     
+
+      <div class="row">
+        <div class="col-md-12">
+        <br>
+          <div class="footer-copyright text-center">The e-Yantra name and logo is a trademark of IIT Bombay. The name and logo should not be reproduced without express consent of IIT Bombay.
+          </div>
+          <div class="footer-copyright text-center">Copyright &copy; 2021 e-Yantra. All rights reserved.<br/>
+          <div class="links-footer"><a href="https://www.e-yantra.org/contact-us">CONTACT US</a> &#8226; <a href="https://www.e-yantra.org/team">TEAM</a> <!-- &#8226; <a href="faq">FAQ</a> --> 
+                      </div>  
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+      
+  </footer>
+
+    </div>
+      <!-- /#fullpage -->
+    <!-- jQuery 2.1.4 -->
+    <!--  <script src="bower_components/jquery/dist/jquery.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.5 JS -->
+    <!--  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://www.e-yantra.org/bower_components/toastr/toastr.js"></script>
+<script src="https://www.e-yantra.org/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script>
+  $(document).ready(function () {
+
+    toastr.options = {
+      "closeButton": true,
+      "newestOnTop": true,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "60000",
+      "extendedTimeOut": "100000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    };
+    var date = new Date();
+    var dd = date.getDate();
+    // toastr.info('<p><strong>Something Cool is coming soon at e-Yantra!!!</strong><br> Stay Tuned. <br><br>Click here to Know!!  <u><a href="https://rap.e-yantra.org/" style="color:Red"; target="_blank"></a></u></p>');
+    /* toastr.info('<p><strong>e-Yantra Hackathon Results Declared!!!</strong><br> Theme: "Fighting COVID-19! <br><br>Log on to <u><a href="http://hackathon.e-yantra.org" style="color:red;" target="_blank">http://hackathon.e-yantra.org</a></u></p>');*/
+  //
+ // toastr.info('<p><u><strong></u><br/>Registration closed for eYRC-2017!!! <br/><br/>Students from 681 colleges have registered for eYRC-2017. We hope you have a great learning experience throughout the competition.<br/></br>"Don\'t Stop Until You\'re Proud"- <font style="font-size: 14px;text-align: right;">Anna Colibri</font></p>');
+  // +
+// toastr.info('<p><strong><font style="color:Black"><h4>Rap Battle Results Announced!!<br/><h4><h4></h4></font></br></br> <u><a href="http://rapbattle.e-yantra.org/" style="color:Black"; target="_blank">Check out the Results here!!</a></u></strong></p>');
+
+   // toastr.info('<p><strong><font style="color:Black"><h4>e-Yantra Hacktoberfest<br/></h4></font><u><a href="http://hacktoberfest.e-yantra.org" style="color:Black"; target="_blank"></u>Hurry Up!!</a> Don&#39t Miss the opportunity!!</strong></p>');
+// toastr.info('<p><strong><font style="color:Black"><h4>We are Hiring Backend Developer!!!<br/><h4><h4></h4></font><u><a href="http://e-yantra.org/jobs" style="color:Black"; target="_blank"></u>Hurry Up!! </a></strong></p>');
+// toastr.info('<p><strong><font style="color:Black"><h4>e-Yantra Hacktoberfest!!!<br/><h4><h4></h4></font><u><a href="http://hacktoberfest.e-yantra.org" style="color:Black"; target="_blank"></u>Hurry Up!! Don&#39t Miss the opportunity!!</a></strong></p>');
+toastr.info('<p><a href="https://mooc.e-yantra.org/sfc_intro" target="_blank">Amazing News!!! 🥳💥<br/>e-Yantra MOOC: Software Foundation Course (Part I) Launched!<br/>Registration open till <b>April 4th, 2021.</b><br/> Grab the Early Bird Discount until March 31st, 2021⌛!!!</b></a></p>');
+
+
+    $('.about-video').magnificPopup({
+      mainClass: 'mfp-fade',
+      items: {
+        src: '//www.youtube.com/watch?v=gXZ-8IgLyNU&feature=em-share_video_user'
+      },
+      type: 'iframe',
+      iframe: {
+        markup: '<div class="mfp-iframe-scaler">' +
+          '<div class="mfp-close"></div>' +
+          '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+          '</div>',
+        patterns: {
+          youtube: {
+            index: 'youtube.com/',
+            id: 'v=',
+            src: '//www.youtube.com/embed/gXZ-8IgLyNU'
+          }
+        },
+        srcAction: 'iframe_src',
+      }
+    });
+    
+    $('.popup-with-move-anim').magnificPopup({
+      type: 'inline',
+      fixedContentPos: false,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-slide-bottom'
+    });
+    $('.image-popup-no-margins').magnificPopup({
+      type: 'image',
+      closeOnContentClick: true,
+      closeBtnInside: false,
+      fixedContentPos: true,
+      mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+      image: {
+        verticalFit: true
+      },
+      zoom: {
+        enabled: true,
+        duration: 300 // don't foget to change the duration also in CSS
+      }
+    });
+    $('.eyrc2014').magnificPopup({
+      mainClass: 'mfp-fade',
+      items: {
+        src: '//www.youtube.com/ ?v=DuDSg7d646c'
+      },
+      type: 'iframe',
+      iframe: {
+        markup: '<div class="mfp-iframe-scaler">' +
+          '<div class="mfp-close"></div>' +
+          '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+          '</div>',
+        patterns: {
+          youtube: {
+            index: 'youtube.com/',
+            id: 'v=',
+            src: '//www.youtube.com/embed/%id%?autoplay=1&rel=0'
+          }
+        },
+        srcAction: 'iframe_src',
+      }
+    });
+    $('.eyrc2013').magnificPopup({
+      mainClass: 'mfp-fade',
+      items: {
+        src: '//www.youtube.com/watch?v=H-wpfAvdqqQ'
+      },
+      type: 'iframe',
+      iframe: {
+        markup: '<div class="mfp-iframe-scaler">' +
+          '<div class="mfp-close"></div>' +
+          '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+          '</div>',
+        patterns: {
+          youtube: {
+            index: 'youtube.com/',
+            id: 'v=',
+            src: '//www.youtube.com/embed/%id%?autoplay=1&rel=0'
+          }
+        },
+        srcAction: 'iframe_src',
+      }
+    });
+    $('.eyrc2012').magnificPopup({
+      mainClass: 'mfp-fade',
+      items: {
+        src: '//www.youtube.com/watch?v=HYlTSSa6xAw'
+      },
+      type: 'iframe',
+      iframe: {
+        markup: '<div class="mfp-iframe-scaler">' +
+          '<div class="mfp-close"></div>' +
+          '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+          '</div>',
+        patterns: {
+          youtube: {
+            index: 'youtube.com/',
+            id: 'v=',
+            src: '//www.youtube.com/embed/%id%?autoplay=1&rel=0'
+          }
+        },
+        srcAction: 'iframe_src',
+      }
+    });
+    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+    disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
+    fixedContentPos: false
+  });
+  });
+</script>
+<script>
+  $('body').scrollspy({ target: '.navbar-custom' })
+</script>
+<script>
+  $(function() {
+  $('a[href*=#]:not([href=#],[href=#small-dialog-students],[href=#small-dialog-colleges],[href=#small-dialog-teachers])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+
+    <!-- Custom JS -->
+    <script src="https://www.e-yantra.org/js/script.min.js"></script>
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-65603803-1', 'auto');
+      ga('send', 'pageview');
+
+    </script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145861739-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145861739-1');
+    </script>
+</body>
+</html>

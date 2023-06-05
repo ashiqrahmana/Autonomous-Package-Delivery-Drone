@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eYIC, e-Yantra</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="robotics,iitb,eyrtc,eyrc,elsi,eys,engineering">
+  <meta name="author" content="e-Yantra Web Team">
+  <!-- Bootstrap 3.3.5 CSS -->
+  <!--  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Bootflat 2.0.4 CSS -->
+  <!--  <link href="bower_components/Bootflat/bootflat/css/bootflat.css" rel="stylesheet">-->
+  <link href="https://www.e-yantra.org/bower_components/Bootflat/bootflat/css/bootflat.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
+<style>
+  @media (max-width:786px){
+    .dataTables_wrapper {
+      white-space:nowrap;
+    }
+    .dataTables_filter {
+      display:none;
+    }
+  }
+  .table-responsive {
+    overflow-x: visible;
+  }
+  .paginate_button a:active,
+  .paginate_button a:focus {
+    position:static;
+    top: 0px;
+  }
+  .btn {
+    font-size: 24px;
+    margin:10px;
+  }
+  .btn-sm{
+    background-color:transparent;
+    color: #333;
+    border:4px solid;
+    transition: all 0.3s ease;
+  }
+  .btn-sm:hover{
+    border:4px solid #333;
+  }
+  .btn-xs{
+    background-color:transparent;
+    color: #3bafda;
+    border:0px;
+    transition: all 0.3s ease;
+  }
+  .btn-xs:hover,
+  .btn-xs:active,
+  .btn-xs:focus{
+    background-color:transparent !important;
+    color:#333;
+  }
+</style>
+  <!-- Fonts -->
+  <!--  <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">-->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom CSS -->
+  <link href="https://www.e-yantra.org/css/style.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.e-yantra.org/apple-touch-icon-57x57.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www.e-yantra.org/apple-touch-icon-60x60.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.e-yantra.org/apple-touch-icon-72x72.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.e-yantra.org/apple-touch-icon-76x76.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.e-yantra.org/apple-touch-icon-114x114.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.e-yantra.org/apple-touch-icon-120x120.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.e-yantra.org/apple-touch-icon-144x144.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.e-yantra.org/apple-touch-icon-152x152.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.e-yantra.org/apple-touch-icon-180x180.png?v2.0.0=JynG3lNP45">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-32x32.png?v2.0.0=JynG3lNP45" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/android-chrome-192x192.png?v2.0.0=JynG3lNP45" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-96x96.png?v2.0.0=JynG3lNP45" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-16x16.png?v2.0.0=JynG3lNP45" sizes="16x16">
+  <link rel="manifest" href="https://www.e-yantra.org/manifest.json?v2.0.0=JynG3lNP45">
+  <link rel="shortcut icon" href="https://www.e-yantra.org/favicon.ico?v2.0.0=JynG3lNP45">
+  <meta name="msapplication-TileColor" content="#f20000">
+  <meta name="msapplication-TileImage" content="https://www.e-yantra.org/mstile-144x144.png?v2.0.0=JynG3lNP45">
+  <meta name="theme-color" content="#333">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body data-spy="scroll" data-target=".navbar-custom"  data-offset="500">
+  <!-- <nav class="navbar navbar-inverse navbar-custom "> -->
+    <nav class="navbar navbar-inverse navbar-custom ">
+    <div class="container col-md-12">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header col-md-2">
+        <a class="navbar-brand" href="www_e-yantra_default.html">
+          <img alt="Brand" src="https://www.e-yantra.org/img/eYantra_logo.svg" width="170" height="50">
+        </a>
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"><a href="index">Home</a></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> -->
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 col-md-4">
+        <ul class="nav navbar-nav">
+          <li class="dropdown hidden-xs">
+            <a href="eyic.htm#" aria-haspopup="true" aria-expanded="false"><span class="visible-xs-inline">Initiative </span><span class="sr-only">Initiative</span><span class="glyphicon glyphicon-menu-down"></span></a>
+            <ul class="dropdown-menu">
+              <li ><a href="https://www.e-yantra.org/index">Home</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Direct Links</li>
+              <li ><a href="elsi.htm">e-Yantra Lab Setup Initiative <small class="pull-right">(eLSI)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrc">e-Yantra Robotics Competition <small class="pull-right">(eYRC)</small></a>
+              </li>
+               <li ><a href="eyic.htm">e-Yantra Ideas Competition <small class="pull-right">(eYIC)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eysip">e-Yantra Summer Internship Program <small class="pull-right">(eYSIP)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrtc">e-Yantra Robotics Teacher Competition <small class="pull-right">(eYRTC)</small></a>
+              </li>
+               <!-- <li ><a href="eyic">e-Yantra Ideas Competition <small class="pull-right">(eYIC)</small></a>
+              </li> -->
+              <li ><a href="https://www.e-yantra.org/efsi">e-Yantra Farm Setup Initiative <small class="pull-right">(eFSI)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrdc">e-Yantra Resource Development Center<small class="pull-right">(eYRDC)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eys">e-Yantra Symposium <small class="pull-right">(eYS)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/tbt">Task Based Training<small class="pull-right">(TBT)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/workshop">Two-day Workshop  <small class="pull-right"></small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/News">News Articles <small class="pull-right"></small></a>
+              </li>
+               <li ><a href="https://www.e-yantra.org/jobs">Careers/Jobs<small class="pull-right"></small></a></li>
+              <!-- <li ><a href="achievements">eLSI College Achievements<small class="pull-right"><br><br></small></a>
+              </li> -->
+            </ul>
+          </li>
+          <li class="nav-small"><a  href="https://www.e-yantra.org/gallery">GALLERY</a> &#8226;<a  href="https://www.e-yantra.org/team">TEAM</a> &#8226;  <a  href="https://www.e-yantra.org/contact-us">CONTACT US</a>  <!-- &#8226; <a  href="faq">FAQ</a>  -->&#8226;
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right col-md-6">
+          <li><a href="https://www.e-yantra.org/index"><i class="fa fa-arrow-left"></i> Back to Home</a>
+          </li>        </ul>
+      </div>
+  <!-- /.navbar-collapse -->
+
+    </div>
+<!-- /.container-fluid -->
+  </nav>
+  <main>
+  <div class="container">
+      <div class="row">
+      <div class="col-lg-12">
+        <h2 class="text-muted">e-Yantra Ideas Competition </h2>
+          <h3 class="space text-muted">eYIC</h3>
+      </div>
+      <div class="row"> 
+        <div class="col-md-6 col-md-offset-3">
+          <!-- <h3 class="text-center"><button type="button" class="btn btn-primary btn-block btn-md" style="padding-left: 12px;padding-right: 12px;padding-top: 12px;padding-bottom: 12px;margin-bottom: 5px;margin-top: 5px;margin-right: 0px;margin-left: 0px;font-size: 22px;" data-toggle="modal" data-target=".bs-example-modal-lg"><sup><img src="img/home/new_blink.gif"></sup>  eYIC-2017 Poster</button></h3> -->
+        </div><br><br><br><br><br><br>
+     </div>
+      <div class="modal-content">
+        <div class="modal fade bs-example-modal-lg">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="https://www.e-yantra.org/img/eyic/Final_eYIC_Poster.jpg" width="100%" height="100%">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-10">
+
+
+
+          <!-- ******** -->
+          <div class="row">
+            <div class="col-md-7">
+              <dl class="lead text-justify">
+                <dt>The e-Yantra Ideas Competition solicits innovative projects from teams of eLSI colleges :</dt>
+                </dt>
+                <ul class="lead text-justify">
+                  <li>To ensure sustained use of the robotics labs set up through the e-Yantra Lab Setup Initiative (eLSI).</li>
+                  <li>To encourage Interesting ideas from students in eLSI colleges across the country.</li>
+                  <li>To provide a platform for teams to showcase their projects.</li>
+                  <li>To nurture BE projects in embedded systems and robotics at the eLSI colleges</li>
+                </ul>
+              </dl>
+            </br></br></br>
+            </div>
+            <div class="col-md-5">
+              <h4 class="text-center">Glimpse</h4>
+              <div class="col-xs-6 col-sm-6">
+                <a button type="button" data-toggle="modal" data-target="#eyic1"><img data-toggle="tooltip" data-placement="down" class="img-thumbnail" src="https://www.e-yantra.org/img/eyic/eyic1.jpg" width="100%" height="100%"></a>
+                <div id="eyic1" class="modal fade" role="dialog">
+                  <div  class="modal-dialog">
+                    <div class="modal-body">
+                      <img src="https://www.e-yantra.org/img/eyic/eyic1.jpg" width="100%" height="100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6">
+                <a button type="button" data-toggle="modal" data-target="#eyic2"><img data-toggle="tooltip" data-placement="down" class="img-thumbnail" src="https://www.e-yantra.org/img/eyic/eyic2.jpg" width="100%" height="100%"></a>
+                <div id="eyic2" class="modal fade" role="dialog">
+                  <div  class="modal-dialog">
+                    <div class="modal-body">
+                      <img src="https://www.e-yantra.org/img/eyic/eyic2.jpg" width="100%" height="100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6">
+                <a button type="button" data-toggle="modal" data-target="#eyic3"><img data-toggle="tooltip" data-placement="down" class="img-thumbnail" src="https://www.e-yantra.org/img/eyic/eyic3.jpg" width="100%" height="100%"></a>
+                <div id="eyic3" class="modal fade" role="dialog">
+                  <div  class="modal-dialog">
+                    <div class="modal-body">
+                      <img src="https://www.e-yantra.org/img/eyic/eyic3.jpg" width="100%" height="100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6">
+                <a button type="button" data-toggle="modal" data-target="#eyic4"><img data-toggle="tooltip" data-placement="down" class="img-thumbnail" src="https://www.e-yantra.org/img/eyic/eyic4.jpg" width="100%" height="100%"></a>
+                <div id="eyic4" class="modal fade" role="dialog">
+                  <div  class="modal-dialog">
+                    <div class="modal-body">
+                      <img src="https://www.e-yantra.org/img/eyic/eyic4.jpg" width="100%" height="100%">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 class="text-center"><a href="https://www.e-yantra.org/gallery"><u><strong>Find more . . .</strong></u></a></h4>
+          </div>
+<!-- ****2019-20**** -->
+<section id="eYIC 2020" class="group">
+            <h1>eYIC 2019-20</h1>
+            <div id="eyic_2020_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class='row'>
+                <div class='col-lg-12'>
+                  <dl class="dl-horizontal">
+                    <dt >Details</dt>
+                    <dd class="text-justify">
+                      <ul>
+                        <li> 321 ideas proposed </li>
+                        <li> 136 teams shortlisted for implementation</li>
+                        <li> 49 teams shortlisted for Regional Finals</li>
+                        <!-- <li>21 teams Shortlisted for National Finals</li> -->
+                        <li> 21 teams exhibited their projects in <a href="https://www.e-yantra.org/eys">e-Yantra Symposium (eYS)</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2020_winners" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-trophy"></i>Finalists & Winners</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Best Project Implementation and Close to Market</td>
+                    <td>Pune Vidhyarthi Griha’s College of Engineering and Technology,Pune</td>
+                    <td>Robotic Platform for enabling students to learn robotics</td>
+                    <td>Prof. Mrs. Urmila Kalshetti</td>
+                    <td>Parth Parikh,<br>Khushboo Mundada,<br>Akash Rasal,<br>Shantanu Kalamdane</td>
+                  </tr>
+                  <tr>
+                    <td>Best Project Implementation</td>
+                    <td>Mahatma Gandhi Mission's College of Engineering & Technology, Noida</td>
+                    <td>Reformation of waste plastic into useful structure</td>
+                    <td>Prof. Sachin R Jambhale</td>
+                    <td>Abdul Ahad ,<br>Rachna Kumari,<br>Sanjay Bisht</td>
+
+                  </tr>
+                  <tr>
+                    <td>Best Project Implementation</td>
+                    <td>Deen Dayal Upadhyaya College,Delhi</td>
+                    <td>next-gen vision kit</td>
+                    <td>Dr. Anju Agrawal</td>
+                    <td>Vaibhav Singh ,<br>Jaideep Shekhar,<br>Chetan,<br>Tanuj </td>
+                            
+                  </tr>
+                  <tr>
+                    <td>Best Project Implementation</td>
+                    <td>K. J. Somaiya College of Engineering, Mumbai</td>
+                    <td>Physiotherapy portable cervical joint assessment device with feedback system</td>
+                    <td>Prof. Arati Phadke</td>
+                    <td>Shrey Shah,<br>Arjun Patel,<br>Bharathi kumar Nadar,<br>Abhishek Kansara</td>
+                  </tr>
+
+                  <tr>
+                    <td>Best Project Implementation</td>
+                    <td>Sri Sairam Engineering College,Kanchipuram</td>
+                    <td>A.Q.U.A Drone</td>
+                    <td>Prof. Prabakaran S</td>
+                    <td>Prithivirajan ,<br>Sudharsanan,<br>Manikandan,<br>Harish</td>
+                  </tr>
+
+                  <tr>
+                    <td>Close to Market</td>
+                    <td>Pune Institute of Computer Technology, Pune</td>
+                    <td>Kanak:Smart Bin and Reward based app</td>
+                    <td>Prof. Ashwin A Bhandekar</td>
+                    <td>Riya Deshpande,<br>Varad Nitin Gorhe,<br>Atharwa Weginwar,<br>Neha Ingavale</td>
+
+                  </tr>
+                  <tr>
+                    <td>Best Project Implementation</td>
+                    <td>CSMSS Chh. Shahu College of Engineering, Aurangabad</td>
+                    <td>Energy Efficient Temperature Controlled Solar Dryer</td>
+                    <td>Prof. Mithun Gourang Aush</td>
+                    <td>Rushikesh Khoche,<br>Shubham Kale,<br>Shama Pathan,<br>Jagruti Rajhans</td>
+                  </tr>
+                  <tr>
+                    <td>Close to Market and Viewer's choice</td>
+                    <td>Vadodara Institute of Engineering, Kotambi</td>
+                    <td>Automatic welding machine</td>
+                    <td>Prof. Satish H Bhati</td>
+                    <td>Tandlekar Prashant Vishwajit,<br>Gujjar Nikunjkumar Narendrabhai,<br>Dharmesh Vaghela,<br>Rana Rahulkumar Kanubhai</td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2020_Finalist" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-road"></i>Other Finalists</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Sri Jayachamarajendra College of Engineering, Mysuru</td>
+                    <td>Sign language recognition using image-based hand gesture recognition techniques</td>
+                    <td>Prof. Yashawanth S D</td>
+                    <td>K S Rakshit,<br>Pannaga S,<br>Prateek Janaj,<br>Rahul Rajkumar Kori</td>
+
+                  </tr>
+                  <tr>
+                    <td>VIVA Institute of Technology, Palghar</td>
+                    <td>Automated Sea Bin</td>
+                    <td>Prof. Kushal Suvarna</td>
+                    <td>Reethik Raju Thota,<br>Sreetish Ravindran Mundayat,<br>Pravin Jodharam Choudhary,<br>Akash Sushil Tripathi</td>
+                  </tr>
+                  <tr>
+                    <td>Inderprastha Engineering College, Ghaziabad</td>
+                    <td>AQUA-Bot: A Crop Watering Mobile Robot For precision Irrigation</td>
+                    <td> Prof. Bindu Rani</td>
+                    <td>Nishant mishra,<br>Piyush Bansal,<br>Mayank Bansal</td>
+
+                  </tr>
+                  <tr>
+                    <td>Mahatma Gandhi Mission's College of Engineering & Technology, Noida</td>
+                    <td>Water Surface Garbage Collector System</td>
+                    <td>Prof. Archana Sar</td>
+                    <td>Gaurav,<br>Moh Nadeem,<br>Ujjawal Mishra</td>
+                  </tr>
+
+                  <tr>
+                    <td>Kongu Engineering College, Erode</td>
+                    <td> Flying Quadruped robot for surveillance</td>
+                    <td>Prof. V.Arun Kumar</td>
+                    <td>Govintha Raj K,<br>Anand A T,<br>Heeraj A,<br>Kavinraja G</td>
+                  </tr>     
+                  <tr>
+                    <td>Shri Vaishnav Vidyapeeth Vishwavidyalaya, Indore</td>
+                    <td>E-Parking Management</td>
+                    <td>Prof. Sandeep Kumar Jain</td>
+                    <td>Chetan Malviya,<br>Manas Solanki,<br>Siddharth Khandelwal</td>
+
+                  </tr>
+                  <tr>
+                    <td>Universal College of Engineering, Thane</td>
+                    <td>E-learning AR application</td>
+                    <td>Dr. Jitendra Saturwar</td>
+                    <td>Shaurya Gulati,<br>Faizal shaikh,<br>Anushri Shetty</td>
+                         
+                  </tr>
+                  <tr>
+                    <td>Vivekanand Education Society's Institute of Technology, Chembur</td>
+                    <td>AIDE: AI & IoT-enabled home automation for Disabled & Elderly</td>
+                    <td>Prof. Mrs Sunita Sahu/td>
+                    <td>Navjyot Singh,<br>Srushti Sachdev,<br>Anushka Tiwari,<br>Smruti Kshirsagar</td>
+                  </tr>
+                  
+                  <tr>
+                    <td>BMS Institute of Technology and Management, Bengaluru</td>
+                    <td>Design and Developmemet of Hydraulically Actuated Autonomous Nurse</td>
+                    <td>Prof. Nithyapoornima Moorthy</td>
+                    <td>Kaushik Balasundar,<br>Akash S Nambiar,<br>Aby J Kottoor,<br>Shwetha D</td>
+                  </tr>
+                   
+                   <tr>
+                    <td>Sarvajanik College of Engineering and Technology, Surat</td>
+                    <td>Environmental Monitoring Drone</td>
+                    <td>Prof. Utpal Tarunkumar Pandya</td>
+                    <td>Manan Chevli,<br>Chirag Gandhi,<br>Dhanvi Shah,<br>Prachita Bagal</td>
+                  </tr>       
+                  <tr>
+                    <td>Mount Zion College of Engineering and Technology, Pudukkottai</td>
+                    <td>DESIGN AND DEVELOPMENT OF INTELLIGENT TABLE TOP WET GRINDER</td>
+                    <td>Prof. R.Muthukumar</td>
+                    <td>A. Nasreen Banu,<br>M. Thishanthan,<br>N. Jayaprakash,<br>V. Karthik Raja </td>
+
+                  </tr>  
+                  <tr>
+                    <td>St.Vincent Pallotti College of Engineering and Technology, Nagpur</td>
+                    <td>Anti-Drowning Device using Machine Learning.</td>
+                    <td>Prof. Rohan Vaidya</td>
+                    <td>Priyanka Jain,<br>Prajwal Pimpalkar,<br>Susan Sajji,<br>Akshay Wararkar </td>
+
+                  </tr>  
+                  <tr>
+                    <td>K. J. Somaiya College of Engineering, Mumbai</td>
+                    <td>Amphibious Autonomous Surveillance UGV</td>
+                    <td>Irfan Siddavatam</td>
+                    <td>Soofiyan Atar,<br>Adil Shaikh</td>
+
+                  </tr>  
+                  
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </section>
+<!-- ****2019**** -->
+          <section id="eYIC-2019" class="group">
+            <h1>eYIC - 2019</h1>
+            <div id="eyic_2019_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class='row'>
+                <div class='col-lg-12'>
+                  <dl class="dl-horizontal">
+                    <dt >Details</dt>
+                    <dd class="text-justify">
+                      <ul>
+                        <li>362 ideas proposed </li>
+                        <li>122 teams shortlisted for implementation</li>
+                        <li>64 teams shortlisted for Regional Finals</li>
+                        <!-- <li>21 teams Shortlisted for National Finals</li> -->
+                        <li>21 teams exhibited their projects in <a href="https://www.e-yantra.org/eys">e-Yantra Symposium (eYS)</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2019_winners" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-trophy"></i>Finalists & Winners</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Most Innovative</td>
+                    <td>Kongu Engineering College, Erode</td>
+                    <td>Biodegradable And Eatable Wheat Bran Plate Making Machine</td>
+                    <td>Dr. C. Maheswari</td>
+                    <td>Balasubramaniam S,<br>Arunkumar. K,<br>Karthik K,<br>Hariharan S</td>
+                  </tr>
+                  <tr>
+                    <td>Best Hardware</td>
+                    <td>Fr. Conceicao Rodrigues College of Engineering, Bandra</td>
+                    <td>Pani-puri And Dahi-puri Vending Machine Using Image Processing And Machine Learning</td>
+                    <td>Prof. Vaibhav Godbole</td>
+                    <td>Mohammed Ahmed ,<br>Anuja Sunil Indore,<br>Pankaj Chandrakant Gharge,<br>Pranjali Bhopte</td>
+
+                  </tr>
+                  <tr>
+                    <td>Best Hardware</td>
+                    <td>K.J.Somaiya College of Engineering,Vidya Vihar</td>
+                    <td>Autonomous Surface Rover And Underwater Inspection System</td>
+                    <td>Prof. Arati Phadke</td>
+                    <td>Poojan Rashmin Dholakia ,<br>Meet Dinesh Mehta,<br>Keval Mamaniya,<br>Smit Shah </td>
+                            
+                  </tr>
+                  <tr>
+                    <td>Best Demonstration</td>
+                    <td>Ramrao Adik Institute of Technology, Nerul</td>
+                    <td>Defence Mechanism System Using Image Processing</td>
+                    <td>Dr. Vishvesh Vyawahare</td>
+                    <td>Mohitosh Jagdish Chaudhari,<br>Jagrut Jadhav,<br>Rahul S Chandak,<br>Snehal Suresh Bondre</td>
+                  </tr>
+
+                  <tr>
+                    <td>Close-to-market</td>
+                    <td>Jawahar Education Society's A. C. Patil College of Engineering,Kharghar,Navi-Mumbai</td>
+                    <td>Generator Excitation Control Using Phasor Measurement Unit</td>
+                    <td>Prof. J. R. Baviskar</td>
+                    <td>Rahul Vibukumar Nair ,<br>Gaurav Dnyaneshwar Hire,<br>Prasad Nandkumar Pawar,<br>Ajinkya Mangesh Khandare</td>
+                  </tr>
+
+                  <tr>
+                    <td>Best Algorithm</td>
+                    <td>Vivekanand Education Society's Institute of Technology, Mumbai</td>
+                    <td>Street Quality Identification Device (squid)</td>
+                    <td>Prof. Charusheela Nehete</td>
+                    <td>Gaurav Sahu,<br>Sahil Sahu,<br>Gayatri Vyankatesh Belapurkar,<br>Chirag Mahesh Bellara</td>
+
+                  </tr>
+                  <tr>
+                    <td>Judge’s Choice</td>
+                    <td>Knowledge Institute of Technology, Salem</td>
+                    <td>Agribot 1.0</td>
+                    <td>Prof. L. Manivannan</td>
+                    <td>Infant Raj,<br>Naveenvignesh R,<br>Sivakumar,<br>Maheshkumar S</td>
+                  </tr>
+                                 
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2019_Finalist" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-road"></i>Other Finalists</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Pune Institute of Computer Technology, Pune </td>
+                    <td>Sitwell – Posture Correcting Device  </td>
+                    <td>Prof. Zakee Ahmed</td>
+                    <td>Chinmay Pramod Dixit,<br>Prajakta Dange,<br>Anindita Chanda,<br>Swarada Ghangurde</td>
+
+                  </tr>
+                  <tr>
+                    <td>Kongu Engineering College, Erode</td>
+                    <td>Automatic Screw Gauge Calibrator And Component Tester</td>
+                    <td> Prof. V. Arun Kumar</td>
+                    <td>A. P. Parameswaran,<br>Praveenraj. I,<br>Pradeep. R,<br>K. B. Prabhu Raj</td>
+                  </tr>
+                  <tr>
+                    <td>Vadodara Institute of Engineering, Vadodara </td>
+                    <td>Automatic Paper Bag Making Machine</td>
+                    <td> Prof. Satish H. Bhati</td>
+                    <td>Patel Karankumar Bharatbhai,<br>Shubham Bhagwan Auti,<br>Ranka Saurabh Darshansingh,<br>Bhatt Mayurkumar Harshadbhai</td>
+
+                  </tr>
+                  <tr>
+                    <td>Vadodara Institute of Engineering, Vadodara </td>
+                    <td> Robotic Exoskeleton For Helping Disabled In Mobility</td>
+                    <td>Prof. Tushar D. Kumbhani</td>
+                    <td>Tanmay Ashishkumar Pathak,<br>Harshil Natvarbhai Patel,<br>Kezhakkepurakkel Niraj K Venugopal,<br>Vasav R Machhi</td>
+                  </tr>
+
+                  <tr>
+                    <td>Vadodara Institute of Engineering, Vadodara </td>
+                    <td> Advance Water Distribution System For Smart City </td>
+                    <td>Prof. Vaishali Patel</td>
+                    <td>Dipal Thakkar,<br>Riddhi D. Panchal,<br>Pinkal Manishkumar Patel,<br>Chauhan Manojkumar Ranjitsinh</td>
+                  </tr>     
+                  <tr>
+                    <td>St. Vincent Pallotti College of Engineering & Technology, Nagpur </td>
+                    <td>Saline Monitoring & Notification System Using Internet Of Things</td>
+                    <td>Prof. M. N Kapse</td>
+                    <td>Nupur Kohadkar,<br>Susan Sajji,<br>Sonu Kamlesh Dupare,<br>Mayur Kisan Ingle</td>
+
+                  </tr>
+                  <tr>
+                    <td>U V Patel College of Engineering, Mehsana</td>
+                    <td>Gesture Designated & Voice Controlled Robotic Hand Using Myograph Sensors  </td>
+                    <td>Prof. V. D. Patel</td>
+                    <td>Bhavy Ajaypal Shah,<br>Abhinav Sanjaybhai Lakhani,<br>Raghav Pathak,<br>Mohit Bhalala</td>
+                         
+                  </tr>
+                  <tr>
+                    <td>Vidya Pratishthan's Kamalnayan Bajaj Institute of Engineering & Technology,Formerly(Vidya Pratishthan’s College of Engineering), Baramati</td>
+                    <td>Underwater Robot For Scientific Data Acquisition</td>
+                    <td>Prof. Jyoti S. Rangole</td>
+                    <td>Sohel Akilsab Shaikh,<br>Nagawade Komal Madhav,<br>Shubham Dattatray Kumbhar,<br>Nagane Bhupali Vijaykumar</td>
+                  </tr>
+                  
+                  <tr>
+                    <td>Government College Of Engineering And Research, Avasari Khurd</td>
+                    <td>Fire Rescue System [frs] For High Rise Building</td>
+                    <td>Dr. Kirti Vasant Thakur</td>
+                    <td>Hemant Goraksh Ghuge,<br>Kulkarni Revati Anand,<br>Unnati Raju Kulkarni,<br>Patil Sujata Sanjay</td>
+                  </tr>
+                   
+                   <tr>
+                    <td>Sri Sairam Engineering College, Chennai</td>
+                    <td>Autonomous Zea Mays Seeding And Monitoring Agribot Using Iot</td>
+                    <td>Prof. S. Prabakaran</td>
+                    <td>Prithivirajan Karunagaran,<br>Harish Natarajan,<br>Manikandan A,<br>Sudharsanan J</td>
+                  </tr>       
+                  <tr>
+                    <td>Pune Institute of Computer Technology, Pune</td>
+                    <td>Exoskeleton Arm</td>
+                    <td>Prof. Ajinkya S Rasal</td>
+                    <td>Mayur Bhaskarrao Bhalerao,<br>Pushkar Dhananjay Deodhar,<br>Priyanka Khore</td>
+
+                  </tr>  
+                  <tr>
+                    <td>Nagesh Karajagi Orchid College of Engineering & Technology, Solapur</td>
+                    <td>Learning Ability Robot</td>
+                    <td>Prof. Amol Ashok Kshirsagar</td>
+                    <td>Vaibhav Patil,<br>Yogesh Revansiddha Maindargi,<br>Prasanna Hanamgaon</td>
+
+                  </tr>  
+                  <tr>
+                    <td>Tezpur University, Tezpur</td>
+                    <td>A Hazardous Gas Sensing Mobile Robot For Military Applications</td>
+                    <td>Dr. Nayan M Kakoty</td>
+                    <td>Tanaya Das,<br>Dhruba Jyoti Sut,<br>Vishal Gupta</td>
+
+                  </tr>  
+                  <tr>
+                    <td>SCMS School of Engineering and Technology, Ernakulam</td>
+                    <td>Bio-inspired Fish-shaped Unmanned Underwater Vehicle For Remote Surveillance</td>
+                    <td>Dr. Sheeja Janardhanan</td>
+                    <td>Fahad Bin Shahabudheen ,<br>Abhijith O,<br>Allen Issac </td>
+                  </tr>    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </section>
+
+ <!-- ****2018**** -->
+          <section id="eYIC-2018" class="group">
+            <h1>eYIC - 2018</h1>
+            <div id="eyic_2018_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class='row'>
+                <div class='col-lg-12'>
+                  <dl class="dl-horizontal">
+                    <dt >Details</dt>
+                    <dd class="text-justify">
+                      <ul>
+                        <li>254 ideas proposed </li>
+                        <li>105 teams shortlisted for implementation</li>
+                        <li>42 teams shortlisted for Regional Finals</li>
+                        <li>22 teams Shortlisted for National Finals</li>
+                        <li>18 teams exhibited their projects in <a href="https://www.e-yantra.org/eys">e-Yantra Symposium (eYS)</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2018_winners" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-trophy"></i>Finalists & Winners</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Best Algorithm Design</td>
+                    <td>Fr. Conceicao Rodrigues College of Engineering, Bandra</td>
+                    <td>Automated Traffic Surveillance System</td>
+                    <td>Kalpana Deorukhkar</td>
+                    <td>Omkar Joshi,<br>Deval Srivastava,<br>Priyank Shah,<br>Saim Shaikh</td>
+                  </tr>
+                  <tr>
+                    <td>Best Demontsration & Presentation</td>
+                    <td>Vadodara Institute of Engineering</td>
+                    <td>Automatic Stirrup Making Machine</td>
+                    <td>Satish Bhati</td>
+                    <td>Nithin Thilakappan,<br>Devang Joshi,<br>Nishit Patel,<br>Pathak Abhishek</td>
+                  </tr>
+                  <tr>
+                    <td>Most Realistic</td>
+                    <td>K.J.Somaiya College of Engineering,Vidya Vihar</td>
+                    <td>Autonomous Water Rover</td>
+                    <td>Arati Phadke</td>
+                    <td>Chirag Shah,<br>Nirav Shah,<br>Abhishek Rai</td>
+                  </tr>
+                  <tr>
+                    <td>Most Realistic</td>
+                    <td>Federal Institute of Science and Technology (FISAT)</td>
+                    <td>Disease Diagnosis Machine</td>
+                    <td>Bejoy Varghese</td>
+                    <td>John Mathai,<br>Shimon Payyanadan,<br>Akhil Joy,<br>Mehjebin Mujeeb</td>
+                  </tr>
+                  <tr>
+                    <td>Most Realistic</td>
+                    <td>Vivekanand Education Society's Institute of Technology</td>
+                    <td>Eclassroom</td>
+                    <td>Mrs. Sharmila Sengupta</td>
+                    <td>Shivani Valecha,<br>Vijay Kataria,<br>Priyanka Wadhwani,<br>Nikhil Vatwani</td>
+                  </tr>
+                  <tr>
+                    <td>Close-to-Market</td>
+                    <td>Vidarbha Youth Welfare Society's Prof. Ram Meghe Institute of Technology & Research</td>
+                    <td>Iot Based Fps Bike Ignition System</td>
+                    <td>Pratik Agrawal</td>
+                    <td>Lokesh Rajesh Popat,<br>Shital Gajanan Kale,<br>Pragati Dnyaneshwar Bharsakle,<br>Mayur Rahul Somkuwar</td>
+                  </tr>
+                  <tr>
+                    <td>Best Hardware Design</td>
+                    <td>Ramrao Adik Institute of Technology, Nerul</td>
+                    <td>Mine Mapping And 3d Reconstruction Of The Mine</td>
+                    <td>Sanjivani Chakote</td>
+                    <td>Vineet Vinod Menon,<br>Rohit Patil,<br>Ajit Mutalik</td>
+                  </tr>
+                  <tr>
+                    <td>Best Demonstration and Presentation</td>
+                    <td>Swami Keshvanand Institute of Technology, Management & Gramothan</td>
+                    <td>Net Zero Automatic Solar Panel Cleaning Robot</td>
+                    <td>Ankit Vijayvargiya</td>
+                    <td>Anubhav Pandey,<br>Aayush Swami,<br>Abhishek Sharma,<br>Apoorv Ranjan</td>
+                  </tr>
+                  <tr>
+                    <td>Most Innovative Solution</td>
+                    <td>Vadodara Institute of Engineering</td>
+                    <td>Restoration And Replenishmemt Of Tributaries Of Vishwamitri River By Using Sand Filter With Automation</td>
+                    <td>Pranav D. Bhangaonkar</td>
+                    <td>Kunalkumar B. Chavda,<br>Harsh D. Patel,<br>Devadattkumar J. Rathava</td>
+                  </tr>                  
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2018_Finalist" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-road"></i>Other Finalists</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Ramrao Adik Institute of Technology </td>
+                    <td>Neural Network Based Motor-cycle Ecosystem  </td>
+                    <td>Mrs.shweta Ashtekar</td>
+                    <td>Rohan Ranjan Mahajan,<br>Kartikey Kawadkar,<br>Heramb Khanvilkar,<br>Jagrut Jadhav</td>
+                  </tr>
+                  <tr>
+                    <td>Mahatma Gandhi Mission's College of Engineering & Technology</td>
+                    <td>Truckagehub</td>
+                    <td> Ms. Ashvini Deshmukh</td>
+                    <td>Abhishek Kaushal,<br>Shubham Mittal</td>
+                  </tr>
+                  <tr>
+                    <td>Mahatma Gandhi Mission's College of Engineering & Technology </td>
+                    <td>Energy Efficient Digital Smart Home</td>
+                    <td> Mr. Sanjay Sharma</td>
+                    <td>Avaneesh Kumar Tripathi,<br>Gaurav Kumar,<br>Mohd Kabir Ansari,<br>Sumit Singh</td>
+                  </tr>
+                  <tr>
+                    <td>T.S. Srinivasan Centre for Polytechnic College and Advanced Training </td>
+                    <td> Electronic Braille Display</td>
+                    <td>K.kalidoss</td>
+                    <td>T Sundar,<br>Jeevan Prabakaran S,<br>Vijay D,<br>Vignesh S P</td>
+                  </tr>
+                  <tr>
+                    <td>SR Patel College of Engineering  </td>
+                    <td> Iot Based home Automation And Security System </td>
+                    <td>Jitendra R.patel</td>
+                    <td>Jaimin Patel,<br>Patel Shvetkumar Hargovind,<br>Patel Nikhil Kantibhai,<br>Patel Marmik Rameshbhai</td>
+                  </tr>
+                  <tr>
+                    <td>Saranathan College of Engineering </td>
+                    <td>Apctmd For Smart City Development (Air Pollution Control And Traffic Management Drone) </td>
+                    <td>Gayathri Natarajan</td>
+                    <td>N Muthu Karuppan,<br>Leo Aldrinraj A S,<br>Madhanraj S,<br>G Manoranjan</td>
+                  </tr>
+                  <tr>
+                    <td>U.V. Patel Engineering College</td>
+                    <td>Combat Unmanned Guided Vehicle  </td>
+                    <td>Prof. J.c.patel</td>
+                    <td>Shyamkumar B Gadhiya,<br>Afzal Chhaya,<br>Hammaad Haseeb Akkiswala</td>
+                  </tr>
+                  <tr>
+                    <td>J D College of Engineering and Management</td>
+                    <td>Smart Agriculture System Using Autonomous Robot</td>
+                    <td>Amit Bhattacharyae</td>
+                    <td>Nilesh Patle,<br>Aman Umredkar,<br>Sachin Thakre</td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+
+            <div id="eyic_2018_mentor" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-road"></i>Active Mentor Awards</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Vadodara Institute of Engineering</td>
+                    <td>Automatic Stirrup Making Machine</td>
+                    <td>Satish Bhati</td>
+                  </tr>
+                  <tr>
+                    <td>Vivekanand Education Society's Institute of Technology</td>
+                    <td>Eclassroom</td>
+                    <td>Mrs. Sharmila Sengupta</td>
+                  </tr>
+                  <tr>
+                    <td>T.S.Srinivasan Centre for Polytechnic College and Advanced Training</td>
+                    <td>Electronic Braille Display</td>
+                    <td>K. Kalidoss</td>
+                  </tr>
+                  <tr>
+                    <td>Vidarbha Youth Welfare Society's Prof. Ram Meghe Institute of Technology & Research</td>
+                    <td>Iot Based Fps Bike Ignition System</td>
+                    <td>Pratik Agrawal</td>
+                  </tr>
+                  <tr>
+                    <td>Vadodara Institute of Engineering</td>
+                    <td>Restoration And Replenishmemt Of Tributaries Of Vishwamitri River By Using Sand Filter With Automation</td>
+                    <td>Pranav D. Bhangaonkar</td>
+                  </tr>
+                  <tr>
+                    <td>J D College of Engineering and Management</td>
+                    <td>Smart Agriculture System Using Autonomous Robot</td>
+                    <td>Amit Bhattacharya</td>                   
+                  </tr>
+                  
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </section>
+          <!-- ****2018**** -->
+
+
+
+          <!-- ****2017**** -->
+          <section id="eYIC-2017" class="group">
+            <h1>eYIC - 2017</h1>
+            <div id="eyic_2017_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class='row'>
+                <div class='col-lg-12'>
+                  <dl class="dl-horizontal">
+                    <dt >Details</dt>
+                    <dd class="text-justify">
+                      <ul>
+                        <li>350 ideas proposed </li>
+                        <li>121 teams shortlisted for implementation</li>
+                        <li>48 teams shortlisted for Regional Finals</li>
+                        <li>16 teams exhibited their projects in <a href="https://www.e-yantra.org/eys">e-Yantra Symposium (eYS)</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2017_winners" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-trophy"></i>Finalists & Winners</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Best Hardware Design</td>
+                    <td>Chhatrapati Shahu Maharaj Shikshan Sanstha's College of Engineering</td>
+                    <td>Automation For The Process Of Paper Bag Manufacturing System</td>
+                    <td>Mr. Vinod Wairagade</td>
+                    <td>Priyanka Shinde,<br>Amol Mangate,<br>Nikita  Sahebarao Jahhav</td>
+                  </tr>
+                  <tr>
+                    <td>Best Hardware Design</td>
+                    <td>PES University</td>
+                    <td>Microcontroller Based Glass Wall Cleaning Robot With Slider Mechanism</td>
+                    <td>Prof. D. Sethuram</td>
+                    <td>Abhishek Kumar Verma,<br>Ayush Lasod,<br>Abhishek</td>
+                  </tr>
+                  <tr>
+                    <td>Close-to-Market</td>
+                    <td>Faculty of Technology, Dharmsinh Desai University</td>
+                    <td>E-money Transfer Using Fingertip Through Iot Device</td>
+                    <td>Dr. Prarthan D. Mehta</td>
+                    <td>Keyur Rakholiya,<br>Vekariya Earnest Popatlal,<br>Sanket Bhimani</td>
+                  </tr>
+                  <tr>
+                    <td>Close-to-Market</td>
+                    <td>Vivekanand Education Society's Institute of Technology</td>
+                    <td>Pravas Sarthi- A Convenience</td>
+                    <td>Mrs. Gresha Bhatia</td>
+                    <td>Supriya Suresh,<br>Aneesh Gunda,<br>Hitesh Rajesh Tewani,<br>Supratim Kamat</td>
+                  </tr>
+                  <tr>
+                    <td>Most Innovative Solution</td>
+                    <td>Fr. Conceicao Rodrigues College of Engineering, Bandra</td>
+                    <td>Robotic Assistance For Tuberculosis Patients</td>
+                    <td>Prof. Kalpana Deorukhar</td>
+                    <td>Rachel Joseph,<br>Yash Bharatkumar Jivrajani,<br>Raj Yogesh Shah,<br>Vaibhav Nagar</td>
+                  </tr>
+                  <tr>
+                    <td>Best Demonstration and Presentation</td>
+                    <td>REVA University</td>
+                    <td>Sewage Blockage Removing Robot With Help Of Pneumatic System.</td>
+                    <td>Dr. Jagadeeswaran N</td>
+                    <td>Suraj N,<br>Vinay Kumar .p,<br>Santhosh Reddy K V</td>
+                  </tr>
+                  <tr>
+                    <td>Best Algorithm Design</td>
+                    <td>Cluster Innovation Center</td>
+                    <td>Visual Perception For The Visually Impaired</td>
+                    <td>Mr. Sachin Kumar</td>
+                    <td>Shreyas Sachan,<br>Ridhwan Luthra,<br>Pankaj Baranwal,<br>Shashwat Yashaswi</td>
+                  </tr>                  
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2017_Finalist" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-road"></i>Other Finalists</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Ramrao Adik Institute of Technology</td>
+                    <td>Neural Network Based Motor-cycle Ecosystem</td>
+                    <td>Mrs.shweta Ashtekar</td>
+                    <td>R. Arul Ashwini,<br>Padhmashree.v,<br>Priyadarshini A</td>
+                  </tr>
+                  <tr>
+                    <td>Mahatma Gandhi Mission's College of Engineering & Technology, Noida</td>
+                    <td>Truckagehub</td>
+                    <td>Ms. Ashvini Deshmukh</td>
+                    <td>Kashif Arif Shaikh,<br>Shubham Atul Mapara,<br>Kashmira Sharad Koli</td>
+                  </tr>
+                  <tr>
+                    <td>Mahatma Gandhi Mission's College of Engineering & Technology, Noida</td>
+                    <td>Energy Efficient Digital Smart Home</td>
+                    <td>Mr. Sanjay Sharma</td>
+                    <td>J. Bennyhinn Samuel,<br>Navin S,B Balamurugan,<br>Abdul Aziz</td>
+                  </tr>
+                  <tr>
+                    <td>T.S. Srinivasan Centre for Polytechnic College and Advanced Training</td>
+                    <td>Electronic Braille Display</td>
+                    <td>K.kalidoss</td>
+                    <td>Ananthu Anil Kumar,<br>Akhil Mathew Jacob,<br>Tibin M Mathai,<br>Jishnu Nair</td>
+                  </tr>
+                  <tr>
+                    <td>Dr. J. J. Magdum College of Engineering</td>
+                    <td>Organ Transfer By Using Drone</td>
+                    <td>Manisha Udaykumar Phutane </td>
+                    <td>Akshata S. Patil,<br>Poonam Kallappa Madiwal,<br>Snehal Sanjay Pasanna,<br>Rushikesh Kagalkar</td>
+                  </tr>
+                  <tr>
+                    <td>Pune Institute of Computer Technology</td>
+                    <td>Saviour: Automated All Terrain Rescue Robot</td>
+                    <td>Prof. Shridhar Sudarshan Dudam</td>
+                    <td>Umang Deshpande,<br>Snehal Mangire,<br>Mansi Deshpande,<br>Aditya S Bomale</td>                    
+                  </tr>
+                  <tr>
+                    <td>IMS Engineering College</td>
+                    <td>Smart Trolley</td>
+                    <td>Mr. Sujeet Kumar</td>
+                    <td>Mohd Zaid,<br>Niket Vohra,Shivam Parashar,<br>Mohd Manazir</td>
+                  </tr>
+                  <tr>
+                    <td>Prof. Ram Meghe College of Engineering & Management</td>
+                    <td>Unmanned Air Vehicle For Crop Health Monitoring</td>
+                    <td>Mr. Sagar Dilip Nimkar</td>
+                    <td>Akshay Gulhane,<br>Nilesh R. Sabe,<br>Sakshi Sanjayrao Sangole,<br>Shraddha Belorkar</td>
+                  </tr>
+                  <tr>
+                    <td>Shri Jayachamarajendra College of Engineering</td>
+                    <td>Wifi/bluetooth Controlled Smart Appliances With Energy Monitoring</td>
+                    <td>Prof.  Shashidhar R</td>
+                    <td>Murugendra Bandrad,<br>Manoj R Poojari,<br>Rameshwari</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </section>
+          <!-- ****2017**** -->
+
+
+
+          <!-- ****2016**** -->
+          <section id="eYIC-2016" class="group">
+            <h1>eYIC - 2016</h1>
+            <div id="eyic_2016_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class='row'>
+                <div class='col-lg-12'>
+                  <dl class="dl-horizontal">
+                    <dt >Details</dt>
+                    <dd class="text-justify">
+                      <ul>
+                        <li>181 ideas proposed </li>
+                        <li>44 teams shortlisted for implementation</li>
+                        <li>11 teams exhibited their projects in <a href="https://www.e-yantra.org/eys">e-Yantra Symposium (eYS)</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2016_winners" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-trophy"></i>Finalists & Winners</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Judges Choice</td>
+                    <td>Mar Ephraem College of Engineering and Technology</td>
+                    <td>Intelligent Car Parking Robot</td>
+                    <td>Abhilash R</td>
+                    <td>Abel Jacob,<br>Abin T John,<br>Baby Paul P J,<br>Shijin Raj S</td>
+                  </tr>
+                  <tr>
+                    <td>Best Demonstration and Presentation</td>
+                    <td>Mar Ephraem College of Engineering and Technology</td>
+                    <td>No Parking Area Clearing Robot</td>
+                    <td>Mr. Y.S John Pradeeb</td>
+                    <td>Varghese Sunny,<br>Jerin George,<br>Shejin A Vaidyan,<br>Joseph Paulose</td>
+                  </tr>
+                  <tr>
+                    <td>Best Demonstration and Presentation</td>
+                    <td>Yadavrao Tasgaonkar College of Engineering & Management</td>
+                    <td>Automated Security System</td>
+                    <td>Prof. Vijay Maruti Shelake</td>
+                    <td>Anuj Kadam,<br>Ashwin Mahatkar,<br>Akash Kumar,<br>Shah Tushar Devendra</td>
+                  </tr>
+                  <tr>
+                    <td>Most Realistic</td>
+                    <td>Vivekanand Education Society's Institute of Technology</td>
+                    <td>Pothole Management System Using Image Processing and Geotagging</td>
+                    <td>Mrs. Sharmila Sengupta</td>
+                    <td>Madhura Katageri,<br>Manisha Mandal,<br>Mansi Gandhi,<br>Navin Koregaonkar</td>
+                  </tr>
+                  <tr>
+                    <td>Best Hardware Design</td>
+                    <td>Ramrao Adik Institute of Technology, Nerul</td>
+                    <td>Smart Suspension</td>
+                    <td>Prof. Trupti Agarkar</td>
+                    <td>Kartikeyan V,<br>Tanmay Pradip Bonde,<br>Chinmay Sandesh Patil,<br>Mukesh Prajapati</td>
+                  </tr>
+                  <tr>
+                    <td>Closest-to-Market</td>
+                    <td>Pune Institute of Computer Technology</td>
+                    <td>Landmine Detecting Rover</td>
+                    <td>Prof. Shridhar Dudam</td>
+                    <td>Atharva Anil Mahindrakar,<br>Shruti Kothadia,<br>Prasad Padir</td>
+                  </tr>
+                  <tr>
+                    <td>Most Innovative Solution</td>
+                    <td>Fr. Conceicao Rodrigues College of Engineering, Bandra</td>
+                    <td>Autonomous Shopping Robot</td>
+                    <td>Mrs. Kranti Wagle</td>
+                    <td>Shubhangi Matey,<br>Khan Mohammad Imran Abubakar,<br>Jitesh Gupta,<br>Rohit Khuspe</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2016_Finalist" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-road"></i>Other Finalists</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>College</th>
+                      <th>Project</th>
+                      <th>Mentor</th>
+                      <th>Members</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Ajay Kumar Garg Engineering College</td>
+                    <td>Unmanned Train With Automatic Signalling In Indian Railways</td>
+                    <td>Ms. Suvarna Mujumdar</td>
+                    <td>Shobhit Khandelwal,<br>Sandesh Pandey,<br>Nikhil Kushwaha,<br>Saurabh Verma</td>
+                  </tr>
+                  <!-- <tr>
+                    <td>Government College of Technology</td>
+                    <td>Teleoperated Pneumatic Arm</td>
+                    <td>Dr. J.C. Miraclin Joyce Pamila</td>
+                    <td>Venktesh V,<br>Muthamil,<br>Bharathakavi D,<br>Prasanth P</td>
+                  </tr> -->
+                  <tr>
+                    <td>Mit Academy of Engineering</td>
+                    <td>Caves And Mining</td>
+                    <td>Mrs. Savita R. Pawar</td>
+                    <td>Sanket Kalwar,<br>Gourav Singh,<br>Harshit Dubey,<br>Sumit Ranjan</td>
+                  </tr>
+                  <tr>
+                    <td>Government College Of Technology</td>
+                    <td>Intelligent Bot With Human Conscience</td>
+                    <td>Dr. J.C. Miraclin Joyce Pamila</td>
+                    <td>Venktesh V,<br>Muthamil,<br>Bharathakavi D,<br>Prasanth P</td>
+                  </tr>
+                  <tr>
+                    <td>Ajay Kumar Garg Engineering College</td>
+                    <td>Smart Touch Control Panel</td>
+                    <td>Mr. Ashish Gupta</td>
+                    <td>Abhinavan Sharma,<br>Sandeep Yadav,<br>Harshit Mathur</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </section>
+          <!-- ****2016**** -->
+ 
+          <!-- ****2015**** -->
+          <section id="eYIC-2015" class="group">
+            <h1>eYIC - 2015</h1>
+            <div id="eyic_2015_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class='row'>
+                <div class='col-lg-12'>
+                  <dl class="dl-horizontal">
+                    <dt >Details</dt>
+                    <dd class="text-justify">
+                      <ul>
+                        <li>104 ideas proposed </li>
+                        <li>30 teams shortlisted for implementation</li>
+                        <li>11 teams exhibited their projects in <a href="https://www.e-yantra.org/eys">e-Yantra Symposium (eYS)</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <div id="eyic_2015_winners" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-fw fa-trophy"></i> Winners</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                  <tr>
+                    <th>Position </th>
+                    <th>College</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1<sup>st</sup></td>
+                    <td>Knowledge Institute of Technology</td>
+                  </tr>
+                  <tr>
+                    <td>2<sup>nd</sup></td>
+                    <td>Jawaharlal Nehru National College of Engineering</td>
+                  </tr>
+                  <tr>
+                    <td>3<sup>rd</sup></td>
+                    <td>Government College of Technology, Coimbatore, TamilnaduAgni College Of Technology, Chennai</td>
+                  </tr>
+                  <tr>
+                    <td>Special</td>
+                    <td>MIT Academy of Engineering, Alandi</td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>Position</th>
+                    <th>College</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+            <div id="eyic_2015_projects" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class=" fa fa-book"></i> Projects</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover ">
+                  <thead>
+                  <tr>
+                    <th>Id. </th>
+                    <th>Project</th>
+                    <th>Mentor</th>
+                    <th>Members</th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                    <td>1</td>
+                    <td>Advanced Line Following Robot Using Quick Response (QR) code Addressing Technique</td>
+                    <td>
+                      Mr. Manivannan.L
+                    </ul>
+                    </td>
+                    <td>Karthik Raja.K,Saravanan.R,Karthick.S,Vasanth Kumar.U</td>
+                   </tr>
+
+                    <tr>
+                    <td>2</td>
+                    <td> Autonomous Tree Climbing Robot</td>
+                    <td>
+                        Benak Patel M P
+                    </ul>
+                    </td>
+                    <td>Ayesha Tabassum S N,Harshitha S A,Smitha N,Benak Patel M P</td>
+                  </tr>
+
+                  <tr>
+                    <td>3</td>
+                    <td>Legmate Robo-human Intelligence</td>
+                    <td>
+                      Dr. S. Gopi
+                      </ul>
+                    </td>
+                    <td>B.Praveenraj,G.Ilamparithy,S.Rajakumar,R.Rahul</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>The Cleaning Spider</td>
+                    <td>
+                      Mrs. Savita Pawar
+                      </ul>
+                    </td>
+                    <td>Girish khule,Vinayak Karne,Rushikesh Pawar</td>
+                  </tr>
+                 </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Id. </th>
+                    <th>Project</th>
+                    <th>Mentor</th>
+                    <th>Members</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </section>
+          <!-- ****2015**** -->
+        </div>
+
+
+        <nav class="hidden-xs hidden-sm col-md-2 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked">
+          <li>
+              <a href="eyic.htm#eYIC 2020">eYIC 2019-20</a>
+              <ul class="nav nav-stacked">
+                <li><a href="eyic.htm#eyic_2020_overview">2019-20_overview</a></li>
+                <li><a href="eyic.htm#eyic_2020_winners">2019-20_winners</a></li>
+                <li><a href="eyic.htm#eyic_2020_Finalist">2019-20_finalist</a></li>
+                
+              </ul>
+            </li>
+            <li>
+              <a href="eyic.htm#eYIC-2019">eYIC - 2019</a>
+              <ul class="nav nav-stacked">
+                <li><a href="eyic.htm#eyic_2019_overview">2019_overview</a></li>
+                <li><a href="eyic.htm#eyic_2019_winners">2019_winners</a></li>
+                <li><a href="eyic.htm#eyic_2019_Finalist">2019_finalist</a></li>
+                
+              </ul>
+            </li>
+          <li>
+              <a href="https://www.e-yantra.org/eyic.htm#eYIC-2018">eYIC - 2018</a>
+              <ul class="nav nav-stacked">
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2018_overview">2018_overview</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2018_winners">2018_winners</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2018_Finalist">2018_finalist</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2018_Mentor">2018_Mentors</a></li>
+              </ul>
+            </li>
+
+          <li>
+              <a href="https://www.e-yantra.org/eyic.htm#eYIC-2017">eYIC - 2017</a>
+              <ul class="nav nav-stacked">
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2017_overview">2017_overview</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2017_winners">2017_winners</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2017_Finalist">2017_finalist</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.e-yantra.org/eyic.htm#eYIC-2016">eYIC - 2016</a>
+              <ul class="nav nav-stacked">
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2016_overview">2016_overview</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2016_winners">2016_winners</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2016_Finalist">2016_finalist</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.e-yantra.org/eyic.htm#eYIC-2015">eYIC - 2015</a>
+              <ul class="nav nav-stacked">
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2015_overview">2015_overview</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2015_winners">2015_winners</a></li>
+                <li><a href="https://www.e-yantra.org/eyic.htm#eyic_2015_projects">2015_projects</a></li>
+              </ul>
+              </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.col -->
+    </div>
+
+
+  </div>
+    <!-- /.container -->
+    </main>
+
+  <footer class=" foot page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" style="">
+          <!-- <div>
+            <strong><font margin-left:50px; size="4px" style ="height:50px";>VISITORS</font></strong>
+          </div> -->
+          <div class="address-footer">
+                   <!--                        <font size="2px">No of visitors: 1 </font><br>
+
+
+                      
+                      <font size="2px">Unique visitors: 15323 </font><br> -->
+          </div>
+        </div>
+        <div class="col-md-12 text-center">
+          <p>IIT Bombay envisages the <strong>'e-Yantra'</strong> platform to harness the intellectual talent of young India to create utility based robotic applications for usage across variety of applications such as: agriculture, manufacturing, defense, home, city maintenance and services industries. <!-- <a href="http://wwww.iitb.ac.in/CSEYantra/Yantra.html" target="_blank">Read More<i class="fa fa-fw fa-external-link"></i></a> -->
+          </p>
+
+         <!--  <div class="col-sm-3 col-md-3">
+            <img width="200" height="150" src="img/IITBlogo.png" alt="IITB Logo">
+          </div>  -->
+         
+        </div>
+        <div class="col-md-4">
+        <p>
+            <address>
+             <strong>ERTS Lab</strong>
+             SIC 102, KReSIT Building,<br>
+             CSE Department<br>
+             IIT Bombay, Powai,<br>
+             Mumbai - 400076, Maharashtra.
+            </address> 
+        </p>
+             
+              <!-- <address>For eYIC:<a href="mailto:eyic@e-yantra.org">eyic@e-yantra.org</a></address>
+              <address >For eYRC:<a href="mailto:helpdesk@e-yantra.org">helpdesk@e-yantra.org</a></address>
+              <address >For other queries:<a href="mailto:support@e-yantra.org">support@e-yantra.org</a></address>   -->     
+        </div>
+      </div>
+      <!-- e-Yantra Logo in Footer -->
+       <div class="row">
+        <div class="col-md-6 text-center">
+            <!-- <img width="250" height="120" src="img/eYantra_logo.svg" alt="e-Yantra Logo"> -->
+            <img alt="Brand" src="https://www.e-yantra.org/img/MoE.png" width="" >
+        </div>
+        <div class="col-md-6 text-center">
+            <img width="120" height="120" src="https://www.e-yantra.org/img/iitblogo.png" alt="IITB Logo">
+        </div>
+      </div>
+
+     <!--  <div class="row">
+        <div class="col-md-12 text-center">
+          <img alt="Brand" src="img/mhrd.png" width="500" >
+        </div>
+      </div> -->
+      <!-- MHRD and IITB Logo -->
+     
+
+      <div class="row">
+        <div class="col-md-12">
+        <br>
+          <div class="footer-copyright text-center">The e-Yantra name and logo is a trademark of IIT Bombay. The name and logo should not be reproduced without express consent of IIT Bombay.
+          </div>
+          <div class="footer-copyright text-center">Copyright &copy; 2021 e-Yantra. All rights reserved.<br/>
+          <div class="links-footer"><a href="https://www.e-yantra.org/contact-us">CONTACT US</a> &#8226; <a href="https://www.e-yantra.org/team">TEAM</a> <!-- &#8226; <a href="faq">FAQ</a> --> 
+                      </div>  
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+      
+  </footer>
+
+    
+    <!-- jQuery 2.1.4 -->
+    <!--  <script src="bower_components/jquery/dist/jquery.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.5 JS -->
+    <!--  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.table').DataTable({
+      "pagingType": "simple"
+    });
+  } );
+</script>
+    <!-- Custom JS -->
+    <script src="https://www.e-yantra.org/js/script.min.js"></script>
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-65603803-1', 'auto');
+      ga('send', 'pageview');
+
+    </script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145861739-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145861739-1');
+    </script>
+</body>
+</html>

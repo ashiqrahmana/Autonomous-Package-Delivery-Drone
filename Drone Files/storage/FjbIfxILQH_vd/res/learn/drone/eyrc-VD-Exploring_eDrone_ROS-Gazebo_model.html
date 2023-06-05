@@ -1,0 +1,495 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Understanding eDrone model - eYRC 2020-21: Vitaraṇa Drone (VD)</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- 
+        <link rel="icon" href="../../../favicon.svg">
+         -->
+        
+        <link rel="shortcut icon" href="../../../favicon.png">
+        
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../home/home_VD.html"><strong aria-hidden="true">1.</strong> Home</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../home/bb_vd.html"><strong aria-hidden="true">1.1.</strong> Bulletin Board</a></li><li class="chapter-item "><a href="../../home/changelog_vd.html"><strong aria-hidden="true">1.2.</strong> Changelog</a></li></ol></li><li class="chapter-item expanded "><a href="../learn.html"><strong aria-hidden="true">2.</strong> Learn</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../resources/learn-books.html"><strong aria-hidden="true">2.1.</strong> Books</a></li><li class="chapter-item "><a href="../linux/learn-linux.html"><strong aria-hidden="true">2.2.</strong> Linux</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../linux/learn-linux-file-system.html"><strong aria-hidden="true">2.2.1.</strong> Linux File System Directories</a></li><li class="chapter-item "><a href="../linux/learn-linux-file-permissions.html"><strong aria-hidden="true">2.2.2.</strong> Linux File Permissions</a></li><li class="chapter-item "><a href="../linux/learn-linux-command.html"><strong aria-hidden="true">2.2.3.</strong> Linux Commands</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-intro.html"><strong aria-hidden="true">2.3.</strong> ROS Basics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-installation.html"><strong aria-hidden="true">2.3.1.</strong> ROS Installation</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-workspace.html"><strong aria-hidden="true">2.3.2.</strong> ROS Workspace</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-create-workspace.html"><strong aria-hidden="true">2.3.2.1.</strong> Create a Catkin Workspace</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-pkg.html"><strong aria-hidden="true">2.3.3.</strong> ROS Package</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-create-pkg.html"><strong aria-hidden="true">2.3.3.1.</strong> Create a ROS Package</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-nodes.html"><strong aria-hidden="true">2.3.4.</strong> ROS Nodes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-create-node.html"><strong aria-hidden="true">2.3.4.1.</strong> Create a ROS Node</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-nodes-cmd-rosrun.html"><strong aria-hidden="true">2.3.4.2.</strong> Command: rosrun</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-nodes-cmd-rosnode.html"><strong aria-hidden="true">2.3.4.3.</strong> Command: rosnode</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-master.html"><strong aria-hidden="true">2.3.5.</strong> ROS Master</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-parameter-server.html"><strong aria-hidden="true">2.3.6.</strong> ROS Parameter Server</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-parameter-yaml.html"><strong aria-hidden="true">2.3.6.1.</strong> Load Parameters using YAML file</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-parameter-eg1.html"><strong aria-hidden="true">2.3.6.2.</strong> Example #1: ROS Node to Get and Set Parameters</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch.html"><strong aria-hidden="true">2.3.7.</strong> ROS Launch Files</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-create.html"><strong aria-hidden="true">2.3.7.1.</strong> Create a ROS Launch File</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-eg1.html"><strong aria-hidden="true">2.3.7.2.</strong> Example #1: Launch two ROS Nodes</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-eg2.html"><strong aria-hidden="true">2.3.7.3.</strong> Example #2: Launch Turtle in Forest</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-eg3.html"><strong aria-hidden="true">2.3.7.4.</strong> Example #3: Load YAML</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-eg4.html"><strong aria-hidden="true">2.3.7.5.</strong> Example #4: Launch Shell Script and ROS Node</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm.html"><strong aria-hidden="true">2.3.8.</strong> ROS Communication</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic.html"><strong aria-hidden="true">2.3.8.1.</strong> ROS Topics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic.html"><strong aria-hidden="true">2.3.8.1.1.</strong> Command: rostopic</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic-list.html"><strong aria-hidden="true">2.3.8.1.1.1.</strong> list</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic-type.html"><strong aria-hidden="true">2.3.8.1.1.2.</strong> type, info and rosmsg</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic-pub.html"><strong aria-hidden="true">2.3.8.1.1.3.</strong> pub</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic-echo.html"><strong aria-hidden="true">2.3.8.1.1.4.</strong> echo</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-eg1.html"><strong aria-hidden="true">2.3.8.1.2.</strong> Example #1: Pub-Sub with Custom Message</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-services.html"><strong aria-hidden="true">2.3.8.2.</strong> ROS Services</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-services-create-srv.html"><strong aria-hidden="true">2.3.8.2.1.</strong> Create a srv file</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-services-testing.html"><strong aria-hidden="true">2.3.8.2.2.</strong> Test ROS Services - Server and Client</a></li></ol></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-misc.html"><strong aria-hidden="true">2.3.9.</strong> Miscellaneous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-nodes-rospy.html"><strong aria-hidden="true">2.3.9.1.</strong> Overview of rospy</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-rqt-graph.html"><strong aria-hidden="true">2.3.9.2.</strong> rqt_graph</a></li></ol></li></ol></li><li class="chapter-item "><a href="../control_systems/overview_controls.html"><strong aria-hidden="true">2.4.</strong> Control Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../control_systems/understanding_pid.html"><strong aria-hidden="true">2.4.1.</strong> Understanding PID</a></li></ol></li><li class="chapter-item "><a href="../image_processing/image_processing.html"><strong aria-hidden="true">2.5.</strong> Image Processing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../image_processing/QR_code_detection.html"><strong aria-hidden="true">2.5.1.</strong> QR detection</a></li><li class="chapter-item "><a href="../image_processing/cascades_training_and_usage.html"><strong aria-hidden="true">2.5.2.</strong> Cascade Classifiers</a></li></ol></li><li class="chapter-item expanded "><a href="basic_Drone_Motion.html"><strong aria-hidden="true">2.6.</strong> Quadcopters</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html" class="active"><strong aria-hidden="true">2.6.1.</strong> Understanding eDrone model</a></li><li class="chapter-item "><a href="pick_drop_mechanism.html"><strong aria-hidden="true">2.6.2.</strong> Pick/drop mechanism of eDronel</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/VD_path_navigation.html"><strong aria-hidden="true">2.6.3.</strong> Obstacle Avoidance and path planning</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/eyrc.html"><strong aria-hidden="true">3.</strong> eYRC 2020-21</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/rulebook/rulebook.html"><strong aria-hidden="true">3.1.</strong> Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/rulebook/intro.html"><strong aria-hidden="true">3.1.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/theme_desc.html"><strong aria-hidden="true">3.1.2.</strong> Theme Description</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/arena.html"><strong aria-hidden="true">3.1.3.</strong> Arena</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/soft_specs.html"><strong aria-hidden="true">3.1.4.</strong> Software Specifications</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/theme_flow.html"><strong aria-hidden="true">3.1.5.</strong> Theme Flow</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/theme_rules.html"><strong aria-hidden="true">3.1.6.</strong> Theme Rules</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/judging_and_scoring_rules.html"><strong aria-hidden="true">3.1.7.</strong> Judging and Scoring Rules</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/eyrc-deadlines.html"><strong aria-hidden="true">3.2.</strong> Deadlines</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0.html"><strong aria-hidden="true">3.3.</strong> Task 0</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-prereq.html"><strong aria-hidden="true">3.3.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-installations.html"><strong aria-hidden="true">3.3.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-learn.html"><strong aria-hidden="true">3.3.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-problem-statement.html"><strong aria-hidden="true">3.3.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-expected-output.html"><strong aria-hidden="true">3.3.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-submission.html"><strong aria-hidden="true">3.3.4.</strong> Submission Instruction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-sub-recording.html"><strong aria-hidden="true">3.3.4.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-submission-make.html"><strong aria-hidden="true">3.3.4.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1.html"><strong aria-hidden="true">3.4.</strong> Task 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-prereq.html"><strong aria-hidden="true">3.4.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-installations.html"><strong aria-hidden="true">3.4.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-learn.html"><strong aria-hidden="true">3.4.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-problem-statement.html"><strong aria-hidden="true">3.4.2.</strong> Problem Statement</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1A-problem-statement.html"><strong aria-hidden="true">3.4.2.1.</strong> Task 1A</a></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1B-problem-statement.html"><strong aria-hidden="true">3.4.2.2.</strong> Task 1B</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-submission.html"><strong aria-hidden="true">3.4.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-sub-recording.html"><strong aria-hidden="true">3.4.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-submission-make.html"><strong aria-hidden="true">3.4.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2.html"><strong aria-hidden="true">3.5.</strong> Task 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-prereq.html"><strong aria-hidden="true">3.5.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-installations.html"><strong aria-hidden="true">3.5.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-learn.html"><strong aria-hidden="true">3.5.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-problem-statement.html"><strong aria-hidden="true">3.5.2.</strong> Problem Statement</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2A-problem-statement.html"><strong aria-hidden="true">3.5.2.1.</strong> Task 2A</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2B-problem-statement.html"><strong aria-hidden="true">3.5.2.2.</strong> Task 2B</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2C-problem-statement.html"><strong aria-hidden="true">3.5.2.3.</strong> Task 2C</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-submission.html"><strong aria-hidden="true">3.5.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-sub-recording.html"><strong aria-hidden="true">3.5.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-submission-make.html"><strong aria-hidden="true">3.5.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3.html"><strong aria-hidden="true">3.6.</strong> Task 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-prereq.html"><strong aria-hidden="true">3.6.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-installations.html"><strong aria-hidden="true">3.6.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-learn.html"><strong aria-hidden="true">3.6.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-problem-statement.html"><strong aria-hidden="true">3.6.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-submission.html"><strong aria-hidden="true">3.6.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-sub-recording.html"><strong aria-hidden="true">3.6.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-submission-make.html"><strong aria-hidden="true">3.6.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4.html"><strong aria-hidden="true">3.7.</strong> Task 4</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-prereq.html"><strong aria-hidden="true">3.7.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-installations.html"><strong aria-hidden="true">3.7.1.1.</strong> Installations</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-problem-statement.html"><strong aria-hidden="true">3.7.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-submission.html"><strong aria-hidden="true">3.7.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-sub-recording.html"><strong aria-hidden="true">3.7.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-submission-make.html"><strong aria-hidden="true">3.7.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5.html"><strong aria-hidden="true">3.8.</strong> Task 5</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-prereq.html"><strong aria-hidden="true">3.8.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-installations.html"><strong aria-hidden="true">3.8.1.1.</strong> Installations</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-problem-statement.html"><strong aria-hidden="true">3.8.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-submission.html"><strong aria-hidden="true">3.8.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-sub-recording.html"><strong aria-hidden="true">3.8.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-submission-make.html"><strong aria-hidden="true">3.8.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6.html"><strong aria-hidden="true">3.9.</strong> Task 6</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-prereq.html"><strong aria-hidden="true">3.9.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-instructions.html"><strong aria-hidden="true">3.9.1.1.</strong> Instructions</a></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-installations.html"><strong aria-hidden="true">3.9.1.2.</strong> Installations</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-problem-statement.html"><strong aria-hidden="true">3.9.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-submission.html"><strong aria-hidden="true">3.9.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-sub-recording.html"><strong aria-hidden="true">3.9.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-submission-make.html"><strong aria-hidden="true">3.9.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/coding_standards/coding_standards.html"><strong aria-hidden="true">3.10.</strong> Coding Standards</a></li></ol></li><li class="chapter-item "><a href="../../downloads/downloads.html"><strong aria-hidden="true">4.</strong> Downloads</a></li><li class="chapter-item "><a href="../../help-feedback/help-feedback-intro.html"><strong aria-hidden="true">5.</strong> Help &amp; Feedback</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../help-feedback/benchmark.html"><strong aria-hidden="true">5.1.</strong> Computer Benchmark Form</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- <html>
+	<head>
+	<style>
+		
+	@media only screen and (max-width: 600px) {
+	  .eyrc_ckt{
+			display:none;
+		}
+	}
+
+	</style>
+	</head>
+	<body>
+		<div>
+		<center></center>
+			<div style="display:flex; justify-content:space-between;padding:10px;padding-top:0">
+				<div >
+					<img src="http://mooc.e-yantra.org/img/eYantra_logo.svg" alt="e-yantra_logo" height="40px" style="padding:10px 15px;" />
+				</div>
+				<div>
+					<img src="https://raw.githubusercontent.com/kalindkaria/typora-md-assets/master/maze_bot/assets/eyrc-header.svg" height="80px"  class="eyrc_ckt">
+				</div>
+				<div style="font-weight:900;font-size:20px;text-align:center;padding:10px 15px">
+					Robotics Competition<br>
+					2020-21
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
+
+
+ -->
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div style="width:100%">
+                        <html>
+	<head>
+	<style>
+		
+	@media only screen and (max-width: 600px) {
+	  .eyrc_ckt{
+			display:none;
+		}
+	}
+
+	</style>
+	</head>
+	<body>
+		<div>
+		<center></center>
+			<div style="display:flex; justify-content:space-between;padding:10px;padding-top:0">
+				<div >
+					<img src="../../../../../img/eYantra_logo.svg" alt="e-yantra_logo" height="40px" style="padding:10px 15px;" />
+				</div>
+				<div>
+					<img src="../../../../../raw.githubusercontent.com/kalindkaria/typora-md-assets/master/maze_bot/assets/eyrc-header.svg" height="80px"  class="eyrc_ckt">
+				</div>
+				<div style="font-weight:900;font-size:20px;text-align:center;padding:10px 15px">
+					Robotics Competition<br>
+					2020-21
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
+
+
+
+                    </div>
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">eYRC 2020-21: Vitaraṇa Drone (VD)</h1>
+
+                    <div class="right-buttons">
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#exploring-edrone-ros-gazebo-model" id="exploring-edrone-ros-gazebo-model"> Exploring eDrone ROS-Gazebo model</a></h1>
+<p>In this section, we will explore the sensors &amp; actuators present on <em>eDrone</em> and  how to get the values from sensors and give command the rotate the propellers.</p>
+<p><strong>NOTE</strong>: Before proceeding further, make sure you have followed the installation instructions for Task-1 provided <a href="../../eyrc_VD/task1/eyrc-VD-task1-installations.html">here</a>.</p>
+<h3><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#sensors" id="sensors">Sensors</a></h3>
+<h4><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#inertial-measurement-unit-imu" id="inertial-measurement-unit-imu">Inertial Measurement Unit (IMU)</a></h4>
+<ul>
+<li>
+<p>An Inertial Measurement Unit (IMU) is an electronic device that measures and reports a body's specific force, angular rate, and sometimes the orientation of the body, using a combination of accelerometers, gyroscopes, and sometimes magnetometers. IMUs are typically used to maneuver aircraft  including unmanned aerial vehicles (UAVs).</p>
+</li>
+<li>
+<p>Typically complex filtering techniques are used to estimate the orientation and heading of the aircraft by fusing readings from all the above mentioned sensors. The filtering techniques are beyond the scope of this task.</p>
+</li>
+<li>
+<p>The <em>eDrone</em> also has an IMU which directly publishes the filtered data ie. the orientation and heading of   the <em>eDrone</em> over a  <em>rostopic</em> named <code>/edrone/imu/data</code>.</p>
+</li>
+<li>
+<p>To check the IMU data being published from the sensor, you can first launch the gazebo world with <em>eDrone</em> using the command in previous section and then to get sensor data, type the following command.</p>
+<pre><code class="language-bash">rostopic echo /erone/imu/data
+</code></pre>
+<center><img width="960px" height="490px" src="media/images/rostopic_echo_imu.png" alt="rostopic_echo_imu" border="0"/></center> 
+</li>
+<li>
+<p>Bonus: If you want to get the info of the topic <code>/edrone/imu/data</code> then type </p>
+<pre><code class="language-bash">rostopic info /edrone/imu/data
+</code></pre>
+<center><img width="960px" height="200px" src="media/images/rostopic_info_imu.png" alt="rostopic_info_imu" border="0"/></center>
+<p>As you can see, the msg type used by this <em>rostopic</em> is <code>sensor_msgs/Imu</code></p>
+<p>To get more info about the msg type, use the command</p>
+<pre><code class="language-bash">rosmsg show sensor_msgs/Imu
+</code></pre>
+<center><img width="960px" height="450px" src="media/images/rosmsg_show_imu.png" alt="Figure 5" border="0"/></center>
+</li>
+<li>
+<p>To know the rate at which the IMU sensor in gazebo publishes data, you can type </p>
+<pre><code class="language-bash">rostopic hz /edrone/imu/data
+</code></pre>
+<center><img width="960px" height="457px" src="media/images/rostopic_hz_imu.png" alt="rostopic_hz_imu" border="0"/></center> 
+</li>
+</ul>
+<h4><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#global-positioning-system-sensor-gps-sensor" id="global-positioning-system-sensor-gps-sensor">Global Positioning System sensor (GPS sensor)</a></h4>
+<ul>
+<li>
+<p>GPS sensors are receivers with antennas that use a satellite-based navigation system with a network of multiple satellites in orbit around the earth to provide position, velocity, and timing information.</p>
+</li>
+<li>
+<p>However a GPS sensor on <em>eDrone</em> is simulated in gazebo which publishes the latitude, longitude and altitude data along with other data but we are concerned about the position of the <em>eDrone</em> ie, latiude, longitude and altitude.</p>
+</li>
+<li>
+<p>The GPS sensor of <em>eDrone</em> publishes data on the topic <code>/edrone/gps</code></p>
+</li>
+<li>
+<p>To get check the data being published by the <code>/edrone/gps</code> topic, type</p>
+<pre><code class="language-bash">rostopic echo /edrone/gps
+</code></pre>
+<center><img width="960px" height="620px" src="media/images/rostopic_echo_gps.png" alt="rostopic_echo_gps" border="0"/></center> 
+</li>
+<li>
+<p>To get more info of the topic, msg type and update rate of <code>/edrone/gps</code> you can follow the similar steps as explained in the IMU section.</p>
+</li>
+</ul>
+<h4><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#range-finder-bottom" id="range-finder-bottom">Range finder-Bottom</a></h4>
+<ul>
+<li>
+<p>Usually UAV's or drones have a range finder (usually SONAR or LiDAR) at the bottom that measures the distance of the drone from the ground/obstacle.</p>
+</li>
+<li>
+<p>The <em>eDrone</em> also has a bottom facing range finder to measure the distance of <em>eDrone</em> from the ground.</p>
+<p><strong>NOTE</strong>: The altitude reading from the GPS sensor is above the sea level or you can consider it as the altitude with reference to global co-ordinate system. Let us consider a case when the <em>eDrone</em> is exactly 1m above a building that is 10m tall, the GPS altitude will give the reading of 11m whereas the range finder will give the actual distance of the obstacle (terrace of the building) from the <em>eDrone</em>.</p>
+</li>
+<li>
+<p>The range finder at the bottom publishes ROS messages on the topic<code>/edrone/range_finder_bottom</code></p>
+</li>
+<li>
+<p>To get check the data being published by the <code>/edrone/range_finde_bottom</code> topic, type</p>
+<pre><code class="language-bash">rostopic echo /edrone/range_finder_bottom
+</code></pre>
+<center><img width="960px" height="640px" src="media/images/rostopic_echo_range_bottom.png" alt="rostopic_echo_range_nottom" border="0"/></center> 
+</li>
+<li>
+<p>To get more info of the topic, msg type and update rate of <code>/edrone/range_finder_bottom</code> you can follow the similar steps as explained in the IMU section.</p>
+</li>
+<li>
+<p><strong>Hint</strong>: In future, you will be accessing the ROS messages using your python scripts. The msg files are like packets with many variables of different data types. The msg <code>sensor_msgs/LaserScan</code> has a variable array named <code>ranges</code>, this is an array of float data type. Use this information while you implement your tasks.</p>
+<center><img width="960px" height="325px" src="media/images/rosmsg_show_laserscan.png" alt="rosmsg_show_laserscan" border="0"/></center> 
+</li>
+</ul>
+<h4><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#range-finder-top" id="range-finder-top">Range finder-top</a></h4>
+<ul>
+<li>
+<p>Some autonomous UAV's or drones have range finders facing front, right, back and left to detect any obstacle and avoid collision.</p>
+</li>
+<li>
+<p>The <em>eDrone</em> also has 4 such range finders facing  front, right, back and left to avoid collision</p>
+</li>
+<li>
+<p>The range finder is placed at the top and hence lets call it as range finder-top to distinguish from the range finder-bottom.</p>
+</li>
+<li>
+<p>The range finder-top publishes ROS messages on the topic <code>/edrone/range_finder_top</code></p>
+</li>
+<li>
+<p>To get check the data being published by the <code>/edrone/range_finde_top</code> topic, type</p>
+<pre><code class="language-bash">rostopic echo /edrone/range_finder_top
+</code></pre>
+<center><img width="960px" height="639px" src="media/images/rostopic_echo_range_top.png" alt="rostopic_echo_range_finder_top" border="0"/></center> 
+</li>
+</ul>
+<h4><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#camera" id="camera">Camera</a></h4>
+<ul>
+<li>
+<p>The <em>eDrone</em> model has a down facing camera for image processing tasks. The camera feed will be used in future tasks for accurate landing and picking boxes.</p>
+</li>
+<li>
+<p>The specifications of the camera used are :</p>
+<ul>
+<li>Field of View (FoV) : 80°</li>
+<li>Resolution : 400x400</li>
+<li>Frame rate : 30</li>
+</ul>
+<p>NOTE: The resolution is purposely kept low so that it does not load the CPU resource of your computer.</p>
+</li>
+<li>
+<p>The frames from the camera are being published on the <em>rostopic</em> <code>/edrone/camera/image_raw</code></p>
+</li>
+<li>
+<p>To see the preview of the image from the camera, type</p>
+<pre><code class="language-bash">rosrun image_view image_viewimage:='/edrone/camera/image_raw'
+</code></pre>
+<p>This will open a new window showing the video stream of the camera</p>
+</li>
+</ul>
+<h3><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#actuators" id="actuators">Actuators</a></h3>
+<h4><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#motors-and-propellers" id="motors-and-propellers">Motors and propellers</a></h4>
+<ul>
+<li>
+<p>The <em>eDrone</em> has 4 propellers attached to 4 different motors.</p>
+</li>
+<li>
+<p>Two motors spin in clockwise direction and two motors spin in counterclockwise direction.</p>
+<center><img width="400px" height="400px" src="media/images/eDrone_prop.png" alt="eDrone_prop" border="0"/></center> 
+</li>
+<li>
+<p>The motors used in real drones are usually Brush-less DC (BLDC) motors which are driven by Electronic Speed Controllers (ESC's). </p>
+</li>
+<li>
+<p>The flight controller present on the drones send the data to the ESC's in the form of Pulse Width Modulated (PWM) signals, however the motors used on <em>eDrone</em> are simulated but still to keep the experience of the simulation realistic, the <em>eDrone</em> model also communicates in PWM format of 10 bits, which means, you can set the speed of motors by sending data ranging from 0 to 2<sup>10</sup> - 1 ie. 0 to 1023.</p>
+</li>
+<li>
+<p>The <em>eDrone</em> accepts the PWM values for setting the speed of motors over the <em>rostopic</em> <code>/edrone/pwm</code></p>
+</li>
+<li>
+<p>To know more about the topic and message types, use </p>
+<pre><code class="language-bash">rostopic info /edrone/pwm
+</code></pre>
+<pre><code class="language-bash">rosmsg show vitarana_drone/prop_speed
+</code></pre>
+</li>
+<li>
+<p>Now lets try to fly the <em>eDrone</em> by publishing the PWM values for the speed of 4 motors by typing</p>
+<pre><code class="language-bash">rostopic pub /edrone/pwm vitarana_drone/prop_speed &quot;prop1: 512.0
+prop2: 512.0
+prop3: 512.0
+prop4: 512.0&quot; 
+</code></pre>
+<p>Voila, you just made the <em>eDrone</em> fly ! </p>
+<p>Now experiment publishing different and unequal values to the propellers and observe how the <em>eDrone</em> performs rotation in Roll and Pitch axes.</p>
+</li>
+</ul>
+<h3><a class="header" href="eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html#tip" id="tip">Tip</a></h3>
+<ul>
+<li>
+<p>If you want to see the IMU, GPS, Range finder's or Camera readings while you move the <em>eDrone</em>'s position and orientation, use the static parameter to launch the <em>eDrone</em></p>
+<pre><code class="language-bash">roslaunch vitarana_drone drone.launch static:='static'
+</code></pre>
+<p>This will disable gravity and you can play around with the <em>eDrone</em> and observe the readings, this will be helpful to interpret the sensor's readings for roll, pitch, lattitude, longitude, altitude etc.</p>
+</li>
+</ul>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="basic_Drone_Motion.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="pick_drop_mechanism.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="basic_Drone_Motion.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="pick_drop_mechanism.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-145861739-2', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

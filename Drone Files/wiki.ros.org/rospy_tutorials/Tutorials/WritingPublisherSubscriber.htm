@@ -1,0 +1,618 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4" />
+<link rel="shortcut icon" href="http://wiki.ros.org/custom/favicon.ico" type="image/ico" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/sorttable.js"></script>
+<script type="text/javascript" src="http://wiki.ros.org/custom/libraries/jquery.min.js"></script>                         
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/seesaw.js"></script> 
+<script type="text/javascript" src="http://wiki.ros.org/custom/js/rosversion.js"></script> 
+<!--script type="text/javascript" src="/custom/libraries/RGraph.common.core.js" ></script Used for metrics only, should be conditional, not at the top-->
+<!--script type="text/javascript" src="/custom/libraries/RGraph.bar.js" ></script same as above -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17821189-2']);
+  _gaq.push(['_setDomainName', 'wiki.ros.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="robots" content="index,nofollow">
+
+<title>rospy_tutorials/Tutorials/WritingPublisherSubscriber - ROS Wiki</title>
+<script type="text/javascript" src="http://wiki.ros.org/moin_static197/common/js/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="http://wiki.ros.org/moin_static197/rostheme/css/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="http://wiki.ros.org/moin_static197/rostheme/css/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="http://wiki.ros.org/moin_static197/rostheme/css/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="http://wiki.ros.org/moin_static197/rostheme/css/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static197/rostheme/css/msie.css">
+<![endif]-->
+
+
+
+
+<link rel="canonical" href="WritingPublisherSubscriber.htm" />
+
+<link rel="Start" href="http://wiki.ros.org/Documentation">
+<link rel="Alternate" title="Wiki Markup" href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber?action=print">
+<link rel="Up" href="http://wiki.ros.org/rospy_tutorials/Tutorials">
+<link rel="Search" href="http://wiki.ros.org/FindPage">
+<link rel="Index" href="http://wiki.ros.org/TitleIndex">
+<link rel="Glossary" href="http://wiki.ros.org/WordIndex">
+<link rel="Help" href="http://wiki.ros.org/HelpOnFormatting">
+</head>
+
+<body  lang="en" dir="ltr">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5950817-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+if(f) f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+if(e) {
+  searchChange(e);
+  searchBlur(e);
+}
+
+function handleSubmit() {
+  var f = document.getElementById('searchform');
+  var t = document.getElementById('searchinput');
+  var r = document.getElementById('real_searchinput');
+
+  //alert("handleSubmit "+ t.value);
+  if(t.value.match(/review/)) {
+    r.value = t.value;
+  } else {
+    //r.value = t.value + " -PackageReviewCategory -StackReviewCategory -M3Review -DocReview -ApiReview -HelpOn -BadContent -LocalSpellingWords";
+    r.value = t.value + " -PackageReviewCategory -StackReviewCategory -DocReview -ApiReview";
+  }
+  //return validate(f);
+}
+//-->
+</script>
+
+<div id="dpage">
+  <div id="dpage-inner">
+    <div id="header"><div id="topnav">
+
+<!-- Alert box -->
+<!-- To enable/disable the alert box, uncomment/comment the block below and update the content below the button. -->
+<!--
+    <div class="alert alert-info alert-dismissable" style="text-align: center;">
+<script>
+jQuery(function( $ ){
+    alert_box_name = 'roswiki_roscon'
+    state = localStorage.getItem(alert_box_name);
+    if (!state) {
+      localStorage.setItem(alert_box_name, 'open');
+    }
+    state = localStorage.getItem(alert_box_name);
+    if (state == 'closed') {
+        $( '#topnav .alert' ).hide();
+    }
+    $( '.close' ).click(function () {
+	console.log('in .close.click');
+        localStorage.setItem(alert_box_name, 'closed');
+        $( '#topnav .alert' ).hide();
+  });
+});
+</script>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <a href="http://roscon.ros.org">ROSCon 2017</a> will be in Vancouver, September 21-22! <br>
+      The last few years have sold out: register now and take advantage of discounted hotel rates</a>.
+    </div>
+-->
+<!-- End Alert box -->
+
+      <table id="topnav-table">
+        <tr>
+          <td width="300" valign="top"><a href="../../wiki_ros_default.html"><img border="0" src="http://wiki.ros.org/custom/images/ros_org.png" alt="ros.org" width="238" height="51"/></a></td>
+          <td width="500" valign="middle">
+            <a href="http://www.ros.org/about-ros">About</a>
+            |
+            <a href="http://wiki.ros.org/Support">Support</a>
+            |
+            <a href="http://discourse.ros.org/">Discussion Forum</a>
+            |
+            <a href="http://status.ros.org/">Service Status</a>
+            |
+            <a href="http://answers.ros.org/">Q&A answers.ros.org</a>
+          </td>
+
+          <td valign="middle" align="right">
+
+<script language="Javascript">
+
+function Searchy(theButton){
+
+theForm = theButton.form;
+newID = theForm.input.value;
+theForm.q.value = newID;
+theForm.input.value=theForm.input.value
+
+}
+</script>
+
+
+<form action="https://www.ros.org/search/index.html" id="cse">
+  <div>
+    <label>Search:</label>
+    <input type="hidden" name="cx" value="005596761048178735851:_ejygd2ukbe" />
+    <input type="hidden" name="cof" value="FORID:11;NB:1" />
+    <input type="hidden" name="filter" value="0" />
+    <input type="hidden" name="num" value="10" />
+
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="input" id="input" autocomplete="on" style="width: 35%"/>
+    <input type="hidden" name="q" value="" />
+    <input type="submit" name="sa" value="Submit" onClick="Searchy(this)"/>
+
+  </div>
+</form>
+
+         </td>
+      </tr>
+      <tr>
+        <td colspan="3" height="53" width="1024"><nobr><img src="http://wiki.ros.org/custom/images/menu_left.png" width="17" height="53" alt=""/><a href="../../wiki_ros_default.html"><img
+        border="0" src="http://wiki.ros.org/custom/images/menu_documentation.png" width="237" height="53" alt="Documentation" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="https://index.ros.org/packages"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_browse_software.png" width="268" height="53" alt="Browse Software" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="https://discourse.ros.org/c/general"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_news.png" width="84" height="53" alt="News" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_spacer.png" width="69" height="53" /><a href="http://wiki.ros.org/ROS/Installation"><img border="0"
+        src="http://wiki.ros.org/custom/images/menu_download.png" width="151" height="53" alt="Download" /></a><img
+        src="http://wiki.ros.org/custom/images/menu_right.png" width="60" height="53" /></nobr></td>
+
+      </tr>
+    </table> <!-- topnav-table -->
+
+    </div> <!-- /#topav -->
+  </div> <!-- /#header -->
+
+
+<div id="header2">
+
+<ul id="pagelocation">
+<li><a href="http://wiki.ros.org/rospy_tutorials">rospy_tutorials</a></li><li><a href="http://wiki.ros.org/rospy_tutorials/Tutorials">Tutorials</a></li><li><a class="backlink" href="http://wiki.ros.org/action/fullsearch/rospy_tutorials/Tutorials/WritingPublisherSubscriber?action=fullsearch&amp;context=180&amp;value=linkto%3A%22rospy_tutorials%2FTutorials%2FWritingPublisherSubscriber%22" rel="nofollow" title="Click to do a full-text search for this title">WritingPublisherSubscriber</a></li>
+</ul>
+
+<div id="locationline">
+</div>
+</div>
+
+<div id="sidebar">
+<h4>ROS 2 Documentation</h4><p>The ROS Wiki is for ROS 1. Are you using ROS 2 (Dashing/Foxy/Rolling)? <a href="http://docs.ros.org/en/rolling/">Check out the ROS 2 Documentation</a></p>
+<div class="sidepanel">
+<h1>Wiki</h1>
+
+<ul id="navibar">
+<li class="wikilink"><a href="../../Distributions.htm">Distributions</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Installation">ROS/Installation</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Tutorials">ROS/Tutorials</a></li><li class="wikilink"><a href="http://wiki.ros.org/RecentChanges">RecentChanges</a></li><li class="current"><a href="WritingPublisherSubscriber.htm">WritingPubl...rSubscriber</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Page</h1>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="WritingPublisherSubscriber.htm#" class="nbcomment" onClick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.ros.org/action/info/rospy_tutorials/Tutorials/WritingPublisherSubscriber?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.ros.org/action/AttachFile/rospy_tutorials/Tutorials/WritingPublisherSubscriber?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="WritingPublisherSubscriber.htm">
+<div>
+    <label>More Actions:</label>
+    <select name="action"
+        onchange="if ((this.selectedIndex != 0) &&
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="show" disabled class="disabled">Delete Cache</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="RenamePage" disabled class="disabled">Rename Page</option>
+<option value="CopyPage">Copy Page</option>
+<option value="DeletePage" disabled class="disabled">Delete Page</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="MyPages">My Pages</option>
+<option value="show" disabled class="disabled">Subscribe User</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="show" disabled class="disabled">Remove Spam</option>
+<option value="show" disabled class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled class="disabled">------------------------</option>
+<option value="CreatePdfDocument">CreatePdfDocument</option>
+<option value="Load">Load</option>
+<option value="RawFile">RawFile</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    <input type="submit" value="Do">
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>User</h1>
+<ul id="username"><li><a href="http://wiki.ros.org/action/login/rospy_tutorials/Tutorials/WritingPublisherSubscriber?action=login" id="login" rel="nofollow">Login</a></li></ul>
+</div>
+</div>
+
+<div id="page" lang="en" dir="ltr">
+
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line867"><span class="anchor" id="line-1-1"></span><span class="anchor" id="line-2-1"></span><div><table><tbody><tr>  <td style="background-color: #cce0ff"><strong>Note:</strong> This tutorial assumes that you have completed the previous tutorials:   <a href="http://wiki.ros.org/ROS/Tutorials/UnderstandingServicesParams">understanding ROS services and params</a>. </td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-3-1"></span><span class="anchor" id="line-4-1"></span><span class="anchor" id="line-5-1"></span><span class="anchor" id="line-6-1"></span><div><table><tbody><tr>  <td style="background-color: #bbceee"> <img alt="(!)" height="15" src="http://wiki.ros.org/moin_static197/rostheme/img/idea.png" title="(!)" width="15" /> Please ask about problems and questions regarding this tutorial on <a class="http" href="http://answers.ros.org">answers.ros.org</a>. Don't forget to include in your question the link to this page, the versions of your OS &amp; ROS, and also add appropriate tags.</td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-7-1"></span><span class="anchor" id="line-8-1"></span><span class="anchor" id="line-9-1"></span>
+<h1 id="Writing_a_Simple_Publisher_and_Subscriber">Writing a Simple Publisher and Subscriber</h1>
+<span class="anchor" id="line-10-1"></span><strong>Description:</strong> This demo will walk you through creating a ROS package as well as creating two simple rospy nodes.  The "talker" node will broadcast a message on topic "chatter", while the "listener" node will receive and print that message.<br>
+<br>
+ <span class="anchor" id="line-11-1"></span><span class="anchor" id="line-12-1"></span><span class="anchor" id="line-13-1"></span><span class="anchor" id="line-14-1"></span><strong>Tutorial Level:</strong> BEGINNER<br>
+ <br>
+ <span class="anchor" id="line-15-1"></span><span class="anchor" id="line-16-1"></span><strong>Next Tutorial:</strong>   <a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingServiceClient">Writing a simple service and client</a> <br>
+ <br>
+  <span class="anchor" id="line-17-1"></span><p class="line874"> <span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span><p class="line867"><script type="text/javascript">
+<!--
+// @@ Buildsystem macro
+function Buildsystem(sections) {
+    var dotversion = ".buildsystem."
+
+    // Tag shows unless already tagged
+    $.each(sections.show,
+        function() {
+            $("div" + dotversion + this).not(".versionshow,.versionhide").addClass("versionshow")
+        }
+    )
+
+    // Tag hides unless already tagged
+    $.each(sections.hide,
+        function() {
+            $("div" + dotversion + this).not(".versionshow,.versionhide").addClass("versionhide")
+        }
+    )
+
+      // Show or hide according to tag
+      $(".versionshow").removeClass("versionshow").filter("div").show()
+      $(".versionhide").removeClass("versionhide").filter("div").hide()
+}
+
+function getURLParameter(name) {
+    return decodeURIComponent(
+        (
+            new RegExp(
+                '[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)'
+            ).exec(location.search) || [,""]
+        )[1].replace(/\+/g, '%20')
+    ) || null;
+}
+
+$(document).ready(function() {
+    var activesystem = "catkin";
+    var url_distro = getURLParameter('buildsystem');
+    if (url_distro)
+    {
+        activesystem = url_distro;
+    }
+    $("div.buildsystem").not("."+activesystem).hide();
+    $("#"+activesystem).click();
+    $("input.version:hidden").each(function() {
+        var bg = $(this).attr("value").split(":");
+        $("div.version." + bg[0]).css("background-color", bg[1]).removeClass(bg[0])
+    });
+})
+ // -->
+</script>
+<span class="btn-group">
+<button id="catkin" class="btn btn-default" onClick="Buildsystem({show:['catkin'], hide:['rosbuild']});this.style.color='#e6e6e6';this.style.background='#3e4f6e';document.getElementById('rosbuild').style.background='#e6e6e6';document.getElementById('rosbuild').style.color='#3e4f6e';return false"> catkin </button>
+<button id="rosbuild" class="btn btn-default" onClick="Buildsystem({show:['rosbuild'], hide:['catkin']});this.style.color='#e6e6e6';this.style.background='#3e4f6e';document.getElementById('catkin').style.background='#e6e6e6';document.getElementById('catkin').style.color='#3e4f6e';return false"> rosbuild </button>
+</span> <span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span><p class="line867"><div class="table-of-contents"><p class="table-of-contents-heading">Contents<ol><li>
+<a href="WritingPublisherSubscriber.htm#Writing_the_Publisher_Node">Writing the Publisher Node</a><ol><li>
+<a href="WritingPublisherSubscriber.htm#The_Code">The Code</a></li><li>
+<a href="WritingPublisherSubscriber.htm#The_Code_Explained">The Code Explained</a></li></ol></li><li>
+<a href="WritingPublisherSubscriber.htm#Writing_the_Subscriber_Node">Writing the Subscriber Node</a><ol><li>
+<a href="WritingPublisherSubscriber.htm#The_Code-1">The Code</a></li><li>
+<a href="WritingPublisherSubscriber.htm#The_Code_Explained-1">The Code Explained</a></li></ol></li><li>
+<a href="WritingPublisherSubscriber.htm#Building_your_nodes">Building your nodes</a></li><li>
+<a href="WritingPublisherSubscriber.htm#Running_the_nodes">Running the nodes</a></li></ol></li></ol></div><p class="line874"> <span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><p class="line867">
+<h2 id="Writing_the_Publisher_Node">Writing the Publisher Node</h2>
+<span class="anchor" id="line-26"></span><p class="line867"><span class="anchor" id="line-27"></span><p class="line874">"Node" is the ROS term for an executable that is connected to the ROS network.  Here we'll create the publisher ("talker") node which will continually broadcast a message. <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><p class="line862">Change directory into the beginner_tutorials package, you created in the earlier tutorial, <a href="http://wiki.ros.org/ROS/Tutorials/CreatingPackage">creating a package</a>: <span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><pre><span class="anchor" id="line-1-2"></span>$ roscd beginner_tutorials</pre><span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><p class="line867">
+<h3 id="The_Code">The Code</h3>
+<span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><p class="line874">First lets create a 'scripts' folder to store our Python scripts in: <span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span><p class="line867"><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><pre><span class="anchor" id="line-1-3"></span>$ mkdir scripts
+<span class="anchor" id="line-2-2"></span>$ cd scripts</pre><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span><p class="line862">Then download the example script <a class="https" href="https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/talker.py">talker.py</a> to your new <tt class="backtick">scripts</tt> directory and make it executable: <span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><p class="line867"><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><pre><span class="anchor" id="line-1-4"></span>$ wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/talker.py
+<span class="anchor" id="line-2-3"></span>$ chmod +x talker.py</pre><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><p class="line862">We will not run it yet. You can view and edit the file with <tt>&nbsp;$&nbsp;rosed&nbsp;beginner_tutorials&nbsp;talker.py&nbsp;</tt> or just look below. <span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><p class="line867"><span class="anchor" id="line-54"></span><p class="line867"><span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-1-5"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+function isnumbered(obj) {
+  return obj.childNodes.length && obj.firstChild.childNodes.length && obj.firstChild.firstChild.className == 'LineNumber';
+}
+function nformat(num,chrs,add) {
+  var nlen = Math.max(0,chrs-(''+num).length), res = '';
+  while (nlen>0) { res += ' '; nlen-- }
+  return res+num+add;
+}
+function addnumber(did, nstart, nstep) {
+  var c = document.getElementById(did), l = c.firstChild, n = 1;
+  if (!isnumbered(c)) {
+    if (typeof nstart == 'undefined') nstart = 1;
+    if (typeof nstep  == 'undefined') nstep = 1;
+    var n = nstart;
+    while (l != null) {
+      if (l.tagName == 'SPAN') {
+        var s = document.createElement('SPAN');
+        var a = document.createElement('A');
+        s.className = 'LineNumber';
+        a.appendChild(document.createTextNode(nformat(n,4,'')));
+        a.href = '#' + did + '_' + n;
+        s.appendChild(a);
+        s.appendChild(document.createTextNode(' '));
+        n += nstep;
+        if (l.childNodes.length) {
+          l.insertBefore(s, l.firstChild);
+        }
+        else {
+          l.appendChild(s);
+        }
+      }
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function remnumber(did) {
+  var c = document.getElementById(did), l = c.firstChild;
+  if (isnumbered(c)) {
+    while (l != null) {
+      if (l.tagName == 'SPAN' && l.firstChild.className == 'LineNumber') l.removeChild(l.firstChild);
+      l = l.nextSibling;
+    }
+  }
+  return false;
+}
+function togglenumber(did, nstart, nstep) {
+  var c = document.getElementById(did);
+  if (isnumbered(c)) {
+    remnumber(did);
+  } else {
+    addnumber(did,nstart,nstep);
+  }
+  return false;
+}
+</script>
+
+<script type="text/javascript">
+document.write('<a href="WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-c82832e0d612370fe9886563f0b7f5433f6caee1\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1" lang="en"><span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_1">   1</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_1"></span><span class="anchor" id="line-1-6"></span><span class="Comment">#!/usr/bin/env python</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_2">   2</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_2"></span><span class="anchor" id="line-2-4"></span><span class="Comment"># license removed for brevity</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_3">   3</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_3"></span><span class="anchor" id="line-3-2"></span><span class="ResWord">import</span> <span class="ID">rospy</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_4">   4</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_4"></span><span class="anchor" id="line-4-2"></span><span class="ResWord">from</span> <span class="ID">std_msgs.msg</span> <span class="ResWord">import</span> <span class="ID">String</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_5">   5</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_5"></span><span class="anchor" id="line-5-2"></span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_6">   6</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_6"></span><span class="anchor" id="line-6-2"></span><span class="ResWord">def</span> <span class="ID">talker</span>():</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_7">   7</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_7"></span><span class="anchor" id="line-7-2"></span>    <span class="ID">pub</span> = <span class="ID">rospy</span>.<span class="ID">Publisher</span>(<span class="String">'</span><span class="String">chatter</span><span class="String">'</span>, <span class="ID">String</span>, <span class="ID">queue_size</span>=<span class="Number">10</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_8">   8</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_8"></span><span class="anchor" id="line-8-2"></span>    <span class="ID">rospy</span>.<span class="ID">init_node</span>(<span class="String">'</span><span class="String">talker</span><span class="String">'</span>, <span class="ID">anonymous</span>=<span class="ResWord">True</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_9">   9</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_9"></span><span class="anchor" id="line-9-2"></span>    <span class="ID">rate</span> = <span class="ID">rospy</span>.<span class="ID">Rate</span>(<span class="Number">10</span>) <span class="Comment"># 10hz</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_10">  10</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_10"></span><span class="anchor" id="line-10-2"></span>    <span class="ResWord">while</span> <span class="ResWord">not</span> <span class="ID">rospy</span>.<span class="ID">is_shutdown</span>():</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_11">  11</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_11"></span><span class="anchor" id="line-11-2"></span>        <span class="ID">hello_str</span> = <span class="String">"</span><span class="String">hello world </span><span class="String">%s</span><span class="String">"</span> % <span class="ID">rospy</span>.<span class="ID">get_time</span>()</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_12">  12</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_12"></span><span class="anchor" id="line-12-2"></span>        <span class="ID">rospy</span>.<span class="ID">loginfo</span>(<span class="ID">hello_str</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_13">  13</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_13"></span><span class="anchor" id="line-13-2"></span>        <span class="ID">pub</span>.<span class="ID">publish</span>(<span class="ID">hello_str</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_14">  14</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_14"></span><span class="anchor" id="line-14-2"></span>        <span class="ID">rate</span>.<span class="ID">sleep</span>()</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_15">  15</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_15"></span><span class="anchor" id="line-15-2"></span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_16">  16</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_16"></span><span class="anchor" id="line-16-2"></span><span class="ResWord">if</span> <span class="ID">__name__</span> == <span class="String">'</span><span class="String">__main__</span><span class="String">'</span>:</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_17">  17</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_17"></span><span class="anchor" id="line-17-2"></span>    <span class="ResWord">try</span>:</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_18">  18</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_18"></span><span class="anchor" id="line-18-1"></span>        <span class="ID">talker</span>()</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_19">  19</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_19"></span><span class="anchor" id="line-19-1"></span>    <span class="ResWord">except</span> <span class="ID">rospy</span>.<span class="ID">ROSInterruptException</span>:</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c82832e0d612370fe9886563f0b7f5433f6caee1_20">  20</a> </span><span class="LineAnchor" id="CA-c82832e0d612370fe9886563f0b7f5433f6caee1_20"></span><span class="anchor" id="line-20-1"></span>        <span class="ResWord">pass</span></span>
+</pre></div></div><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><p class="line862">Add the following to your <tt class="backtick">CMakeLists.txt</tt>. <span class="anchor" id="line-79"></span>This makes sure the python script gets installed properly, and uses the right python interpreter. <span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><p class="line867"><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span><pre><span class="anchor" id="line-1-7"></span>catkin_install_python(PROGRAMS scripts/talker.py
+<span class="anchor" id="line-2-5"></span>  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+<span class="anchor" id="line-3-3"></span>)</pre><span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><p class="line867">
+<h3 id="The_Code_Explained">The Code Explained</h3>
+<span class="anchor" id="line-89"></span><p class="line874">Now, let's break the code down. <span class="anchor" id="line-90"></span><span class="anchor" id="line-91"></span><p class="line867"><span class="anchor" id="line-1-8"></span><span class="anchor" id="line-2-6"></span><span class="anchor" id="line-3-4"></span><span class="anchor" id="line-4-3"></span><span class="anchor" id="line-1-9"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-da6097954e7fee459e60cb816897ac01d266cf48\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-da6097954e7fee459e60cb816897ac01d266cf48" lang="en"><span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-da6097954e7fee459e60cb816897ac01d266cf48_1">   1</a> </span><span class="LineAnchor" id="CA-da6097954e7fee459e60cb816897ac01d266cf48_1"></span><span class="anchor" id="line-1-10"></span><span class="Comment">#!/usr/bin/env python</span></span>
+</pre></div></div><span class="anchor" id="line-5-3"></span><p class="line874"> <span class="anchor" id="line-92"></span>Every Python ROS <a href="../../Nodes.htm">Node</a> will have this declaration at the top. The first line makes sure your script is executed as a Python script. <span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span><p class="line867"><span class="anchor" id="line-1-11"></span><span class="anchor" id="line-2-7"></span><span class="anchor" id="line-3-5"></span><span class="anchor" id="line-4-4"></span><span class="anchor" id="line-5-4"></span><span class="anchor" id="line-1-12"></span><span class="anchor" id="line-2-8"></span><span class="anchor" id="line-3-6"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-fb2d85bed2cdd0892041958808af40a4b2e2619f\', 3, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-fb2d85bed2cdd0892041958808af40a4b2e2619f" lang="en"><span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-fb2d85bed2cdd0892041958808af40a4b2e2619f_3">   3</a> </span><span class="LineAnchor" id="CA-fb2d85bed2cdd0892041958808af40a4b2e2619f_3"></span><span class="anchor" id="line-1-13"></span><span class="ResWord">import</span> <span class="ID">rospy</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-fb2d85bed2cdd0892041958808af40a4b2e2619f_4">   4</a> </span><span class="LineAnchor" id="CA-fb2d85bed2cdd0892041958808af40a4b2e2619f_4"></span><span class="anchor" id="line-2-9"></span><span class="ResWord">from</span> <span class="ID">std_msgs.msg</span> <span class="ResWord">import</span> <span class="ID">String</span></span>
+</pre></div></div><span class="anchor" id="line-6-3"></span><p class="line874"> <span class="anchor" id="line-95"></span>You need to import <tt>rospy</tt> if you are writing a ROS <a href="../../Nodes.htm">Node</a>. The <tt>std_msgs.msg</tt> import is so that we can reuse the <tt>std_msgs/String</tt> message type (a simple string container) for publishing. <span class="anchor" id="line-96"></span><span class="anchor" id="line-97"></span><p class="line867"><span class="anchor" id="line-1-14"></span><span class="anchor" id="line-2-10"></span><span class="anchor" id="line-3-7"></span><span class="anchor" id="line-4-5"></span><span class="anchor" id="line-5-5"></span><span class="anchor" id="line-1-15"></span><span class="anchor" id="line-2-11"></span><span class="anchor" id="line-3-8"></span><span class="anchor" id="line-4-6"></span><span class="anchor" id="line-5-6"></span><span class="anchor" id="line-6-4"></span><span class="anchor" id="line-7-3"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-0d784dd4f9d2b50d6bfc6dbddf4a45b58f61bbe1\', 7, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-0d784dd4f9d2b50d6bfc6dbddf4a45b58f61bbe1" lang="en"><span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-0d784dd4f9d2b50d6bfc6dbddf4a45b58f61bbe1_7">   7</a> </span><span class="LineAnchor" id="CA-0d784dd4f9d2b50d6bfc6dbddf4a45b58f61bbe1_7"></span><span class="anchor" id="line-1-16"></span>    <span class="ID">pub</span> = <span class="ID">rospy</span>.<span class="ID">Publisher</span>(<span class="String">'</span><span class="String">chatter</span><span class="String">'</span>, <span class="ID">String</span>, <span class="ID">queue_size</span>=<span class="Number">10</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-0d784dd4f9d2b50d6bfc6dbddf4a45b58f61bbe1_8">   8</a> </span><span class="LineAnchor" id="CA-0d784dd4f9d2b50d6bfc6dbddf4a45b58f61bbe1_8"></span><span class="anchor" id="line-2-12"></span>    <span class="ID">rospy</span>.<span class="ID">init_node</span>(<span class="String">'</span><span class="String">talker</span><span class="String">'</span>, <span class="ID">anonymous</span>=<span class="ResWord">True</span>)</span>
+</pre></div></div><span class="anchor" id="line-6-5"></span><p class="line874"> <span class="anchor" id="line-98"></span>This section of code defines the talker's interface to the rest of ROS. <tt>pub&nbsp;=&nbsp;rospy.Publisher("chatter",&nbsp;String,&nbsp;queue_size=10)</tt> declares that your node is publishing to the <tt>chatter</tt> topic using the message type <tt>String</tt>. <tt>String</tt> here is actually the class <tt>std_msgs.msg.String</tt>. The <tt class="backtick">queue_size</tt> argument is <span style="background-color:#FFFF00; font-weight:bold; padding: 3px;">New in ROS hydro</span> and limits the amount of queued messages if any subscriber is not receiving them fast enough. In older ROS distributions just omit the argument. <span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><p class="line862">The next line, <tt>rospy.init_node(NAME,&nbsp;...)</tt>, is very important as it tells rospy the name of your node -- until rospy has this information, it cannot start communicating with the ROS <a href="../../Master.htm">Master</a>. In this case, your node will take on the name <tt>talker</tt>. NOTE: the name must be a <a href="http://wiki.ros.org/Names">base name</a>, i.e. it cannot contain any slashes <tt class="backtick">"/"</tt>. <span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span><p class="line867"><tt class="backtick">anonymous&nbsp;=&nbsp;True</tt> ensures that your node has a unique name by adding random numbers to the end of <tt class="backtick">NAME</tt>. Refer to <a href="http://wiki.ros.org/rospy/Overview/Initialization%20and%20Shutdown#Initializing_your_ROS_Node">Initialization and Shutdown - Initializing your ROS Node</a> in the <tt class="backtick">rospy</tt> documentation for more information about node initialization options. <span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span><p class="line867"><span class="anchor" id="line-1-17"></span><span class="anchor" id="line-2-13"></span><span class="anchor" id="line-3-9"></span><span class="anchor" id="line-4-7"></span><span class="anchor" id="line-1-18"></span><span class="anchor" id="line-2-14"></span><span class="anchor" id="line-3-10"></span><span class="anchor" id="line-4-8"></span><span class="anchor" id="line-5-7"></span><span class="anchor" id="line-6-6"></span><span class="anchor" id="line-7-4"></span><span class="anchor" id="line-8-3"></span><span class="anchor" id="line-9-3"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-deeb77cb436e1a6b1a92349b80ed4634d8d9587b\', 9, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-deeb77cb436e1a6b1a92349b80ed4634d8d9587b" lang="en"><span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-deeb77cb436e1a6b1a92349b80ed4634d8d9587b_9">   9</a> </span><span class="LineAnchor" id="CA-deeb77cb436e1a6b1a92349b80ed4634d8d9587b_9"></span><span class="anchor" id="line-1-19"></span>    <span class="ID">rate</span> = <span class="ID">rospy</span>.<span class="ID">Rate</span>(<span class="Number">10</span>) <span class="Comment"># 10hz</span></span>
+</pre></div></div><span class="anchor" id="line-5-8"></span><p class="line874"> <span class="anchor" id="line-105"></span>This line creates a <tt class="backtick">Rate</tt> object <tt class="backtick">rate</tt>. With the help of its method <tt class="backtick">sleep()</tt>, it offers a convenient way for looping at the desired rate. With its argument of <tt class="backtick">10</tt>, we should expect to go through the loop 10 times per second (as long as our processing time does not exceed 1/10th of a second!) <span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><p class="line867"><span class="anchor" id="line-1-20"></span><span class="anchor" id="line-2-15"></span><span class="anchor" id="line-3-11"></span><span class="anchor" id="line-4-9"></span><span class="anchor" id="line-5-9"></span><span class="anchor" id="line-6-7"></span><span class="anchor" id="line-7-5"></span><span class="anchor" id="line-8-4"></span><span class="anchor" id="line-1-21"></span><span class="anchor" id="line-2-16"></span><span class="anchor" id="line-3-12"></span><span class="anchor" id="line-4-10"></span><span class="anchor" id="line-5-10"></span><span class="anchor" id="line-6-8"></span><span class="anchor" id="line-7-6"></span><span class="anchor" id="line-8-5"></span><span class="anchor" id="line-9-4"></span><span class="anchor" id="line-10-3"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-c119a947845452aa2f89a85d4fb37e402941b0e1\', 10, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-c119a947845452aa2f89a85d4fb37e402941b0e1" lang="en"><span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c119a947845452aa2f89a85d4fb37e402941b0e1_10">  10</a> </span><span class="LineAnchor" id="CA-c119a947845452aa2f89a85d4fb37e402941b0e1_10"></span><span class="anchor" id="line-1-22"></span>    <span class="ResWord">while</span> <span class="ResWord">not</span> <span class="ID">rospy</span>.<span class="ID">is_shutdown</span>():</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c119a947845452aa2f89a85d4fb37e402941b0e1_11">  11</a> </span><span class="LineAnchor" id="CA-c119a947845452aa2f89a85d4fb37e402941b0e1_11"></span><span class="anchor" id="line-2-17"></span>        <span class="ID">hello_str</span> = <span class="String">"</span><span class="String">hello world </span><span class="String">%s</span><span class="String">"</span> % <span class="ID">rospy</span>.<span class="ID">get_time</span>()</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c119a947845452aa2f89a85d4fb37e402941b0e1_12">  12</a> </span><span class="LineAnchor" id="CA-c119a947845452aa2f89a85d4fb37e402941b0e1_12"></span><span class="anchor" id="line-3-13"></span>        <span class="ID">rospy</span>.<span class="ID">loginfo</span>(<span class="ID">hello_str</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c119a947845452aa2f89a85d4fb37e402941b0e1_13">  13</a> </span><span class="LineAnchor" id="CA-c119a947845452aa2f89a85d4fb37e402941b0e1_13"></span><span class="anchor" id="line-4-11"></span>        <span class="ID">pub</span>.<span class="ID">publish</span>(<span class="ID">hello_str</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-c119a947845452aa2f89a85d4fb37e402941b0e1_14">  14</a> </span><span class="LineAnchor" id="CA-c119a947845452aa2f89a85d4fb37e402941b0e1_14"></span><span class="anchor" id="line-5-11"></span>        <span class="ID">rate</span>.<span class="ID">sleep</span>()</span>
+</pre></div></div><span class="anchor" id="line-9-5"></span><p class="line874"> <span class="anchor" id="line-108"></span>This loop is a fairly standard rospy construct: checking the <tt>rospy.is_shutdown()</tt> flag and then doing work. You have to check <tt class="backtick">is_shutdown()</tt> to check if your program should exit (e.g. if there is a <tt class="backtick">Ctrl-C</tt> or otherwise). In this case, the "work" is a call to <tt>pub.publish(hello_str)</tt> that publishes a string to our <tt>chatter</tt> topic. The loop calls <tt>rate.sleep()</tt>, which sleeps just long enough to maintain the desired rate through the loop. <span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><p class="line862">(You may also run across <tt class="backtick">rospy.sleep()</tt> which is similar to <tt>time.sleep()</tt> except that it works with simulated time as well (see <a href="http://wiki.ros.org/Clock">Clock</a>).) <span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><p class="line862">This loop also calls <tt>rospy.loginfo(str)</tt>, which performs triple-duty: the messages get printed to screen, it gets written to the Node's log file, and it gets written to <a href="http://wiki.ros.org/rosout">rosout</a>. <a href="http://wiki.ros.org/rosout">rosout</a> is a handy tool for debugging: you can pull up messages using <a href="http://wiki.ros.org/rqt_console">rqt_console</a> instead of having to find the console window with your Node's output. <span class="anchor" id="line-113"></span><span class="anchor" id="line-114"></span><p class="line867"><tt>std_msgs.msg.String</tt> is a very simple message type, so you may be wondering what it looks like to publish more complicated types. The general rule of thumb is that <em>constructor args are in the same order as in the <tt>.msg</tt> file</em>. You can also pass in no arguments and initialize the fields directly, e.g. <span class="anchor" id="line-115"></span><span class="anchor" id="line-116"></span><p class="line867"><span class="anchor" id="line-117"></span><span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><pre><span class="anchor" id="line-1-23"></span>msg = String()
+<span class="anchor" id="line-2-18"></span>msg.data = str</pre><span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><p class="line874">or you can initialize some of the fields and leave the rest with default values: <span class="anchor" id="line-122"></span><span class="anchor" id="line-123"></span><p class="line867"><span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><pre><span class="anchor" id="line-1-24"></span>String(data=str)</pre><span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span><p class="line874">You may be wondering about the last little bit: <span class="anchor" id="line-128"></span><span class="anchor" id="line-129"></span><p class="line867"><span class="anchor" id="line-1-25"></span><span class="anchor" id="line-2-19"></span><span class="anchor" id="line-3-14"></span><span class="anchor" id="line-4-12"></span><span class="anchor" id="line-5-12"></span><span class="anchor" id="line-6-9"></span><span class="anchor" id="line-7-7"></span><span class="anchor" id="line-8-6"></span><span class="anchor" id="line-1-26"></span><span class="anchor" id="line-2-20"></span><span class="anchor" id="line-3-15"></span><span class="anchor" id="line-4-13"></span><span class="anchor" id="line-5-13"></span><span class="anchor" id="line-6-10"></span><span class="anchor" id="line-7-8"></span><span class="anchor" id="line-8-7"></span><span class="anchor" id="line-9-6"></span><span class="anchor" id="line-10-4"></span><span class="anchor" id="line-11-3"></span><span class="anchor" id="line-12-3"></span><span class="anchor" id="line-13-3"></span><span class="anchor" id="line-14-3"></span><span class="anchor" id="line-15-3"></span><span class="anchor" id="line-16-3"></span><span class="anchor" id="line-17-3"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f\', 17, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f" lang="en"><span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f_17">  17</a> </span><span class="LineAnchor" id="CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f_17"></span><span class="anchor" id="line-1-27"></span>    <span class="ResWord">try</span>:</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f_18">  18</a> </span><span class="LineAnchor" id="CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f_18"></span><span class="anchor" id="line-2-21"></span>        <span class="ID">talker</span>()</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f_19">  19</a> </span><span class="LineAnchor" id="CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f_19"></span><span class="anchor" id="line-3-16"></span>    <span class="ResWord">except</span> <span class="ID">rospy</span>.<span class="ID">ROSInterruptException</span>:</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f_20">  20</a> </span><span class="LineAnchor" id="CA-03913aa01eb4dc084a8831e8982cf5d7c49e193f_20"></span><span class="anchor" id="line-4-14"></span>        <span class="ResWord">pass</span></span>
+</pre></div></div><span class="anchor" id="line-9-7"></span><p class="line874"> <span class="anchor" id="line-130"></span>In addition to the standard Python <tt class="backtick">__main__</tt> check, this catches a <tt class="backtick">rospy.ROSInterruptException</tt> exception, which can be thrown by <tt class="backtick">rospy.sleep()</tt> and <tt class="backtick">rospy.Rate.sleep()</tt> methods when <tt class="backtick">Ctrl-C</tt> is pressed or your Node is otherwise shutdown. The reason this exception is raised is so that you don't accidentally continue executing code after the <tt class="backtick">sleep()</tt>. <span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span><p class="line874">Now we need to write a node to receive the messages. <span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span><p class="line867">
+<h2 id="Writing_the_Subscriber_Node">Writing the Subscriber Node</h2>
+<span class="anchor" id="line-136"></span><p class="line867">
+<h3 id="The_Code-1">The Code</h3>
+<span class="anchor" id="line-137"></span><p class="line862">Download the <a class="https" href="https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/listener.py">listener.py</a> file into your scripts directory: <span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><pre><span class="anchor" id="line-1-28"></span>$ roscd beginner_tutorials/scripts/
+<span class="anchor" id="line-2-22"></span>$ wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/rospy_tutorials/001_talker_listener/listener.py
+<span class="anchor" id="line-3-17"></span>$ chmod +x listener.py</pre><span class="anchor" id="line-143"></span><p class="line874">The file contents look close to: <span class="anchor" id="line-144"></span><span class="anchor" id="line-145"></span><p class="line867"><span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span><span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span><span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span><span class="anchor" id="line-156"></span><span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span><span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><span class="anchor" id="line-161"></span><span class="anchor" id="line-162"></span><span class="anchor" id="line-163"></span><span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span><span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span><span class="anchor" id="line-168"></span><span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><span class="anchor" id="line-1-29"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86\', 1, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86" lang="en"><span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_1">   1</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_1"></span><span class="anchor" id="line-1-30"></span><span class="Comment">#!/usr/bin/env python</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_2">   2</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_2"></span><span class="anchor" id="line-2-23"></span><span class="ResWord">import</span> <span class="ID">rospy</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_3">   3</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_3"></span><span class="anchor" id="line-3-18"></span><span class="ResWord">from</span> <span class="ID">std_msgs.msg</span> <span class="ResWord">import</span> <span class="ID">String</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_4">   4</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_4"></span><span class="anchor" id="line-4-15"></span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_5">   5</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_5"></span><span class="anchor" id="line-5-14"></span><span class="ResWord">def</span> <span class="ID">callback</span>(<span class="ID">data</span>):</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_6">   6</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_6"></span><span class="anchor" id="line-6-11"></span>    <span class="ID">rospy</span>.<span class="ID">loginfo</span>(<span class="ID">rospy</span>.<span class="ID">get_caller_id</span>() + <span class="String">"</span><span class="String">I heard </span><span class="String">%s</span><span class="String">"</span>, <span class="ID">data</span>.<span class="ID">data</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_7">   7</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_7"></span><span class="anchor" id="line-7-9"></span>    </span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_8">   8</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_8"></span><span class="anchor" id="line-8-8"></span><span class="ResWord">def</span> <span class="ID">listener</span>():</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_9">   9</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_9"></span><span class="anchor" id="line-9-8"></span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_10">  10</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_10"></span><span class="anchor" id="line-10-5"></span>    <span class="Comment"># In ROS, nodes are uniquely named. If two nodes with the same</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_11">  11</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_11"></span><span class="anchor" id="line-11-4"></span>    <span class="Comment"># name are launched, the previous one is kicked off. The</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_12">  12</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_12"></span><span class="anchor" id="line-12-4"></span>    <span class="Comment"># anonymous=True flag means that rospy will choose a unique</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_13">  13</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_13"></span><span class="anchor" id="line-13-4"></span>    <span class="Comment"># name for our 'listener' node so that multiple listeners can</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_14">  14</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_14"></span><span class="anchor" id="line-14-4"></span>    <span class="Comment"># run simultaneously.</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_15">  15</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_15"></span><span class="anchor" id="line-15-4"></span>    <span class="ID">rospy</span>.<span class="ID">init_node</span>(<span class="String">'</span><span class="String">listener</span><span class="String">'</span>, <span class="ID">anonymous</span>=<span class="ResWord">True</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_16">  16</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_16"></span><span class="anchor" id="line-16-4"></span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_17">  17</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_17"></span><span class="anchor" id="line-17-4"></span>    <span class="ID">rospy</span>.<span class="ID">Subscriber</span>(<span class="String">"</span><span class="String">chatter</span><span class="String">"</span>, <span class="ID">String</span>, <span class="ID">callback</span>)</span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_18">  18</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_18"></span><span class="anchor" id="line-18-2"></span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_19">  19</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_19"></span><span class="anchor" id="line-19-2"></span>    <span class="Comment"># spin() simply keeps python from exiting until this node is stopped</span></span>
+<span class="line"><span class="LineNumber"><a href="WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_20">  20</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_20"></span><span class="anchor" id="line-20-2"></span>    <span class="ID">rospy</span>.<span class="ID">spin</span>()</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_21">  21</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_21"></span><span class="anchor" id="line-21-1"></span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_22">  22</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_22"></span><span class="anchor" id="line-22-1"></span><span class="ResWord">if</span> <span class="ID">__name__</span> == <span class="String">'</span><span class="String">__main__</span><span class="String">'</span>:</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_23">  23</a> </span><span class="LineAnchor" id="CA-56fb82d4681d7880a3d3a97f7af70cfe17618f86_23"></span><span class="anchor" id="line-23-1"></span>    <span class="ID">listener</span>()</span>
+</pre></div></div><span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span><p class="line862">Then, edit the <tt class="backtick">catkin_install_python()</tt> call in your <tt class="backtick">CMakeLists.txt</tt> so it looks like the following: <span class="anchor" id="line-173"></span><span class="anchor" id="line-174"></span><p class="line867"><span class="anchor" id="line-175"></span><span class="anchor" id="line-176"></span><span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span><span class="anchor" id="line-179"></span><pre><span class="anchor" id="line-1-31"></span>catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py
+<span class="anchor" id="line-2-24"></span>  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+<span class="anchor" id="line-3-19"></span>)</pre><span class="anchor" id="line-180"></span><span class="anchor" id="line-181"></span><p class="line867">
+<h3 id="The_Code_Explained-1">The Code Explained</h3>
+<span class="anchor" id="line-182"></span><p class="line862">The code for <tt>listener.py</tt> is similar to <tt>talker.py</tt>, except we've introduced a new callback-based mechanism for subscribing to messages. <span class="anchor" id="line-183"></span><span class="anchor" id="line-184"></span><p class="line867"><span class="anchor" id="line-1-32"></span><span class="anchor" id="line-2-25"></span><span class="anchor" id="line-3-20"></span><span class="anchor" id="line-4-16"></span><span class="anchor" id="line-5-15"></span><span class="anchor" id="line-6-12"></span><span class="anchor" id="line-7-10"></span><span class="anchor" id="line-8-9"></span><span class="anchor" id="line-9-9"></span><span class="anchor" id="line-1-33"></span><span class="anchor" id="line-2-26"></span><span class="anchor" id="line-3-21"></span><span class="anchor" id="line-4-17"></span><span class="anchor" id="line-5-16"></span><span class="anchor" id="line-6-13"></span><span class="anchor" id="line-7-11"></span><span class="anchor" id="line-8-10"></span><span class="anchor" id="line-9-10"></span><span class="anchor" id="line-10-6"></span><span class="anchor" id="line-11-5"></span><span class="anchor" id="line-12-5"></span><span class="anchor" id="line-13-5"></span><span class="anchor" id="line-14-5"></span><span class="anchor" id="line-15-5"></span><div class="highlight python"><div class="codearea" dir="ltr" lang="en">
+<script type="text/javascript">
+document.write('<a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#" onclick="return togglenumber(\'CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62\', 15, 1);" \
+                class="codenumbers">Toggle line numbers<\/a>');
+</script>
+<pre dir="ltr" id="CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62" lang="en"><span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_15">  15</a> </span><span class="LineAnchor" id="CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_15"></span><span class="anchor" id="line-1-34"></span>    <span class="ID">rospy</span>.<span class="ID">init_node</span>(<span class="String">'</span><span class="String">listener</span><span class="String">'</span>, <span class="ID">anonymous</span>=<span class="ResWord">True</span>)</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_16">  16</a> </span><span class="LineAnchor" id="CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_16"></span><span class="anchor" id="line-2-27"></span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_17">  17</a> </span><span class="LineAnchor" id="CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_17"></span><span class="anchor" id="line-3-22"></span>    <span class="ID">rospy</span>.<span class="ID">Subscriber</span>(<span class="String">"</span><span class="String">chatter</span><span class="String">"</span>, <span class="ID">String</span>, <span class="ID">callback</span>)</span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_18">  18</a> </span><span class="LineAnchor" id="CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_18"></span><span class="anchor" id="line-4-18"></span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_19">  19</a> </span><span class="LineAnchor" id="CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_19"></span><span class="anchor" id="line-5-17"></span>    <span class="Comment"># spin() simply keeps python from exiting until this node is stopped</span></span>
+<span class="line"><span class="LineNumber"><a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber.htm#CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_20">  20</a> </span><span class="LineAnchor" id="CA-c54953afb3f7ac20abfe7460208d0cd6c36c1d62_20"></span><span class="anchor" id="line-6-14"></span>    <span class="ID">rospy</span>.<span class="ID">spin</span>()</span>
+</pre></div></div><span class="anchor" id="line-10-7"></span><p class="line874"> <span class="anchor" id="line-185"></span>This declares that your node subscribes to the <tt>chatter</tt> topic which is of type <tt>std_msgs.msgs.String</tt>. When new messages are received, <tt>callback</tt> is invoked with the message as the first argument. <span class="anchor" id="line-186"></span><span class="anchor" id="line-187"></span><p class="line862">We also changed up the call to <tt>rospy.init_node()</tt> somewhat. We've added the <tt>anonymous=True</tt> keyword argument. ROS requires that each node have a unique name. If a node with the same name comes up, it bumps the previous one. This is so that malfunctioning nodes can easily be kicked off the network. The <tt>anonymous=True</tt> flag tells <tt>rospy</tt> to generate a unique name for the node so that you can have multiple <tt>listener.py</tt> nodes run easily. <span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span><p class="line862">The final addition, <tt>rospy.spin()</tt> simply keeps your node from exiting until the node has been shutdown. Unlike roscpp, rospy.spin() does not affect the subscriber callback functions, as those have their own threads. <span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span><span class="anchor" id="line-192"></span><p class="line867">
+<h2 id="Building_your_nodes">Building your nodes</h2>
+<span class="anchor" id="line-193"></span><p class="line874">We use CMake as our build system and, yes, you have to use it even for Python nodes. This is to make sure that the autogenerated Python code for messages and services is created. <span class="anchor" id="line-194"></span><span class="anchor" id="line-195"></span><p class="line867"><span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span><span class="anchor" id="line-198"></span><span class="anchor" id="line-199"></span><span class="anchor" id="line-200"></span><span class="anchor" id="line-201"></span><span class="anchor" id="line-202"></span><span class="anchor" id="line-203"></span><div class="buildsystem rosbuild"><span class="anchor" id="line-1-35"></span><p class="line874">We also use a Makefile for a bit of convenience. <span class="anchor" id="line-2-28"></span><tt>roscreate-pkg</tt> automatically created a Makefile, so you don't have to edit it. <span class="anchor" id="line-3-23"></span><span class="anchor" id="line-4-19"></span><p class="line874">Now run make: <span class="anchor" id="line-5-18"></span><span class="anchor" id="line-6-15"></span><span class="anchor" id="line-7-12"></span><pre><span class="anchor" id="line-1-36"></span>$ make</pre></div><span class="anchor" id="line-204"></span><span class="anchor" id="line-205"></span><p class="line867"><span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span><span class="anchor" id="line-208"></span><span class="anchor" id="line-209"></span><span class="anchor" id="line-210"></span><span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span><div class="buildsystem catkin"><span class="anchor" id="line-1-37"></span><p class="line862">Go to your catkin workspace and run <tt class="backtick">catkin_make</tt>: <span class="anchor" id="line-2-29"></span><span class="anchor" id="line-3-24"></span><p class="line867"><span class="anchor" id="line-4-20"></span><span class="anchor" id="line-5-19"></span><span class="anchor" id="line-6-16"></span><pre><span class="anchor" id="line-1-38"></span>$ cd ~/catkin_ws
+<span class="anchor" id="line-2-30"></span>$ catkin_make</pre></div><span class="anchor" id="line-213"></span><span class="anchor" id="line-214"></span><p class="line867"><span class="anchor" id="line-215"></span><span class="anchor" id="line-216"></span><p class="line867"><span class="anchor" id="line-217"></span><p class="line867">
+<h2 id="Running_the_nodes">Running the nodes</h2>
+<span class="anchor" id="line-218"></span><p class="line874">Running nodes requires you have a ROS core started. A ROS core is a collection of nodes and programs that are pre-requisites of a ROS-based system. You must have a roscore running in order for ROS nodes to communicate.  Open a new shell, and type: <span class="anchor" id="line-219"></span><span class="anchor" id="line-220"></span><p class="line867"><span class="anchor" id="line-221"></span><span class="anchor" id="line-222"></span><pre><span class="anchor" id="line-1-39"></span>$ roscore</pre><span class="anchor" id="line-223"></span><span class="anchor" id="line-224"></span><p class="line867"><tt>roscore</tt> will output something similar to this: <span class="anchor" id="line-225"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-226"></span><span class="anchor" id="line-227"></span><span class="anchor" id="line-228"></span><span class="anchor" id="line-229"></span><span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span><span class="anchor" id="line-232"></span><span class="anchor" id="line-233"></span><span class="anchor" id="line-234"></span><span class="anchor" id="line-235"></span><span class="anchor" id="line-236"></span><span class="anchor" id="line-237"></span><span class="anchor" id="line-238"></span><span class="anchor" id="line-239"></span><span class="anchor" id="line-240"></span><span class="anchor" id="line-241"></span><span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span><span class="anchor" id="line-244"></span><span class="anchor" id="line-245"></span><span class="anchor" id="line-246"></span><span class="anchor" id="line-247"></span><span class="anchor" id="line-248"></span><span class="anchor" id="line-249"></span><pre><span class="anchor" id="line-1-40"></span>... logging to /u/nkoenig/ros-jaunty/ros/log/d92b213a-90d4-11de-9344-00301b8246bf/roslaunch-ncq-11315.log
+<span class="anchor" id="line-2-31"></span>... loading XML file [/u/nkoenig/ros-jaunty/ros/tools/roslaunch/roscore.xml]
+<span class="anchor" id="line-3-25"></span>Added core node of type [rosout/rosout] in namespace [/]
+<span class="anchor" id="line-4-21"></span>started roslaunch server http://ncq:60287/
+<span class="anchor" id="line-5-20"></span>
+<span class="anchor" id="line-6-17"></span>SUMMARY
+<span class="anchor" id="line-7-13"></span>======
+<span class="anchor" id="line-8-11"></span>
+<span class="anchor" id="line-9-11"></span>NODES
+<span class="anchor" id="line-10-8"></span>
+<span class="anchor" id="line-11-6"></span>starting new master (master configured for auto start)
+<span class="anchor" id="line-12-6"></span>process[master]: started with pid [11338]
+<span class="anchor" id="line-13-6"></span>ROS_MASTER_URI=http://ncq:11311/
+<span class="anchor" id="line-14-6"></span>setting /run_id to d92b213a-90d4-11de-9344-00301b8246bf
+<span class="anchor" id="line-15-6"></span>+PARAM [/run_id] by /roslaunch
+<span class="anchor" id="line-16-5"></span>+PARAM [/roslaunch/uris/ncq:60287] by /roslaunch
+<span class="anchor" id="line-17-5"></span>process[rosout-1]: started with pid [11353]
+<span class="anchor" id="line-18-3"></span>started core service [/rosout]
+<span class="anchor" id="line-19-3"></span>+SERVICE [/rosout/get_loggers] /rosout http://ncq:36277/
+<span class="anchor" id="line-20-3"></span>+SERVICE [/rosout/set_logger_level] /rosout http://ncq:36277/
+<span class="anchor" id="line-21-2"></span>+SUB [/time] /rosout http://ncq:36277/
+<span class="anchor" id="line-22-2"></span>+PUB [/rosout_agg] /rosout http://ncq:36277/
+<span class="anchor" id="line-23-2"></span>+SUB [/rosout] /rosout http://ncq:36277/</pre><span class="anchor" id="line-250"></span><span class="anchor" id="line-251"></span></li></ul><p class="line867"><span class="anchor" id="line-252"></span><span class="anchor" id="line-253"></span><p class="line874">Now everything is set to run talker/listener.  Open a new shell and type: <span class="anchor" id="line-254"></span><span class="anchor" id="line-255"></span><p class="line867"><span class="anchor" id="line-256"></span><span class="anchor" id="line-257"></span><pre><span class="anchor" id="line-1-41"></span>$ rosrun beginner_tutorials talker.py</pre><span class="anchor" id="line-258"></span><p class="line874">Now in the original shell type: <span class="anchor" id="line-259"></span><span class="anchor" id="line-260"></span><p class="line867"><span class="anchor" id="line-261"></span><span class="anchor" id="line-262"></span><pre><span class="anchor" id="line-1-42"></span>$ rosrun beginner_tutorials listener.py</pre><span class="anchor" id="line-263"></span><p class="line867"><tt>rosrun</tt> is just a convenience script. You're also free to just type <tt>./talker.py</tt>. <span class="anchor" id="line-264"></span><span class="anchor" id="line-265"></span><p class="line867"><span class="anchor" id="line-266"></span><p class="line874">Talker should begin outputting text similar to: <span class="anchor" id="line-267"></span><span class="anchor" id="line-268"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-269"></span><span class="anchor" id="line-270"></span><span class="anchor" id="line-271"></span><span class="anchor" id="line-272"></span><span class="anchor" id="line-273"></span><span class="anchor" id="line-274"></span><pre><span class="anchor" id="line-1-43"></span>[INFO] [WallTime: 1394915011.927728] hello world 1394915011.93
+<span class="anchor" id="line-2-32"></span>[INFO] [WallTime: 1394915012.027887] hello world 1394915012.03
+<span class="anchor" id="line-3-26"></span>[INFO] [WallTime: 1394915012.127884] hello world 1394915012.13
+<span class="anchor" id="line-4-22"></span>[INFO] [WallTime: 1394915012.227858] hello world 1394915012.23
+<span class="anchor" id="line-5-21"></span>...</pre><span class="anchor" id="line-275"></span></li></ul><p class="line874">And listener should begin outputting text similar to: <span class="anchor" id="line-276"></span><span class="anchor" id="line-277"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-278"></span><span class="anchor" id="line-279"></span><span class="anchor" id="line-280"></span><span class="anchor" id="line-281"></span><span class="anchor" id="line-282"></span><span class="anchor" id="line-283"></span><pre><span class="anchor" id="line-1-44"></span>[INFO] [WallTime: 1394915043.555022] /listener_9056_1394915043253I heard hello world 1394915043.55
+<span class="anchor" id="line-2-33"></span>[INFO] [WallTime: 1394915043.654982] /listener_9056_1394915043253I heard hello world 1394915043.65
+<span class="anchor" id="line-3-27"></span>[INFO] [WallTime: 1394915043.754936] /listener_9056_1394915043253I heard hello world 1394915043.75
+<span class="anchor" id="line-4-23"></span>[INFO] [WallTime: 1394915043.854918] /listener_9056_1394915043253I heard hello world 1394915043.85
+<span class="anchor" id="line-5-22"></span>...</pre><span class="anchor" id="line-284"></span></li></ul><p class="line862">Now that you've written your first listener node, you should also know that ROS comes with its own generic listener for any topic called <a href="http://wiki.ros.org/rostopic.htm">rostopic</a>. If you run <tt>rostopic&nbsp;echo&nbsp;topic_name</tt>, you get output similar to what you wrote with <tt>listener.py</tt>: <span class="anchor" id="line-285"></span><span class="anchor" id="line-286"></span><p class="line867"><span class="anchor" id="line-287"></span><span class="anchor" id="line-288"></span><pre><span class="anchor" id="line-1-45"></span>$ rostopic echo chatter</pre><span class="anchor" id="line-289"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-290"></span><span class="anchor" id="line-291"></span><span class="anchor" id="line-292"></span><span class="anchor" id="line-293"></span><span class="anchor" id="line-294"></span><span class="anchor" id="line-295"></span><span class="anchor" id="line-296"></span><span class="anchor" id="line-297"></span><span class="anchor" id="line-298"></span><span class="anchor" id="line-299"></span><span class="anchor" id="line-300"></span><span class="anchor" id="line-301"></span><pre><span class="anchor" id="line-1-46"></span>data: hello world 1394915083.35
+<span class="anchor" id="line-2-34"></span>---
+<span class="anchor" id="line-3-28"></span>data: hello world 1394915083.45
+<span class="anchor" id="line-4-24"></span>---
+<span class="anchor" id="line-5-23"></span>data: hello world 1394915083.55
+<span class="anchor" id="line-6-18"></span>---
+<span class="anchor" id="line-7-14"></span>data: hello world 1394915083.65
+<span class="anchor" id="line-8-12"></span>---
+<span class="anchor" id="line-9-12"></span>data: hello world 1394915083.75
+<span class="anchor" id="line-10-9"></span>---
+<span class="anchor" id="line-11-7"></span>...</pre><span class="anchor" id="line-302"></span></li></ul><p class="line862">Congratulations!  You've just run your first ROS python nodes.  For more example code, see the <a href="http://wiki.ros.org/rospy_tutorials">rospy_tutorials</a> package, or move on to the next tutorial <a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingServiceClient">rospy_tutorials/Tutorials/WritingServiceClient</a>. <span class="anchor" id="line-303"></span><span class="anchor" id="line-304"></span><p class="line867"><hr class="hr1" /><p class="line874"> <span class="anchor" id="line-305"></span><span class="anchor" id="line-306"></span><p class="line867"><span class="anchor" id="line-307"></span><p class="line867"><span class="anchor" id="line-308"></span><span class="anchor" id="bottom"></span></div></div>
+<div id="pagebottom"></div>
+</div>
+
+<p id="pageinfo" class="info" lang="en" dir="ltr">Wiki: rospy_tutorials/Tutorials/WritingPublisherSubscriber  (last edited 2020-05-21 00:04:03 by <span title="ShaneLoretz @ c-73-241-29-44.hsd1.ca.comcast.net[73.241.29.44]"><a class="nonexistent" href="http://wiki.ros.org/ShaneLoretz" title="ShaneLoretz @ c-73-241-29-44.hsd1.ca.comcast.net[73.241.29.44]">ShaneLoretz</a></span>)</p>
+
+
+
+
+<div style="margin-top: 9px;" class="footer">
+Except where otherwise noted, the ROS wiki is licensed under the <br /><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>
+<hr style="margin-top: 10px;">
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+<a href="https://www.openrobotics.org/"><img style="margin-top: -1px;" src="http://wiki.ros.org/custom/images/brought_by_horiz.png"></p></a>
+  </div>
+</div>
+</div>
+
+  </div></div> <!-- /#dpage-inner, /#dpage -->
+
+
+</body>
+</html>
+

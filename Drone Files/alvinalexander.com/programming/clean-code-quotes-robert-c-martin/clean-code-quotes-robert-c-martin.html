@@ -1,0 +1,748 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+
+<!-- NODE: 2562 -->
+<head>
+<meta charset="utf-8" />
+<meta name="title" content="Quotes from Clean Code | alvinalexander.com" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://alvinalexander.com/programming/clean-code-quotes-robert-c-martin" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://alvinalexander.com/themes/aadotcom/images/aa_favicon.ico" type="image/vnd.microsoft.icon" />
+
+<link href="https://alvinalexander.com/lightbox/lightbox.css" rel="stylesheet" />
+<title>Quotes from Clean Code | alvinalexander.com</title>
+
+<!-- CSS AND JS START -->
+<link rel="stylesheet" href="https://alvinalexander.com/sites/default/files/css/css_NEPu95WMqSo8_ZIg9GdO391MSaF8p8CW5wK_drpOUL4.css?q7nzrx" media="all" />
+<link rel="stylesheet" href="https://alvinalexander.com/sites/default/files/css/css_Va4zLdYXDM0x79wYfYIi_RSorpNS_xtrTcNUqq0psQA.css?q7nzrx" media="screen" />
+<link rel="stylesheet" href="https://alvinalexander.com/sites/default/files/css/css_naG5Qjy_1T39kWHhDY9JBAxHwWbQ4fBGjaK4us6fq1k.css?q7nzrx" media="all" />
+<link rel="stylesheet" href="https://alvinalexander.com/sites/default/files/css/css_mdjRV4G_8CQCPii7NjJyNmZGwOvSNgOEK6Yj2xOZIa4.css?q7nzrx" media="all" />
+
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="https://alvinalexander.com/core/assets/vendor/modernizr/modernizr.min.js?v=3.3.1"></script>
+<!-- CSS AND JS END -->
+
+<link rel="shortcut icon" href="https://alvinalexander.com/themes/aadotcom/images/aa_favicon.ico" type="image/x-icon" />
+<link rel='stylesheet' media='only screen and (min-width:769px)' href='https://alvinalexander.com/themes/aadotcom/css/desktop.css' />
+<link rel='stylesheet' media='only screen and (max-width:320px)' href='https://alvinalexander.com/themes/aadotcom/css/mobile.css' />
+<link rel='stylesheet' media='only screen and (min-width:321px) and (max-width:768px)' href='https://alvinalexander.com/themes/aadotcom/css/mobile.css' />
+
+
+
+
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35326316-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+  </script>
+  
+
+
+<script src="https://alvinalexander.com/js/jquery-3.3.1.min.js"></script>
+<script src="https://alvinalexander.com/js/books.js"></script>
+<script src="https://alvinalexander.com/js/booksStructs.js"></script>
+
+<!-- formatting PRE sections -->
+<link href="https://alvinalexander.com/js/prism.css" rel="stylesheet" />
+<style>
+pre[class*="language-"] {
+    background-color: #fdfaf6;
+    background-color: #fdfaf9;
+}
+pre[class*="language-"] code {
+    font-size: 13px;
+}
+pre[class*="language-"] span.token.number {
+    color: #3333cc;
+}
+</style>
+
+
+    
+
+
+</head>
+
+
+<body class="path-node page-node-type-blog">
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+<div class="layout-container">
+    
+<div class="header">
+    <div class="header-inner">
+        <div class="header-inner-left"></div>
+        <div class="header-inner-right">
+            <div id="header-mobile-link"><a href="https://alvinalexander.com/">alvin alexander</a></div>
+            <div id="header-image">
+               <a href="https://alvinalexander.com/"><img src="https://alvinalexander.com/themes/aadotcom/images/alvin-alexander-sig.png" alt="alvin alexander" width="227" height="23" /></a>
+            </div>
+            <span id="nav">
+               <a id="home_icon"
+                  href="https://alvinalexander.com/"
+                  alt="Home" 
+                  title="Home"><img src="https://alvinalexander.com/images/icons/home.png" height="18" /></a>
+               
+               <a id="about_icon"
+                  href="https://alvinalexander.com/about-al-alexander" 
+                  alt="About Alvin Alexander" 
+                  title="About Alvin Alexander"><img src="https://alvinalexander.com/images/icons/person.png" height="18" /></a>
+               <a id="rss_icon"
+                  href="https://alvinalexander.com/rss.xml" 
+                  alt="rss feed" 
+                  title="rss feed"><img src="https://alvinalexander.com/images/icons/rss.png" height="18" /></a>
+               <a id="twitter_icon" 
+                  href="http://twitter.com/alvinalexander" 
+                  alt="Alvin Alexander on Twitter" 
+                  title="Alvin Alexander on Twitter"><img src="https://alvinalexander.com/images/icons/twitter2.png" height="18" /></a>
+               <a id="kofi_icon"
+                  href="https://ko-fi.com/alvin"
+                  target="_blank"
+                  alt="Tip your barista?"
+                  title="Tip your barista?"><img src="https://alvinalexander.com/images/icons/ko-fi-22h.png" height="18" /></a>
+            </span>
+        </div>
+      </div>
+  </div>
+  
+
+<div class="content">
+<div class="content-inner">
+<div class="content-inner-left">
+
+<aside class="layout-sidebar-first" role="complementary">
+
+<div class="region region-sidebar-first">
+
+
+
+<div id="block-skyadprogramming" class="block block-block-content">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div 
+     style="width:210px;margin-left:auto;margin-right:auto;text-align:center;">
+
+
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Display, LHS -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5530641073697401"
+     data-ad-slot="3573286415"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+<!-- BOOK BLOCK -->
+<div id="block-lhsbooksblock" class="block block-block-content block-block-content5cd0aa0a-25ba-4fc8-8a6a-4b2a2a987098">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div id="lhs-books-block">
+<h2>favorite books</h2>
+</div>
+</div>
+</div>
+<!-- END block-lhsbooksblock -->
+
+
+<!-- "MORE SCALA" BLOCK -->
+
+<!-- END "MORE SCALA" BLOCK -->
+
+
+<!-- BEGIN CATEGORIES DIV -->
+<div id="block-alscategories" class="block block-block-content block-block-content8137e809-0033-4584-9238-878acac04c15">
+<h2>categories</h2>
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- NEW -->
+<ul class="menu"><li class="leaf"><a href="https://alvinalexander.com/alaska">alaska <span class="category-count">(25)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/android">android <span class="category-count">(138)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/best-practices">best practices <span class="category-count">(63)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/career">career <span class="category-count">(50)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/colorado">colorado <span class="category-count">(21)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/cvs">cvs <span class="category-count">(27)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/design">design <span class="category-count">(33)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/drupal">drupal <span class="category-count">(120)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/eclipse">eclipse <span class="category-count">(6)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/funny">funny <span class="category-count">(3)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/gadgets">gadgets <span class="category-count">(108)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/git">git <span class="category-count">(15)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/intellij">intellij <span class="category-count">(4)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/java">java <span class="category-count">(429)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/jdbc">jdbc <span class="category-count">(26)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/jfc-swing">swing <span class="category-count">(74)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/jsp">jsp <span class="category-count">(9)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/latex">latex <span class="category-count">(26)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/linux">linux/unix <span class="category-count">(289)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/osx">mac os x <span class="category-count">(315)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/mysql">mysql <span class="category-count">(54)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/ooa-ood">ooa/ood <span class="category-count">(11)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/perl">perl <span class="category-count">(156)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/php">php <span class="category-count">(97)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/postgresql">postgresql <span class="category-count">(17)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/programming">programming <span class="category-count">(43)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/ruby">ruby <span class="category-count">(56)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/scala">scala <span class="category-count">(640)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/sencha">sencha <span class="category-count">(23)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/servlets">servlets <span class="category-count">(10)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/technology">technology <span class="category-count">(84)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/testing">testing <span class="category-count">(13)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/uml">uml <span class="category-count">(24)</span></a></li>
+<li class="leaf"><a href="https://alvinalexander.com/zen">zen <span class="category-count">(47)</span></a></li>
+</ul></div>
+</div>
+
+<!-- END CATEGORIES DIV -->
+
+
+</div> <!-- END "region region-sidebar-first" -->
+</aside>
+</div> 
+
+<div class="content-inner-right">
+<div class="layout-content">
+<div class="region region-content">
+    <div id="block-aadotcom-page-title" class="block block-core block-page-title-block">
+    <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Quotes from Clean Code</span></h1>
+    </div>
+
+<div id="block-aadotcom-content" class="block block-system block-system-main-block">
+<article data-history-node-id="2562"
+         role="article" 
+         about="/programming/clean-code-quotes-robert-c-martin"
+         class="node node--type-blog node--promoted node--view-mode-full">
+
+<div class="submitted_by">By Alvin Alexander. Last updated: January 10, 2021</div>
+<div class="node__content">
+
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+
+<!-- TODO: TOC -->
+<div class="toc-filter">
+
+<div style="width:600;display:block;margin:auto;text-align:center;background-color:#f3faff; border-radius: 8px 8px 0 0; padding: 1.8em 0;"><a href="https://ko-fi.com/alvin"><em style="color:#3863ac;font-family:Palatino,Georgia,Times;font-size:18px;line-height:1.6;">using an ad blocker?<br />click here to sponsor my writing</em></a>
+</div>
+
+<p>Back in 2013 I read the book <a href="http://amzn.to/1UJhPQy" target="_blank">Clean Code</a> by Robert C. Martin, and in an effort to keep that book alive with me a little while longer, I decided to make my own &ldquo;Cliffs Notes&rdquo; version of the book on this page. One of my favorite notes from below is that a language named LOGO used the keyword <code>to</code> in the same way that Scala uses <code>def</code>, so a method named <code>double</code> would be defined as <code>to&nbsp;double...</code> instead of <code>def&nbsp;double...</code>, which seems like it would help developers name methods better.</p>
+<!--break-->
+
+<h2>Writing clean code</h2>
+
+<p>Here's a short collection of quotes from Clean Code, with my comments added after each quote.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>&ldquo;Later equals never.&rdquo;</p>
+</blockquote>
+
+<p>In our youth we always said, "I'll clean up the code later", but of course we never did. "Later equals never" is known as LeBlanc's Law.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>&ldquo;The only way to make the deadline — the only way to go fast — is to keep the code as clean as possible at all times.&rdquo;</p>
+</blockquote>
+
+<p>The only thing I'd change in that quote is to say, &ldquo;the only way to <em>constantly</em> go fast.&rdquo; You can go fast in the short term by taking shortcuts, but not in the long term.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>&ldquo;Clean code always looks like it was written by someone who cares.&rdquo;</p>
+</blockquote>
+
+<p>This was written by Michael Feathers. This quote reflects something I stress during training and mentoring sessions. Programmers need to think of themselves as craftsmen, and take pride in their work. Maybe customers can't see your work, but other developers certainly can, and you should take pride in writing crisp, clear code that other programmers can easily read and comprehend.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>&ldquo;Leave the campground cleaner than the way you found it.&rdquo;</p>
+</blockquote>
+
+<p>This is similar to the previous quote. I didn't know it, but this is a Boy Scouts of America rule/slogan. In Alaska they have the exact same statement about using the Public Use Cabins here, leave it in better shape than the way you found it.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>&ldquo;The ratio of time spent reading (code) versus writing is well over 10 to 1 ... (therefore) making it easy to read makes it easier to write.&rdquo;</p>
+</blockquote>
+
+<p>This was something I never really thought about before, but Uncle Bob Martin makes a very convincing case that when we're working on software projects with other developers, we're constantly trying to understand existing code when writing new code, to see how our new code should work and fit into the system.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>&ldquo;You know you are working on clean code when each routine you read turns out to be pretty much what you expected. You can call it beautiful code when the code also makes it look like the language was made for the problem.&rdquo;</p>
+</blockquote>
+
+<p>That quote comes from <a href="http://c2.com/ward/">Ward Cunningham</a> (inventor of the Wiki, inventor of Fit, co-inventor of eXtreme Programming, and much more), who seems to be one of the greatest programmers of our time. I haven't met him yet, but whenever I read his writing, he blows me away. That statement alone sold me on this book.</p>
+
+<h2>Make your code read like a story</h2>
+
+<p>The following quote begins what I think is the best section of the book:</p>
+
+<blockquote>
+<p>"The LOGO language used the keyword 'TO' in the same way that Ruby and Python use 'def'."</p>
+</blockquote>
+
+<p>I never worked with LOGO, but the author begins describing how code should read like sentences in a book. Later he adds:</p>
+
+<blockquote>
+<p>"Make the code read like a top-down set of TO paragraphs."</p>
+</blockquote>
+
+<p>Eventually he takes these thoughts to this excellent conclusion:</p>
+
+<blockquote>
+<p>"Master programmers think of systems as stories to be told rather than programs to be written."</p>
+</blockquote>
+
+<p>For me, that's a very powerful phrase. I suspect you probably need to read his book to really understand what he's saying here, but if you read the section where he writes about the LOGO "TO" statements, he makes his point very well.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>"In order to make sure our functions are doing 'one thing', we need to make sure that the statements within the function are all at the same level of abstraction."</p>
+</blockquote>
+
+<p>This is another great line, and something I hadn't thought of consciously before. If code in a function is doing one thing at a high level of abstraction, another thing at a medium level, and another at a low level, it's going to be very hard to read, whether you consciously know why, or not. (This really is an excellent observation.)</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-5530641073697401"
+     data-ad-slot="6488591346"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h2>Functions</h2>
+
+<p>Here's a nice starter quote about functions:</p>
+
+<blockquote>
+<p>"The first rule of functions is that they should be small."</p>
+</blockquote>
+
+<p>As you've probably read elsewhere, a function should do one thing, and only one thing.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>"Functions should do something, or answer something, but not both."</p>
+</blockquote>
+
+<p>As he states, a function should change the state of an object, or return some information about that object, but not both. I've run into many functions over the years where a function was named "setSomething", and then when I looked at the source for that function, I found that it did several other things besides the "set" it claimed to do.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>"Methods should have verb or phrase names."</p>
+</blockquote>
+
+<p>Very true. I'm always naming methods "handleXYZ", "getXYZ", "calculateXYZ", and so on, trying to use verbs and action names.<br />
+&nbsp;</p>
+
+<blockquote>
+<p>"One way to know that a function is doing more than 'one thing' is if you can extract another function from it with a name that is not merely a restatement of its implementation."</p>
+</blockquote>
+
+<p>This is another great observation that I've never thought about consciously. Many times you can look at a function and obviously know it's trying to accomplish more than one thing, but other times you look at a function and all you can tell is that it's wrong ... it doesn't seem right for some reason, but you can't put your finger on it.</p>
+
+<p>This "rule", along with the other statement about function statements all being at the same level of abstraction, are very nice observations.</p>
+
+<h2>Comments</h2>
+
+<p>Here's a great statement about comments in source code:</p>
+
+<blockquote>
+<p>"Every time you write a comment, you should grimace and feel the failure of your ability of expression."</p>
+</blockquote>
+
+<p>Like many experienced programmers, the author has been burned by out of date comments, useless comments, and so on, and has come to the conclusion many others have: Most comments are not needed, and if you feel the need to write a comment, you should consider rewriting your code to make it more readable.</p>
+
+<h2>try/catch blocks</h2>
+
+<p>One of my pet peeves about try/catch statements is how complicated they make code. The author expresses my sentiments exactly, then states:</p>
+
+<blockquote>
+<p>"It is better to extract the bodies of the try and catch blocks out info functions of their own."</p>
+</blockquote>
+
+<p>This is a clever technique that can be used to make try/catch blocks as readable as they can be.</p>
+
+<h2>Clean Code, and the Principles of OOD</h2>
+
+<p>In this book, Mr. Martin also writes about things like:</p>
+
+<ul>
+	<li>The Single Responsibility Principle</li>
+	<li>The Open Closed Principle</li>
+	<li>The Liskov Substitution Principle</li>
+</ul>
+
+<p>and much more. You can find information on each of these topics on his website:</p>
+
+<ul>
+	<li><a href="http://www.butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">Principles of OOD</a></li>
+</ul>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-5530641073697401"
+     data-ad-slot="6488591346"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h2>Clean Code, by Robert C. Martin</h2>
+
+<p>I hope these notes have been helpful, and I also hope they encourage you to buy <a href="http://amzn.to/1H3R5zc" target="_blank">Clean Code</a>. It's an easy read, with many more helpful nuggets that can help to make you the best programmer you can be.</p>
+
+</div><!-- END: "toc-filter" -->
+</div><!-- END: field field--name-body field--type-text-with-summary -->
+
+<!-- CATEGORY -->
+<div class="content_category">
+    <style>
+#patron-widget {
+    width:480;
+    height:140px;
+    display:block;
+    margin:auto;
+    text-align:center;
+    padding:1.5em 0 6em 0;
+}
+</style>
+
+<!--
+<div id="patron-widget">
+<p>
+<div id="kofi">
+<a href="https://ko-fi.com/alvin"><em 
+   style="color:#999;font-family:Palatino,Georgia,Times;font-size:18px;line-height:1.5;">Help
+   keep this website running!</em><br /><img
+     src="/images/kofi-support-me-bouncing.gif" 
+     alt="Support my work on ko-fi.com" 
+     title="Support my work ko-fi.com" 
+     width="320" /></a>
+</div>
+<span id="kofi-message-bottom"></span>
+</p>
+</div>
+-->
+
+    
+    <div class="field field--name-category field--type-entity-reference field--label-hidden field__item"><a 
+        href="https://alvinalexander.com/programming" hreflang="en">programming</a>
+    </div>
+</div>
+
+
+<!-- BEGIN "content_tags" -->
+<div class="content_tags">
+    <div class="field field--name-tags field--type-entity-reference field--label-hidden field__items">
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/449" hreflang="en">code</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/484" hreflang="en">comments</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/1063" hreflang="en">functions</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/1732" hreflang="en">method</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/1925" hreflang="en">ood</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/2156" hreflang="en">programming</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/4158" hreflang="en">programming language</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/4906" hreflang="en">clean code</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/5272" hreflang="en">ward cunningham</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/5324" hreflang="en">logo</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/7966" hreflang="en">phrases</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/10191" hreflang="en">caring</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/11894" hreflang="en">later</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/11895" hreflang="en">cares</a></div>
+    
+    <div class="field__item"><a href="https://alvinalexander.com/taxonomy/term/11896" hreflang="en">verbs</a></div>
+            
+</div>
+<!-- END "content_tags" -->
+
+</div>
+</div>
+
+
+
+<div class="similar">
+<div class="views-element-container">
+<div class="view view-similar-by-terms view-id-similar_by_terms view-display-id-default">
+<div class="view-content">
+<div class="item-list">
+<ul>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/programming/clean-code-logo-language-to-method-keyword-def" hreflang="en">LOGO used “TO” like Scala and Ruby use “def”</a></span></div></li>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/photos/description-beautiful-code-ward-cunningham" hreflang="en">A description of &#x27;beautiful code&#x27; by Ward Cunningham</a></span></div></li>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/photos/accuracy-comments-software" hreflang="en">On the accuracy of comments in software</a></span></div></li>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/misc/examples-of-miranda-programming-language" hreflang="en">Examples of the Miranda programming language</a></span></div></li>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/photos/more-good-code-written-bad-languages-bjarne-stroustrup" hreflang="en">More good code written in “bad” languages</a></span></div></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+    
+
+
+<!-- START: "below_content" -->
+<div class="below_content">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+<!-- START: MY BOOKS -->
+<div class="my_books">
+<h2 class="title">books i’ve written</h2>
+<table border="​&quot;0&quot;" cellpadding="4" cellspacing="​&quot;2&quot;" class="​&quot;noborder&quot;" width="​&quot;100%&quot;"><tbody><tr><td><a href="http://goo.gl/eV4PtU" target="_blank"><img height="190px" src="https://alvinalexander.com/sites/default/files/photos/scala-cookbook-oreilly-alvin-alexander.gif" title="Scala Cookbook" /></a></td>
+<td><a href="http://goo.gl/wqK5ty" target="_blank"><img height="190px" src="https://alvinalexander.com/sites/default/files/HowISoldMyBusiness-300pxH-5.jpg" title="How I Sold My Business" /></a></td>
+<td><a href="http://goo.gl/GX1VDx" target="_blank"><img height="190px" src="https://alvinalexander.com/sites/default/files/V6-Flattened-FrontOnly-300pxH-60b.jpg" title="A Survival Guide for New Consultants" /></a></td>
+<td><a href="https://alvinalexander.com/scala/learning-functional-programming-in-scala-book" target="_blank"><img height="190px" src="https://alvinalexander.com/images/functional-programming-simplified-190h.jpg" title="Functional Programming, Simplified" /></a></td>
+</tr></tbody></table>
+</div>
+
+<!-- END: MY BOOKS -->
+
+
+</div>
+<!-- END: clearfix text-formatted field field--name-body field--type-text-with-summary -->
+
+
+<!-- START: recent -->
+<div class="views-element-container">
+<div class="recent-content view view-content-recent view-id-content_recent view-display-id-default js-view-dom-id-5b428ff0afb220ade29b3421317051fe8ec643710adeed3e5abada4f009f16a8">
+<div class="view-content">
+<div class="item-list">
+<ul>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/scala/functional-programming-simplified-book" hreflang="en">Functional Programming, Simplified</a></span></div></li>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/misc/in-enlightenment-death-no-relevance-state-of-being-easter-2021" hreflang="en">In enlightenment, death has no relevance to one’s state of being</a></span></div></li>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/source-code/sbt-NoClassDefFoundError-org.fusesource.jansi.AnsiOutputStream" hreflang="en">sbt error: NoClassDefFoundError: org/fusesource/jansi/AnsiOutputStream</a></span></div></li>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/photos/snow-white-tree-louisville-colorado-march-2018" hreflang="en">A snow white tree, Louisville, Colorado</a></span></div></li>
+    
+<li><div class="views-field views-field-title"><span class="field-content"><a href="https://alvinalexander.com/photos/white-trees-cloudy-day" hreflang="en">Louisville, Colorado: White trees on a cloudy day</a></span></div></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div><!-- END: "views-element-container" -->
+</div><!-- END: "below_content" -->
+
+
+<section class="field field--name-comment field--type-comment field--label-above comment-wrapper">
+</section>
+</article>
+
+</div>
+</div>
+</div>
+</div> 
+</div>
+</div>     
+
+<!-- START: FOOTER -->
+<div class="footer">
+    <div class="footer-inner">
+    <div id="mobile">
+        <div id="footer-links">Links:</div>
+        <div class="field-items">
+            <a href="https://alvinalexander.com/">front page</a>
+            <a href="https://twitter.com/alvinalexander">alvin on twitter</a>
+            <a href="https://alvinalexander.com/search">search</a>
+            <a href="https://alvinalexander.com/privacy">privacy</a>
+            <a href="https://alvinalexander.com/terms">terms &amp; conditions</a>
+        </div> 
+    
+        <div style="text-align:left; color: #5f5f5f; padding-top:1.5em;">alvinalexander.com
+            <br/>is owned and operated by<br/>
+            <a href="https://www.valleyprogramming.com/">Valley Programming, LLC</a>
+            <br />&nbsp;<br />In regards to links to Amazon.com, As an Amazon Associate
+            <br />I (Valley Programming, LLC) earn from qualifying purchases
+            <br />&nbsp;
+            <br />This website uses cookies: <a href="https://alvinalexander.com/privacy-policy">learn more</a>
+        </div>
+    </div><!-- END: 'mobile' -->
+    
+    
+    <!-- START: desktop -->
+    <div id="desktop">
+    <footer role="contentinfo">
+    <div class="region region-footer">
+    <div id="block-footer" class="block block-block-content block-block-content623e89b2-3d65-4d44-9862-6996c08c3abd">
+    <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- first column -->
+    <div class="footer-wrapper">
+    <div class="footer-col-first">
+    <dl class="links"><dt>java</dt>
+      <dd class="first"><a href="https://alvinalexander.com/java/appletcenter.shtml">java applets</a></dd>
+      <dd><a href="https://alvinalexander.com/java/edu/qanda/">java faqs</a></dd>
+      <dd><a href="https://alvinalexander.com/java/misc/">misc content</a></dd>
+      <dd><a href="https://alvinalexander.com/java/jwarehouse/">java source code</a></dd>
+      <dd><a href="https://alvinalexander.com/java/edu/TestProjects/">test projects</a></dd>
+      <dd><a href="https://alvinalexander.com/java/lejos/">lejos</a></dd>
+    </dl><dl class="links"><dt>Perl</dt>
+      <dd class="first"><a href="https://alvinalexander.com/perl/edu/qanda/">perl faqs</a></dd>
+      <dd><a href="https://alvinalexander.com/perl/pgms/">programs</a></dd>
+      <dd><a href="https://alvinalexander.com/perl/recipes/">perl recipes</a></dd>
+      <dd><a href="https://alvinalexander.com/perl/edu/">perl tutorials</a></dd>
+      <dd> </dd>
+    </dl></div>
+    <!-- second column -->
+    
+    <div class="footer-col">
+    <dl class="links"><dt>Unix</dt>
+      <dd class="first"><a href="https://alvinalexander.com/unix/man/">man (help) pages</a></dd>
+      <dd><a href="https://alvinalexander.com/unix/edu/examples/">unix by example</a></dd>
+      <dd><a href="https://alvinalexander.com/unix/edu/">tutorials</a></dd>
+    </dl><dl class="links"><dt>source code<br />
+      warehouse</dt>
+      <dd class="first"><a href="https://alvinalexander.com/java/jwarehouse/">java examples</a></dd>
+      <dd><a href="https://alvinalexander.com/drupal-code-examples/">drupal examples</a></dd>
+    </dl></div>
+    <!-- 3rd column -->
+    
+    <div class="footer-col">
+    <dl class="links"><dt>misc</dt>
+      <dd class="first"><a href="https://alvinalexander.com/privacy-policy">privacy policy</a></dd>
+      <dd><a href="https://alvinalexander.com/terms">terms &amp; conditions</a></dd>
+      <dd><a href="http://eepurl.com/BhYt">subscribe</a></dd>
+      <dd><a href="http://devdaily.us1.list-manage.com/unsubscribe?u=bf478771d83401629ab773851&amp;id=ea7b9f711b">unsubscribe</a></dd>
+      <dd><a href="https://alvinalexander.com/wincvs/">wincvs tutorial</a></dd>
+      <dd><a href="https://alvinalexander.com/fpa/">function point<br />
+      analysis (fpa)</a></dd>
+      <dd><a href="https://alvinalexander.com/FunctionPoints/">fpa tutorial</a></dd>
+      <dd> </dd>
+      <dd> </dd>
+    </dl></div>
+    <!-- 4th column -->
+    
+    <div class="footer-col footer-col-last">
+    <dl class="links"><dt>Other</dt>
+      <dd><a href="https://alvinalexander.com/contact" title="mobile site">contact me</a></dd>
+      <dd><a href="https://alvinalexander.com/rss.xml" title="rss feed">rss feed</a></dd>
+      <dd><a href="https://alvinalexander.com/photos" title="my photo galley">my photos</a></dd>
+      <dd><a href="http://www.onemansalaska.com/" title="a blog about living in alaska">life in alaska</a></dd>
+      <dd><a href="http://www.HowISoldMyBusiness.com/" title="personal diary about how to buy and sell a business">how i sold my business</a></dd>
+      <dd><a href="http://www.alaskasquirrel.com/" title="living in talkeetna, alaska">living in talkeetna, alaska</a></dd>
+      <dd><a href="https://alvinalexander.com/bookmarks" title="my bookmarks">my bookmarks</a></dd>
+      <dd><a href="https://alvinalexander.com/category/tags/inspirational-quotes" title="inspirational and motivational quotes">inspirational quotes</a></dd>
+      <dd><a href="https://alvinalexander.com/source-code-snippets" title="source code snippets">source code snippets</a></dd>
+    </dl></div>
+    </div>
+    <!-- end of 'footer-wrapper' -->
+    
+    <div id="footer-wrapper-2">This website uses cookies: <a href="https://alvinalexander.com/privacy-policy">learn more</a><br /> <br />alvinalexander.com 
+    is owned and operated by <a href="https://www.valleyprogramming.com/">Valley Programming, LLC</a><br />
+    <br />In regards to links to Amazon.com, “As an Amazon Associate<br />
+    I (Valley Programming) earn from qualifying purchases”<br /></div>
+    </div>
+    </div>
+    </div>
+    </footer>
+    </div><!-- END: desktop -->
+    
+    </div>
+    </div><!-- END footer div -->
+    
+</div>
+</div>
+
+
+<script>
+$(document).ready(function() {
+
+    // get the uri
+    let uri = getUri().substring(1);
+    let initUri = firstNChars(uri, 4);
+
+    // get the right books for the uri
+    let books = [];
+    if (booksMap[initUri] === undefined) {
+        books = popularBooks;
+    } else {
+        books = booksMap[initUri];
+    }
+
+    // get a random book from `books`
+    shuffle(books);
+    let twoBooks = books.slice(0,1);
+
+    // add one of my books
+    shuffle(myBooks);
+    let myBook = myBooks.slice(0,1);
+    let allBooks = twoBooks.concat(myBook);
+    shuffle(allBooks);
+    for (i = 0; i < allBooks.length; i++) {
+        let bookHtml = htmlFromBook(allBooks[i]);
+        $("#lhs-books-block").append(bookHtml);
+    }
+
+});
+</script>
+
+
+<script>
+// amazon-affiliate links
+$(document).ready(function() {
+
+    // 'layout-content' is the wrapper class for the article content
+    let hrefs = jQuery('a', 'div.layout-content');
+
+    for (let i = 0; i < hrefs.length; i++) {
+        let h = hrefs[i];
+        if (h.href.includes("amzn")) {
+            h.innerHTML = h.innerHTML + '<sup style="font-size:12px;"> (#ad)</sup>';
+        }
+    }
+
+});
+</script>
+
+<script src="https://alvinalexander.com/js/prism.js"></script>
+<script src="https://alvinalexander.com/lightbox/lightbox.min.js"></script>
+
+
+</body>
+</html>

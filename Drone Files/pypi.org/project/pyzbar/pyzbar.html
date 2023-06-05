@@ -1,0 +1,1919 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="defaultLanguage" content="en">
+    <meta name="availableLanguages" content="en, es, fr, ja, pt_BR, uk, el, de, zh_Hans, ru, he, eo">
+
+    
+
+    <title>pyzbar · PyPI</title>
+    <meta name="description" content="Read one-dimensional barcodes and QR codes from Python 2 and 3.">
+
+    <link rel="stylesheet" href="https://pypi.org/static/css/warehouse-ltr.ea4044d5.css">
+    <link rel="stylesheet" href="https://pypi.org/static/css/fontawesome.6002a161.css">
+    <link rel="stylesheet" href="https://pypi.org/static/css/regular.98fbf39a.css">
+    <link rel="stylesheet" href="https://pypi.org/static/css/solid.c3b5f0b5.css">
+    <link rel="stylesheet" href="https://pypi.org/static/css/brands.2c303be1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic%7CSource+Code+Pro:500">
+    <noscript>
+      <link rel="stylesheet" href="https://pypi.org/static/css/noscript.d4ce1e76.css">
+    </noscript>
+
+    
+
+    <link rel="icon" href="https://pypi.org/static/images/favicon.6a76275d.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS: 40 latest updates" href="https://pypi.org/rss/updates.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS: 40 newest packages" href="https://pypi.org/rss/packages.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS: latest releases for pyzbar" href="https://pypi.org/rss/project/pyzbar/releases.xml">
+    
+    <link rel="canonical" href="pyzbar.html">
+    
+
+    <meta property="og:url" content="https://pypi.org/project/pyzbar/">
+    <meta property="og:site_name" content="PyPI">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://pypi.org/static/images/twitter.90915068.jpg">
+    <meta property="og:title" content="pyzbar">
+    <meta property="og:description" content="Read one-dimensional barcodes and QR codes from Python 2 and 3.">
+
+    <link rel="search" type="application/opensearchdescription+xml" title="PyPI" href="https://pypi.org/opensearch.xml">
+
+    
+    <script
+      src="https://cdn.ravenjs.com/3.26.2/raven.min.js"
+      integrity="sha384-D6LXy67EIC102DTuqypxwQsTHgiatlbvg7q/1YAWFb6lRyZ1lIZ6bGDsX7jxHNKA"
+      crossorigin="anonymous">
+    </script>
+    
+    <script async
+            data-ga-id="UA-55961911-1"
+            data-sentry-frontend-dsn="https://3a67b35c9dc248a191d761410b095861@sentry.io/1231155"
+            src="https://pypi.org/static/js/warehouse.910dcbc1.js">
+    </script>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55961911-1"></script>
+    <script defer src="https://www.fastly-insights.com/insights.js?k=6a52360a-f306-421e-8ed5-7417d0d4a4e9&dnt=true"></script>
+  </head>
+
+  <body data-controller="viewport-toggle">
+    
+
+    <!-- Accessibility: this link should always be the first piece of content inside the body-->
+    <a href="pyzbar.html#content" class="skip-to-content">Skip to main content</a>
+
+    <button type="button" class="button button--primary button--switch-to-mobile hidden" data-target="viewport-toggle.switchToMobile" data-action="viewport-toggle#switchToMobile">
+      Switch to mobile version
+    </button>
+
+    <div id="sticky-notifications" class="stick-to-top js-stick-to-top">
+      <!-- Add browser warning. Will show for ie9 and below -->
+      <!--[if IE]>
+      <div class="notification-bar notification-bar--warning" role="status">
+        <span class="notification-bar__icon">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span class="sr-only">Warning</span>
+        </span>
+        <span class="notification-bar__message">You are using an unsupported browser, upgrade to a newer version.</span>
+      </div>
+      <![endif]-->
+      
+      <noscript>
+      <div class="notification-bar notification-bar--warning" role="status">
+        
+        <span class="notification-bar__icon">
+          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+          <span class="sr-only">Warning</span>
+        </span>
+        <span class="notification-bar__message">Some features may not work without JavaScript. Please try enabling it if you encounter problems.</span>
+      </div>
+      </noscript>
+    </div>
+
+    
+      <div data-html-include="/_includes/flash-messages/">
+      </div>
+    
+
+    
+
+    
+      <div data-html-include="/_includes/session-notifications/">
+      </div>
+    
+
+    <header class="site-header ">
+      <div class="site-container">
+        <div class="split-layout">
+          
+          <div class="split-layout">
+            <div>
+              <a class="site-header__logo" href="https://pypi.org/">
+                <img alt="PyPI" src="https://pypi.org/static/images/logo-small.6eef541e.svg">
+              </a>
+            </div>
+
+            <form class="search-form search-form--primary" action="https://pypi.org/search/" role="search">
+              <label for="search" class="sr-only">Search PyPI</label>
+              <input id="search" class="search-form__search" type="text" name="q" placeholder="Search projects" value="" autocomplete="off" autocapitalize="off" spellcheck="false">
+              
+              <button type="submit" class="search-form__button">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <span class="sr-only">Search</span>
+              </button>
+            </form>
+          </div>
+          
+
+          <div data-html-include="/_includes/current-user-indicator/">
+            <div id="user-indicator" class="horizontal-menu horizontal-menu--light horizontal-menu--tall">
+  <nav class="horizontal-menu horizontal-menu--light horizontal-menu--tall hide-on-tablet" aria-label="Main navigation">
+    <ul>
+      <li class="horizontal-menu__item"><a href="https://pypi.org/help/" class="horizontal-menu__link">Help</a></li>
+      <li class="horizontal-menu__item"><a href="https://pypi.org/sponsors/" class="horizontal-menu__link">Sponsors</a></li>
+      <li class="horizontal-menu__item"><a href="https://pypi.org/account/login/" class="horizontal-menu__link">Log in</a></li>
+      <li class="horizontal-menu__item"><a href="https://pypi.org/account/register/" class="horizontal-menu__link">Register</a></li>
+    </ul>
+  </nav>
+  <nav class="dropdown dropdown--on-menu hidden show-on-tablet" aria-label="Main navigation">
+    <button type="button" class="horizontal-menu__link dropdown__trigger" aria-haspopup="true" aria-expanded="false" aria-label="View menu">
+      Menu
+      <span class="dropdown__trigger-caret">
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </span>
+    </button>
+    <ul class="dropdown__content" aria-hidden="true" aria-label="Main menu">
+      <li><a class="dropdown__link" href="https://pypi.org/help/">Help</a></li>
+      <li><a class="dropdown__link" href="https://pypi.org/sponsors/">Sponsors</a></li>
+      <li><a class="dropdown__link" href="https://pypi.org/account/login/">Log in</a></li>
+      <li><a class="dropdown__link" href="https://pypi.org/account/register/">Register</a></li>
+    </ul>
+  </nav>
+</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="mobile-search">
+      <form class="search-form search-form--fullwidth" action="https://pypi.org/search/" role="search">
+        <label for="mobile-search" class="sr-only">Search PyPI</label>
+        <input id="mobile-search" class="search-form__search" type="text" name="q" placeholder="Search projects" value="" autocomplete="off" autocapitalize="off" spellcheck="false">
+        
+        <button type="submit" class="search-form__button">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <span class="sr-only">Search</span>
+        </button>
+      </form>
+    </div>
+    
+
+    <main id="content">
+      
+<div class="banner">
+  <div class="package-header">
+    <div class="package-header__left">
+      <h1 class="package-header__name">
+        pyzbar 0.1.8
+      </h1>
+
+      
+      <p class="package-header__pip-instructions">
+        <span id="pip-command">pip install pyzbar</span>
+        <button type="button" class="copy-tooltip copy-tooltip-s" data-clipboard-target="#pip-command" data-tooltip-label="Copy to clipboard">
+          <i class="fa fa-copy" aria-hidden="true"></i>
+          <span class="sr-only">Copy PIP instructions</span>
+        </button>
+      </p>
+      
+    </div>
+
+    <div class="package-header__right">
+    
+      
+      <a class="status-badge status-badge--good" href="pyzbar.html">
+        <span>Latest version</span>
+      </a>
+      
+    
+      <p class="package-header__date">
+        Released: <time datetime="2019-02-21T07:09:34+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Feb 21, 2019
+</time>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="horizontal-section horizontal-section--grey horizontal-section--thin">
+  <div class="site-container">
+    <div class="split-layout split-layout--middle package-description">
+    
+      <p class="package-description__summary">Read one-dimensional barcodes and QR codes from Python 2 and 3.</p>
+    
+    <div data-html-include="/_includes/edit-project-button/pyzbar">
+    </div>
+    </div>
+  </div>
+</div>
+
+<div data-controller="project-tabs">
+  <div class="tabs-container">
+    <div class="vertical-tabs">
+      <div class="vertical-tabs__tabs">
+        <div class="sidebar-section">
+          <h3 class="sidebar-section__title">Navigation</h3>
+          <nav aria-label="Navigation for pyzbar">
+            <ul class="vertical-tabs__list" role="tablist">
+              <li role="tab">
+                <a id="description-tab" href="pyzbar.html#description" data-target="project-tabs.tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--is-active" aria-selected="true" aria-label="Project description. Focus will be moved to the description.">
+                  <i class="fa fa-align-left" aria-hidden="true"></i>
+                  Project description
+                </a>
+              </li>
+              <li role="tab">
+                <a id="history-tab" href="pyzbar.html#history" data-target="project-tabs.tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon" aria-label="Release history. Focus will be moved to the history panel.">
+                  <i class="fa fa-history" aria-hidden="true"></i>
+                  Release history
+                </a>
+              </li>
+              
+              <li role="tab">
+                <a id="files-tab" href="pyzbar.html#files" data-target="project-tabs.tab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon" aria-label="Download files. Focus will be moved to the project files.">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                  Download files
+                </a>
+              </li>
+              
+            </ul>
+          </nav>
+        </div>
+        
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Project links</h3>
+  <ul class="vertical-tabs__list">
+    
+    
+    <li>
+      <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://github.com/NaturalHistoryMuseum/pyzbar/" rel="nofollow">
+        
+
+
+  
+
+
+<i class="fas fa-home" aria-hidden="true"></i>Homepage
+      </a>
+    </li>
+    
+    
+  </ul>
+</div>
+
+
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Statistics</h3>
+  
+  <div class="github-repo-info hidden" data-url="https://api.github.com/repos/NaturalHistoryMuseum/pyzbar">
+    GitHub statistics:
+    <ul class="vertical-tabs__list">
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item"
+           data-key="html_url" data-attr="href" data-supplement="/stargazers" rel="noopener">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <strong>Stars:</strong>
+          <span class="github-repo-info__item" data-key="stargazers_count"></span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item"
+           data-key="html_url" data-attr="href" data-supplement="/network/members" rel="noopener">
+          <i class="fa fa-code-branch" aria-hidden="true"></i>
+          <strong>Forks:</strong>
+          <span class="github-repo-info__item" data-key="forks_count"></span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item"
+           data-key="html_url" data-attr="href" data-supplement="/issues" rel="noopener">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          <strong>Open issues/PRs:</strong>
+          <span class="github-repo-info__item" data-key="open_issues_count"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <p>
+    View statistics for this project via <a href="https://libraries.io/pypi/pyzbar" title="External link" target="_blank" rel="noopener">Libraries.io</a>, or by using <a href="https://packaging.python.org/guides/analyzing-pypi-package-downloads/" target="_blank" rel="noopener">our public dataset on Google BigQuery</a>
+  </p>
+</div>
+
+
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Meta</h3>
+  
+  <p><strong>License:</strong> MIT License (MIT)</p>
+  
+  
+    <p><strong>Author:</strong> <a href="mailto:quicklizard@googlemail.com">Lawrence Hudson</a></p>
+  
+  
+  
+  
+</div>
+
+
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Maintainers</h3>
+  
+    
+    <span class="sidebar-section__maintainer">
+      <a href="https://pypi.org/user/quicklizard/" aria-label="quicklizard">
+        <span class="sidebar-section__user-gravatar">
+          <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/47e4878f08add03694a6f22fc6d423c11ca8a8f6/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f31313636336439613465363365613136306161343861343561333764633939373f73697a653d3530" height="50" width="50" alt="Avatar for quicklizard from gravatar.com" title="Avatar for quicklizard from gravatar.com">
+        </span>
+        <span class="sidebar-section__user-gravatar-text">
+          quicklizard
+        </span>
+      </a>
+    </span>
+  
+</div>
+
+
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Classifiers</h3>
+  <ul class="sidebar-section__classifiers">
+    
+    <li>
+      <strong>Development Status</strong>
+      <ul>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Development+Status+%3A%3A+4+-+Beta">
+            4 - Beta
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li>
+      <strong>License</strong>
+      <ul>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=License+%3A%3A+OSI+Approved+%3A%3A+MIT+License">
+            OSI Approved :: MIT License
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li>
+      <strong>Programming Language</strong>
+      <ul>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+2">
+            Python :: 2
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+2.7">
+            Python :: 2.7
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3">
+            Python :: 3
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.4">
+            Python :: 3.4
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.5">
+            Python :: 3.5
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.6">
+            Python :: 3.6
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.7">
+            Python :: 3.7
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li>
+      <strong>Topic</strong>
+      <ul>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Topic+%3A%3A+Utilities">
+            Utilities
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+</div>
+
+        <div data-html-include="https://pypi.org/_includes/sidebar-sponsor-logo/">
+        </div>
+
+      </div>
+      <div class="vertical-tabs__panel">
+        <!-- mobile menu -->
+        <nav aria-label="Navigation for pyzbar">
+          <ul class="vertical-tabs__list" role="tablist">
+            <li role="tab">
+              <a id="mobile-description-tab" href="pyzbar.html#description" data-target="project-tabs.mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile vertical-tabs__tab--no-top-border vertical-tabs__tab--is-active" aria-selected="true" aria-label="Project description. Focus will be moved to the description.">
+                <i class="fa fa-align-left" aria-hidden="true"></i>
+                Project description
+              </a>
+            </li>
+            <li role="tab">
+              <a id="mobile-data-tab" href="pyzbar.html#data" data-target="project-tabs.mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Project details. Focus will be moved to the project details.">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                Project details
+              </a>
+            </li>
+            <li role="tab">
+              <a id="mobile-history-tab" href="pyzbar.html#history" data-target="project-tabs.mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Release history. Focus will be moved to the history panel.">
+              <i class="fa fa-history" aria-hidden="true"></i>
+              Release history
+            </a>
+            </li>
+            
+            <li role="tab">
+              <a id="mobile-files-tab" href="pyzbar.html#files" data-target="project-tabs.mobileTab" data-action="project-tabs#onTabClick" class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--mobile" aria-label="Download files. Focus will be moved to the project files.">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                Download files
+              </a>
+            </li>
+            
+          </ul>
+        </nav>
+
+        
+        <div id="description" data-target="project-tabs.content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="description-tab mobile-description-tab" tabindex="-1">
+          <h2 class="page-title">Project description</h2>
+          
+          <div class="project-description">
+            <a href="https://github.com/NaturalHistoryMuseum/pyzbar" rel=nofollow><img alt="https://img.shields.io/badge/python-2.7%2C%203.4%2C%203.5%2C%203.6%2C%203.7-blue.svg" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/f36fda0ca540ac0cefcb2dae2faef72a43f02f55/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f707974686f6e2d322e37253243253230332e34253243253230332e35253243253230332e36253243253230332e372d626c75652e737667"></a>
+<a href="https://pypi.python.org/pypi/pyzbar" rel=nofollow><img alt="https://badge.fury.io/py/pyzbar.svg" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/114f068324b2c7326278a2042bb85f5b76e9614d/68747470733a2f2f62616467652e667572792e696f2f70792f70797a6261722e737667"></a>
+<a href="https://travis-ci.org/NaturalHistoryMuseum/pyzbar" rel=nofollow><img alt="https://travis-ci.org/NaturalHistoryMuseum/pyzbar.svg?branch=master" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/1e0af866db65e0030f97e9896750c21690becef6/68747470733a2f2f7472617669732d63692e6f72672f4e61747572616c486973746f72794d757365756d2f70797a6261722e7376673f6272616e63683d6d6173746572"></a>
+<a href="https://coveralls.io/github/NaturalHistoryMuseum/pyzbar?branch=master" rel=nofollow><img alt="https://coveralls.io/repos/github/NaturalHistoryMuseum/pyzbar/badge.svg?branch=master" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/75d3a1c65e42522289dc8150b3a35deb2b934ff9/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f6769746875622f4e61747572616c486973746f72794d757365756d2f70797a6261722f62616467652e7376673f6272616e63683d6d6173746572"></a>
+<p>Read one-dimensional barcodes and QR codes from Python 2 and 3 using the
+<a href="http://zbar.sourceforge.net/" rel=nofollow>zbar</a> library.</p>
+<ul>
+<li>Pure python</li>
+<li>Works with PIL / Pillow images, OpenCV / numpy <tt>ndarray</tt>s, and raw bytes</li>
+<li>Decodes locations of barcodes</li>
+<li>No dependencies, other than the zbar library itself</li>
+<li>Tested on Python 2.7, and Python 3.4 to 3.6</li>
+</ul>
+<p>The older <a href="https://sourceforge.net/p/zbar/code/ci/default/tree/python/" rel=nofollow>zbar</a>
+package is stuck in Python 2.x-land.
+The <a href="https://github.com/Polyconseil/zbarlight/" rel=nofollow>zbarlight</a> package does not
+provide support for Windows and depends upon Pillow.</p>
+<div id=installation>
+<h2>Installation</h2>
+<p>The <tt>zbar</tt> <tt>DLL</tt>s are included with the Windows Python wheels.
+On other operating systems, you will need to install the <tt>zbar</tt> shared
+library.</p>
+<p>Mac OS X:</p>
+<pre>brew install zbar
+</pre>
+<p>Linux:</p>
+<pre>sudo apt-get install libzbar0
+</pre>
+<p>Install this Python wrapper; use the second form to install dependencies of the
+command-line scripts:</p>
+<pre>pip install pyzbar
+pip install pyzbar[scripts]
+</pre>
+</div>
+<div id=example-usage>
+<h2>Example usage</h2>
+<p>The <tt>decode</tt> function accepts instances of <tt>PIL.Image</tt>.</p>
+<pre>&gt;&gt;&gt; from pyzbar.pyzbar import decode
+&gt;&gt;&gt; from PIL import Image
+&gt;&gt;&gt; decode(Image.open('pyzbar/tests/code128.png'))
+[
+    Decoded(
+        data=b'Foramenifera', type='CODE128',
+        rect=Rect(left=37, top=550, width=324, height=76),
+        polygon=[
+            Point(x=37, y=551), Point(x=37, y=625), Point(x=361, y=626),
+            Point(x=361, y=550)
+        ]
+    )
+    Decoded(
+        data=b'Rana temporaria', type='CODE128',
+        rect=Rect(left=4, top=0, width=390, height=76),
+        polygon=[
+            Point(x=4, y=1), Point(x=4, y=75), Point(x=394, y=76),
+            Point(x=394, y=0)
+        ]
+    )
+]
+</pre>
+<p>It also accepts instances of <tt>numpy.ndarray</tt>, which might come from loading
+images using <a href="http://opencv.org/" rel=nofollow>OpenCV</a>.</p>
+<pre>&gt;&gt;&gt; import cv2
+&gt;&gt;&gt; decode(cv2.imread('pyzbar/tests/code128.png'))
+[
+    Decoded(
+        data=b'Foramenifera', type='CODE128',
+        rect=Rect(left=37, top=550, width=324, height=76),
+        polygon=[
+            Point(x=37, y=551), Point(x=37, y=625), Point(x=361, y=626),
+            Point(x=361, y=550)
+        ]
+    )
+    Decoded(
+        data=b'Rana temporaria', type='CODE128',
+        rect=Rect(left=4, top=0, width=390, height=76),
+        polygon=[
+            Point(x=4, y=1), Point(x=4, y=75), Point(x=394, y=76),
+            Point(x=394, y=0)
+        ]
+    )
+]
+</pre>
+<p>You can also provide a tuple <tt>(pixels, width, height)</tt>, where the image data
+is eight bits-per-pixel.</p>
+<pre>&gt;&gt;&gt; image = cv2.imread('pyzbar/tests/code128.png')
+&gt;&gt;&gt; height, width = image.shape[:2]
+
+&gt;&gt;&gt; # 8 bpp by considering just the blue channel
+&gt;&gt;&gt; decode((image[:, :, 0].astype('uint8').tobytes(), width, height))
+[
+    Decoded(
+        data=b'Foramenifera', type='CODE128',
+        rect=Rect(left=37, top=550, width=324, height=76),
+        polygon=[
+            Point(x=37, y=551), Point(x=37, y=625), Point(x=361, y=626),
+            Point(x=361, y=550)
+        ]
+    )
+    Decoded(
+        data=b'Rana temporaria', type='CODE128',
+        rect=Rect(left=4, top=0, width=390, height=76),
+        polygon=[
+            Point(x=4, y=1), Point(x=4, y=75), Point(x=394, y=76),
+            Point(x=394, y=0)
+        ]
+    )
+]
+
+&gt;&gt;&gt; # 8 bpp by converting image to greyscale
+&gt;&gt;&gt; grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+&gt;&gt;&gt; decode((grey.tobytes(), width, height))
+[
+    Decoded(
+        data=b'Foramenifera', type='CODE128',
+        rect=Rect(left=37, top=550, width=324, height=76),
+        polygon=[
+            Point(x=37, y=551), Point(x=37, y=625), Point(x=361, y=626),
+            Point(x=361, y=550)
+        ]
+    )
+    Decoded(
+        data=b'Rana temporaria', type='CODE128',
+        rect=Rect(left=4, top=0, width=390, height=76),
+        polygon=[
+            Point(x=4, y=1), Point(x=4, y=75), Point(x=394, y=76),
+            Point(x=394, y=0)
+        ]
+    )
+]
+
+&gt;&gt;&gt; # If you don't provide 8 bpp
+&gt;&gt;&gt; decode((image.tobytes(), width, height))
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+  File "/Users/lawh/projects/pyzbar/pyzbar/pyzbar.py", line 102, in decode
+    raise PyZbarError('Unsupported bits-per-pixel [{0}]'.format(bpp))
+pyzbar.pyzbar_error.PyZbarError: Unsupported bits-per-pixel [24]
+</pre>
+<p>The default behaviour is to decode all symbol types. You can look for just your
+symbol types</p>
+<pre>&gt;&gt;&gt; from pyzbar.pyzbar import ZBarSymbol
+&gt;&gt;&gt; # Look for just qrcode
+&gt;&gt;&gt; decode(Image.open('pyzbar/tests/qrcode.png'), symbols=[ZBarSymbol.QRCODE])
+[
+    Decoded(
+        data=b'Thalassiodracon', type='QRCODE',
+        rect=Rect(left=27, top=27, width=145, height=145),
+        polygon=[
+            Point(x=27, y=27), Point(x=27, y=172), Point(x=172, y=172),
+            Point(x=172, y=27)
+        ]
+    )
+]
+
+
+&gt;&gt;&gt; # If we look for just code128, the qrcodes in the image will not be detected
+&gt;&gt;&gt; decode(Image.open('pyzbar/tests/qrcode.png'), symbols=[ZBarSymbol.CODE128])
+[]
+</pre>
+</div>
+<div id=bounding-boxes-and-polygons>
+<h2>Bounding boxes and polygons</h2>
+<p>The blue and pink boxes show <tt>rect</tt> and <tt>polygon</tt>, respectively, for
+barcodes in <tt>pyzbar/tests/qrcode.png</tt> (see
+<a href="https://github.com/NaturalHistoryMuseum/pyzbar/blob/master/bounding_box_and_polygon.py" rel=nofollow>bounding_box_and_polygon.py</a>).</p>
+<div>
+<img alt="Two barcodes with bounding boxes and polygons" src="https://warehouse-camo.ingress.cmh1.psfhosted.org/0cd6c3cebd8c8eeddb626651f46364b870c2af6a/68747470733a2f2f6769746875622e636f6d2f4e61747572616c486973746f72794d757365756d2f70797a6261722f7261772f6d61737465722f626f756e64696e675f626f785f616e645f706f6c79676f6e2e706e67">
+</div>
+</div>
+<div id=windows-error-message>
+<h2>Windows error message</h2>
+<p>If you see an ugly <tt>ImportError</tt> when importing <tt>pyzbar</tt> on Windows
+you will most likely need the <a href="https://www.microsoft.com/en-US/download/details.aspx?id=40784" rel=nofollow>Visual C++ Redistributable Packages for Visual
+Studio 2013</a>.
+Install <tt>vcredist_x64.exe</tt> if using 64-bit Python, <tt>vcredist_x86.exe</tt> if
+using 32-bit Python.</p>
+</div>
+<div id=contributors>
+<h2>Contributors</h2>
+<ul>
+<li>Alex (@globophobe) - first implementation of barcode locations</li>
+</ul>
+</div>
+<div id=license>
+<h2>License</h2>
+<p><tt>pyzbar</tt> is distributed under the MIT license (see <tt>LICENCE.txt</tt>).
+The <tt>zbar</tt> shared library is distributed under the GNU Lesser General
+Public License, version 2.1 (see <tt><span class=pre>zbar-LICENCE.txt</span></tt>).</p>
+</div>
+
+          </div>
+          
+        </div>
+
+        
+        <div id="data" data-target="project-tabs.content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="mobile-data-tab" tabindex="-1">
+          <h2 class="page-title">Project details</h2>
+          
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Project links</h3>
+  <ul class="vertical-tabs__list">
+    
+    
+    <li>
+      <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed" href="https://github.com/NaturalHistoryMuseum/pyzbar/" rel="nofollow">
+        
+
+
+  
+
+
+<i class="fas fa-home" aria-hidden="true"></i>Homepage
+      </a>
+    </li>
+    
+    
+  </ul>
+</div>
+
+
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Statistics</h3>
+  
+  <div class="github-repo-info hidden" data-url="https://api.github.com/repos/NaturalHistoryMuseum/pyzbar">
+    GitHub statistics:
+    <ul class="vertical-tabs__list">
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item"
+           data-key="html_url" data-attr="href" data-supplement="/stargazers" rel="noopener">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <strong>Stars:</strong>
+          <span class="github-repo-info__item" data-key="stargazers_count"></span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item"
+           data-key="html_url" data-attr="href" data-supplement="/network/members" rel="noopener">
+          <i class="fa fa-code-branch" aria-hidden="true"></i>
+          <strong>Forks:</strong>
+          <span class="github-repo-info__item" data-key="forks_count"></span>
+        </a>
+      </li>
+      <li>
+        <a class="vertical-tabs__tab vertical-tabs__tab--with-icon vertical-tabs__tab--condensed github-repo-info__item"
+           data-key="html_url" data-attr="href" data-supplement="/issues" rel="noopener">
+          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+          <strong>Open issues/PRs:</strong>
+          <span class="github-repo-info__item" data-key="open_issues_count"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <p>
+    View statistics for this project via <a href="https://libraries.io/pypi/pyzbar" title="External link" target="_blank" rel="noopener">Libraries.io</a>, or by using <a href="https://packaging.python.org/guides/analyzing-pypi-package-downloads/" target="_blank" rel="noopener">our public dataset on Google BigQuery</a>
+  </p>
+</div>
+
+
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Meta</h3>
+  
+  <p><strong>License:</strong> MIT License (MIT)</p>
+  
+  
+    <p><strong>Author:</strong> <a href="mailto:quicklizard@googlemail.com">Lawrence Hudson</a></p>
+  
+  
+  
+  
+</div>
+
+
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Maintainers</h3>
+  
+    
+    <span class="sidebar-section__maintainer">
+      <a href="https://pypi.org/user/quicklizard/" aria-label="quicklizard">
+        <span class="sidebar-section__user-gravatar">
+          <img src="https://warehouse-camo.ingress.cmh1.psfhosted.org/47e4878f08add03694a6f22fc6d423c11ca8a8f6/68747470733a2f2f7365637572652e67726176617461722e636f6d2f6176617461722f31313636336439613465363365613136306161343861343561333764633939373f73697a653d3530" height="50" width="50" alt="Avatar for quicklizard from gravatar.com" title="Avatar for quicklizard from gravatar.com">
+        </span>
+        <span class="sidebar-section__user-gravatar-text">
+          quicklizard
+        </span>
+      </a>
+    </span>
+  
+</div>
+
+
+<div class="sidebar-section">
+  <h3 class="sidebar-section__title">Classifiers</h3>
+  <ul class="sidebar-section__classifiers">
+    
+    <li>
+      <strong>Development Status</strong>
+      <ul>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Development+Status+%3A%3A+4+-+Beta">
+            4 - Beta
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li>
+      <strong>License</strong>
+      <ul>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=License+%3A%3A+OSI+Approved+%3A%3A+MIT+License">
+            OSI Approved :: MIT License
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li>
+      <strong>Programming Language</strong>
+      <ul>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+2">
+            Python :: 2
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+2.7">
+            Python :: 2.7
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3">
+            Python :: 3
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.4">
+            Python :: 3.4
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.5">
+            Python :: 3.5
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.6">
+            Python :: 3.6
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Programming+Language+%3A%3A+Python+%3A%3A+3.7">
+            Python :: 3.7
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li>
+      <strong>Topic</strong>
+      <ul>
+        
+        <li>
+          <a href="https://pypi.org/search/?c=Topic+%3A%3A+Utilities">
+            Utilities
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+</div>
+
+          <br>
+        </div>
+
+        
+        <div id="history" data-target="project-tabs.content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="history-tab mobile-history-tab" tabindex="-1">
+          <h2 class="page-title split-layout">
+            <span>Release history</span>
+            <span class="reset-text margin-top">
+              <a href="https://pypi.org/help/#project-release-notifications">Release notifications</a> |
+              <a href="https://pypi.org/rss/project/pyzbar/releases.xml">RSS feed <i class="fa fa-rss" aria-hidden="true"></i></a>
+            </span>
+          </h2>
+
+          <div class="release-timeline">
+            
+            
+            
+            
+            <div class="release release--latest release--current">
+              <div class="release__meta">
+                
+                <span class="badge">This version</span>
+                
+              </div>
+
+              <div class="release__graphic">
+                
+                <div class="release__line"></div>
+                
+                
+                <img class="release__node" alt="" src="https://pypi.org/static/images/blue-cube.e6165d35.svg">
+                
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/pyzbar/0.1.8/">
+                <p class="release__version">
+                  0.1.8
+                  
+                  
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2019-02-21T07:09:34+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Feb 21, 2019
+</time>
+                </p>
+              </a>
+            </div>
+            
+            
+            <div class="release">
+              <div class="release__meta">
+                
+              </div>
+
+              <div class="release__graphic">
+                
+                <div class="release__line"></div>
+                
+                
+                <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg">
+                
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/pyzbar/0.1.7/">
+                <p class="release__version">
+                  0.1.7
+                  
+                  
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2018-05-13T12:30:15+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  May 13, 2018
+</time>
+                </p>
+              </a>
+            </div>
+            
+            
+            <div class="release">
+              <div class="release__meta">
+                
+              </div>
+
+              <div class="release__graphic">
+                
+                <div class="release__line"></div>
+                
+                
+                <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg">
+                
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/pyzbar/0.1.5/">
+                <p class="release__version">
+                  0.1.5
+                  
+                  
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2018-03-18T21:05:10+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Mar 18, 2018
+</time>
+                </p>
+              </a>
+            </div>
+            
+            
+            <div class="release">
+              <div class="release__meta">
+                
+              </div>
+
+              <div class="release__graphic">
+                
+                <div class="release__line"></div>
+                
+                
+                <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg">
+                
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/pyzbar/0.1.4/">
+                <p class="release__version">
+                  0.1.4
+                  
+                  
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2017-01-18T13:16:08+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Jan 18, 2017
+</time>
+                </p>
+              </a>
+            </div>
+            
+            
+            <div class="release">
+              <div class="release__meta">
+                
+              </div>
+
+              <div class="release__graphic">
+                
+                <div class="release__line"></div>
+                
+                
+                <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg">
+                
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/pyzbar/0.1.3/">
+                <p class="release__version">
+                  0.1.3
+                  
+                  
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2016-12-01T10:46:55+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Dec 1, 2016
+</time>
+                </p>
+              </a>
+            </div>
+            
+            
+            <div class="release">
+              <div class="release__meta">
+                
+              </div>
+
+              <div class="release__graphic">
+                
+                <div class="release__line"></div>
+                
+                
+                <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg">
+                
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/pyzbar/0.1.2/">
+                <p class="release__version">
+                  0.1.2
+                  
+                  
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2016-11-09T12:49:03+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Nov 9, 2016
+</time>
+                </p>
+              </a>
+            </div>
+            
+            
+            <div class="release">
+              <div class="release__meta">
+                
+              </div>
+
+              <div class="release__graphic">
+                
+                <div class="release__line"></div>
+                
+                
+                <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg">
+                
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/pyzbar/0.1.1/">
+                <p class="release__version">
+                  0.1.1
+                  
+                  
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2016-11-08T12:41:32+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Nov 8, 2016
+</time>
+                </p>
+              </a>
+            </div>
+            
+            
+            <div class="release release--oldest">
+              <div class="release__meta">
+                
+              </div>
+
+              <div class="release__graphic">
+                
+                <div class="release__line"></div>
+                
+                
+                <img class="release__node" alt="" src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg">
+                
+              </div>
+
+              <a class="card release__card" href="https://pypi.org/project/pyzbar/0.1.0/">
+                <p class="release__version">
+                  0.1.0
+                  
+                  
+                </p>
+                <p class="release__version-date">
+                  <time datetime="2016-11-08T12:14:06+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Nov 8, 2016
+</time>
+                </p>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+          
+          <div id="files" data-target="project-tabs.content" class="vertical-tabs__content" role="tabpanel" aria-labelledby="files-tab mobile-files-tab" tabindex="-1">
+            <h2 class="page-title">Download files</h2>
+            <p>Download the file for your platform. If you're not sure which to choose, learn more about <a href="https://packaging.python.org/installing/" title="External link" target="_blank" rel="noopener">installing packages</a>.</p>
+
+            <table class="table table--downloads">
+              <caption class="sr-only">Files for pyzbar, version 0.1.8</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Filename, size</th>
+                  <th scope="col">File type</th>
+                  <th scope="col">Python version</th>
+                  <th scope="col">Upload date</th>
+                  <th scope="col" class="table__align-right">Hashes</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr>
+                  <th scope="row">
+                    <span class="table__mobile-label">Filename, size</span>
+                    <a href="https://files.pythonhosted.org/packages/46/7e/d2ad702facc47c0b3106a494f5dfbc3f296aab7a07dac05d1f30bdad0fab/pyzbar-0.1.8-py2.py3-none-any.whl">
+                      pyzbar-0.1.8-py2.py3-none-any.whl
+                    </a>
+                     (28.7 kB)
+                  </th>
+                  <td>
+                    <span class="table__mobile-label">File type</span>
+                    Wheel
+                  </td>
+                  <td>
+                    <span class="table__mobile-label">Python version</span>
+                    
+                      py2.py3
+                    
+                  </td>
+                  <td>
+                    <span class="table__mobile-label">Upload date</span>
+                    <time datetime="2019-02-21T07:09:34+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Feb 21, 2019
+</time>
+                  </td>
+                  <td class="table__align-right">
+                    <span class="table__mobile-label table__mobile-label--hashes">Hashes</span>
+                    <a href="https://pypi.org/project/pyzbar/pyzbar.html#copy-hash-modal-f89f81f4-1cd6-462f-b7f9-5cafcf1d2e1a" class="button button--small button--primary">
+                      View
+                    </a>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">
+                    <span class="table__mobile-label">Filename, size</span>
+                    <a href="https://files.pythonhosted.org/packages/15/f4/90033b4ecca7c2f2815b410b953fad6499ca3861af420b1de5bf111ccdd2/pyzbar-0.1.8-py2.py3-none-win32.whl">
+                      pyzbar-0.1.8-py2.py3-none-win32.whl
+                    </a>
+                     (806.7 kB)
+                  </th>
+                  <td>
+                    <span class="table__mobile-label">File type</span>
+                    Wheel
+                  </td>
+                  <td>
+                    <span class="table__mobile-label">Python version</span>
+                    
+                      py2.py3
+                    
+                  </td>
+                  <td>
+                    <span class="table__mobile-label">Upload date</span>
+                    <time datetime="2019-02-21T07:09:46+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Feb 21, 2019
+</time>
+                  </td>
+                  <td class="table__align-right">
+                    <span class="table__mobile-label table__mobile-label--hashes">Hashes</span>
+                    <a href="https://pypi.org/project/pyzbar/pyzbar.html#copy-hash-modal-4a4592bb-7f35-4f19-8f34-6005607c082c" class="button button--small button--primary">
+                      View
+                    </a>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">
+                    <span class="table__mobile-label">Filename, size</span>
+                    <a href="https://files.pythonhosted.org/packages/3d/14/97bf8e36fb58965415e3c7d8f95cfd6375cb0b5464ae9dbc0a48f7f9ab19/pyzbar-0.1.8-py2.py3-none-win_amd64.whl">
+                      pyzbar-0.1.8-py2.py3-none-win_amd64.whl
+                    </a>
+                     (813.5 kB)
+                  </th>
+                  <td>
+                    <span class="table__mobile-label">File type</span>
+                    Wheel
+                  </td>
+                  <td>
+                    <span class="table__mobile-label">Python version</span>
+                    
+                      py2.py3
+                    
+                  </td>
+                  <td>
+                    <span class="table__mobile-label">Upload date</span>
+                    <time datetime="2019-02-21T07:09:57+0000" data-controller="localized-time" data-localized-time-relative="true" data-localized-time-show-time="false">
+  Feb 21, 2019
+</time>
+                  </td>
+                  <td class="table__align-right">
+                    <span class="table__mobile-label table__mobile-label--hashes">Hashes</span>
+                    <a href="https://pypi.org/project/pyzbar/pyzbar.html#copy-hash-modal-5d29bb56-6138-4058-b75b-666448631b81" class="button button--small button--primary">
+                      View
+                    </a>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+
+          
+          <div id="copy-hash-modal-f89f81f4-1cd6-462f-b7f9-5cafcf1d2e1a" class="modal modal--wide">
+  <div class="modal__content" role="dialog">
+    <a href="https://pypi.org/project/pyzbar/pyzbar.html#modal-close" title="Close" class="modal__close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+      <span class="sr-only">Close</span>
+    </a>
+    <div class="modal__body">
+      <h3 class="modal__title">
+        <a href="https://pip.pypa.io/en/stable/reference/pip_install/#hash-checking-mode" title="External link" target="_blank" rel="noopener">Hashes</a> for pyzbar-0.1.8-py2.py3-none-any.whl
+      </h3>
+      <table class="table table--hashes">
+        <caption class="sr-only">Hashes for pyzbar-0.1.8-py2.py3-none-any.whl</caption>
+        <thead>
+          <tr>
+            <th scope="col">Algorithm</th>
+            <th scope="col">Hash digest</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">SHA256</th>
+            <td><code>0e204b904e093e5e75aa85e0203bb0e02888105732a509b51f31cff400f34265</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="0e204b904e093e5e75aa85e0203bb0e02888105732a509b51f31cff400f34265">
+                Copy
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">MD5</th>
+            <td><code>4cee06c1e2dbfeab163c5d1f4ebc5503</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="4cee06c1e2dbfeab163c5d1f4ebc5503">
+                Copy
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">BLAKE2-256</th>
+            <td><code>467ed2ad702facc47c0b3106a494f5dfbc3f296aab7a07dac05d1f30bdad0fab</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="467ed2ad702facc47c0b3106a494f5dfbc3f296aab7a07dac05d1f30bdad0fab">
+                Copy
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal__footer">
+      <a href="https://pypi.org/project/pyzbar/pyzbar.html#modal-close" class="button button--primary modal__action">Close</a>
+    </div>
+  </div>
+</div>
+          
+          <div id="copy-hash-modal-4a4592bb-7f35-4f19-8f34-6005607c082c" class="modal modal--wide">
+  <div class="modal__content" role="dialog">
+    <a href="https://pypi.org/project/pyzbar/pyzbar.html#modal-close" title="Close" class="modal__close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+      <span class="sr-only">Close</span>
+    </a>
+    <div class="modal__body">
+      <h3 class="modal__title">
+        <a href="https://pip.pypa.io/en/stable/reference/pip_install/#hash-checking-mode" title="External link" target="_blank" rel="noopener">Hashes</a> for pyzbar-0.1.8-py2.py3-none-win32.whl
+      </h3>
+      <table class="table table--hashes">
+        <caption class="sr-only">Hashes for pyzbar-0.1.8-py2.py3-none-win32.whl</caption>
+        <thead>
+          <tr>
+            <th scope="col">Algorithm</th>
+            <th scope="col">Hash digest</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">SHA256</th>
+            <td><code>7d6c01d2c0a352fa994aa91b5540d1caeaeaac466656eb41468ca5df33be9f2e</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="7d6c01d2c0a352fa994aa91b5540d1caeaeaac466656eb41468ca5df33be9f2e">
+                Copy
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">MD5</th>
+            <td><code>b8526e37f3ade7ef762aefd237dce4dd</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="b8526e37f3ade7ef762aefd237dce4dd">
+                Copy
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">BLAKE2-256</th>
+            <td><code>15f490033b4ecca7c2f2815b410b953fad6499ca3861af420b1de5bf111ccdd2</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="15f490033b4ecca7c2f2815b410b953fad6499ca3861af420b1de5bf111ccdd2">
+                Copy
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal__footer">
+      <a href="https://pypi.org/project/pyzbar/pyzbar.html#modal-close" class="button button--primary modal__action">Close</a>
+    </div>
+  </div>
+</div>
+          
+          <div id="copy-hash-modal-5d29bb56-6138-4058-b75b-666448631b81" class="modal modal--wide">
+  <div class="modal__content" role="dialog">
+    <a href="https://pypi.org/project/pyzbar/pyzbar.html#modal-close" title="Close" class="modal__close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+      <span class="sr-only">Close</span>
+    </a>
+    <div class="modal__body">
+      <h3 class="modal__title">
+        <a href="https://pip.pypa.io/en/stable/reference/pip_install/#hash-checking-mode" title="External link" target="_blank" rel="noopener">Hashes</a> for pyzbar-0.1.8-py2.py3-none-win_amd64.whl
+      </h3>
+      <table class="table table--hashes">
+        <caption class="sr-only">Hashes for pyzbar-0.1.8-py2.py3-none-win_amd64.whl</caption>
+        <thead>
+          <tr>
+            <th scope="col">Algorithm</th>
+            <th scope="col">Hash digest</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">SHA256</th>
+            <td><code>496249b546be70ec98c0ff0ad9151e73daaffff129266df86150a15dcd8dac4c</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="496249b546be70ec98c0ff0ad9151e73daaffff129266df86150a15dcd8dac4c">
+                Copy
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">MD5</th>
+            <td><code>5952a5a156f4572bf2da88fb24dcbb63</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="5952a5a156f4572bf2da88fb24dcbb63">
+                Copy
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">BLAKE2-256</th>
+            <td><code>3d1497bf8e36fb58965415e3c7d8f95cfd6375cb0b5464ae9dbc0a48f7f9ab19</code></td>
+            <td class="table__align-right">
+              <button type="button" class="button button--small copy-tooltip copy-tooltip-w" data-tooltip-label="Copy to clipboard" data-clipboard-text="3d1497bf8e36fb58965415e3c7d8f95cfd6375cb0b5464ae9dbc0a48f7f9ab19">
+                Copy
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal__footer">
+      <a href="https://pypi.org/project/pyzbar/pyzbar.html#modal-close" class="button button--primary modal__action">Close</a>
+    </div>
+  </div>
+</div>
+          
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__logo">
+        <img src="https://pypi.org/static/images/white-cube.8c3a6fe9.svg" alt="" class="-js-white-cube">
+      </div>
+
+      <div class="footer__menus">
+        <div class="footer__menu">
+          <h2>Help</h2>
+          <nav aria-label="Help navigation">
+            <ul>
+              <li><a href="https://packaging.python.org/installing/" title="External link" target="_blank" rel="noopener">Installing packages</a></li>
+              <li><a href="https://packaging.python.org/tutorials/packaging-projects/" title="External link" target="_blank" rel="noopener">Uploading packages</a></li>
+              <li><a href="https://packaging.python.org/" title="External link" target="_blank" rel="noopener">User guide</a></li>
+              <li><a href="https://pypi.org/help/">FAQs</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>About PyPI</h2>
+          <nav aria-label="About PyPI navigation">
+            <ul>
+              <li><a href="https://twitter.com/PyPI" title="External link" target="_blank" rel="noopener">PyPI on Twitter</a></li>
+              <li><a href="https://dtdg.co/pypi" title="External link" target="_blank" rel="noopener">Infrastructure dashboard</a></li>
+              <li><a href="https://www.python.org/dev/peps/pep-0541/" title="External link" target="_blank" rel="noopener">Package index name retention</a></li>
+              <li><a href="https://pypi.org/sponsors/">Our sponsors</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>Contributing to PyPI</h2>
+          <nav aria-label="How to contribute navigation">
+            <ul>
+              <li><a href="https://pypi.org/help/#feedback">Bugs and feedback</a></li>
+              <li><a href="https://github.com/pypa/warehouse" title="External link" target="_blank" rel="noopener">Contribute on GitHub</a></li>
+              <li><a href="https://hosted.weblate.org/projects/pypa/warehouse/" title="External link" target="_blank" rel="noopener">Translate PyPI</a></li>
+              <li><a href="https://github.com/pypa/warehouse/graphs/contributors" title="External link" target="_blank" rel="noopener">Development credits</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer__menu">
+          <h2>Using PyPI</h2>
+          <nav aria-label="Using PyPI navigation">
+            <ul>
+              <li><a href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md" title="External link" target="_blank" rel="noopener">Code of conduct</a></li>
+              <li><a href="https://pypi.org/security/">Report security issue</a></li>
+              <li><a href="https://www.python.org/privacy/" title="External link" target="_blank" rel="noopener">Privacy policy</a></li>
+              <li><a href="https://pypi.org/policy/terms-of-use/">Terms of use</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <hr class="footer__divider">
+
+      <div class="footer__text">
+        
+        <p>Status: <a href="https://status.python.org/" title="External link" target="_blank" rel="noopener">
+          <span data-statuspage-domain="https://2p66nmmycsj3.statuspage.io">all systems operational</span></a>
+        </p>
+        
+        <p>
+          Developed and maintained by the Python community, for the Python community.
+          <br>
+          <a href="https://donate.pypi.org">Donate today!</a>
+        </p>
+        <p>© 2021 <a href="https://www.python.org/psf/" title="External link" target="_blank" rel="noopener">Python Software Foundation</a><br>
+          <a href="https://pypi.org/sitemap/">Site map</a>
+        </p>
+      </div>
+
+      <div class="centered hide-on-desktop">
+        <button type="button" class="button button--switch-to-desktop hidden" data-target="viewport-toggle.switchToDesktop" data-action="viewport-toggle#switchToDesktop">
+          Switch to desktop version
+        </button>
+      </div>
+    </footer>
+
+
+    <div class="language-switcher">
+      <form action="https://pypi.org/locale/">
+        <ul>
+          
+          <li>
+            <button
+              
+              class="language-switcher__selected"
+              
+              name="locale_id" value="en" type="submit"
+            >
+              English
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="es" type="submit"
+            >
+              español
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="fr" type="submit"
+            >
+              français
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="ja" type="submit"
+            >
+              日本語
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="pt_BR" type="submit"
+            >
+              português (Brasil)
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="uk" type="submit"
+            >
+              українська
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="el" type="submit"
+            >
+              Ελληνικά
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="de" type="submit"
+            >
+              Deutsch
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="zh_Hans" type="submit"
+            >
+              中文 (简体)
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="ru" type="submit"
+            >
+              русский
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="he" type="submit"
+            >
+              עברית
+            </button>
+          </li>
+          
+          <li>
+            <button
+              
+              name="locale_id" value="eo" type="submit"
+            >
+              esperanto
+            </button>
+          </li>
+          
+        </ul>
+      </form>
+    </div>
+
+
+    
+
+<div class="sponsors">
+  <p class="sponsors__title">Supported by</p>
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://aws.amazon.com/">
+          <img class="sponsors__image" alt="AWS" src="https://pypi.org/static/images/sponsors/white/aws.9f9c77f7.png">
+          <span class="sponsors__name">AWS</span>
+          <span class="sponsors__service">
+          
+          
+            Cloud computing
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.datadoghq.com/">
+          <img class="sponsors__image" alt="Datadog" src="https://pypi.org/static/images/sponsors/white/datadog.d16bd2ef.png">
+          <span class="sponsors__name">Datadog</span>
+          <span class="sponsors__service">
+          
+          
+            Monitoring
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.digicert.com/">
+          <img class="sponsors__image" alt="DigiCert" src="https://pypi.org/static/images/sponsors/white/digicert.7d655136.png">
+          <span class="sponsors__name">DigiCert</span>
+          <span class="sponsors__service">
+          
+          
+            EV certificate
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://research.fb.com/">
+          <img class="sponsors__image" alt="Facebook / Instagram" src="https://pypi.org/static/images/sponsors/white/facebook.34ad6ed2.png">
+          <span class="sponsors__name">Facebook / Instagram</span>
+          <span class="sponsors__service">
+          
+          
+            PSF Sponsor
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.fastly.com/">
+          <img class="sponsors__image" alt="Fastly" src="https://pypi.org/static/images/sponsors/white/fastly.dc317a48.png">
+          <span class="sponsors__name">Fastly</span>
+          <span class="sponsors__service">
+          
+          
+            CDN
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://careers.google.com/">
+          <img class="sponsors__image" alt="Google" src="https://pypi.org/static/images/sponsors/white/google.32d8a2de.png">
+          <span class="sponsors__name">Google</span>
+          <span class="sponsors__service">
+          
+          
+            Object Storage and Download Analytics
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://www.pingdom.com/">
+          <img class="sponsors__image" alt="Pingdom" src="https://pypi.org/static/images/sponsors/white/pingdom.277dedc4.png">
+          <span class="sponsors__name">Pingdom</span>
+          <span class="sponsors__service">
+          
+          
+            Monitoring
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://opensource.salesforce.com/">
+          <img class="sponsors__image" alt="Salesforce" src="https://pypi.org/static/images/sponsors/white/salesforce.0ab4c01d.png">
+          <span class="sponsors__name">Salesforce</span>
+          <span class="sponsors__service">
+          
+          
+            PSF Sponsor
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://getsentry.com/for/python">
+          <img class="sponsors__image" alt="Sentry" src="https://pypi.org/static/images/sponsors/white/sentry.55260f07.png">
+          <span class="sponsors__name">Sentry</span>
+          <span class="sponsors__service">
+          
+          
+            Error logging
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+    
+  
+    
+    
+      
+      
+        <a class="sponsors__sponsor" target="_blank" rel="noopener" href="https://statuspage.io">
+          <img class="sponsors__image" alt="StatusPage" src="https://pypi.org/static/images/sponsors/white/statuspage.62f130cc.png">
+          <span class="sponsors__name">StatusPage</span>
+          <span class="sponsors__service">
+          
+          
+            Status page
+          
+          </span>
+        </a>
+      
+    
+  
+    
+    
+      
+      
+    
+  
+</div>
+
+    
+  </body>
+
+</html>

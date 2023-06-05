@@ -1,0 +1,2877 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <title>Questions - ROS Answers: Open Source Q&amp;A Forum</title> <meta name="description" content="Open source question and answer forum written in Python and Django" /> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=EDGE" /> <meta name="keywords" content=",ROS,forum,community" /> <meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4" /> <meta name="referrer" content="always" /> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> <link rel="shortcut icon" href="https://answers.ros.org/m/ros/media/images/ros_favicon.gif?v=28" /> <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="https://answers.ros.org/feeds/rss/"
+        /> <link rel="stylesheet" href="https://answers.ros.org/m/CACHE/css/eb774c0c10a9.css" type="text/css" /> <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=latin-ext" rel="stylesheet" type="text/css" /> <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=cyrillic-ext" rel="stylesheet" type="text/css" /> <script type="text/javascript" src="https://answers.ros.org/m/default/media/jslib/modernizr.custom.js?v=28"></script> <script type="text/javascript">
+    var askbot = {};
+    askbot['data'] = {};
+    askbot['data']['userIsAuthenticated'] = false;
+    askbot['data']['languageCode'] = 'en';
+    
+        askbot['data']['userReputation'] = 0;
+        askbot['data']['userEmail'] = null;
+        askbot['data']['userIsReadOnly'] = false;//in principle we allow anon users to start posting
+    
+    askbot['urls'] = {};
+    askbot['settings'] = {};
+    askbot['messages'] = {};
+    
+</script> <script type="text/javascript" src="https://answers.ros.org/s/jsi18n/"></script> </head> <body class="two-col user-messages main-page anon lang-en"> <div class="notify" style="display:none"> <div class="content-wrapper"> <p class="notification">First time here? Check out the FAQ!</p> <a id="closeNotify" onclick="notify.close(true)"></a> </div> </div> <!-- template header.html --> <div 
+    id="header"
+    class="with-logo"
+> <div class="content-wrapper"> <div id="userToolsNav"> <a href="https://answers.ros.org/account/signin/?next=/"
+    >Hi there! Please sign in</a> <a class="help" href="https://answers.ros.org/help/" title="help">help</a> </div> <a 
+    id="logo" 
+    href="questions.html"
+><img
+    src="https://answers.ros.org/m/ros/media/images/logoros.png?v=28"
+    alt="ROS Answers logo"/> </a> <div id="metaNav"> <a 
+  id="navTags"
+  href="https://answers.ros.org/tags/"
+  
+>tags</a> <a 
+  id="navUsers"
+  href="https://answers.ros.org/users/"
+  
+>users</a> <a 
+  id="navBadges"
+  href="https://answers.ros.org/badges/"
+  
+>badges</a> </div> <div class="clean"></div> </div> </div> <!-- end template header.html --> <!-- template secondary_header.html --> <div id="secondaryHeader"> <div class="content-wrapper"> <form
+            
+                action="questions.html" id="searchForm"
+            
+            class="scopes-True-True-False"
+            method="get"> <table width="100%"> <tr> <td width="1"><a id="homeButton" href="https://answers.ros.org/questions/questions.html"><i class="fa fa-home"></i></a></td> <td width="1"><div id="scopeNav"> <a class="scope-selector on"
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/page:1/"
+        >ALL</a> <a class="scope-selector "
+            href="https://answers.ros.org/questions/scope:unanswered/sort:answers-asc/page:1/"
+        >UNANSWERED</a> </div></td> <td width="*" class="search-bar"> <div 
+    id="searchBar"
+    class="search-bar"
+><input 
+        class="searchInput" 
+        type="text" 
+        autocomplete="off"
+        value="" 
+        name="query" 
+        placeholder="Search or ask your question"
+        id="keywords"
+    /><input type="submit" value="" name="search" class="searchBtn" /><input type="button"
+        value="X"
+        name="reset_query"
+        class="cancelSearchBtn"
+        
+            style="display: none;"
+        
+    /></div> </td> <td width="1"> <a
+        id="askButton"
+        class="button"
+        href="https://answers.ros.org/questions/ask/"
+        >
+            Ask Your Question
+        </a> </td> </tr> </table> </form> </div> </div> <div class="content-wrapper"> <div id="ContentLeft"> <a class="rss" href="https://answers.ros.org/feeds/rss/"
+    title="subscribe to the feed"
+    >RSS
+</a> <div class="tabBar"> <div id="sort_tabs" class="tabsA"> <span class="label">Sort by &raquo;</span> <script type="text/javascript">
+                askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+                askbot['data']['sortButtonData']['relevance'] = {
+                    asc_tooltip: "most relevant questions",
+                    desc_tooltip: "click to see most relevant questions",
+                    label: "relevance"
+                };
+            </script> <a id="by_age"
+           href="https://answers.ros.org/questions/scope:all/sort:age-desc/page:1/"
+           class="off"
+           title="click to see the newest questions"><span>date</span></a> <script type="text/javascript">
+        askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+        askbot['data']['sortButtonData']['age'] = {
+            label: 'date',
+            asc_tooltip: 'click to see the oldest questions',
+            desc_tooltip: 'click to see the newest questions'
+        };
+    </script> <a id="by_activity"
+           href="https://answers.ros.org/questions/scope:all/sort:activity-asc/page:1/"
+           class="rev on"
+           title="click to see the least recently updated questions"><span>activity &#9660;</span></a> <script type="text/javascript">
+        askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+        askbot['data']['sortButtonData']['activity'] = {
+            label: 'activity',
+            asc_tooltip: 'click to see the least recently updated questions',
+            desc_tooltip: 'click to see the most recently updated questions'
+        };
+    </script> <a id="by_answers"
+           href="https://answers.ros.org/questions/scope:all/sort:answers-desc/page:1/"
+           class="off"
+           title="click to see the most answered questions"><span>answers</span></a> <script type="text/javascript">
+        askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+        askbot['data']['sortButtonData']['answers'] = {
+            label: 'answers',
+            asc_tooltip: 'click to see the least answered questions',
+            desc_tooltip: 'click to see the most answered questions'
+        };
+    </script> <a id="by_votes"
+           href="https://answers.ros.org/questions/scope:all/sort:votes-desc/page:1/"
+           class="off"
+           title="click to see most voted questions"><span>votes</span></a> <script type="text/javascript">
+        askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+        askbot['data']['sortButtonData']['votes'] = {
+            label: 'votes',
+            asc_tooltip: 'click to see least voted questions',
+            desc_tooltip: 'click to see most voted questions'
+        };
+    </script> </div> </div> <h1 id="questionCount" class="search-result-summary"> <span class="count">58750</span> questions
+        </h1> <div class="clearfix"></div> <div id="listSearchTags" style="display: none;"> <span class="left">Tagged</span> <ul id="searchTags"
+    class="tags"
+> </ul> </div> <div id="question-list"> <div class="short-summary" id="question-375402"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">15</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 23:29:14 -0600">2021-04-05 23:29:14 -0600</abbr> <a href="https://answers.ros.org/users/72915/kanishk598/">Kanishk598</a> </div> </div> <h2><a href="https://answers.ros.org/question/375402/how-to-remap-move_base_simplegoal-to-my-own-topic-in-turtlebot3_navigation/">How to remap /move_base_simple/goal to my own topic in turtlebot3_navigation?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.ros1/page:1/"
+            
+            data-tag-name="1.ros1"
+        >1.ros1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:turtlebot3/page:1/"
+            
+            data-tag-name="turtlebot3"
+        >turtlebot3</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.navigation/page:1/"
+            
+            data-tag-name="1.navigation"
+        >1.navigation</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:move_base/page:1/"
+            
+            data-tag-name="move_base"
+        >move_base</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375421"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">8</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 21:35:06 -0600">2021-04-05 21:35:06 -0600</abbr> <a href="https://answers.ros.org/users/2221/astronaut/">Astronaut</a> </div> </div> <h2><a href="https://answers.ros.org/question/375421/camera-sensor-not-correctly-attached-to-the-robot-joint-how-to-fix-it/">Camera sensor not correctly attached to the robot joint. How to fix it?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:camera_sensor/page:1/"
+            
+            data-tag-name="camera_sensor"
+        >camera_sensor</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:2.urdf/page:1/"
+            
+            data-tag-name="2.urdf"
+        >2.urdf</a></div> </li> </ul> </div> <div class="short-summary" id="question-374982"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">17</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 21:23:53 -0600">2021-04-05 21:23:53 -0600</abbr> <a href="https://answers.ros.org/users/72672/alexisp/">alexisp</a> </div> </div> <h2><a href="https://answers.ros.org/question/374982/how-to-move-youbot-arm-with-python/">How to move youbot arm with python? [closed]</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kukayoubot/page:1/"
+            
+            data-tag-name="kukayoubot"
+        >kukayoubot</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:hydro%23ros/page:1/"
+            
+            data-tag-name="hydro#ros"
+        >hydro#ros</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:arm_controller/page:1/"
+            
+            data-tag-name="arm_controller"
+        >arm_controller</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:hydro%23roscpp%23turtlebot/page:1/"
+            
+            data-tag-name="hydro#roscpp#turtlebot"
+        >hydro#roscpp#turtlebot</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:error_hydro/page:1/"
+            
+            data-tag-name="error_hydro"
+        >error_hydro</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:r2b3/page:1/"
+            
+            data-tag-name="r2b3"
+        >r2b3</a></div> </li> </ul> </div> <div class="short-summary" id="question-375484"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">4</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 18:59:00 -0600">2021-04-05 18:59:00 -0600</abbr> <a href="https://answers.ros.org/users/70549/thiago-martins/">Thiago Martins</a> </div> </div> <h2><a href="https://answers.ros.org/question/375484/how-to-get-the-build-order-for-bloom-automation-of-a-multi-package-project/">How to get the build order for Bloom automation of a multi-package project?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:bloom-generate/page:1/"
+            
+            data-tag-name="bloom-generate"
+        >bloom-generate</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Debian/page:1/"
+            
+            data-tag-name="Debian"
+        >Debian</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:build/page:1/"
+            
+            data-tag-name="build"
+        >build</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-374907"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">22</span> <div>
+            views
+            </div> </div> <div class="answers
+                
+                        accepted"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 17:13:58 -0600">2021-04-05 17:13:58 -0600</abbr> <a href="https://answers.ros.org/users/72126/ignacioud/">IgnacioUD</a> </div> </div> <h2><a href="https://answers.ros.org/question/374907/multirobot-moveit-controller-management/">MultiRobot MoveIt controller management</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:moveit/page:1/"
+            
+            data-tag-name="moveit"
+        >moveit</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros_control/page:1/"
+            
+            data-tag-name="ros_control"
+        >ros_control</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:multirobot/page:1/"
+            
+            data-tag-name="multirobot"
+        >multirobot</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:controller/page:1/"
+            
+            data-tag-name="controller"
+        >controller</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:UR3/page:1/"
+            
+            data-tag-name="UR3"
+        >UR3</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:UR3e/page:1/"
+            
+            data-tag-name="UR3e"
+        >UR3e</a></div> </li> </ul> </div> <div class="short-summary" id="question-367962"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">72</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >2</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    some-votes"> <span class="item-count">1</span> <div>
+            vote
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 16:28:58 -0600">2021-04-05 16:28:58 -0600</abbr> <a href="https://answers.ros.org/users/69056/buzzport93/">buzzport93</a> </div> </div> <h2><a href="https://answers.ros.org/question/367962/move_base-local-planner-deviates-significantly-from-global-planner-path/">move_base local planner deviates significantly from global planner path</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Kinectic/page:1/"
+            
+            data-tag-name="Kinectic"
+        >Kinectic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:move_base/page:1/"
+            
+            data-tag-name="move_base"
+        >move_base</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:deviation/page:1/"
+            
+            data-tag-name="deviation"
+        >deviation</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:base_local_planner/page:1/"
+            
+            data-tag-name="base_local_planner"
+        >base_local_planner</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> </ul> </div> <div class="short-summary" id="question-375480"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">4</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 16:26:08 -0600">2021-04-05 16:26:08 -0600</abbr> <a href="https://answers.ros.org/users/33199/pointsnadpixels/">pointsnadpixels</a> </div> </div> <h2><a href="https://answers.ros.org/question/375480/warnings-with-base_link-in-namespace-for-robot_localization/">Warnings with base_link in namespace for robot_localization</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ekf_localization/page:1/"
+            
+            data-tag-name="ekf_localization"
+        >ekf_localization</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros-noetic/page:1/"
+            
+            data-tag-name="ros-noetic"
+        >ros-noetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375472"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">11</span> <div>
+            views
+            </div> </div> <div class="answers
+                
+                        accepted"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 14:29:24 -0600">2021-04-05 14:29:24 -0600</abbr> <a href="https://answers.ros.org/users/37912/rezenders/">rezenders</a> </div> </div> <h2><a href="https://answers.ros.org/question/375472/error-with-shared-objects-when-building-from-source/">Error with shared objects when building from source [closed]</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:build_from_source/page:1/"
+            
+            data-tag-name="build_from_source"
+        >build_from_source</a></div> </li> </ul> </div> <div class="short-summary" id="question-375477"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">5</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 14:08:44 -0600">2021-04-05 14:08:44 -0600</abbr> <a href="https://answers.ros.org/users/25023/cybodroid/">cybodroid</a> </div> </div> <h2><a href="https://answers.ros.org/question/375477/what-is-the-recommended-way-to-publish-name-value-pairs-in-ros-using-existing-message-types/">What is the recommended way to publish name-value pairs in ROS using existing message types?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375476"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">4</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 14:07:06 -0500">2021-04-05 14:07:06 -0500</abbr> <a href="https://answers.ros.org/users/25023/cybodroid/">cybodroid</a> </div> </div> <h2><a href="https://answers.ros.org/question/375476/what-is-recommended-way-to-publish-name-value-pair-messages-on-a-ros-topic/">What is recommended way to publish name value pair messages on a ROS topic? [closed]</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rosmsg/page:1/"
+            
+            data-tag-name="rosmsg"
+        >rosmsg</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:messages/page:1/"
+            
+            data-tag-name="messages"
+        >messages</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:message/page:1/"
+            
+            data-tag-name="message"
+        >message</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:types/page:1/"
+            
+            data-tag-name="types"
+        >types</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375473"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">7</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 13:42:52 -0600">2021-04-05 13:42:52 -0600</abbr> <a href="https://answers.ros.org/users/72946/whiskygrandee/">whiskygrandee</a> </div> </div> <h2><a href="https://answers.ros.org/question/375473/how-should-i-organize-file-and-projects/">How should I organize file and projects?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:catkin/page:1/"
+            
+            data-tag-name="catkin"
+        >catkin</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Docker/page:1/"
+            
+            data-tag-name="Docker"
+        >Docker</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:github/page:1/"
+            
+            data-tag-name="github"
+        >github</a></div> </li> </ul> </div> <div class="short-summary" id="question-375436"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">15</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 13:32:28 -0600">2021-04-05 13:32:28 -0600</abbr> <a href="https://answers.ros.org/users/72933/kamakshi/">kamakshi</a> </div> </div> <h2><a href="https://answers.ros.org/question/375436/smac-planner-is-it-possible-to-make-the-robot-reverse-without-changing-heading/">Smac Planner - Is it possible to make the robot Reverse (without changing heading)</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:nav2/page:1/"
+            
+            data-tag-name="nav2"
+        >nav2</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:nav2_planner/page:1/"
+            
+            data-tag-name="nav2_planner"
+        >nav2_planner</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:foxy/page:1/"
+            
+            data-tag-name="foxy"
+        >foxy</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rpp/page:1/"
+            
+            data-tag-name="rpp"
+        >rpp</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:2.global_planner/page:1/"
+            
+            data-tag-name="2.global_planner"
+        >2.global_planner</a></div> </li> </ul> </div> <div class="short-summary" id="question-375385"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">21</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 12:09:47 -0600">2021-04-05 12:09:47 -0600</abbr> <a href="https://answers.ros.org/users/24051/hidmic/">hidmic</a> </div> </div> <h2><a href="https://answers.ros.org/question/375385/is-parameter-overrides-supported-in-ros2-launch/">Is parameter overrides supported in ROS2 launch?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:launch/page:1/"
+            
+            data-tag-name="launch"
+        >launch</a></div> </li> </ul> </div> <div class="short-summary" id="question-375389"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">15</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 11:57:47 -0600">2021-04-05 11:57:47 -0600</abbr> <a href="https://answers.ros.org/users/69938/shonigmann/">shonigmann</a> </div> </div> <h2><a href="https://answers.ros.org/question/375389/gazebo-plugin-for-ros2-doesnt-get-loaded/">Gazebo plugin for ROS2 doesn&#39;t get loaded</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:gazebo/page:1/"
+            
+            data-tag-name="gazebo"
+        >gazebo</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:model/page:1/"
+            
+            data-tag-name="model"
+        >model</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:plugin/page:1/"
+            
+            data-tag-name="plugin"
+        >plugin</a></div> </li> </ul> </div> <div class="short-summary" id="question-375384"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">18</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 11:46:01 -0500">2021-04-05 11:46:01 -0500</abbr> <a href="https://answers.ros.org/users/24051/hidmic/">hidmic</a> </div> </div> <h2><a href="https://answers.ros.org/question/375384/is-it-possible-to-refer-to-the-actions-defined-in-a-different-launch/">Is it possible to refer to the actions defined in a different launch?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:launch/page:1/"
+            
+            data-tag-name="launch"
+        >launch</a></div> </li> </ul> </div> <div class="short-summary" id="question-375431"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">5</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 11:39:37 -0600">2021-04-05 11:39:37 -0600</abbr> <a href="https://answers.ros.org/users/72931/marcholm/">MarcHolm</a> </div> </div> <h2><a href="https://answers.ros.org/question/375431/publishing-transformed-pointcloud-topic/">Publishing transformed PointCloud topic</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:pointcloud/page:1/"
+            
+            data-tag-name="pointcloud"
+        >pointcloud</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:transform/page:1/"
+            
+            data-tag-name="transform"
+        >transform</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:tf/page:1/"
+            
+            data-tag-name="tf"
+        >tf</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375272"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">26</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 11:00:55 -0600">2021-04-05 11:00:55 -0600</abbr> <a href="https://answers.ros.org/users/60505/seif_seghiri/">seif_seghiri</a> </div> </div> <h2><a href="https://answers.ros.org/question/375272/cant-find-the-cc-source-codes-of-the-tf-ros-package-in-optrosmelodic/">Can&#39;t find the C/C++ source codes of the tf ros package in /opt/ros/melodic/...</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375459"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">7</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 10:22:24 -0600">2021-04-05 10:22:24 -0600</abbr> <a href="https://answers.ros.org/users/72943/chris1343/">Chris1343</a> </div> </div> <h2><a href="https://answers.ros.org/question/375459/how-to-start-a-python-script-that-launches-master-using-docker/">How to start a python script that launches master using Docker</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Docker/page:1/"
+            
+            data-tag-name="Docker"
+        >Docker</a></div> </li> </ul> </div> <div class="short-summary" id="question-375458"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">6</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 09:52:15 -0600">2021-04-05 09:52:15 -0600</abbr> <a href="https://answers.ros.org/users/72942/gearth/">GearTH</a> </div> </div> <h2><a href="https://answers.ros.org/question/375458/successfully-installed-autowareauto-and-svl-simulator-how-can-i-use-the-autopilot/">Successfully installed autoware.auto and svl simulator. How can I use the autopilot?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autoware/page:1/"
+            
+            data-tag-name="autoware"
+        >autoware</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autoware-auto/page:1/"
+            
+            data-tag-name="autoware-auto"
+        >autoware-auto</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a></div> </li> </ul> </div> <div class="short-summary" id="question-375456"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">7</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 09:47:01 -0600">2021-04-05 09:47:01 -0600</abbr> <a href="https://answers.ros.org/users/72941/joe_smith/">joe_smith</a> </div> </div> <h2><a href="https://answers.ros.org/question/375456/whats-the-difference-between-project_name_generate_message_cpp-and-project_name_exported_targets/">what&#39;s the difference between ${PROJECT_NAME}_generate_message_cpp and ${${PROJECT_NAME}_EXPORTED_TARGETS}</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS/page:1/"
+            
+            data-tag-name="ROS"
+        >ROS</a></div> </li> </ul> </div> <div class="short-summary" id="question-375382"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">6</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 09:42:49 -0600">2021-04-05 09:42:49 -0600</abbr> <a href="https://answers.ros.org/users/72899/mada63/">mada63</a> </div> </div> <h2><a href="https://answers.ros.org/question/375382/navigation-and-pathplanning-using-hector-slam/">navigation and pathplanning using hector slam</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:hector-mapping/page:1/"
+            
+            data-tag-name="hector-mapping"
+        >hector-mapping</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:hecto_slam/page:1/"
+            
+            data-tag-name="hecto_slam"
+        >hecto_slam</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autonomous-navigation/page:1/"
+            
+            data-tag-name="autonomous-navigation"
+        >autonomous-navigation</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autonomous_driving/page:1/"
+            
+            data-tag-name="autonomous_driving"
+        >autonomous_driving</a></div> </li> </ul> </div> <div class="short-summary" id="question-375443"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">10</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 09:39:38 -0600">2021-04-05 09:39:38 -0600</abbr> <a href="https://answers.ros.org/users/33908/tryan/">tryan</a> </div> </div> <h2><a href="https://answers.ros.org/question/375443/how-to-remove-recovery-behavior/">How to remove recovery behavior?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:recovery_behavior/page:1/"
+            
+            data-tag-name="recovery_behavior"
+        >recovery_behavior</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:recovery_behavior_enabled/page:1/"
+            
+            data-tag-name="recovery_behavior_enabled"
+        >recovery_behavior_enabled</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS_kinetic/page:1/"
+            
+            data-tag-name="ROS_kinetic"
+        >ROS_kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros_navigation/page:1/"
+            
+            data-tag-name="ros_navigation"
+        >ros_navigation</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> </ul> </div> <div class="short-summary" id="question-375445"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">15</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 09:24:39 -0600">2021-04-05 09:24:39 -0600</abbr> <a href="https://answers.ros.org/users/5184/gvdhoorn/">gvdhoorn</a> </div> </div> <h2><a href="https://answers.ros.org/question/375445/interesting-problem-with-naming-topic/">Interesting problem with naming topic</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS/page:1/"
+            
+            data-tag-name="ROS"
+        >ROS</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375343"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">11</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 09:14:21 -0600">2021-04-05 09:14:21 -0600</abbr> <a href="https://answers.ros.org/users/33908/tryan/">tryan</a> </div> </div> <h2><a href="https://answers.ros.org/question/375343/rosbag-record-until-disk-is-almost-full/">Rosbag Record Until Disk is Almost Full</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rosbag/page:1/"
+            
+            data-tag-name="rosbag"
+        >rosbag</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:record/page:1/"
+            
+            data-tag-name="record"
+        >record</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:split/page:1/"
+            
+            data-tag-name="split"
+        >split</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros-noetic/page:1/"
+            
+            data-tag-name="ros-noetic"
+        >ros-noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375397"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">22</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 08:59:39 -0600">2021-04-05 08:59:39 -0600</abbr> <a href="https://answers.ros.org/users/59801/miura/">miura</a> <img class="flag" 
+            
+            src="https://answers.ros.org/m/default/media/images/flags/jp.gif?v=28" 
+            alt="flag of Japan"
+            title="miura is from Japan"
+        /> </div> </div> <h2><a href="https://answers.ros.org/question/375397/difference-between-resolution-in-different-yaml-files/">difference between resolution in different yaml files?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:2DCostmap/page:1/"
+            
+            data-tag-name="2DCostmap"
+        >2DCostmap</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:resolution/page:1/"
+            
+            data-tag-name="resolution"
+        >resolution</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375415"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">5</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 08:40:35 -0600">2021-04-05 08:40:35 -0600</abbr> <a href="https://answers.ros.org/users/33908/tryan/">tryan</a> </div> </div> <h2><a href="https://answers.ros.org/question/375415/localization-using-just-an-rplidar/">localization using just an rplidar</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS_kinetic/page:1/"
+            
+            data-tag-name="ROS_kinetic"
+        >ROS_kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rplidar/page:1/"
+            
+            data-tag-name="rplidar"
+        >rplidar</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:laser_scan_matcher/page:1/"
+            
+            data-tag-name="laser_scan_matcher"
+        >laser_scan_matcher</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:amcl_localization/page:1/"
+            
+            data-tag-name="amcl_localization"
+        >amcl_localization</a></div> </li> </ul> </div> <div class="short-summary" id="question-350394"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">73</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 07:35:16 -0600">2021-04-05 07:35:16 -0600</abbr> <a href="https://answers.ros.org/users/72936/kingsimba0511/">kingsimba0511</a> </div> </div> <h2><a href="https://answers.ros.org/question/350394/windows-tab-completion/">windows tab completion</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros-for-windows/page:1/"
+            
+            data-tag-name="ros-for-windows"
+        >ros-for-windows</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:RosOnWindows/page:1/"
+            
+            data-tag-name="RosOnWindows"
+        >RosOnWindows</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Windows10/page:1/"
+            
+            data-tag-name="Windows10"
+        >Windows10</a></div> </li> </ul> </div> <div class="short-summary" id="question-375409"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">12</span> <div>
+            views
+            </div> </div> <div class="answers
+                
+                        accepted"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 04:40:02 -0600">2021-04-05 04:40:02 -0600</abbr> <a href="https://answers.ros.org/users/72841/sgvandijk/">sgvandijk</a> </div> </div> <h2><a href="https://answers.ros.org/question/375409/linker-error-for-geometry_msgs/">Linker error for geometry_msgs</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rclcpp/page:1/"
+            
+            data-tag-name="rclcpp"
+        >rclcpp</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:build/page:1/"
+            
+            data-tag-name="build"
+        >build</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:undefined_reference_to/page:1/"
+            
+            data-tag-name="undefined_reference_to"
+        >undefined_reference_to</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:dashing/page:1/"
+            
+            data-tag-name="dashing"
+        >dashing</a></div> </li> </ul> </div> <div class="short-summary" id="question-375425"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">6</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 04:38:45 -0600">2021-04-05 04:38:45 -0600</abbr> <a href="https://answers.ros.org/users/69730/hediimohamed/">hediimohamed</a> </div> </div> <h2><a href="https://answers.ros.org/question/375425/can-i-control-the-autonomy-level-on-flexbe-without-using-the-gui/">Can I control the autonomy level on Flexbe without using the GUI ?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Flexbe/page:1/"
+            
+            data-tag-name="Flexbe"
+        >Flexbe</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375419"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">4</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 03:51:24 -0600">2021-04-05 03:51:24 -0600</abbr> <a href="https://answers.ros.org/users/72925/attia-mouna/">attia mouna</a> </div> </div> <h2><a href="https://answers.ros.org/question/375419/couldnt-visualize-laser-scan-and-map-at-the-same-time/">Couldn&#39;t visualize laser scan and map at the same time</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Rp/page:1/"
+            
+            data-tag-name="Rp"
+        >Rp</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:lidar/page:1/"
+            
+            data-tag-name="lidar"
+        >lidar</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:localisation/page:1/"
+            
+            data-tag-name="localisation"
+        >localisation</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS/page:1/"
+            
+            data-tag-name="ROS"
+        >ROS</a></div> </li> </ul> </div> <div class="short-summary" id="question-375418"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">5</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 03:45:37 -0600">2021-04-05 03:45:37 -0600</abbr> <a href="https://answers.ros.org/users/72924/virgincoder/">virgincoder</a> </div> </div> <h2><a href="https://answers.ros.org/question/375418/cannot-locate-rosdep-definition-for-camera_info_manager_py/">Cannot locate rosdep definition for [camera_info_manager_py]</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375413"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">7</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 02:56:54 -0600">2021-04-05 02:56:54 -0600</abbr> <a href="https://answers.ros.org/users/72647/john-le/">john-le</a> </div> </div> <h2><a href="https://answers.ros.org/question/375413/can-i-use-pcd-as-map-in-ros-rviz/">Can i use .pcd as map in ros rviz?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:pcd/page:1/"
+            
+            data-tag-name="pcd"
+        >pcd</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:bag_to_pcd/page:1/"
+            
+            data-tag-name="bag_to_pcd"
+        >bag_to_pcd</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:3DPointCloud/page:1/"
+            
+            data-tag-name="3DPointCloud"
+        >3DPointCloud</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375412"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">11</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 02:02:38 -0600">2021-04-05 02:02:38 -0600</abbr> <a href="https://answers.ros.org/users/26847/dinesh/">dinesh</a> </div> </div> <h2><a href="https://answers.ros.org/question/375412/using-conda-for-ros-development/">using conda for ros development</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:SNAP/page:1/"
+            
+            data-tag-name="SNAP"
+        >SNAP</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:anaconda/page:1/"
+            
+            data-tag-name="anaconda"
+        >anaconda</a></div> </li> </ul> </div> <div class="short-summary" id="question-375410"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">6</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 01:51:56 -0600">2021-04-05 01:51:56 -0600</abbr> <a href="https://answers.ros.org/users/72921/juulbl/">Juulbl</a> </div> </div> <h2><a href="https://answers.ros.org/question/375410/is-there-a-way-to-make-sensors-easily-swappablechangeable/">Is there a way to make sensors easily swappable/changeable?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:changeable/page:1/"
+            
+            data-tag-name="changeable"
+        >changeable</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:swappable/page:1/"
+            
+            data-tag-name="swappable"
+        >swappable</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:sensors/page:1/"
+            
+            data-tag-name="sensors"
+        >sensors</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:foxy/page:1/"
+            
+            data-tag-name="foxy"
+        >foxy</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:turtlebot3/page:1/"
+            
+            data-tag-name="turtlebot3"
+        >turtlebot3</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Raspberry-PI-3b/page:1/"
+            
+            data-tag-name="Raspberry-PI-3b"
+        >Raspberry-PI-3b</a></div> </li> </ul> </div> <div class="short-summary" id="question-240786"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">965</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-05 01:25:50 -0600">2021-04-05 01:25:50 -0600</abbr> <a href="https://answers.ros.org/users/37345/mohamed-ahmed/">mohamed ahmed</a> </div> </div> <h2><a href="https://answers.ros.org/question/240786/cmake-error-could-not-find-module-findcatkin_simplecmake/">CMake Error: Could not find module Findcatkin_simple.cmake</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:CMake-error/page:1/"
+            
+            data-tag-name="CMake-error"
+        >CMake-error</a></div> </li> </ul> </div> <div class="short-summary" id="question-375137"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">12</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 22:55:32 -0600">2021-04-04 22:55:32 -0600</abbr> <a href="https://answers.ros.org/users/8631/fvd/">fvd</a> </div> </div> <h2><a href="https://answers.ros.org/question/375137/error-while-pressing-execute-button-in-moveit-with-real-robot/">Error while pressing execute button in moveit with real robot</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:moveit/page:1/"
+            
+            data-tag-name="moveit"
+        >moveit</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kuka_experimental/page:1/"
+            
+            data-tag-name="kuka_experimental"
+        >kuka_experimental</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Kuka/page:1/"
+            
+            data-tag-name="Kuka"
+        >Kuka</a></div> </li> </ul> </div> <div class="short-summary" id="question-197964"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">13k</span> <div>
+            views
+            </div> </div> <div class="answers
+                
+                        accepted"> <span 
+                class="item-count"
+            >3</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    some-votes"> <span class="item-count">6</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 22:43:12 -0600">2021-04-04 22:43:12 -0600</abbr> <a href="https://answers.ros.org/users/34739/rufus/">Rufus</a> </div> </div> <h2><a href="https://answers.ros.org/question/197964/set-log-level-in-launch-file/">set log level in launch file</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:launch/page:1/"
+            
+            data-tag-name="launch"
+        >launch</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:log-level/page:1/"
+            
+            data-tag-name="log-level"
+        >log-level</a></div> </li> </ul> </div> <div class="short-summary" id="question-375400"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">4</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 22:11:40 -0600">2021-04-04 22:11:40 -0600</abbr> <a href="https://answers.ros.org/users/72912/hj/">HJ</a> </div> </div> <h2><a href="https://answers.ros.org/question/375400/turtlebot3-melodic-connecting-error/">Turtlebot3 Melodic Connecting Error</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375399"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">9</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 22:10:44 -0600">2021-04-04 22:10:44 -0600</abbr> <a href="https://answers.ros.org/users/70549/thiago-martins/">Thiago Martins</a> </div> </div> <h2><a href="https://answers.ros.org/question/375399/how-to-enable-debians-dh-parallel-build-with-bloom/">How to enable Debian&#39;s &#34;dh --parallel&#34; build with Bloom?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:bloom-generate/page:1/"
+            
+            data-tag-name="bloom-generate"
+        >bloom-generate</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Debian/page:1/"
+            
+            data-tag-name="Debian"
+        >Debian</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:build/page:1/"
+            
+            data-tag-name="build"
+        >build</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375398"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">2</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 18:09:21 -0600">2021-04-04 18:09:21 -0600</abbr> <a href="https://answers.ros.org/users/72908/juniorgamingtime/">JuniorGamingTime</a> </div> </div> <h2><a href="https://answers.ros.org/question/375398/pi4-noetic-ubuntu-mate-looking-for-guidance/">Pi4 Noetic Ubuntu Mate? (looking for guidance)</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:pi4/page:1/"
+            
+            data-tag-name="pi4"
+        >pi4</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:UbuntuMATE/page:1/"
+            
+            data-tag-name="UbuntuMATE"
+        >UbuntuMATE</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Ubuntu/page:1/"
+            
+            data-tag-name="Ubuntu"
+        >Ubuntu</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:vm/page:1/"
+            
+            data-tag-name="vm"
+        >vm</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ARM/page:1/"
+            
+            data-tag-name="ARM"
+        >ARM</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:new/page:1/"
+            
+            data-tag-name="new"
+        >new</a></div> </li> </ul> </div> <div class="short-summary" id="question-375249"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">30</span> <div>
+            views
+            </div> </div> <div class="answers
+                
+                        accepted"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 16:51:16 -0600">2021-04-04 16:51:16 -0600</abbr> <a href="https://answers.ros.org/users/72841/sgvandijk/">sgvandijk</a> </div> </div> <h2><a href="https://answers.ros.org/question/375249/gazebo-model-plugin-for-ros2/">Gazebo model plugin for ROS2</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:gazebo_model/page:1/"
+            
+            data-tag-name="gazebo_model"
+        >gazebo_model</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:foxy/page:1/"
+            
+            data-tag-name="foxy"
+        >foxy</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a></div> </li> </ul> </div> <div class="short-summary" id="question-375366"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">14</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 11:05:28 -0500">2021-04-04 11:05:28 -0500</abbr> <a href="https://answers.ros.org/users/5184/gvdhoorn/">gvdhoorn</a> </div> </div> <h2><a href="https://answers.ros.org/question/375366/ros-kinetic-control-command-not-found/">ros-kinetic-control*: command not found</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.ros1turtlebot3/page:1/"
+            
+            data-tag-name="1.ros1turtlebot3"
+        >1.ros1turtlebot3</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:OpenManulaptor-X/page:1/"
+            
+            data-tag-name="OpenManulaptor-X"
+        >OpenManulaptor-X</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.ros1/page:1/"
+            
+            data-tag-name="1.ros1"
+        >1.ros1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-331188"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">63</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 10:52:46 -0600">2021-04-04 10:52:46 -0600</abbr> <a href="https://answers.ros.org/users/59889/kokko/">kokko</a> </div> </div> <h2><a href="https://answers.ros.org/question/331188/is-trac-ik-available-in-ros-windows/">Is Trac-IK available in ROS Windows?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:trac-IK/page:1/"
+            
+            data-tag-name="trac-IK"
+        >trac-IK</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:2.windows10/page:1/"
+            
+            data-tag-name="2.windows10"
+        >2.windows10</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375378"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">6</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 10:44:38 -0600">2021-04-04 10:44:38 -0600</abbr> <a href="https://answers.ros.org/users/72611/kennydedavion/">KennyDeDavion</a> </div> </div> <h2><a href="https://answers.ros.org/question/375378/cppo-error-catkin_make-why/">.cpp.o error catkin_make why?*</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375375"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">10</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 10:14:20 -0600">2021-04-04 10:14:20 -0600</abbr> <a href="https://answers.ros.org/users/66756/navid-a-mulla/">Navid A Mulla</a> </div> </div> <h2><a href="https://answers.ros.org/question/375375/how-to-map-cmd_vel-command-in-arduino/">how to map cmd_vel command in Arduino?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros-development-studio/page:1/"
+            
+            data-tag-name="ros-development-studio"
+        >ros-development-studio</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.ros/page:1/"
+            
+            data-tag-name="1.ros"
+        >1.ros</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.navigation/page:1/"
+            
+            data-tag-name="1.navigation"
+        >1.navigation</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ignitionrobotics/page:1/"
+            
+            data-tag-name="ignitionrobotics"
+        >ignitionrobotics</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:robotics/page:1/"
+            
+            data-tag-name="robotics"
+        >robotics</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> </ul> </div> <div class="short-summary" id="question-368509"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">60</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >2</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 08:23:51 -0600">2021-04-04 08:23:51 -0600</abbr> <a href="https://answers.ros.org/users/47131/anshul/">Anshul</a> </div> </div> <h2><a href="https://answers.ros.org/question/368509/where-are-the-map-files-stored-when-rosrun-map_server-map_saver-is-run/">Where are the map files stored when rosrun map_server map_saver is run</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:map_saver/page:1/"
+            
+            data-tag-name="map_saver"
+        >map_saver</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375149"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">15</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    some-votes"> <span class="item-count">1</span> <div>
+            vote
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 08:07:14 -0600">2021-04-04 08:07:14 -0600</abbr> <a href="https://answers.ros.org/users/61590/etch/">etch</a> </div> </div> <h2><a href="https://answers.ros.org/question/375149/point-cloud-compensation-motion-distortion-correction/">Point Cloud Compensation (motion distortion correction)</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:3DPointCloud/page:1/"
+            
+            data-tag-name="3DPointCloud"
+        >3DPointCloud</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:lidar/page:1/"
+            
+            data-tag-name="lidar"
+        >lidar</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:python3/page:1/"
+            
+            data-tag-name="python3"
+        >python3</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:pcl/page:1/"
+            
+            data-tag-name="pcl"
+        >pcl</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:python-pcl/page:1/"
+            
+            data-tag-name="python-pcl"
+        >python-pcl</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a></div> </li> </ul> </div> <div class="short-summary" id="question-375365"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">16</span> <div>
+            views
+            </div> </div> <div class="answers
+                
+                        accepted"> <span 
+                class="item-count"
+            >2</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 07:16:37 -0500">2021-04-04 07:16:37 -0500</abbr> <a href="https://answers.ros.org/users/34260/abhishek47kashyap/">abhishek47kashyap</a> </div> </div> <h2><a href="https://answers.ros.org/question/375365/publish-after-processing-data-from-2-synced-subscribers-rospy/">publish after processing data from 2 synced subscribers (rospy)</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rospy/page:1/"
+            
+            data-tag-name="rospy"
+        >rospy</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:publisher/page:1/"
+            
+            data-tag-name="publisher"
+        >publisher</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:subscriber/page:1/"
+            
+            data-tag-name="subscriber"
+        >subscriber</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:synchronization/page:1/"
+            
+            data-tag-name="synchronization"
+        >synchronization</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:callback/page:1/"
+            
+            data-tag-name="callback"
+        >callback</a></div> </li> </ul> </div> <div class="short-summary" id="question-375372"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">8</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 07:02:49 -0600">2021-04-04 07:02:49 -0600</abbr> <a href="https://answers.ros.org/users/72893/ram/">Ram</a> </div> </div> <h2><a href="https://answers.ros.org/question/375372/autowareauto-master-branch-source-code-failed/">Autoware.auto Master branch source code failed</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autoware.auto/page:1/"
+            
+            data-tag-name="autoware.auto"
+        >autoware.auto</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rosfoxy/page:1/"
+            
+            data-tag-name="rosfoxy"
+        >rosfoxy</a></div> </li> </ul> </div> <div class="short-summary" id="question-375356"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">19</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 05:50:14 -0600">2021-04-04 05:50:14 -0600</abbr> <a href="https://answers.ros.org/users/37345/mohamed-ahmed/">mohamed ahmed</a> </div> </div> <h2><a href="https://answers.ros.org/question/375356/launching-gazebo-error/">launching Gazebo error</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:gazebo/page:1/"
+            
+            data-tag-name="gazebo"
+        >gazebo</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.gazebo7/page:1/"
+            
+            data-tag-name="1.gazebo7"
+        >1.gazebo7</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a></div> </li> </ul> </div> </div> <div id="pager" class="pager"> <div class="paginator" style="float:left"><span class="curr page" title="current page"><a>1</a></span><span class="page"><a href="https://answers.ros.org/questions/scope:all/sort:activity-desc/page:2/" title="page 2">2</a></span><span class="page"><a href="https://answers.ros.org/questions/scope:all/sort:activity-desc/page:3/" title="page 3">3</a></span><span class="page"><a href="https://answers.ros.org/questions/scope:all/sort:activity-desc/page:4/" title="page 4">4</a></span><span class="page"><a href="https://answers.ros.org/questions/scope:all/sort:activity-desc/page:5/" title="page 5">5</a></span>
+                    
+                
+
+                
+                    ...
+                    
+                        <span class="page"><a href="https://answers.ros.org/questions/scope:all/sort:activity-desc/page:1175/" title="page 1175">1175</a></span><span class="next"><a href="https://answers.ros.org/questions/scope:all/sort:activity-desc/page:2/" title="next page">next page &raquo;</a></span></div> <div class="clean"></div> </div> </div> <div id="ContentRight"> <div id="contrib-users" class="box"> <h2 class="contributorback">Contributors</h2> <a class="js-avatar-box"
+    href="https://answers.ros.org/users/72841/sgvandijk/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/sgvandijk/resized/48/sander.jpg"
+    title="sgvandijk" 
+    alt="sgvandijk gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/26348/markus/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/Markus/resized/48/elune-theme-2830269-2048x1152.jpg"
+    title="Markus" 
+    alt="Markus gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/63046/ranjit/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/Ranjit/resized/48/about.jpg"
+    title="Ranjit" 
+    alt="Ranjit gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/5184/gvdhoorn/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/gvdhoorn/resized/48/4550046.png"
+    title="gvdhoorn" 
+    alt="gvdhoorn gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/24051/hidmic/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/hidmic/resized/48/13500507.jpeg"
+    title="hidmic" 
+    alt="hidmic gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/26847/dinesh/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/dinesh/resized/48/4ba9422701af3553fb404d1e3c31fddf.jpg"
+    title="dinesh" 
+    alt="dinesh gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/44068/kenji-miyake/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/Kenji%20Miyake/resized/48/Facebook_Profile.png"
+    title="Kenji Miyake" 
+    alt="Kenji Miyake gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/60505/seif_seghiri/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/seif_seghiri/resized/48/index.png"
+    title="seif_seghiri" 
+    alt="seif_seghiri gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/25940/stevemacenski/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.ros.org/upfiles/avatars/stevemacenski/resized/48/14944147.jpeg"
+    title="stevemacenski" 
+    alt="stevemacenski gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/33199/pointsnadpixels/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/de298a1f8ad5fd7a1fc9899774c99e2e?s=48&amp;d=identicon&amp;r=PG"
+    title="pointsnadpixels" 
+    alt="pointsnadpixels gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/29233/bwolfe/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/7873f3438150ba29c85d9290c93cb33f?s=48&amp;d=identicon&amp;r=PG"
+    title="bwolfe" 
+    alt="bwolfe gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/34739/rufus/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/b6503a5de528868997a051e576c985b5?s=48&amp;d=identicon&amp;r=PG"
+    title="Rufus" 
+    alt="Rufus gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/37345/mohamed-ahmed/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/89b8fbf67e5a585fa53497092ab2325a?s=48&amp;d=identicon&amp;r=PG"
+    title="mohamed ahmed" 
+    alt="mohamed ahmed gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/33908/tryan/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/4cd1a4a3c51b6947acbcfb58c7f1f988?s=48&amp;d=identicon&amp;r=PG"
+    title="tryan" 
+    alt="tryan gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/8631/fvd/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/43375dfa4d0f571b5f0605455bdfe5e7?s=48&amp;d=identicon&amp;r=PG"
+    title="fvd" 
+    alt="fvd gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.ros.org/users/25923/percy_liu/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/c2e232862897fc9f6e97bf6d39f1816f?s=48&amp;d=identicon&amp;r=PG"
+    title="percy_liu" 
+    alt="percy_liu gravatar image" 
+/></a> </div> <div id="tagSearch" class="box"> <h2>Tag search</h2> <div class="inputs"> <input id="ab-tag-search" autocomplete="off" type="text"/> <input id="ab-tag-search-add" type="submit" value="search"/> </div> </div> <div class="box"> <h2>Tags</h2> <div class="js-related-tags"> <ul class="tags"> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+            
+            data-tag-name="kinetic"
+        >kinetic</a><span class="js-tag-extra-content"><span class="tag-number">&#215;15</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:noetic/page:1/"
+            
+            data-tag-name="noetic"
+        >noetic</a><span class="js-tag-extra-content"><span class="tag-number">&#215;15</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a><span class="js-tag-extra-content"><span class="tag-number">&#215;12</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS1/page:1/"
+            
+            data-tag-name="ROS1"
+        >ROS1</a><span class="js-tag-extra-content"><span class="tag-number">&#215;10</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros2/page:1/"
+            
+            data-tag-name="ros2"
+        >ros2</a><span class="js-tag-extra-content"><span class="tag-number">&#215;8</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:build/page:1/"
+            
+            data-tag-name="build"
+        >build</a><span class="js-tag-extra-content"><span class="tag-number">&#215;3</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:foxy/page:1/"
+            
+            data-tag-name="foxy"
+        >foxy</a><span class="js-tag-extra-content"><span class="tag-number">&#215;3</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:launch/page:1/"
+            
+            data-tag-name="launch"
+        >launch</a><span class="js-tag-extra-content"><span class="tag-number">&#215;3</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS/page:1/"
+            
+            data-tag-name="ROS"
+        >ROS</a><span class="js-tag-extra-content"><span class="tag-number">&#215;3</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.navigation/page:1/"
+            
+            data-tag-name="1.navigation"
+        >1.navigation</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.ros1/page:1/"
+            
+            data-tag-name="1.ros1"
+        >1.ros1</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:3DPointCloud/page:1/"
+            
+            data-tag-name="3DPointCloud"
+        >3DPointCloud</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:bloom-generate/page:1/"
+            
+            data-tag-name="bloom-generate"
+        >bloom-generate</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Debian/page:1/"
+            
+            data-tag-name="Debian"
+        >Debian</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:Docker/page:1/"
+            
+            data-tag-name="Docker"
+        >Docker</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:gazebo/page:1/"
+            
+            data-tag-name="gazebo"
+        >gazebo</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:lidar/page:1/"
+            
+            data-tag-name="lidar"
+        >lidar</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:move_base/page:1/"
+            
+            data-tag-name="move_base"
+        >move_base</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:moveit/page:1/"
+            
+            data-tag-name="moveit"
+        >moveit</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ROS_kinetic/page:1/"
+            
+            data-tag-name="ROS_kinetic"
+        >ROS_kinetic</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ros-noetic/page:1/"
+            
+            data-tag-name="ros-noetic"
+        >ros-noetic</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:turtlebot3/page:1/"
+            
+            data-tag-name="turtlebot3"
+        >turtlebot3</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.gazebo7/page:1/"
+            
+            data-tag-name="1.gazebo7"
+        >1.gazebo7</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.ros/page:1/"
+            
+            data-tag-name="1.ros"
+        >1.ros</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:1.ros1turtlebot3/page:1/"
+            
+            data-tag-name="1.ros1turtlebot3"
+        >1.ros1turtlebot3</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:2DCostmap/page:1/"
+            
+            data-tag-name="2DCostmap"
+        >2DCostmap</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:2.global_planner/page:1/"
+            
+            data-tag-name="2.global_planner"
+        >2.global_planner</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:2.urdf/page:1/"
+            
+            data-tag-name="2.urdf"
+        >2.urdf</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:2.windows10/page:1/"
+            
+            data-tag-name="2.windows10"
+        >2.windows10</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:amcl_localization/page:1/"
+            
+            data-tag-name="amcl_localization"
+        >amcl_localization</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:anaconda/page:1/"
+            
+            data-tag-name="anaconda"
+        >anaconda</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ARM/page:1/"
+            
+            data-tag-name="ARM"
+        >ARM</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:arm_controller/page:1/"
+            
+            data-tag-name="arm_controller"
+        >arm_controller</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autonomous_driving/page:1/"
+            
+            data-tag-name="autonomous_driving"
+        >autonomous_driving</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autonomous-navigation/page:1/"
+            
+            data-tag-name="autonomous-navigation"
+        >autonomous-navigation</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autoware/page:1/"
+            
+            data-tag-name="autoware"
+        >autoware</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autoware-auto/page:1/"
+            
+            data-tag-name="autoware-auto"
+        >autoware-auto</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:autoware.auto/page:1/"
+            
+            data-tag-name="autoware.auto"
+        >autoware.auto</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:bag_to_pcd/page:1/"
+            
+            data-tag-name="bag_to_pcd"
+        >bag_to_pcd</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:base_local_planner/page:1/"
+            
+            data-tag-name="base_local_planner"
+        >base_local_planner</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:build_from_source/page:1/"
+            
+            data-tag-name="build_from_source"
+        >build_from_source</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:callback/page:1/"
+            
+            data-tag-name="callback"
+        >callback</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:camera_sensor/page:1/"
+            
+            data-tag-name="camera_sensor"
+        >camera_sensor</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:catkin/page:1/"
+            
+            data-tag-name="catkin"
+        >catkin</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:changeable/page:1/"
+            
+            data-tag-name="changeable"
+        >changeable</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:CMake-error/page:1/"
+            
+            data-tag-name="CMake-error"
+        >CMake-error</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:controller/page:1/"
+            
+            data-tag-name="controller"
+        >controller</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:dashing/page:1/"
+            
+            data-tag-name="dashing"
+        >dashing</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:deviation/page:1/"
+            
+            data-tag-name="deviation"
+        >deviation</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:ekf_localization/page:1/"
+            
+            data-tag-name="ekf_localization"
+        >ekf_localization</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> </ul> </div> </div> <div class="box"> </div> </div> </div> <!-- template footer.html --> <div id="ground"> <div class="content-wrapper"> <div class="copyright"> <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode"> <img
+                            class="license-logo"
+                            src="https://answers.ros.org/m/default/media/images/cc-by-sa.png?v=28"
+                            title="cc-by-sa"
+                            alt="cc-by-sa"
+                        /> </a>
+                
+                ROS Answers is licensed under Creative Commons Attribution 3.0 Content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">Creative Commons Attribution Share Alike 3.0</a> license.
+
+            </div> <div class="footer-links" > <a href="https://answers.ros.org/about/">about</a><span class="link-separator"> |</span> <a href="https://answers.ros.org/faq/">faq</a><span class="link-separator"> |</span> <a href="https://answers.ros.org/help/" title="help">help</a> <span class="link-separator"> |</span> <a href="https://answers.ros.org/privacy/">privacy policy</a><span class="link-separator"> |</span> <a href="https://answers.ros.org/terms/">terms of service</a> </div> <div class="powered-link"> <a href="http://askbot.com" target="_blank">
+                Powered by Askbot version 0.10.2
+            </a> </div> <div class="clean"></div> </div> </div> <!-- end template footer.html --> <div id="no-javascript"> <noscript class="noscript">
+        Please note: ROS Answers requires javascript to work properly, please enable javascript in your browser, <a href="https://www.google.com/support/bin/answer.py?answer=23852">here is how</a> </noscript> <script type="text/javascript">
+        //IE fix to hide the red margin
+        var noscript = document.getElementsByTagName('noscript')[0];
+        noscript.style.padding = '0px';
+        noscript.style.backgroundColor = 'transparent';
+    </script> </div> <script type="text/javascript">
+    askbot['urls']['mark_read_message'] = '/s/messages/markread/';
+    askbot['urls']['get_tags_by_wildcard'] = '/s/get-tags-by-wildcard/';
+    askbot['urls']['get_tag_list'] = '/s/get-tag-list/';
+    askbot['urls']['follow_user'] = '/followit/follow/user/{{userId}}/';
+    askbot['urls']['unfollow_user'] = '/followit/unfollow/user/{{userId}}/';
+    askbot['urls']['user_signin'] = '/account/signin/';
+    askbot['urls']['getEditor'] = '/s/get-editor/';
+    
+    askbot['urls']['apiGetQuestions'] = '/s/api/get_questions/';
+    askbot['urls']['ask'] = '/questions/ask/';
+	askbot['urls']['questions'] = '/questions/';
+    askbot['settings']['groupsEnabled'] = false;
+    askbot['settings']['static_url'] = '/m/';
+    askbot['settings']['minSearchWordLength'] = 3;
+    askbot['settings']['mathjaxEnabled'] = false;
+    askbot['settings']['sharingSuffixText'] = '';
+    askbot['settings']['errorPlacement'] = 'after-label';
+    askbot['data']['maxCommentLength'] = 1000;
+    askbot['settings']['editorType'] = 'markdown';
+    
+    askbot['settings']['commentsEditorType'] = 'rich\u002Dtext';
+    askbot['messages']['askYourQuestion'] = 'Ask Your Question';
+    askbot['messages']['acceptOwnAnswer'] = 'accept or unaccept your own answer';
+    askbot['messages']['followQuestions'] = 'follow questions';
+    
+        askbot['settings']['allowedUploadFileTypes'] = [
+            "jpg", "jpeg", "gif", "bmp", "png", "tiff"
+        ];
+    
+    askbot['data']['haveFlashNotifications'] = true;
+    askbot['data']['activeTab'] = 'questions';
+    askbot['settings']['csrfCookieName'] = 'csrftoken';
+    
+        askbot['data']['searchUrl'] = 'scope:all/sort:activity\u002Ddesc/page:1/';
+    
+</script> <form name="scroll-pos-form"><input id="scroll-mem" type="text" style="display: none;"/></form> <script type="text/javascript" src="https://answers.ros.org/m/CACHE/js/ca86e3e2cb53.js"></script> <script type="text/javascript">
+    /*<![CDATA[*/
+    $('.mceStatusbar').remove();//a hack to remove the tinyMCE status bar
+    $(document).ready(function(){
+        // focus input on the search bar endcomment
+        var activeTab = askbot['data']['activeTab'];
+        if (inArray(activeTab, ['users', 'questions', 'tags', 'badges'])) {
+            var searchInput = $('#keywords');
+        } else if (activeTab === 'ask') {
+            var searchInput = $('#id_title');
+        } else {
+            var searchInput = undefined;
+            animateHashes();
+        }
+
+        var wasScrolled = $('#scroll-mem').val();
+        if (searchInput && !wasScrolled) {
+            searchInput.focus();
+            putCursorAtEnd(searchInput);
+        }
+
+        var haveFullTextSearchTab = inArray(activeTab, ['questions', 'badges', 'ask']);
+        var haveUserProfilePage = $('body').hasClass('user-profile-page');
+        if ((haveUserProfilePage || haveFullTextSearchTab) && searchInput && searchInput.length) {
+            var search = new FullTextSearch();
+            askbot['controllers'] = askbot['controllers'] || {};
+            askbot['controllers']['fullTextSearch'] = search;
+            search.setSearchUrl(askbot['data']['searchUrl']);
+            if (activeTab === 'ask') {
+                search.setAskButtonEnabled(false);
+            }
+            search.decorate(searchInput);
+        } else if (activeTab === 'tags') {
+            var search = new TagSearch();
+            search.decorate(searchInput);
+        }
+
+        if (askbot['data']['userIsAdminOrMod']) {
+            $('body').addClass('admin');
+        }
+        if (askbot['settings']['groupsEnabled']) {
+            askbot['urls']['add_group'] = "/s/add-group/";
+            var group_dropdown = new GroupDropdown();
+            $('.groups-dropdown').append(group_dropdown.getElement());
+        }
+        var userRep = $('#userToolsNav .reputation');
+        if (userRep.length) {
+            var showPermsTrigger = new ShowPermsTrigger();
+            showPermsTrigger.decorate(userRep);
+        }
+    });
+    if (askbot['data']['haveFlashNotifications']) {
+        $('#validate_email_alert').click(function(){notify.close(true)})
+        notify.show();
+    }
+
+    var langNav = $('.lang-nav');
+    if (langNav.length) {
+        var nav = new LangNav();
+        nav.decorate(langNav);
+    }
+    /*]]>*/
+</script> <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker('UA-17821189-3');
+    pageTracker._trackPageview();
+    } catch(err) {}
+</script> <div class="js-templates" style="display: none;"><div class="js-tag  js-deletable-tag"><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:dummy/page:1/"
+            
+            data-tag-name="dummy"
+        >dummy</a><span class="js-delete-icon">&times;</span></div></div> <script type="text/javascript">
+        
+        askbot['settings']['showSortByRelevance'] = true;
+    </script> <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function(){
+        /*var on_tab = '#nav_questions';
+        $(on_tab).attr('className','on');*/
+        Hilite.exact = false;
+        Hilite.elementid = "question-list";
+        Hilite.debug_referrer = location.href;
+    });
+
+    askbot['urls']['mark_interesting_tag'] = '/s/mark-tag/interesting/';
+    askbot['urls']['mark_ignored_tag'] = '/s/mark-tag/ignored/';
+    askbot['urls']['mark_subscribed_tag'] = '/s/mark-tag/subscribed/';
+    askbot['urls']['unmark_tag'] = '/s/unmark-tag/';
+    askbot['urls']['set_tag_filter_strategy'] = '/s/set-tag-filter-strategy/';
+    askbot['settings']['tag_editor'] = '{\u0022tag_forbidden_first_chars\u0022: \u0022#\u0022, \u0022max_tag_length\u0022: 40, \u0022force_lowercase_tags\u0022: false, \u0022max_tags_per_post\u0022: 500, \u0022messages\u0022: {\u0022wrong_first_char\u0022: \u0022# is not a valid character at the beginning of tags, use only letters and numbers\u0022, \u0022wrong_chars\u0022: \u0022please use letters, numbers and characters \u005C\u0022\u002D+.#\u005C\u0022\u0022, \u0022required\u0022: \u0022tags are required\u0022}, \u0022tags_are_required\u0022: true}';
+
+    if (Modernizr.history) {
+        // history management works!
+    } else {
+        // no history support :(
+        //hash = unescape(window.location.hash).replace('#','').split("?")[0]
+        
+        var hash = History.unescapeHash(window.location.hash).replace('#','').split("?")[0];
+        var questions_url = askbot['urls']['questions'];
+        if (hash.substring(0, questions_url.length) === questions_url) {
+            var url = hash;
+        } else {
+            var url = questions_url + hash;
+        }
+        if (hash !== '' && hash !== undefined && url !== undefined){
+            
+            window.location = document.location.protocol + '//' + window.location.host + url;
+        }
+    }
+    /*]]>*/
+</script> <script type="text/javascript" src="https://answers.ros.org/m/CACHE/js/7d628661765e.js"></script> <script type="text/javascript">
+            for (url_name in askbot['urls']){
+                askbot['urls'][url_name] = cleanUrl(askbot['urls'][url_name]);
+            }
+        </script> </body> </html>

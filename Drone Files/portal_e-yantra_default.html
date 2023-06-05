@@ -1,0 +1,617 @@
+<!-- title -->
+
+<!-- add user css -->
+
+<!-- content -->
+
+<!-- add javascript -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>e-Yantra Robotics Competition 2020-21</title>
+    <meta name="e-Yantra Robotics Competition 2020-21" content="e-Yantra Robotics Competition (eYRC) is a unique annual competition for undergraduate students in Engineering/ Science/ Polytechnic colleges.">
+    <meta name="keywords" content="e-Yantra Robotics Compeititon">
+    <meta name="author" content="e-Yantra">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="Ti9KqityQCkbxnU2mPTrOccVgLkU2ZHYRXvkDpgB">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon_io/site.webmanifest">
+    <!-- tailwind css -->
+    <link href="css/app.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"> -->
+    <!-- fontawesome css -->
+    <link href="css/fonts.css" rel="stylesheet">
+    <!-- font -->
+    <link href="fonts.googleapis.com/css.css" rel="stylesheet">
+    <link href="fonts.googleapis.com/css_2.css" rel="stylesheet">
+    <link href="cdn.jsdelivr.net/npm/_mdi/font_5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!-- google recachapa -->
+    <script src="www.google.com/recaptcha/api.js" async defer></script>
+    <!-- add pagew specific style -->
+    <style type="text/css"></style>
+    <link href="https://portal.e-yantra.org/css/modal-video.min.css" rel="stylesheet">
+<style type="text/css">
+	html{
+		scroll-behavior: smooth;
+	}
+	.gradient {
+		background:linear-gradient(90deg,#a3bffa 0%, #ebf4ff 100%);
+	}
+
+	/*Toast open/load animation*/
+	.alert-toast {
+		-webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+				animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	}
+
+	/*Toast close animation*/
+	.alert-toast input:checked ~ * {
+		-webkit-animation: fade-out-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+				animation: fade-out-right 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	}
+
+	/* -------------------------------------------------------------
+	 * Animations generated using Animista * w: http://animista.net,
+	 * ---------------------------------------------------------- */
+	@-webkit-keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes  slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@-webkit-keyframes slide-out-top{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}}@keyframes  slide-out-top{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}}@-webkit-keyframes slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes  slide-in-bottom{0%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@-webkit-keyframes slide-out-bottom{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}}@keyframes  slide-out-bottom{0%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}100%{-webkit-transform:translateY(1000px);transform:translateY(1000px);opacity:0}}@-webkit-keyframes slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes  slide-in-right{0%{-webkit-transform:translateX(1000px);transform:translateX(1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@-webkit-keyframes fade-out-right{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(50px);transform:translateX(50px);opacity:0}}@keyframes  fade-out-right{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(50px);transform:translateX(50px);opacity:0}}
+</style>
+</head><!-- end head -->
+
+<!-- body -->
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <div id="app">
+        <header>
+	<!--Nav-->
+	<nav id="header" class="fixed w-full z-30 top-0 text-white">
+		<div class="container">
+			<div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+				<!-- logo -->
+				<div class="pl-4 flex items-center">
+					<a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="portal_e-yantra_default.html">
+						<img class="w-48 md:w-56" src="img/logo.svg" alt="e-Yantra">
+					</a>
+				</div>
+				<!-- Menu Button for mobile -->
+				<div class="block lg:hidden pr-4">
+					<button id="nav-toggle" class="flex items-center p-1 text-orange-800 hover:text-gray-900">
+						<svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+					</button>
+				</div>
+
+				<!-- menu -->
+				<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+					<ul id="navList" class="list-reset lg:flex justify-end flex-1 items-center">
+						<li class="mr-3">
+							<a class="inline-block py-2 px-4 text-black font-bold no-underline" href="portal_e-yantra_default.html#about">About</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="portal_e-yantra_default.html#why">Why?</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="portal_e-yantra_default.html#whocan">Who Can?</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="portal_e-yantra_default.html#rules">Rules</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="faq.htm">FAQ</a>
+						</li>
+						<!-- <li class="mr-3">
+							<a class="inline-block text-red-500 font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#register">Register</a>
+						</li> -->
+						<li class="mr-3">
+							<a class="inline-block text-red-500 font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="schedule.htm">Schedule</a>
+						</li>
+					</ul>
+					<a id="navAction" href="login.htm" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75">Login</a>
+				</div>
+			</div>
+		</div>
+		<hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+	</nav>
+	<!-- end -->
+</header>    <!-- header -->
+        <!--top banner-->
+
+<div class="pt-24">
+	<div class="container">
+		<div class="px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+			<!--Left Col-->
+			<div class="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left">
+				<h1 class="my-4 text-5xl font-bold leading-tight text-red-700">Robotics Competition 2020-21!!</h1>
+				<p class="leading-normal text-2xl mb-8 text-gray-900">Creating the next generation of multidisciplinary engineers with a practical outlook to help solve real problems in society.</p>
+				
+				<a class="js-modal-btn mx-auto md:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
+				data-video-id="veVnweUigfQ">How is eYRC different from other competitions?</a>
+			</div>
+			<!--Right Col-->
+			<div class="w-full md:w-2/5 px-4 text-center lg:text-right lg:text-left self-end">
+				<img class="w-full xl:w-4/5 z-50 inline-block" src="https://portal.e-yantra.org/img/hero1.png">
+			</div>
+			<!-- <div class="w-full px-4 text-center lg:text-right lg:text-left self-end">
+				<img class="w-full xl:w-5/5 z-50 inline-block" src="https://portal.e-yantra.org/img/baanner.jpeg">
+			</div> -->
+		</div>
+	</div>
+</div>
+<!-- end banner -->
+<!-- wave -->
+<div class="relative-mt-12 md:-mt-24">
+	<svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+				<path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+				<path d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z" opacity="0.100000001"></path>
+				<path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" id="Path-4" opacity="0.200000003"></path>
+			</g>
+			<g transform="translate(-4.000000, 76.000000)" fill="#F7FAFC" fill-rule="nonzero">
+				<path d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z"></path>
+			</g>
+		</g>
+	</svg>
+</div>
+<!-- end -->
+
+<!-- About Competition -->
+<section class="bg-gray-100 border-b py-8 bg-cover" id="about">
+	<div class="container max-w-5xl mx-auto m-8">
+		<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">About Competition</h1>
+		<div class="w-full mb-4">
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+		</div>
+		<div class="flex flex-wrap">
+			<div class="w-5/6 sm:w-1/2 p-6">
+				<p class="text-gray-600 mb-8 sm:text-xl text-justify">e-Yantra Robotics Competition (eYRC) is a unique annual competition for students in Engineering/ Science/ Polytechnic colleges.
+				The competition is inclusive and accommodates teams having a varied level of skills from beginners to advanced teams who have participated earlier. Themes range over a variety of  skills including: <span class="font-bold">ROS, Machine Learning, Image Processing, 3D Designing, Embedded Systems and much more.</span> Currently in its ninth edition, eYRC 2020-21 introduces multiple problem statements abstracted into games called “Themes” – all running in parallel where Finals are planned at IIT Bombay in March 2021. Details to be disclosed at a later time..
+				</div>
+				<div class="w-full sm:w-1/2 p-2">
+					<img class="w-full md:w-4/6 mx-auto" src="https://portal.e-yantra.org/img/art-work/kit-to-team.png">
+				</div>
+		</div>
+		<div class="flex flex-wrap flex-col-reverse sm:flex-row">
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+				<img class="w-5/6 mx-auto" src="https://portal.e-yantra.org/img/art-work/about.png">
+			</div>
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+				<div class="align-middle">
+					<p class="text-gray-600 mb-8 sm:text-xl text-justify">
+						Students register as a team of four – <span class="font-bold">any year, any branch from the same institute.</span> Team members’ profiles comprising factors such as their participation in past competitions may be used to assign the best suited Themes to the team. e-Yantra has complete discretion in the selection and Theme assignment process.
+						<span class="text-bold text-red-500">All registered teams are directly inducted into Stage 1 of the competition which is essentially a MOOC (Massive Open Online Course) which trains them in skills needed in Stage 2 which could use a robotic kit.</span>
+						<br/>
+						<span class="text-red-900">The winners of this competition are eligible for a coveted summer internship at IITB through the <a class="text-orange-500 underline" href="https://www.e-yantra.org/eysip" target="_blank">e-Yantra Summer Internship Program (eYSIP).</a></span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end -->
+
+<!-- how we are different -->
+<section class="bg-white border-b py-8 bg-cover" id="why" style="background-image: url('img/69.jpg')">
+	<div class="container max-w-5xl mx-auto m-8">
+		<h1 class="w-full my-2 text-xl sm:text-5xl font-bold leading-tight text-center text-gray-800">How are we different from other competitions?</h1>
+		<div class="w-full mb-4">
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+		</div>
+		<div class="w-full px-5">
+			<p class="text-blue-900 mb-8 text-justify sm:text-2xl">
+				The e-Yantra Robotics Competition uses a Project-Based Learning (PBL) approach.<br><br>
+
+				(i) hands-on learning <br>
+				(ii) prior knowledge not needed other than basic programming skills <br>
+				(iii) knowledge on concepts in Embedded systems and Robotics <br>
+				(iv) real-world problem solving skills <br>
+				(v) resources, guidance and feedback provided by expert technical team<br><br>
+
+				The competition is conducted completely online over a period of 5-6 months in a <span class="text-bold">“LEARNING while COMPETING”</span> mode. During this period Teams work on Tasks – each Task being a step in the learning/problem-solving process. Students are themselves surprised (in testimonials) at the quantum of skills acquired in the competition. <br><br>
+
+				Based on the performance in Stage 1, teams are selected for further stages of the competition/Finals of the competition. <span class="font-bold">Finals of the competition will be held at IIT Bombay in March 2021.</span> <br><br>
+
+				Through this competition, students not only learn and explore technologies but also develop skills to analyze a problem, finding alternate solutions and presenting an appropriate solution to the problem - skills essential in any academic or entrepreneurial endeavour.
+			</p>
+		</div>
+		<div class="w-full px-5">
+			<img class="w-full" src="https://portal.e-yantra.org/img/diff1.svg">
+		</div>
+	</div>
+</section>
+<!-- end -->
+
+<!-- who can -->
+<section class="border-b py-8 bg-cover" id="whocan" style="background-image: url('img/11857.jpg')">
+	<div class="container max-w-5xl mx-auto m-8 px-2 pt-4 pb-12 text-gray-800">
+		<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Who Can Participate?</h1>
+		<div class="w-full mb-4">
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+		</div>
+		<!-- Flags -->
+		<div class="flex flex-wrap justify-center items-center max-w-4xl mx-auto p-3 rounded-lg">
+			<div class="w-full my-4">
+
+					<img src="https://portal.e-yantra.org/img/flag/india-flag-icon-256.png" class="h-20 mx-auto shadow-xl ">
+
+			</div>
+			<div class="p-2">
+				<img src="https://portal.e-yantra.org/img/flag/bangladesh-flag-icon-256.png" class="h-8">
+			</div>
+			<div class="p-2">
+				<img src="https://portal.e-yantra.org/img/flag/bhutan-flag-icon-256.png" class="h-8">
+			</div>
+			<div class="p-2">
+				<img src="https://portal.e-yantra.org/img/flag/brunei-flag-icon-256.png" class="h-8">
+			</div>
+			<div class=" p-2">
+				<img src="https://portal.e-yantra.org/img/flag/cambodia-flag-icon-256.png" class="h-8">
+			</div>
+
+			<div class="p-2">
+				<img src="https://portal.e-yantra.org/img/flag/indonesia-flag-icon-256.png" class="h-8 border">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/laos-flag-icon-256.png" class="h-8 ">
+			</div>
+		    <div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/maldives-flag-icon-256.png" class="h-8">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/myanmar-flag-icon-256.png" class="h-8">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/malaysia-flag-icon-256.png" class="h-8">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/namibia-flag-icon-256.png" class="h-8">
+			</div>
+			<div class="p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/nepal-flag-icon-256.png" class="h-8 ">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/philippines-flag-icon-256.png" class="h-8 ">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/singapore-flag-icon-256.png" class="h-8 border ">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/south-africa-flag-icon-256.png" class="h-8 ">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/sri-lanka-flag-icon-256.png" class="h-8">
+			</div>
+			<div class="p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/thailand-flag-icon-256.png" class="h-8">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/united-kingdom-flag-icon-256.png" class="h-8 ">
+			</div>
+			<div class=" p-2  ">
+				<img src="https://portal.e-yantra.org/img/flag/vietnam-flag-icon-256.png" class="h-8">
+			</div>
+		</div>
+
+
+		<div class="flex flex-wrap flex-col-reverse sm:flex-row">
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+				<img class="w-3/6 sm:h-64 mx-auto" src="https://portal.e-yantra.org/img/art-work/who-can.png">
+			</div>
+			<div class="w-full sm:w-1/2 p-6 mt-6">
+				<div class="align-middle">
+					<ul class="list-disc text-gray-900 mb-8 sm:text-2xl text-justify">
+						<li> The competition is open for registration to full time Engineering/ Science/ Polytechnic college students who are studying in universities/ colleges, for a degree in any discipline.</li>
+						<li> Each team must have four members.</li>
+						<li> All members of a team must belong to the same college/institution. However team members may belong to different disciplines and years of study.</li>
+						<li> Each student can join only one team.</li>
+						<li> One member of the team should be designated as the team leader, who is responsible for all communications with e-Yantra.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</section>
+<!-- end -->
+
+<!-- terms and conditions -->
+<section class="bg-cover py-8" id="rules" style="background-image: url('img/19007.jpg')">
+	<div class="container max-w-5xl mx-auto m-8 px-2 pt-4 pb-12 text-gray-800">
+		<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Terms and Conditions</h1>
+		<div class="w-full mb-4">
+			<div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+		</div>
+		<div class="flex flex-wrap flex-col-reverse sm:flex-row">
+			<div class="w-full px-5">
+				<div class="align-middle">
+					<ul class="list-disc text-gray-900 mb-8 sm:text-2xl text-justify">
+						<li>Each team member will register with only one email ID.</li>
+						<li>A team will NOT BE PERMITTED to change/replace any team member(s). A team once registered will remain unchanged till the end of competition.</li> <li>e-Yantra holds complete discretion to assign Tracks/Themes to selected teams.</li>
+						<li>Failure to comply with any of the rules, terms and conditions of the competition may result in disqualification of the participating team.</li>
+						<li>All participants (implicitly) consent to allow their names and photographs to be used for publicity purposes by e-Yantra during and after the competition.</li>
+						<li>e-Yantra holds intellectual property rights for all materials submitted by the participating teams for the competition.</li>
+						<li>e-Yantra will not be responsible for submitted material lost in transit.</li>
+						<li>All material submitted must be the team's original work.</li>
+						<li>Any kind of plagiarism is strictly prohibited and will lead to disqualification of a team. Remember Plagiarism is cheating.</li>
+						<li>Provide proper citation for the source of any idea or words taken from anywhere else. Provide references for the material used in your work.</li> <li>e-Yantra’s decision is final and no appeals will be entertained.</li>
+						<li>e-Yantra reserves the right to modify or amend the prizes, rules, terms and conditions of the competition at any time. </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end -->
+
+<!-- action -->
+<section id="register" class="container mx-auto text-center py-6 mb-12">
+	<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-black">Register Now</h1>
+	<div class="w-full mb-4">
+		<div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+	</div>
+	<!-- fee -->
+	<div class="flex flex-wrap my-10 mx-auto">
+		<h3 class="w-full mb-8 text-3xl font-bold leading-tight text-center text-black">Registration Fee</h3>
+		<!-- non elsi -->
+		<div class="w-full md:w-1/3 px-10 mb-8">
+			<div class="flex flex-col h-full text-black rounded bg-white">
+				<div class="border-b border-primary py-4 bg-teal-400">
+					<h3 class="text-2xl font-bold text-red-500">
+						non-eLSI Colleges
+					</h3>
+				</div>
+				<div class="flex-grow text-center text-lg">
+					<p class="my-5">
+						<span class="line-through">5000 INR/Team</span><br>
+						2500 INR/Team (inc. taxes) <br>
+						<small class="font-bold">(inaugural rate till registrations end)</small>
+					</p>
+				</div>
+			</div>
+		</div> <!-- end -->
+		<!-- elsi -->
+		<div class="w-full md:w-1/3 px-10 mb-8">
+			<div class="flex flex-col h-full text-black rounded bg-white">
+				<div class="border-b border-primary py-4 bg-teal-400">
+					<h3 class="text-2xl font-bold text-red-500">
+						eLSI Colleges <br>
+					</h3>
+				</div>
+
+				<div class="flex-grow text-center text-lg">
+					<p class="my-5">
+						<span class="line-through">4000 INR/Team</span> <br>
+						2000 INR/Team (inc. taxes) <br>
+						<small class="font-bold">(inaugural rate till registrations end)</small>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- international colleges -->
+        <div class="w-full md:w-1/3 px-10 mb-8">
+            <div class="flex flex-col h-full text-black rounded bg-white">
+                <div class="border-b border-primary py-4 bg-teal-400">
+                    <h3 class="text-2xl font-bold text-red-500">
+                    	International Teams
+                    </h3>
+                </div>
+                <div class="flex-grow text-center text-lg">
+                    <p class="my-5">
+                       <span class="line-through">80 USD/Team</span><br>
+                       40 USD/Team (inc. taxes) <br>
+					   <small class="font-bold">(inaugural rate till registrations end)</small>
+                    </p>
+                </div>
+            </div>
+        </div><!-- end -->
+                        <div class="w-full text-center md:w-2/3 bg-red-200 mx-auto">
+        								<h2 class="my-6 text-3xl leading-tight text-red-500">
+					Registration Closed
+				</h2>
+							</div>
+        </div>
+</section>
+<!-- end -->
+
+<!-- past eyrc videos -->
+<past-eyrc-component></past-eyrc-component>
+
+<!--Toast-->
+<!-- <div class="alert-toast fixed bottom-0 right-0 m-8 w-6/6 md:w-full max-w-lg">
+	<input type="checkbox" class="hidden" id="footertoast">
+	<label class="close cursor-pointer flex items-start justify-between w-full p-2 bg-blue-600 h-24 rounded shadow-lg text-white" title="close" for="footertoast">
+		<p class="text-lg pl-3">
+			Registration open till: Thursday 17th of September 2020, 11:59 pm
+		</p>
+		<svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+			<path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+		</svg>
+	</label>
+</div> -->
+<!--toast end  -->
+
+                      <!-- content -->
+        <footer class="bg-gray-200">
+	<div class="container mx-auto px-8">
+		<div class="w-full py-6">
+			<p class="text-gray-900 text-center md:text-2xl">
+				e-Yantra is a project sponsored by <a class="text-blue-600" href="http://mhrd.gov.in/" target="_blank">MoE</a> through the <a class="text-blue-600" href="https://mhrd.gov.in/technology-enabled-learning-0" target="_blank">National Mission on Education through ICT (NMEICT)</a>
+			</p>
+		</div>
+		<div class="w-full flex flex-col md:flex-row py-6">
+			<div class="w-full md:w-3/5 mb-6">
+				<img src="img/mhrd.png">
+			</div>
+			<div class="w-full mx-auto mb-6 text-center md:text-right md:text-lg">
+				<p>
+					<!-- facebook -->
+					<span class="mdi mdi-facebook text-orange-500"></span>
+					<a href="https://portal.e-yantra.org/www.facebook.com/eyantra.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-3">Facebook</a>
+					<!-- twitter -->
+					<span class="mdi mdi-twitter text-orange-500"></span>
+					<a href="https://twitter.com/eyantra_iitb" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-3">Twitter</a>
+					<!-- linkedin -->
+					<span class="mdi mdi-linkedin text-orange-500"></span>
+					<a href="https://www.linkedin.com/company/14407133/admin/" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-3">LinkedIn</a>
+					<!-- insta -->
+					<span class="mdi mdi-instagram text-orange-500"></span>
+					<a href="https://www.instagram.com/eyantra/" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-3">Insta</a>
+					<!-- youtube -->
+					<span class="mdi mdi-youtube text-orange-500"></span>
+					<a href="https://portal.e-yantra.org/www.youtube.com/user/eyantra/videos.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500">YouTube</a>
+				</p>
+				<p class="mt-5">
+					<a href="https://portal.e-yantra.org/www_e-yantra_default.html" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-5">e-Yantra</a>
+					<!-- elsi -->
+					<a href="https://portal.e-yantra.org/elsi.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500">eLSI</a>
+					<!-- eyic -->
+					<a href="https://portal.e-yantra.org/eyic.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mx-5">eYIC</a>
+					<!-- eyrdc -->
+					<a href="https://portal.e-yantra.org/content.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500">eYRDC</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="w-full py-6 text-center text-gray-500">
+		<hr class="mb-5">
+		Copyright © 2021 <a class="text-blue-600" href="https://portal.e-yantra.org/e-yantra_default.html" target="_blank">e-Yantra</a>. All rights reserved. <br>
+		<a href="https://portal.e-yantra.org/www.freepik.com/free-photos-vectors/background.htm" class="text-gray-500">Background vector created by freepik - www.freepik.com</a>
+	</div>
+</footer>    <!-- footer -->
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://portal.e-yantra.org/js/jquery-modal-video.min.js"></script>
+<script type="text/javascript">
+	$(".js-modal-btn").modalVideo({autoplay: 1});
+</script>
+<script>
+	var activeclass = document.querySelectorAll('#header li a');
+	for (var i = 0; i < activeclass.length; i++) {
+		activeclass[i].addEventListener('click', activateClass);
+	}
+
+	function activateClass(e) {
+		for (var i = 0; i < activeclass.length; i++) {
+			activeclass[i].classList.remove("font-bold");
+		}
+		e.target.classList.add("font-bold");
+	}
+</script>
+<script>
+	/*on scroll change the font-bold class*/
+	var mainNavLinks = document.querySelectorAll("nav ul li a");
+	var mainSections = document.querySelectorAll("body section");
+
+	let lastId;
+	let cur = [];
+
+	window.addEventListener("scroll", event => {
+		var fromTop = window.scrollY + 60;
+
+		mainNavLinks.forEach(link => {
+			var section = document.querySelector(link.hash);
+			if(
+				section.offsetTop <= fromTop  &&
+				section.offsetTop + section.offsetHeight > fromTop
+				){
+				link.classList.add("font-bold");
+		} else {
+			link.classList.remove("font-bold");
+		}
+	});
+	});
+</script>
+    <script type="text/javascript">
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var navaction = document.getElementById("navAction");
+    var brandname = document.getElementById("brandname");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener('scroll', function() {
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY;
+        if(scrollpos > 10){
+            header.classList.add("bg-white");
+            //navaction.classList.remove("bg-white");
+            navaction.classList.add("gradient");
+            //navaction.classList.remove("text-gray-800");
+            navaction.classList.add("text-gray-800");
+            //Use to switch toggleColour colours
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-gray-800");
+                toToggle[i].classList.remove("text-white");
+            }
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            navaction.classList.remove("gradient");
+            navaction.classList.add("bg-white");
+            navaction.classList.remove("text-white");
+            navaction.classList.add("text-gray-800");
+              //Use to switch toggleColour colours
+              for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-white");
+                toToggle[i].classList.remove("text-gray-800");
+            }
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+        }
+    });
+    </script>
+    <script type="text/javascript">
+    /*Toggle dropdown list*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+    function check(e){
+        var target = (e && e.target) || (event && event.srcElement);
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+            // click NOT on the menu
+            if (checkParent(target, navMenu)) {
+                // click on the link
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else { navMenuDiv.classList.add("hidden"); }
+            } else {
+              // click both outside link and outside menu, hide menu
+              navMenuDiv.classList.add("hidden");
+            }
+        }
+    }
+    function checkParent(t, elm) {
+        while(t.parentNode) {
+            if( t == elm ) {return true;}
+            t = t.parentNode;
+        }
+        return false;
+    }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://portal.e-yantra.org/www.googletagmanager.com/gtag/js"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145861739-2');
+    </script>
+    <!--End of Analycits-->
+</body><!-- end body -->
+</html><!-- end html -->

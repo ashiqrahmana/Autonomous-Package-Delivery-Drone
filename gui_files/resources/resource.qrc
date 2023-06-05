@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="images">
+    <file>images/imgbig.png</file>
+    <file>images/metal.png</file>
+    <file>images/main2.png</file>
+    <file>images/main.png</file>
+    <file>images/img10.png</file>
+    <file>images/img9.png</file>
+    <file>images/img4.png</file>
+    <file>images/img1.png</file>
+    <file>images/img.png</file>
+    <file>images/imag2.png</file>
+  </qresource>
+  <qresource prefix="fonts">
+    <file>fonts/opensans.ttf</file>
+    <file>fonts/playfair.ttf</file>
+    <file>fonts/roboto.ttf</file>
+  </qresource>
+</RCC>

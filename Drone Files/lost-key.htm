@@ -1,0 +1,273 @@
+<!-- title -->
+
+<!-- add user css -->
+
+<!-- content -->
+
+<!-- add javascript -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>e-Yantra: Login</title>
+    <meta name="e-Yantra Robotics Competition 2020-21" content="e-Yantra Robotics Competition (eYRC) is a unique annual competition for undergraduate students in Engineering/ Science/ Polytechnic colleges.">
+    <meta name="keywords" content="e-Yantra Robotics Compeititon">
+    <meta name="author" content="e-Yantra">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="Ti9KqityQCkbxnU2mPTrOccVgLkU2ZHYRXvkDpgB">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon_io/site.webmanifest">
+    <!-- tailwind css -->
+    <link href="css/app.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"> -->
+    <!-- fontawesome css -->
+    <link href="css/fonts.css" rel="stylesheet">
+    <!-- font -->
+    <link href="fonts.googleapis.com/css.css" rel="stylesheet">
+    <link href="fonts.googleapis.com/css_2.css" rel="stylesheet">
+    <link href="cdn.jsdelivr.net/npm/_mdi/font_5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!-- google recachapa -->
+    <script src="www.google.com/recaptcha/api.js" async defer></script>
+    <!-- add pagew specific style -->
+    <style type="text/css"></style>
+    	<style type="text/css">
+	#header {
+		/*background:linear-gradient(90deg,#ba5370 0%, #ffdde1 100%);*/
+		background:linear-gradient(90deg,#a3bffa 0%, #ebf4ff 100%);
+	}
+	</style>
+</head><!-- end head -->
+
+<!-- body -->
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <div id="app">
+        <header>
+	<!--Nav-->
+	<nav id="header" class="fixed w-full z-30 top-0 text-white">
+		<div class="container">
+			<div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+				<!-- logo -->
+				<div class="pl-4 flex items-center">
+					<a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"  href="portal_e-yantra_default.html">
+						<img class="w-48 md:w-56" src="img/logo.svg" alt="e-Yantra">
+					</a>
+				</div>
+				<!-- Menu Button for mobile -->
+				<div class="block lg:hidden pr-4">
+					<button id="nav-toggle" class="flex items-center p-1 text-orange-800 hover:text-gray-900">
+						<svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+					</button>
+				</div>
+
+				<!-- menu -->
+				<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+					<ul id="navList" class="list-reset lg:flex justify-end flex-1 items-center">
+						<li class="mr-3">
+							<a class="inline-block py-2 px-4 text-black font-bold no-underline" href="lost-key.htm#about">About</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="lost-key.htm#why">Why?</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="lost-key.htm#whocan">Who Can?</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="lost-key.htm#rules">Rules</a>
+						</li>
+						<li class="mr-3">
+							<a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="faq.htm">FAQ</a>
+						</li>
+						<!-- <li class="mr-3">
+							<a class="inline-block text-red-500 font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#register">Register</a>
+						</li> -->
+						<li class="mr-3">
+							<a class="inline-block text-red-500 font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="schedule.htm">Schedule</a>
+						</li>
+					</ul>
+					<a id="navAction" href="login.htm" class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75">Login</a>
+				</div>
+			</div>
+		</div>
+		<hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+	</nav>
+	<!-- end -->
+</header>    <!-- header -->
+        <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-blue-100">
+	<div class="max-w-md w-full">
+								<div class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+			<div class="w-full p-8">
+				<div class="pb-3">
+					<h2 class="mt-3 text-3xl font-semibold text-center leading-9 font-display text-gray-900">
+						Reset your password
+					</h2>
+				</div>
+				<form class="mt-8" action="https://portal.e-yantra.org/process-lost-key" method="post">
+					<input type="hidden" name="_token" value="Ti9KqityQCkbxnU2mPTrOccVgLkU2ZHYRXvkDpgB">
+					<p class="text-lg text-center text-gray-900 pb-4">
+						Enter your verified email address and we will send you a password reset link.
+					</p>
+					<div class="rounded-md shadow-sm">
+						<div class="rounded-md border border-gray-300">
+							<input aria-label="Email address" id="inputUsername" name="inputUsername" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address">
+						</div>
+					</div>
+					<div class="mt-6">
+						<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+							Send password reset email
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+                      <!-- content -->
+        <footer class="bg-gray-200">
+	<div class="container mx-auto px-8">
+		<div class="w-full py-6">
+			<p class="text-gray-900 text-center md:text-2xl">
+				e-Yantra is a project sponsored by <a class="text-blue-600" href="http://mhrd.gov.in/" target="_blank">MoE</a> through the <a class="text-blue-600" href="https://mhrd.gov.in/technology-enabled-learning-0" target="_blank">National Mission on Education through ICT (NMEICT)</a>
+			</p>
+		</div>
+		<div class="w-full flex flex-col md:flex-row py-6">
+			<div class="w-full md:w-3/5 mb-6">
+				<img src="img/mhrd.png">
+			</div>
+			<div class="w-full mx-auto mb-6 text-center md:text-right md:text-lg">
+				<p>
+					<!-- facebook -->
+					<span class="mdi mdi-facebook text-orange-500"></span>
+					<a href="www.facebook.com/eyantra.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-3">Facebook</a>
+					<!-- twitter -->
+					<span class="mdi mdi-twitter text-orange-500"></span>
+					<a href="https://twitter.com/eyantra_iitb" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-3">Twitter</a>
+					<!-- linkedin -->
+					<span class="mdi mdi-linkedin text-orange-500"></span>
+					<a href="https://www.linkedin.com/company/14407133/admin/" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-3">LinkedIn</a>
+					<!-- insta -->
+					<span class="mdi mdi-instagram text-orange-500"></span>
+					<a href="https://www.instagram.com/eyantra/" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-3">Insta</a>
+					<!-- youtube -->
+					<span class="mdi mdi-youtube text-orange-500"></span>
+					<a href="www.youtube.com/user/eyantra/videos.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500">YouTube</a>
+				</p>
+				<p class="mt-5">
+					<a href="www_e-yantra_default.html" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mr-5">e-Yantra</a>
+					<!-- elsi -->
+					<a href="elsi.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500">eLSI</a>
+					<!-- eyic -->
+					<a href="eyic.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500 mx-5">eYIC</a>
+					<!-- eyrdc -->
+					<a href="content.htm" target="_blank" class="no-underline hover:underline text-gray-800 hover:text-orange-500">eYRDC</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="w-full py-6 text-center text-gray-500">
+		<hr class="mb-5">
+		Copyright © 2021 <a class="text-blue-600" href="e-yantra_default.html" target="_blank">e-Yantra</a>. All rights reserved. <br>
+		<a href="https://portal.e-yantra.org/www.freepik.com/free-photos-vectors/background.htm" class="text-gray-500">Background vector created by freepik - www.freepik.com</a>
+	</div>
+</footer>    <!-- footer -->
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">
+	/* remove header menu */
+	var myList = document.getElementById('navList');
+	myList.innerHTML = '';
+</script>
+    <script type="text/javascript">
+    var scrollpos = window.scrollY;
+    var header = document.getElementById("header");
+    var navcontent = document.getElementById("nav-content");
+    var navaction = document.getElementById("navAction");
+    var brandname = document.getElementById("brandname");
+    var toToggle = document.querySelectorAll(".toggleColour");
+
+    document.addEventListener('scroll', function() {
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY;
+        if(scrollpos > 10){
+            header.classList.add("bg-white");
+            //navaction.classList.remove("bg-white");
+            navaction.classList.add("gradient");
+            //navaction.classList.remove("text-gray-800");
+            navaction.classList.add("text-gray-800");
+            //Use to switch toggleColour colours
+            for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-gray-800");
+                toToggle[i].classList.remove("text-white");
+            }
+            header.classList.add("shadow");
+            navcontent.classList.remove("bg-gray-100");
+            navcontent.classList.add("bg-white");
+        } else {
+            header.classList.remove("bg-white");
+            navaction.classList.remove("gradient");
+            navaction.classList.add("bg-white");
+            navaction.classList.remove("text-white");
+            navaction.classList.add("text-gray-800");
+              //Use to switch toggleColour colours
+              for (var i = 0; i < toToggle.length; i++) {
+                toToggle[i].classList.add("text-white");
+                toToggle[i].classList.remove("text-gray-800");
+            }
+            header.classList.remove("shadow");
+            navcontent.classList.remove("bg-white");
+            navcontent.classList.add("bg-gray-100");
+        }
+    });
+    </script>
+    <script type="text/javascript">
+    /*Toggle dropdown list*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+    var navMenuDiv = document.getElementById("nav-content");
+    var navMenu = document.getElementById("nav-toggle");
+
+    document.onclick = check;
+    function check(e){
+        var target = (e && e.target) || (event && event.srcElement);
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+            // click NOT on the menu
+            if (checkParent(target, navMenu)) {
+                // click on the link
+                if (navMenuDiv.classList.contains("hidden")) {
+                    navMenuDiv.classList.remove("hidden");
+                } else { navMenuDiv.classList.add("hidden"); }
+            } else {
+              // click both outside link and outside menu, hide menu
+              navMenuDiv.classList.add("hidden");
+            }
+        }
+    }
+    function checkParent(t, elm) {
+        while(t.parentNode) {
+            if( t == elm ) {return true;}
+            t = t.parentNode;
+        }
+        return false;
+    }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://portal.e-yantra.org/www.googletagmanager.com/gtag/js"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145861739-2');
+    </script>
+    <!--End of Analycits-->
+</body><!-- end body -->
+</html><!-- end html -->

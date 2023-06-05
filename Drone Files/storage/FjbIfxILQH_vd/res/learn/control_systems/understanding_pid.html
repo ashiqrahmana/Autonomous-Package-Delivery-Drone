@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Understanding PID - eYRC 2020-21: Vitaraṇa Drone (VD)</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- 
+        <link rel="icon" href="../../../favicon.svg">
+         -->
+        
+        <link rel="shortcut icon" href="../../../favicon.png">
+        
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../home/home_VD.html"><strong aria-hidden="true">1.</strong> Home</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../home/bb_vd.html"><strong aria-hidden="true">1.1.</strong> Bulletin Board</a></li><li class="chapter-item "><a href="../../home/changelog_vd.html"><strong aria-hidden="true">1.2.</strong> Changelog</a></li></ol></li><li class="chapter-item expanded "><a href="../learn.html"><strong aria-hidden="true">2.</strong> Learn</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../resources/learn-books.html"><strong aria-hidden="true">2.1.</strong> Books</a></li><li class="chapter-item "><a href="../linux/learn-linux.html"><strong aria-hidden="true">2.2.</strong> Linux</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../linux/learn-linux-file-system.html"><strong aria-hidden="true">2.2.1.</strong> Linux File System Directories</a></li><li class="chapter-item "><a href="../linux/learn-linux-file-permissions.html"><strong aria-hidden="true">2.2.2.</strong> Linux File Permissions</a></li><li class="chapter-item "><a href="../linux/learn-linux-command.html"><strong aria-hidden="true">2.2.3.</strong> Linux Commands</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-intro.html"><strong aria-hidden="true">2.3.</strong> ROS Basics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-installation.html"><strong aria-hidden="true">2.3.1.</strong> ROS Installation</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-workspace.html"><strong aria-hidden="true">2.3.2.</strong> ROS Workspace</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-create-workspace.html"><strong aria-hidden="true">2.3.2.1.</strong> Create a Catkin Workspace</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-pkg.html"><strong aria-hidden="true">2.3.3.</strong> ROS Package</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-create-pkg.html"><strong aria-hidden="true">2.3.3.1.</strong> Create a ROS Package</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-nodes.html"><strong aria-hidden="true">2.3.4.</strong> ROS Nodes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-create-node.html"><strong aria-hidden="true">2.3.4.1.</strong> Create a ROS Node</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-nodes-cmd-rosrun.html"><strong aria-hidden="true">2.3.4.2.</strong> Command: rosrun</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-nodes-cmd-rosnode.html"><strong aria-hidden="true">2.3.4.3.</strong> Command: rosnode</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-master.html"><strong aria-hidden="true">2.3.5.</strong> ROS Master</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-parameter-server.html"><strong aria-hidden="true">2.3.6.</strong> ROS Parameter Server</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-parameter-yaml.html"><strong aria-hidden="true">2.3.6.1.</strong> Load Parameters using YAML file</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-parameter-eg1.html"><strong aria-hidden="true">2.3.6.2.</strong> Example #1: ROS Node to Get and Set Parameters</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch.html"><strong aria-hidden="true">2.3.7.</strong> ROS Launch Files</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-create.html"><strong aria-hidden="true">2.3.7.1.</strong> Create a ROS Launch File</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-eg1.html"><strong aria-hidden="true">2.3.7.2.</strong> Example #1: Launch two ROS Nodes</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-eg2.html"><strong aria-hidden="true">2.3.7.3.</strong> Example #2: Launch Turtle in Forest</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-eg3.html"><strong aria-hidden="true">2.3.7.4.</strong> Example #3: Load YAML</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-launch-eg4.html"><strong aria-hidden="true">2.3.7.5.</strong> Example #4: Launch Shell Script and ROS Node</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm.html"><strong aria-hidden="true">2.3.8.</strong> ROS Communication</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic.html"><strong aria-hidden="true">2.3.8.1.</strong> ROS Topics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic.html"><strong aria-hidden="true">2.3.8.1.1.</strong> Command: rostopic</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic-list.html"><strong aria-hidden="true">2.3.8.1.1.1.</strong> list</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic-type.html"><strong aria-hidden="true">2.3.8.1.1.2.</strong> type, info and rosmsg</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic-pub.html"><strong aria-hidden="true">2.3.8.1.1.3.</strong> pub</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-cmd-rostopic-echo.html"><strong aria-hidden="true">2.3.8.1.1.4.</strong> echo</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-topic-eg1.html"><strong aria-hidden="true">2.3.8.1.2.</strong> Example #1: Pub-Sub with Custom Message</a></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-services.html"><strong aria-hidden="true">2.3.8.2.</strong> ROS Services</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-services-create-srv.html"><strong aria-hidden="true">2.3.8.2.1.</strong> Create a srv file</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-comm-services-testing.html"><strong aria-hidden="true">2.3.8.2.2.</strong> Test ROS Services - Server and Client</a></li></ol></li></ol></li><li class="chapter-item "><a href="../ros-basics/learn-ros-misc.html"><strong aria-hidden="true">2.3.9.</strong> Miscellaneous</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ros-basics/learn-ros-nodes-rospy.html"><strong aria-hidden="true">2.3.9.1.</strong> Overview of rospy</a></li><li class="chapter-item "><a href="../ros-basics/learn-ros-rqt-graph.html"><strong aria-hidden="true">2.3.9.2.</strong> rqt_graph</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="overview_controls.html"><strong aria-hidden="true">2.4.</strong> Control Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="understanding_pid.html" class="active"><strong aria-hidden="true">2.4.1.</strong> Understanding PID</a></li></ol></li><li class="chapter-item "><a href="../image_processing/image_processing.html"><strong aria-hidden="true">2.5.</strong> Image Processing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../image_processing/QR_code_detection.html"><strong aria-hidden="true">2.5.1.</strong> QR detection</a></li><li class="chapter-item "><a href="../image_processing/cascades_training_and_usage.html"><strong aria-hidden="true">2.5.2.</strong> Cascade Classifiers</a></li></ol></li><li class="chapter-item "><a href="../drone/basic_Drone_Motion.html"><strong aria-hidden="true">2.6.</strong> Quadcopters</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../drone/eyrc-VD-Exploring_eDrone_ROS-Gazebo_model.html"><strong aria-hidden="true">2.6.1.</strong> Understanding eDrone model</a></li><li class="chapter-item "><a href="../drone/pick_drop_mechanism.html"><strong aria-hidden="true">2.6.2.</strong> Pick/drop mechanism of eDronel</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/VD_path_navigation.html"><strong aria-hidden="true">2.6.3.</strong> Obstacle Avoidance and path planning</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/eyrc.html"><strong aria-hidden="true">3.</strong> eYRC 2020-21</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/rulebook/rulebook.html"><strong aria-hidden="true">3.1.</strong> Rulebook</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/rulebook/intro.html"><strong aria-hidden="true">3.1.1.</strong> Introduction</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/theme_desc.html"><strong aria-hidden="true">3.1.2.</strong> Theme Description</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/arena.html"><strong aria-hidden="true">3.1.3.</strong> Arena</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/soft_specs.html"><strong aria-hidden="true">3.1.4.</strong> Software Specifications</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/theme_flow.html"><strong aria-hidden="true">3.1.5.</strong> Theme Flow</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/theme_rules.html"><strong aria-hidden="true">3.1.6.</strong> Theme Rules</a></li><li class="chapter-item "><a href="../../eyrc_VD/rulebook/judging_and_scoring_rules.html"><strong aria-hidden="true">3.1.7.</strong> Judging and Scoring Rules</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/eyrc-deadlines.html"><strong aria-hidden="true">3.2.</strong> Deadlines</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0.html"><strong aria-hidden="true">3.3.</strong> Task 0</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-prereq.html"><strong aria-hidden="true">3.3.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-installations.html"><strong aria-hidden="true">3.3.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-learn.html"><strong aria-hidden="true">3.3.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-problem-statement.html"><strong aria-hidden="true">3.3.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-expected-output.html"><strong aria-hidden="true">3.3.3.</strong> Expected Output</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-submission.html"><strong aria-hidden="true">3.3.4.</strong> Submission Instruction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-sub-recording.html"><strong aria-hidden="true">3.3.4.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc/task0/eyrc-task0-submission-make.html"><strong aria-hidden="true">3.3.4.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1.html"><strong aria-hidden="true">3.4.</strong> Task 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-prereq.html"><strong aria-hidden="true">3.4.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-installations.html"><strong aria-hidden="true">3.4.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-learn.html"><strong aria-hidden="true">3.4.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-problem-statement.html"><strong aria-hidden="true">3.4.2.</strong> Problem Statement</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1A-problem-statement.html"><strong aria-hidden="true">3.4.2.1.</strong> Task 1A</a></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1B-problem-statement.html"><strong aria-hidden="true">3.4.2.2.</strong> Task 1B</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-submission.html"><strong aria-hidden="true">3.4.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-sub-recording.html"><strong aria-hidden="true">3.4.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task1/eyrc-VD-task1-submission-make.html"><strong aria-hidden="true">3.4.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2.html"><strong aria-hidden="true">3.5.</strong> Task 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-prereq.html"><strong aria-hidden="true">3.5.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-installations.html"><strong aria-hidden="true">3.5.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-learn.html"><strong aria-hidden="true">3.5.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-problem-statement.html"><strong aria-hidden="true">3.5.2.</strong> Problem Statement</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2A-problem-statement.html"><strong aria-hidden="true">3.5.2.1.</strong> Task 2A</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2B-problem-statement.html"><strong aria-hidden="true">3.5.2.2.</strong> Task 2B</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2C-problem-statement.html"><strong aria-hidden="true">3.5.2.3.</strong> Task 2C</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-submission.html"><strong aria-hidden="true">3.5.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-sub-recording.html"><strong aria-hidden="true">3.5.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task2/eyrc-VD-task2-submission-make.html"><strong aria-hidden="true">3.5.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3.html"><strong aria-hidden="true">3.6.</strong> Task 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-prereq.html"><strong aria-hidden="true">3.6.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-installations.html"><strong aria-hidden="true">3.6.1.1.</strong> Installations</a></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-learn.html"><strong aria-hidden="true">3.6.1.2.</strong> Learning Resources</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-problem-statement.html"><strong aria-hidden="true">3.6.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-submission.html"><strong aria-hidden="true">3.6.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-sub-recording.html"><strong aria-hidden="true">3.6.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task3/eyrc-VD-task3-submission-make.html"><strong aria-hidden="true">3.6.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4.html"><strong aria-hidden="true">3.7.</strong> Task 4</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-prereq.html"><strong aria-hidden="true">3.7.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-installations.html"><strong aria-hidden="true">3.7.1.1.</strong> Installations</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-problem-statement.html"><strong aria-hidden="true">3.7.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-submission.html"><strong aria-hidden="true">3.7.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-sub-recording.html"><strong aria-hidden="true">3.7.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task4/eyrc-VD-task4-submission-make.html"><strong aria-hidden="true">3.7.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5.html"><strong aria-hidden="true">3.8.</strong> Task 5</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-prereq.html"><strong aria-hidden="true">3.8.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-installations.html"><strong aria-hidden="true">3.8.1.1.</strong> Installations</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-problem-statement.html"><strong aria-hidden="true">3.8.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-submission.html"><strong aria-hidden="true">3.8.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-sub-recording.html"><strong aria-hidden="true">3.8.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task5/eyrc-VD-task5-submission-make.html"><strong aria-hidden="true">3.8.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6.html"><strong aria-hidden="true">3.9.</strong> Task 6</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-prereq.html"><strong aria-hidden="true">3.9.1.</strong> Prerequisites</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-instructions.html"><strong aria-hidden="true">3.9.1.1.</strong> Instructions</a></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-installations.html"><strong aria-hidden="true">3.9.1.2.</strong> Installations</a></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-problem-statement.html"><strong aria-hidden="true">3.9.2.</strong> Problem Statement</a></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-submission.html"><strong aria-hidden="true">3.9.3.</strong> Submission Instructions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-sub-recording.html"><strong aria-hidden="true">3.9.3.1.</strong> Recording Logs</a></li><li class="chapter-item "><a href="../../eyrc_VD/task6/eyrc-VD-task6-submission-make.html"><strong aria-hidden="true">3.9.3.2.</strong> Making the submission</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../eyrc_VD/coding_standards/coding_standards.html"><strong aria-hidden="true">3.10.</strong> Coding Standards</a></li></ol></li><li class="chapter-item "><a href="../../downloads/downloads.html"><strong aria-hidden="true">4.</strong> Downloads</a></li><li class="chapter-item "><a href="../../help-feedback/help-feedback-intro.html"><strong aria-hidden="true">5.</strong> Help &amp; Feedback</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../help-feedback/benchmark.html"><strong aria-hidden="true">5.1.</strong> Computer Benchmark Form</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- <html>
+	<head>
+	<style>
+		
+	@media only screen and (max-width: 600px) {
+	  .eyrc_ckt{
+			display:none;
+		}
+	}
+
+	</style>
+	</head>
+	<body>
+		<div>
+		<center></center>
+			<div style="display:flex; justify-content:space-between;padding:10px;padding-top:0">
+				<div >
+					<img src="http://mooc.e-yantra.org/img/eYantra_logo.svg" alt="e-yantra_logo" height="40px" style="padding:10px 15px;" />
+				</div>
+				<div>
+					<img src="https://raw.githubusercontent.com/kalindkaria/typora-md-assets/master/maze_bot/assets/eyrc-header.svg" height="80px"  class="eyrc_ckt">
+				</div>
+				<div style="font-weight:900;font-size:20px;text-align:center;padding:10px 15px">
+					Robotics Competition<br>
+					2020-21
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
+
+
+ -->
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div style="width:100%">
+                        <html>
+	<head>
+	<style>
+		
+	@media only screen and (max-width: 600px) {
+	  .eyrc_ckt{
+			display:none;
+		}
+	}
+
+	</style>
+	</head>
+	<body>
+		<div>
+		<center></center>
+			<div style="display:flex; justify-content:space-between;padding:10px;padding-top:0">
+				<div >
+					<img src="../../../../../img/eYantra_logo.svg" alt="e-yantra_logo" height="40px" style="padding:10px 15px;" />
+				</div>
+				<div>
+					<img src="../../../../../raw.githubusercontent.com/kalindkaria/typora-md-assets/master/maze_bot/assets/eyrc-header.svg" height="80px"  class="eyrc_ckt">
+				</div>
+				<div style="font-weight:900;font-size:20px;text-align:center;padding:10px 15px">
+					Robotics Competition<br>
+					2020-21
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
+
+
+
+                    </div>
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">eYRC 2020-21: Vitaraṇa Drone (VD)</h1>
+
+                    <div class="right-buttons">
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="understanding_pid.html#pid-controller" id="pid-controller">PID Controller</a></h1>
+<h2><a class="header" href="understanding_pid.html#abstract" id="abstract">Abstract</a></h2>
+<p>Systems can broadly be divided into two types; open loop systems and closed loop systems. An open loop system is also called an uncontrolled system. The output of such a system is not controlled as the system has no feedback. a closed loop system is also called a controlled system. The output of such a system is controlled as it receives feedback. PID is an example of a close loop system. Proportional-integral-derivative (PID) controllers are widely used in industrial systems despite the significant developments of recent years in control theory and technology. They perform well for a wide class of processes. Also, they give robust performance for a wide range of operating conditions and, they are easy to implement using analogue or digital hardware.</p>
+<h2><a class="header" href="understanding_pid.html#types-of-controllers" id="types-of-controllers">Types of Controllers</a></h2>
+<h3><a class="header" href="understanding_pid.html#proportional-controller-p-controller" id="proportional-controller-p-controller">Proportional Controller (P Controller)</a></h3>
+<p>P controller is mostly used in first order processes with single energy storage to stabilize the unstable process. The main usage of the P controller is to decrease the steady state error of the system. As the proportional gain factor K increases, the steady state error of the system decreases. However, despite the reduction, P control can never manage to eliminate the steady state error of the system. As we increase the proportional gain, it provides smaller amplitude and phase margin, faster dynamics satisfying wider frequency band and larger sensitivity to the noise. We can use this controller only when our system is tolerable to a constant steady state error. In addition, it can be easily concluded that applying P controller decreases the rise time and after a certain value of reduction on the steady state error, increasing K only leads to overshoot of the system response. P control also causes oscillation if sufficiently aggressive in the presence of lags and/or dead time. The more lags (higher order), the more problem it leads. Plus, it directly amplifies process noise.</p>
+<h3><a class="header" href="understanding_pid.html#proportional-derivative-controller-pd-controller" id="proportional-derivative-controller-pd-controller">Proportional Derivative Controller (PD Controller)</a></h3>
+<p>The aim of using P-D controller is to increase the stability of the system by improving control since it has an ability to predict the future error of the system response. In order to avoid effects of the sudden change in the value of the error signal, the derivative is taken from the output response of the system variable instead of the error signal. Therefore, D mode is designed to be proportional to the change of the output variable to prevent the sudden changes occurring in the control output resulting from sudden changes in the error signal. In addition D directly amplifies process noise therefore D-only control is not used.</p>
+<h3><a class="header" href="understanding_pid.html#proportional-integral-derivative-pid-controller" id="proportional-integral-derivative-pid-controller">Proportional Integral Derivative (PID Controller)</a></h3>
+<p>P-I-D controller has the optimum control dynamics including zero steady state error, fast response (short rise time), no oscillations and higher stability. The necessity of using a derivative gain component in addition to the PI controller is to eliminate the overshoot and the oscillations occurring in the output response of the system.</p>
+<h3><a class="header" href="understanding_pid.html#p-controller" id="p-controller">P Controller</a></h3>
+<p>A P controller consists of only a linear gain Kp. The output of such controller
+can be simply given as</p>
+<pre><code>output = Kp * error
+</code></pre>
+<img src = "media/images/understanding_pid_1.jpg">
+<div align="center"> Block diagram  </div>
+<h4><a class="header" href="understanding_pid.html#observations" id="observations">Observations</a></h4>
+<p>It was observed that the drone never settled at its destination. Instead it oscillated about its destination. The higher the value of Kp the more the amplitude of the oscillation and the drone would be out of the flying zone. Below is a plot between error in x, y, and z coordinates and time. Clearly it is visible that the drone was not able to stabilize itself at the destination. </p>
+<img src = "media/images/understanding_pid_2.jpg">
+<div align="center"> Hence, it was concluded that a P-controller by itself wasn’t able to stabilize the system at a required point. </div>
+<h4><a class="header" href="understanding_pid.html#pd-controller" id="pd-controller">PD Controller</a></h4>
+<p>In the previous section we saw how the P-Controller wasn’t successful in stabilizing the system at a given point. It was observed that there were oscillations instead. These oscillations can be damped by using a differential gain along with the P-Controller. The system as a whole is said to be a PD Controller</p>
+<img src = "media/images/understanding_pid_3.jpg">
+<div align="center"> Block diagram  </div>
+<p>The differential gain Kd is multiplied with the difference of error and previous error. Previous error is a variable that holds the last error generated by the controller output.
+The controller output in this case is given as</p>
+<pre><code>output = Kp * error + Kd * (error - previous error) 
+</code></pre>
+<blockquote>
+<p>Note, that Kd is calculated keeping the sampling time in consideration. This output will be further added or subtracted to the offset output as the need be to give the final output.</p>
+</blockquote>
+<h5><a class="header" href="understanding_pid.html#observations-1" id="observations-1">Observations</a></h5>
+<p>The results of this controller was no match to the P-controller. The oscillations were damped with change in time. Here is a plot of error and time for a PD controller implemented a system.</p>
+<img src = "media/images/understanding_pid_4.jpg">
+<p>But, there was a hitch! On having a closer look it was observed that though the drone could hover with respectable stability, it did not do so over the correct point, i.e the drone did not reach its destination instead it would hover at a point near to the destination. This slight error is known as the steady state error. Hence, it was concluded that a PD controller also by itself wasn’t able to stabilise the drone at the correct destination.</p>
+<h3><a class="header" href="understanding_pid.html#pid-controller-1" id="pid-controller-1">PID Controller</a></h3>
+<p>In the previous section we saw how a PD controller was not quite enough. In order to minimise the steady state error we introduce another gain called Ki ,the integral gain. Such a system is said to be a PID Controller</p>
+<img src = "media/images/understanding_pid_5.jpg">
+<div align="center"> Block diagram  </div>
+<p>Here in we keep track of the error over time i.e. sum up the errors over a specified sampling time.</p>
+<pre><code>Iterm = (Iterm + error) * Ki
+</code></pre>
+<p>Further explanation regarding implementation of this Iterm is given in the code. Note that Ki is calculated keeping the sampling time in consideration. This output will be further added or subtracted to the offset pwm as the need be to give the final output.</p>
+<pre><code>output = Kp*error + Iterm + Kd*(error - previous error)
+</code></pre>
+<p><strong>Observations</strong></p>
+<p>The PID controller was successful in hovering the drone above the destination point with minimal error.</p>
+<p>It overcome the steady state error which was noticeable in previous controllers. Here is a plot of error and time for a PID controller implemented on the Pluto drone.</p>
+<img src = "media/images/understanding_pid_6.jpg">
+<h3><a class="header" href="understanding_pid.html#to-sum-it-up" id="to-sum-it-up">To sum it up</a></h3>
+<img src = "media/images/understanding_pid_7.jpg">
+<h3><a class="header" href="understanding_pid.html#references" id="references">References</a></h3>
+<p>Please refer to the following video tutorials for a more detailed explanation:</p>
+<ul>
+<li>
+<p><a href="../../../../../www.youtube.com/watch_2.htm">Introduction to PID by e-Yantra</a></p>
+</li>
+<li>
+<p><a href="../../../../../www.youtube.com/watch_3.htm">Video explanation by Brain Douglas</a></p>
+</li>
+<li>
+<p><a href="../../../../../brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/improving-the-beginners-pid-introduction.html">Further improving your PID script</a></p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="overview_controls.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../image_processing/image_processing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="overview_controls.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../image_processing/image_processing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-145861739-2', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

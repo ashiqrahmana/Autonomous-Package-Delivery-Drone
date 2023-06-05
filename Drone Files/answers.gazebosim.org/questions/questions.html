@@ -1,0 +1,1890 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <title>Questions - Gazebo: Q&amp;A Forum</title> <meta name="description" content="Open source question and answer forum for Gazebo" /> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=EDGE" /> <meta name="keywords" content=",Gazebo" /> <meta name="referrer" content="always" /> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> <link rel="shortcut icon" href="https://answers.gazebosim.org/upfiles/gazebo.ico" /> <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="http://answers.gazebosim.org/feeds/rss/"
+        /> <link rel="stylesheet" href="https://answers.gazebosim.org/m/CACHE/css/f644d25fa4e9.css" type="text/css" /> <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=latin-ext" rel="stylesheet" type="text/css" /> <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=cyrillic-ext" rel="stylesheet" type="text/css" /> <script type="text/javascript" src="https://answers.gazebosim.org/m/default/media/jslib/modernizr.custom.js?v=2"></script> <script type="text/javascript">
+    var askbot = {};
+    askbot['data'] = {};
+    askbot['data']['userIsAuthenticated'] = false;
+    askbot['data']['languageCode'] = 'en';
+    
+        askbot['data']['userReputation'] = 0;
+        askbot['data']['userEmail'] = null;
+        askbot['data']['userIsReadOnly'] = false;//in principle we allow anon users to start posting
+    
+    askbot['urls'] = {};
+    askbot['settings'] = {};
+    askbot['messages'] = {};
+    
+</script> <script type="text/javascript" src="https://answers.gazebosim.org/s/jsi18n/"></script> </head> <body class="two-col user-messages main-page anon lang-en"> <div class="notify" style="display:none"> <div class="content-wrapper"> <p class="notification">First time here? Check out the FAQ!</p> <a id="closeNotify" onclick="notify.close(true)"></a> </div> </div> <div class="gazebo-header"> <a href="http://gazebosim.org">Gazebo</a> | <a href="https://ignitionrobotics.org">Ignition</a> | <a href="https://community.gazebosim.org/">Community</a> </div> <!-- template header.html --> <div 
+    id="header"
+    class="with-logo"
+> <div class="content-wrapper"> <div id="userToolsNav"> <a href="https://answers.gazebosim.org/account/signin/?next=/"
+    >Hi there! Please sign in</a> <a class="help" href="https://answers.gazebosim.org/help/" title="help">help</a> </div> <a 
+    id="logo" 
+    href="https://answers.gazebosim.org/questions/questions.html"
+><img
+    src="https://answers.gazebosim.org/upfiles/gazebo_logo_1.png"
+    alt="Gazebo logo"/> </a> <div id="metaNav"> <a 
+  id="navTags"
+  href="https://answers.gazebosim.org/tags/"
+  
+> <i class="fa fa-tags"></i>
+tags</a> <a 
+  id="navUsers"
+  href="https://answers.gazebosim.org/users/"
+  
+> <i class="fa fa-users"></i>
+users</a> <a 
+  id="navBadges"
+  href="https://answers.gazebosim.org/badges/"
+  
+> <i class="fa fa-diamond"></i>
+badges</a> </div> <div class="clean"></div> </div> </div> <!-- end template header.html --> <!-- template secondary_header.html --> <div id="secondaryHeader"> <div class="content-wrapper"> <form
+            
+                action="https://answers.gazebosim.org/questions/questions.html" id="searchForm"
+            
+            class="scopes-True-True-False"
+            method="get"> <table width="100%"> <tr> <td width="1"><a id="homeButton" href="https://answers.gazebosim.org/questions/questions.html"><i class="fa fa-home"></i></a></td> <td width="1"><div id="scopeNav"> <a class="scope-selector on"
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/page:1/"
+        >ALL</a> <a class="scope-selector "
+            href="https://answers.gazebosim.org/questions/scope:unanswered/sort:answers-asc/page:1/"
+        >UNANSWERED</a> </div></td> <td width="*" class="search-bar"> <div 
+    id="searchBar"
+    class="search-bar"
+><input 
+        class="searchInput" 
+        type="text" 
+        autocomplete="off"
+        value="" 
+        name="query" 
+        placeholder="Search or ask your question"
+        id="keywords"
+    /><input type="submit" value="" name="search" class="searchBtn" /><input type="button"
+        value="X"
+        name="reset_query"
+        class="cancelSearchBtn"
+        
+            style="display: none;"
+        
+    /></div> </td> <td width="1"> <a
+        id="askButton"
+        class="button"
+        href="https://answers.gazebosim.org/questions/ask/"
+        >
+            Ask Your Question
+        </a> </td> </tr> </table> </form> </div> </div> <div class="content-wrapper"> <div id="ContentLeft"> <a class="rss" href="https://answers.gazebosim.org/feeds/rss/"
+    title="subscribe to the feed"
+    >RSS
+</a> <div class="tabBar"> <div id="sort_tabs" class="tabsA"> <span class="label">Sort by &raquo;</span> <script type="text/javascript">
+                askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+                askbot['data']['sortButtonData']['relevance'] = {
+                    asc_tooltip: "most relevant questions",
+                    desc_tooltip: "click to see most relevant questions",
+                    label: "relevance"
+                };
+            </script> <a id="by_age"
+           href="https://answers.gazebosim.org/questions/scope:all/sort:age-desc/page:1/"
+           class="off"
+           title="click to see the newest questions"><span>date</span></a> <script type="text/javascript">
+        askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+        askbot['data']['sortButtonData']['age'] = {
+            label: 'date',
+            asc_tooltip: 'click to see the oldest questions',
+            desc_tooltip: 'click to see the newest questions'
+        };
+    </script> <a id="by_activity"
+           href="https://answers.gazebosim.org/questions/scope:all/sort:activity-asc/page:1/"
+           class="rev on"
+           title="click to see the least recently updated questions"><span>activity &#9660;</span></a> <script type="text/javascript">
+        askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+        askbot['data']['sortButtonData']['activity'] = {
+            label: 'activity',
+            asc_tooltip: 'click to see the least recently updated questions',
+            desc_tooltip: 'click to see the most recently updated questions'
+        };
+    </script> <a id="by_answers"
+           href="https://answers.gazebosim.org/questions/scope:all/sort:answers-desc/page:1/"
+           class="off"
+           title="click to see the most answered questions"><span>answers</span></a> <script type="text/javascript">
+        askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+        askbot['data']['sortButtonData']['answers'] = {
+            label: 'answers',
+            asc_tooltip: 'click to see the least answered questions',
+            desc_tooltip: 'click to see the most answered questions'
+        };
+    </script> <a id="by_votes"
+           href="https://answers.gazebosim.org/questions/scope:all/sort:votes-desc/page:1/"
+           class="off"
+           title="click to see most voted questions"><span>votes</span></a> <script type="text/javascript">
+        askbot['data']['sortButtonData'] = askbot['data']['sortButtonData'] || {};
+        askbot['data']['sortButtonData']['votes'] = {
+            label: 'votes',
+            asc_tooltip: 'click to see least voted questions',
+            desc_tooltip: 'click to see most voted questions'
+        };
+    </script> </div> </div> <h1 id="questionCount" class="search-result-summary"> <span class="count">6104</span> questions
+        </h1> <div class="clearfix"></div> <div id="listSearchTags" style="display: none;"> <span class="left">Tagged</span> <ul id="searchTags"
+    class="tags"
+> </ul> </div> <div id="question-list"> <div class="short-summary" id="question-26770"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">35</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 14:35:55 -0500">2021-04-04 14:35:55 -0500</abbr> <a href="https://answers.gazebosim.org/users/44778/andrejorsula/">AndrejOrsula</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26770/unknown-cmake-command-ign_find_package/">Unknown CMake command &#34;ign_find_package&#34;.</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition/page:1/"
+            
+            data-tag-name="ignition"
+        >ignition</a></div> </li> </ul> </div> <div class="short-summary" id="question-26769"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">1</span> <div>
+            view
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 07:13:26 -0500">2021-04-04 07:13:26 -0500</abbr> <a href="https://answers.gazebosim.org/users/45618/harunberk/">HarunBerk</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26769/i-cannot-install-libstaticmappluginso-file-how-can-i/">I cannot install libStaticMapPlugin.so file. How can i?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo_plugins/page:1/"
+            
+            data-tag-name="gazebo_plugins"
+        >gazebo_plugins</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:plugin/page:1/"
+            
+            data-tag-name="plugin"
+        >plugin</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:worlds/page:1/"
+            
+            data-tag-name="worlds"
+        >worlds</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:satellite/page:1/"
+            
+            data-tag-name="satellite"
+        >satellite</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> </ul> </div> <div class="short-summary" id="question-26764"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">8</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-04 05:01:41 -0500">2021-04-04 05:01:41 -0500</abbr> <a href="https://answers.gazebosim.org/users/45513/bach/">bach</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26764/gridmap-on-a-gazebo-plugin/">GridMap on a Gazebo Plugin</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:actor/page:1/"
+            
+            data-tag-name="actor"
+        >actor</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:actorplugin/page:1/"
+            
+            data-tag-name="actorplugin"
+        >actorplugin</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:plugin/page:1/"
+            
+            data-tag-name="plugin"
+        >plugin</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gridmap/page:1/"
+            
+            data-tag-name="gridmap"
+        >gridmap</a></div> </li> </ul> </div> <div class="short-summary" id="question-24355"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">40</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-03 18:41:09 -0500">2021-04-03 18:41:09 -0500</abbr> <a href="https://answers.gazebosim.org/users/45588/alfr3/">Alfr3</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/24355/modeling-non-uniform-vector-field-of-disturbances/">Modeling non-uniform vector field of disturbances?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:environment_variable/page:1/"
+            
+            data-tag-name="environment_variable"
+        >environment_variable</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:underwater/page:1/"
+            
+            data-tag-name="underwater"
+        >underwater</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:disturbances/page:1/"
+            
+            data-tag-name="disturbances"
+        >disturbances</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> </ul> </div> <div class="short-summary" id="question-26767"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">6</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-02 22:18:05 -0500">2021-04-02 22:18:05 -0500</abbr> <a href="https://answers.gazebosim.org/users/45450/wh366666648/">wh366666648</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26767/gazebo-cannot-load-the-model-as-rviz/">Gazebo cannot load the model as rviz</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:sw2urdf/page:1/"
+            
+            data-tag-name="sw2urdf"
+        >sw2urdf</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> </ul> </div> <div class="short-summary" id="question-26766"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">3</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-02 21:36:50 -0500">2021-04-02 21:36:50 -0500</abbr> <a href="https://answers.gazebosim.org/users/45557/emanmm/">Eman.mm</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26766/cannot-open-gazebo-gzclient-error/">Cannot open Gazebo gzclient: error ... ?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-7/page:1/"
+            
+            data-tag-name="gazebo-7"
+        >gazebo-7</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:kineticc/page:1/"
+            
+            data-tag-name="kineticc"
+        >kineticc</a></div> </li> </ul> </div> <div class="short-summary" id="question-26762"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">2</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-02 02:03:15 -0500">2021-04-02 02:03:15 -0500</abbr> <a href="https://answers.gazebosim.org/users/45513/bach/">bach</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26762/add-a-bounding-box-to-an-actor-on-gazebo/">Add a Bounding Box to an Actor on Gazebo</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition/page:1/"
+            
+            data-tag-name="ignition"
+        >ignition</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:actor/page:1/"
+            
+            data-tag-name="actor"
+        >actor</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:actorplugin/page:1/"
+            
+            data-tag-name="actorplugin"
+        >actorplugin</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:bounding_box/page:1/"
+            
+            data-tag-name="bounding_box"
+        >bounding_box</a></div> </li> </ul> </div> <div class="short-summary" id="question-26761"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">3</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-04-02 00:22:11 -0500">2021-04-02 00:22:11 -0500</abbr> <a href="https://answers.gazebosim.org/users/45509/akashpawar/">Akashpawar</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26761/replacing-gazebo-simulation-lidar-with-real-vehicle-rplidarrplidar/">replacing gazebo simulation lidar with real vehicle rplidar(Rplidar)</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-11/page:1/"
+            
+            data-tag-name="gazebo-11"
+        >gazebo-11</a></div> </li> </ul> </div> <div class="short-summary" id="question-26754"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">6</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-31 06:02:11 -0500">2021-03-31 06:02:11 -0500</abbr> <a href="https://answers.gazebosim.org/users/45405/pedmacros/">pedmacros</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26754/change-camera-zoom-in-real-time/">Change camera zoom in real time</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:camera/page:1/"
+            
+            data-tag-name="camera"
+        >camera</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:zoom/page:1/"
+            
+            data-tag-name="zoom"
+        >zoom</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ros-indigo/page:1/"
+            
+            data-tag-name="ros-indigo"
+        >ros-indigo</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-2/page:1/"
+            
+            data-tag-name="gazebo-2"
+        >gazebo-2</a></div> </li> </ul> </div> <div class="short-summary" id="question-26744"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">23</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-31 00:17:38 -0500">2021-03-31 00:17:38 -0500</abbr> <a href="https://answers.gazebosim.org/users/42410/adwait/">Adwait</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26744/plugin-for-actor-to-follow-particular-trajectory/">plugin for actor to follow particular trajectory</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition/page:1/"
+            
+            data-tag-name="ignition"
+        >ignition</a></div> </li> </ul> </div> <div class="short-summary" id="question-26736"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">15</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-30 23:21:55 -0500">2021-03-30 23:21:55 -0500</abbr> <a href="https://answers.gazebosim.org/users/45263/snoopy706/">Snoopy706</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26736/issues-with-controlling-gazebo_ros_pkgs-example-ackermann-robot/">Issues with controlling gazebo_ros_pkgs example ackermann robot</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ackermann_steering/page:1/"
+            
+            data-tag-name="ackermann_steering"
+        >ackermann_steering</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-11/page:1/"
+            
+            data-tag-name="gazebo-11"
+        >gazebo-11</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ros-foxy/page:1/"
+            
+            data-tag-name="ros-foxy"
+        >ros-foxy</a></div> </li> </ul> </div> <div class="short-summary" id="question-26749"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">14</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-30 19:18:50 -0500">2021-03-30 19:18:50 -0500</abbr> <a href="https://answers.gazebosim.org/users/45388/francisg131/">FrancisG131</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26749/pid-tuning-for-a-closed-loop-configuration-robot/">PID tuning for a closed-loop configuration robot?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:PID/page:1/"
+            
+            data-tag-name="PID"
+        >PID</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:PIDTuning/page:1/"
+            
+            data-tag-name="PIDTuning"
+        >PIDTuning</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:closedchain/page:1/"
+            
+            data-tag-name="closedchain"
+        >closedchain</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-11/page:1/"
+            
+            data-tag-name="gazebo-11"
+        >gazebo-11</a></div> </li> </ul> </div> <div class="short-summary" id="question-26716"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">14</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-30 18:24:49 -0500">2021-03-30 18:24:49 -0500</abbr> <a href="https://answers.gazebosim.org/users/3879/josephcoombe/">josephcoombe</a> <img class="flag" 
+            
+            src="https://answers.gazebosim.org/m/default/media/images/flags/us.gif?v=2" 
+            alt="flag of United States of America"
+            title="josephcoombe is from United States of America"
+        /> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26716/how-to-implement-a-passive-caster-wheel/">How to implement a passive caster wheel</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:caster/page:1/"
+            
+            data-tag-name="caster"
+        >caster</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-all-versions/page:1/"
+            
+            data-tag-name="gazebo-all-versions"
+        >gazebo-all-versions</a></div> </li> </ul> </div> <div class="short-summary" id="question-26729"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">21</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-30 18:14:20 -0500">2021-03-30 18:14:20 -0500</abbr> <a href="https://answers.gazebosim.org/users/3879/josephcoombe/">josephcoombe</a> <img class="flag" 
+            
+            src="https://answers.gazebosim.org/m/default/media/images/flags/us.gif?v=2" 
+            alt="flag of United States of America"
+            title="josephcoombe is from United States of America"
+        /> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26729/wrong-physics-wild-bouncing-object-after-drop-fall/">Wrong physics - wild bouncing object after drop / fall</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo_physics/page:1/"
+            
+            data-tag-name="gazebo_physics"
+        >gazebo_physics</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:model/page:1/"
+            
+            data-tag-name="model"
+        >model</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-11/page:1/"
+            
+            data-tag-name="gazebo-11"
+        >gazebo-11</a></div> </li> </ul> </div> <div class="short-summary" id="question-20187"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">437</span> <div>
+            views
+            </div> </div> <div class="answers
+                
+                        accepted"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    some-votes"> <span class="item-count">1</span> <div>
+            vote
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-30 17:34:57 -0500">2021-03-30 17:34:57 -0500</abbr> <a href="https://answers.gazebosim.org/users/3879/josephcoombe/">josephcoombe</a> <img class="flag" 
+            
+            src="https://answers.gazebosim.org/m/default/media/images/flags/us.gif?v=2" 
+            alt="flag of United States of America"
+            title="josephcoombe is from United States of America"
+        /> </div> </div> <h2><a href="https://answers.gazebosim.org/question/20187/what-unit-is-setforce-on-a-revolute-joint/">What unit is &#34;SetForce&#34; on a revolute joint?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:joint/page:1/"
+            
+            data-tag-name="joint"
+        >joint</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:torque/page:1/"
+            
+            data-tag-name="torque"
+        >torque</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:SetForce/page:1/"
+            
+            data-tag-name="SetForce"
+        >SetForce</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:Units/page:1/"
+            
+            data-tag-name="Units"
+        >Units</a></div> </li> </ul> </div> <div class="short-summary" id="question-25733"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">186</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    some-votes"> <span class="item-count">1</span> <div>
+            vote
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-29 14:42:13 -0500">2021-03-29 14:42:13 -0500</abbr> <a href="https://answers.gazebosim.org/users/45292/huguesthomas/">HuguesTHOMAS</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/25733/gazebo-doesnt-use-gpu-when-run-inside-a-container/">Gazebo doesn&#39;t use GPU when run inside a container</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-7/page:1/"
+            
+            data-tag-name="gazebo-7"
+        >gazebo-7</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gpu/page:1/"
+            
+            data-tag-name="gpu"
+        >gpu</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:container/page:1/"
+            
+            data-tag-name="container"
+        >container</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:simulator_gazebo/page:1/"
+            
+            data-tag-name="simulator_gazebo"
+        >simulator_gazebo</a></div> </li> </ul> </div> <div class="short-summary" id="question-26739"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">6</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-29 06:27:20 -0500">2021-03-29 06:27:20 -0500</abbr> <a href="https://answers.gazebosim.org/users/45285/astghik/">Astghik</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26739/missing-library-when-running-gazebo/">Missing library when running gazebo</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gzserver/page:1/"
+            
+            data-tag-name="gzserver"
+        >gzserver</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:DART/page:1/"
+            
+            data-tag-name="DART"
+        >DART</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:installation/page:1/"
+            
+            data-tag-name="installation"
+        >installation</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-11/page:1/"
+            
+            data-tag-name="gazebo-11"
+        >gazebo-11</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-all-versions/page:1/"
+            
+            data-tag-name="gazebo-all-versions"
+        >gazebo-all-versions</a></div> </li> </ul> </div> <div class="short-summary" id="question-26738"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">4</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-29 03:58:38 -0500">2021-03-29 03:58:38 -0500</abbr> <a href="https://answers.gazebosim.org/users/19194/igricart/">igricart</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26738/how-does-onnewlaserscans-works/">How does OnNewLaserScans works?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:rayplugin/page:1/"
+            
+            data-tag-name="rayplugin"
+        >rayplugin</a></div> </li> </ul> </div> <div class="short-summary" id="question-26737"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">5</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-28 18:56:58 -0500">2021-03-28 18:56:58 -0500</abbr> <a href="https://answers.gazebosim.org/users/45268/jiajie-shi/">Jiajie Shi</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26737/why-does-my-gazebo-window-look-dark/">why does my gazebo window look dark?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> </ul> </div> <div class="short-summary" id="question-26735"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">1</span> <div>
+            view
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-27 19:43:53 -0500">2021-03-27 19:43:53 -0500</abbr> <a href="https://answers.gazebosim.org/users/45225/asimkymk/">asimkymk</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26735/how-to-use-stop_light_post-in-a-loop/">How to use stop_light_post in a loop</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:stop_light_post/page:1/"
+            
+            data-tag-name="stop_light_post"
+        >stop_light_post</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:3dmodel/page:1/"
+            
+            data-tag-name="3dmodel"
+        >3dmodel</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:model/page:1/"
+            
+            data-tag-name="model"
+        >model</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:traffic_light/page:1/"
+            
+            data-tag-name="traffic_light"
+        >traffic_light</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> </ul> </div> <div class="short-summary" id="question-26734"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">3</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-27 05:05:52 -0500">2021-03-27 05:05:52 -0500</abbr> <a href="https://answers.gazebosim.org/users/45188/chungpuonn/">chungpuonn</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26734/model-is-loaded-but-no-displayed/">Model is loaded but no displayed</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:spawn/page:1/"
+            
+            data-tag-name="spawn"
+        >spawn</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:display/page:1/"
+            
+            data-tag-name="display"
+        >display</a></div> </li> </ul> </div> <div class="short-summary" id="question-26724"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">22</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-26 22:59:36 -0500">2021-03-26 22:59:36 -0500</abbr> <a href="https://answers.gazebosim.org/users/45078/m-hijikata/">M-Hijikata</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26724/ignition-gazebo-cannot-use-diffdrive-from-urdf/">Ignition Gazebo: Cannot Use Diffdrive from URDF</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition-gazebo/page:1/"
+            
+            data-tag-name="ignition-gazebo"
+        >ignition-gazebo</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:diffdriveplugin/page:1/"
+            
+            data-tag-name="diffdriveplugin"
+        >diffdriveplugin</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ign-citadel/page:1/"
+            
+            data-tag-name="ign-citadel"
+        >ign-citadel</a></div> </li> </ul> </div> <div class="short-summary" id="question-26732"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">5</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-26 12:02:15 -0500">2021-03-26 12:02:15 -0500</abbr> <a href="https://answers.gazebosim.org/users/45160/pashek/">Pashek</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26732/synchronize-depthcamera-and-camera/">Synchronize DepthCamera and Camera</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:synchronization/page:1/"
+            
+            data-tag-name="synchronization"
+        >synchronization</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:depth/page:1/"
+            
+            data-tag-name="depth"
+        >depth</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:camera/page:1/"
+            
+            data-tag-name="camera"
+        >camera</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:MultiCameraSensor/page:1/"
+            
+            data-tag-name="MultiCameraSensor"
+        >MultiCameraSensor</a></div> </li> </ul> </div> <div class="short-summary" id="question-26731"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">10</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-26 10:09:50 -0500">2021-03-26 10:09:50 -0500</abbr> <a href="https://answers.gazebosim.org/users/42410/adwait/">Adwait</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26731/irregularities-in-simulation-in-ignition-gazebo-4/">irregularities in simulation in ignition gazebo 4</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition/page:1/"
+            
+            data-tag-name="ignition"
+        >ignition</a></div> </li> </ul> </div> <div class="short-summary" id="question-26730"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">5</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-26 04:33:21 -0500">2021-03-26 04:33:21 -0500</abbr> <a href="https://answers.gazebosim.org/users/19194/igricart/">igricart</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26730/how-to-integrate-a-bullet-physics-engine-with-an-ode/">How to integrate a bullet physics engine with an ode</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo_physics/page:1/"
+            
+            data-tag-name="gazebo_physics"
+        >gazebo_physics</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a></div> </li> </ul> </div> <div class="short-summary" id="question-26728"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">4</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-25 19:42:44 -0500">2021-03-25 19:42:44 -0500</abbr> <a href="https://answers.gazebosim.org/users/45133/mbarulic/">mbarulic</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26728/lighting-not-affecting-model/">Lighting not affecting model</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition-gazebo/page:1/"
+            
+            data-tag-name="ignition-gazebo"
+        >ignition-gazebo</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ign-citadel/page:1/"
+            
+            data-tag-name="ign-citadel"
+        >ign-citadel</a></div> </li> </ul> </div> <div class="short-summary" id="question-26726"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">4</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-25 08:38:38 -0500">2021-03-25 08:38:38 -0500</abbr> <a href="https://answers.gazebosim.org/users/45100/bengao/">bengao</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26726/error-parsing-xml-with-gazebo-11/">error parsing XML with gazebo-11</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-11/page:1/"
+            
+            data-tag-name="gazebo-11"
+        >gazebo-11</a></div> </li> </ul> </div> <div class="short-summary" id="question-26722"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">17</span> <div>
+            views
+            </div> </div> <div class="answers
+                no-answers
+                "> <span 
+                class="item-count"
+            >no</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-24 14:58:31 -0500">2021-03-24 14:58:31 -0500</abbr> <a href="https://answers.gazebosim.org/users/847/peci1/">peci1</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26722/synchronous-publishing-in-ignition-gazebo-in-preupdate/">Synchronous publishing in Ignition Gazebo in PreUpdate?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition-gazebo/page:1/"
+            
+            data-tag-name="ignition-gazebo"
+        >ignition-gazebo</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:physics/page:1/"
+            
+            data-tag-name="physics"
+        >physics</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:transport/page:1/"
+            
+            data-tag-name="transport"
+        >transport</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ign-transport/page:1/"
+            
+            data-tag-name="ign-transport"
+        >ign-transport</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition/page:1/"
+            
+            data-tag-name="ignition"
+        >ignition</a></div> </li> </ul> </div> <div class="short-summary" id="question-26720"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">25</span> <div>
+            views
+            </div> </div> <div class="answers
+                some-answers"> <span 
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-24 11:08:34 -0500">2021-03-24 11:08:34 -0500</abbr> <a href="https://answers.gazebosim.org/users/5/nkoenig/">nkoenig</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26720/is-there-a-large-database-or-urdf-object-files-that-could-be-quickly-leveraged-for-simulation/">Is there a large database or urdf object files that could be quickly leveraged for simulation?</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:database/page:1/"
+            
+            data-tag-name="database"
+        >database</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:objects/page:1/"
+            
+            data-tag-name="objects"
+        >objects</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:URDF/page:1/"
+            
+            data-tag-name="URDF"
+        >URDF</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:bin-picking/page:1/"
+            
+            data-tag-name="bin-picking"
+        >bin-picking</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-11/page:1/"
+            
+            data-tag-name="gazebo-11"
+        >gazebo-11</a></div> </li> </ul> </div> <div class="short-summary" id="question-26690"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">103</span> <div>
+            views
+            </div> </div> <div class="answers
+                
+                        accepted"> <span 
+                class="item-count"
+            >2</span> <div>
+                answers
+            </div> </div> <div class="votes 
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2021-03-24 08:17:45 -0500">2021-03-24 08:17:45 -0500</abbr> <a href="https://answers.gazebosim.org/users/44219/firefoxmetzger/">FirefoxMetzger</a> </div> </div> <h2><a href="https://answers.gazebosim.org/question/26690/how-to-get-the-camera-matrix-of-a-camera-sensor-in-ignition-gazebo/">How to get the camera matrix of a camera sensor in Ignition Gazebo</a></h2> <ul 
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition-gazebo/page:1/"
+            
+            data-tag-name="ignition-gazebo"
+        >ignition-gazebo</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition/page:1/"
+            
+            data-tag-name="ignition"
+        >ignition</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:projection/page:1/"
+            
+            data-tag-name="projection"
+        >projection</a></div> </li> </ul> </div> </div> <div id="pager" class="pager"> <div class="paginator" style="float:left"><span class="curr page" title="current page"><a>1</a></span><span class="page"><a href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/page:2/" title="page 2">2</a></span><span class="page"><a href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/page:3/" title="page 3">3</a></span><span class="page"><a href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/page:4/" title="page 4">4</a></span><span class="page"><a href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/page:5/" title="page 5">5</a></span>
+                    
+                
+
+                
+                    ...
+                    
+                        <span class="page"><a href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/page:204/" title="page 204">204</a></span><span class="next"><a href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/page:2/" title="next page">next page &raquo;</a></span></div> <div class="clean"></div> </div> </div> <div id="ContentRight"> <div id="contrib-users" class="box"> <h2 class="contributorback">Contributors</h2> <a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/3879/josephcoombe/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.gazebosim.org/upfiles/avatars/josephcoombe/resized/48/joseph_cropped.png"
+    title="josephcoombe" 
+    alt="josephcoombe gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45388/francisg131/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.gazebosim.org/upfiles/avatars/FrancisG131/resized/48/me-min.jpg"
+    title="FrancisG131" 
+    alt="FrancisG131 gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/42410/adwait/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://answers.gazebosim.org/upfiles/avatars/Adwait/resized/48/Adwait_profile.jpg"
+    title="Adwait" 
+    alt="Adwait gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45268/jiajie-shi/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/2be0a3ccdbf9d58166db7d4144763b6c?s=48&amp;d=identicon&amp;r=PG"
+    title="Jiajie Shi" 
+    alt="Jiajie Shi gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/44219/firefoxmetzger/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/712495f1a24a01d37c37a7e2e8a41778?s=48&amp;d=identicon&amp;r=PG"
+    title="FirefoxMetzger" 
+    alt="FirefoxMetzger gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45285/astghik/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/c1030fa4fb60d916db08882273a7f959?s=48&amp;d=identicon&amp;r=PG"
+    title="Astghik" 
+    alt="Astghik gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/19194/igricart/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/62a87a234175397d9f19f1276fcdfc53?s=48&amp;d=identicon&amp;r=PG"
+    title="igricart" 
+    alt="igricart gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45188/chungpuonn/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/c786d739af0166fbeaa3a032572c5b12?s=48&amp;d=identicon&amp;r=PG"
+    title="chungpuonn" 
+    alt="chungpuonn gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45405/pedmacros/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/49cf506f232379283b71872363a95ec8?s=48&amp;d=identicon&amp;r=PG"
+    title="pedmacros" 
+    alt="pedmacros gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45509/akashpawar/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/b6ecbad438d9ab1bbc813bfbb0cb7707?s=48&amp;d=identicon&amp;r=PG"
+    title="Akashpawar" 
+    alt="Akashpawar gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/44778/andrejorsula/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/c208ae16a4819aac64dc9ed77f5e9932?s=48&amp;d=identicon&amp;r=PG"
+    title="AndrejOrsula" 
+    alt="AndrejOrsula gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45160/pashek/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/96feed1037cb81522f8b4f57a7cd36fc?s=48&amp;d=identicon&amp;r=PG"
+    title="Pashek" 
+    alt="Pashek gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45263/snoopy706/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/900f50345f4bbedd91df104a2f88b5f7?s=48&amp;d=identicon&amp;r=PG"
+    title="Snoopy706" 
+    alt="Snoopy706 gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/5637/jakobwelner/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/e84a19ec787d5f03ef517ac99f2e6d66?s=48&amp;d=identicon&amp;r=PG"
+    title="JakobWelner" 
+    alt="JakobWelner gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/45078/m-hijikata/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/8f6d804aea43ced6e73ed58b4002b19c?s=48&amp;d=identicon&amp;r=PG"
+    title="M-Hijikata" 
+    alt="M-Hijikata gravatar image" 
+/></a><a class="js-avatar-box"
+    href="https://answers.gazebosim.org/users/2429/shantia/"
+><img class="js-avatar gravatar" 
+    width="48" height="48"
+    src="https://www.gravatar.com/avatar/8201edbb8c2eb76d9729d5046f84b7b3?s=48&amp;d=identicon&amp;r=PG"
+    title="shantia" 
+    alt="shantia gravatar image" 
+/></a> </div> <div class="box"> <h2>Tags</h2> <div class="js-related-tags"> <ul class="tags"> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-9/page:1/"
+            
+            data-tag-name="gazebo-9"
+        >gazebo-9</a><span class="js-tag-extra-content"><span class="tag-number">&#215;11</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-11/page:1/"
+            
+            data-tag-name="gazebo-11"
+        >gazebo-11</a><span class="js-tag-extra-content"><span class="tag-number">&#215;7</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition/page:1/"
+            
+            data-tag-name="ignition"
+        >ignition</a><span class="js-tag-extra-content"><span class="tag-number">&#215;6</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ignition-gazebo/page:1/"
+            
+            data-tag-name="ignition-gazebo"
+        >ignition-gazebo</a><span class="js-tag-extra-content"><span class="tag-number">&#215;4</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:actor/page:1/"
+            
+            data-tag-name="actor"
+        >actor</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:actorplugin/page:1/"
+            
+            data-tag-name="actorplugin"
+        >actorplugin</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:camera/page:1/"
+            
+            data-tag-name="camera"
+        >camera</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-7/page:1/"
+            
+            data-tag-name="gazebo-7"
+        >gazebo-7</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-all-versions/page:1/"
+            
+            data-tag-name="gazebo-all-versions"
+        >gazebo-all-versions</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo_physics/page:1/"
+            
+            data-tag-name="gazebo_physics"
+        >gazebo_physics</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ign-citadel/page:1/"
+            
+            data-tag-name="ign-citadel"
+        >ign-citadel</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:model/page:1/"
+            
+            data-tag-name="model"
+        >model</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:plugin/page:1/"
+            
+            data-tag-name="plugin"
+        >plugin</a><span class="js-tag-extra-content"><span class="tag-number">&#215;2</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:3dmodel/page:1/"
+            
+            data-tag-name="3dmodel"
+        >3dmodel</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ackermann_steering/page:1/"
+            
+            data-tag-name="ackermann_steering"
+        >ackermann_steering</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:bin-picking/page:1/"
+            
+            data-tag-name="bin-picking"
+        >bin-picking</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:bounding_box/page:1/"
+            
+            data-tag-name="bounding_box"
+        >bounding_box</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:caster/page:1/"
+            
+            data-tag-name="caster"
+        >caster</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:closedchain/page:1/"
+            
+            data-tag-name="closedchain"
+        >closedchain</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:container/page:1/"
+            
+            data-tag-name="container"
+        >container</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:DART/page:1/"
+            
+            data-tag-name="DART"
+        >DART</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:database/page:1/"
+            
+            data-tag-name="database"
+        >database</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:depth/page:1/"
+            
+            data-tag-name="depth"
+        >depth</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:diffdriveplugin/page:1/"
+            
+            data-tag-name="diffdriveplugin"
+        >diffdriveplugin</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:display/page:1/"
+            
+            data-tag-name="display"
+        >display</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:disturbances/page:1/"
+            
+            data-tag-name="disturbances"
+        >disturbances</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:environment_variable/page:1/"
+            
+            data-tag-name="environment_variable"
+        >environment_variable</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo-2/page:1/"
+            
+            data-tag-name="gazebo-2"
+        >gazebo-2</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gazebo_plugins/page:1/"
+            
+            data-tag-name="gazebo_plugins"
+        >gazebo_plugins</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gpu/page:1/"
+            
+            data-tag-name="gpu"
+        >gpu</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gridmap/page:1/"
+            
+            data-tag-name="gridmap"
+        >gridmap</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:gzserver/page:1/"
+            
+            data-tag-name="gzserver"
+        >gzserver</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ign-transport/page:1/"
+            
+            data-tag-name="ign-transport"
+        >ign-transport</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:installation/page:1/"
+            
+            data-tag-name="installation"
+        >installation</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:joint/page:1/"
+            
+            data-tag-name="joint"
+        >joint</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:kineticc/page:1/"
+            
+            data-tag-name="kineticc"
+        >kineticc</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:melodic/page:1/"
+            
+            data-tag-name="melodic"
+        >melodic</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:MultiCameraSensor/page:1/"
+            
+            data-tag-name="MultiCameraSensor"
+        >MultiCameraSensor</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:objects/page:1/"
+            
+            data-tag-name="objects"
+        >objects</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:physics/page:1/"
+            
+            data-tag-name="physics"
+        >physics</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:PID/page:1/"
+            
+            data-tag-name="PID"
+        >PID</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:PIDTuning/page:1/"
+            
+            data-tag-name="PIDTuning"
+        >PIDTuning</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:projection/page:1/"
+            
+            data-tag-name="projection"
+        >projection</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:rayplugin/page:1/"
+            
+            data-tag-name="rayplugin"
+        >rayplugin</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ros-foxy/page:1/"
+            
+            data-tag-name="ros-foxy"
+        >ros-foxy</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:ros-indigo/page:1/"
+            
+            data-tag-name="ros-indigo"
+        >ros-indigo</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:satellite/page:1/"
+            
+            data-tag-name="satellite"
+        >satellite</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:SetForce/page:1/"
+            
+            data-tag-name="SetForce"
+        >SetForce</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:simulator_gazebo/page:1/"
+            
+            data-tag-name="simulator_gazebo"
+        >simulator_gazebo</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:spawn/page:1/"
+            
+            data-tag-name="spawn"
+        >spawn</a><span class="js-tag-extra-content"><span class="tag-number">&#215;1</span></span></div> </li> </ul> </div> </div> </div> </div> <!-- template footer.html --> <div id="ground"> <div class="content-wrapper"> <div class="copyright"> <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode"> <img
+                            class="license-logo"
+                            src="https://answers.gazebosim.org/m/default/media/images/cc-by-sa.png?v=2"
+                            title="cc-by-sa"
+                            alt="cc-by-sa"
+                        /> </a>
+                
+                Copyright Askbot, 2010-2011. Content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">Creative Commons Attribution Share Alike 3.0</a> license.
+
+            </div> <div class="footer-links" > <a href="https://answers.gazebosim.org/about/">about</a><span class="link-separator"> |</span> <a href="https://answers.gazebosim.org/faq/">faq</a><span class="link-separator"> |</span> <a href="https://answers.gazebosim.org/help/" title="help">help</a> <span class="link-separator"> |</span> <a href="https://answers.gazebosim.org/privacy/">privacy policy</a><span class="link-separator"> |</span> <a href="https://answers.gazebosim.org/terms/">terms of service</a> <span class="link-separator"> |</span> <a 
+                
+                    href="https://answers.gazebosim.org/feedback/?next=/questions/"
+                
+            >
+                give feedback
+            </a> </div> <div class="powered-link"> <a href="http://askbot.com" target="_blank">
+                Powered by Askbot version 0.7.58
+            </a> </div> <div class="clean"></div> </div> </div> <!-- end template footer.html --> <div id="no-javascript"> <noscript class="noscript">
+        Please note: Gazebo requires javascript to work properly, please enable javascript in your browser, <a href="https://www.google.com/support/bin/answer.py?answer=23852">here is how</a> </noscript> <script type="text/javascript">
+        //IE fix to hide the red margin
+        var noscript = document.getElementsByTagName('noscript')[0];
+        noscript.style.padding = '0px';
+        noscript.style.backgroundColor = 'transparent';
+    </script> </div> <script type="text/javascript">
+    askbot['urls']['mark_read_message'] = '/s/messages/markread/';
+    askbot['urls']['get_tags_by_wildcard'] = '/s/get-tags-by-wildcard/';
+    askbot['urls']['get_tag_list'] = '/s/get-tag-list/';
+    askbot['urls']['follow_user'] = '/followit/follow/user/{{userId}}/';
+    askbot['urls']['unfollow_user'] = '/followit/unfollow/user/{{userId}}/';
+    askbot['urls']['user_signin'] = '/account/signin/';
+    askbot['urls']['getEditor'] = '/s/get-editor/';
+    
+    askbot['urls']['apiGetQuestions'] = '/s/api/get_questions/';
+    askbot['urls']['ask'] = '/questions/ask/';
+	askbot['urls']['questions'] = '/questions/';
+    askbot['settings']['groupsEnabled'] = false;
+    askbot['settings']['static_url'] = '/m/';
+    askbot['settings']['minSearchWordLength'] = 4;
+    askbot['settings']['mathjaxEnabled'] = false;
+    askbot['settings']['sharingSuffixText'] = '';
+    askbot['settings']['errorPlacement'] = 'after-label';
+    askbot['data']['maxCommentLength'] = 500;
+    askbot['settings']['editorType'] = 'markdown';
+    
+    askbot['settings']['commentsEditorType'] = 'rich\u002Dtext';
+    askbot['messages']['askYourQuestion'] = 'Ask Your Question';
+    askbot['messages']['acceptOwnAnswer'] = 'accept or unaccept your own answer';
+    askbot['messages']['followQuestions'] = 'follow questions';
+    
+        askbot['settings']['allowedUploadFileTypes'] = [
+            "jpg", "jpeg", "gif", "bmp", "png", "tiff", "launch", "yaml", "c", "cc", "cpp", "h", "hh", "hpp", "py", "proto", "msg", "srv", "sdf", "model", "world"
+        ];
+    
+    askbot['data']['haveFlashNotifications'] = true;
+    askbot['data']['activeTab'] = 'questions';
+    askbot['settings']['csrfCookieName'] = '_csrf';
+    
+        askbot['data']['searchUrl'] = 'scope:all/sort:activity\u002Ddesc/page:1/';
+    
+</script> <script type="text/javascript" src="https://answers.gazebosim.org/m/CACHE/js/8227174696ea.js"></script> <script type="text/javascript">
+    /*<![CDATA[*/
+    $('.mceStatusbar').remove();//a hack to remove the tinyMCE status bar
+    $(document).ready(function(){
+        // focus input on the search bar endcomment
+        var activeTab = askbot['data']['activeTab'];
+        if (inArray(activeTab, ['users', 'questions', 'tags', 'badges'])) {
+            var searchInput = $('#keywords');
+        } else if (activeTab === 'ask') {
+            var searchInput = $('#id_title');
+        } else {
+            var searchInput = undefined;
+            animateHashes();
+        }
+
+        if (searchInput) {
+            searchInput.focus();
+            putCursorAtEnd(searchInput);
+        }
+
+        var haveFullTextSearchTab = inArray(activeTab, ['questions', 'badges', 'ask']);
+        var haveUserProfilePage = $('body').hasClass('user-profile-page');
+        if ((haveUserProfilePage || haveFullTextSearchTab) && searchInput && searchInput.length) {
+            var search = new FullTextSearch();
+            askbot['controllers'] = askbot['controllers'] || {};
+            askbot['controllers']['fullTextSearch'] = search;
+            search.setSearchUrl(askbot['data']['searchUrl']);
+            if (activeTab === 'ask') {
+                search.setAskButtonEnabled(false);
+            }
+            search.decorate(searchInput);
+        } else if (activeTab === 'tags') {
+            var search = new TagSearch();
+            search.decorate(searchInput);
+        }
+
+        if (askbot['data']['userIsAdminOrMod']) {
+            $('body').addClass('admin');
+        }
+        if (askbot['settings']['groupsEnabled']) {
+            askbot['urls']['add_group'] = "/s/add-group/";
+            var group_dropdown = new GroupDropdown();
+            $('.groups-dropdown').append(group_dropdown.getElement());
+        }
+        var userRep = $('#userToolsNav .reputation');
+        if (userRep.length) {
+            var showPermsTrigger = new ShowPermsTrigger();
+            showPermsTrigger.decorate(userRep);
+        }
+    });
+    if (askbot['data']['haveFlashNotifications']) {
+        $('#validate_email_alert').click(function(){notify.close(true)})
+        notify.show();
+    }
+
+    var langNav = $('.lang-nav');
+    if (langNav.length) {
+        var nav = new LangNav();
+        nav.decorate(langNav);
+    }
+    /*]]>*/
+</script> <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker('UA-107492394-2');
+    pageTracker._trackPageview();
+    } catch(err) {}
+</script> <div class="js-templates" style="display: none;"><div class="js-tag  js-deletable-tag"><a
+            class="js-tag-name"
+            rel="tag"
+            
+            href="https://answers.gazebosim.org/questions/scope:all/sort:activity-desc/tags:dummy/page:1/"
+            
+            data-tag-name="dummy"
+        >dummy</a><span class="js-delete-icon">&times;</span></div></div> <script type="text/javascript">
+        
+        askbot['settings']['showSortByRelevance'] = true;
+    </script> <script type="text/javascript">
+    /*<![CDATA[*/
+    $(document).ready(function(){
+        /*var on_tab = '#nav_questions';
+        $(on_tab).attr('className','on');*/
+        Hilite.exact = false;
+        Hilite.elementid = "question-list";
+        Hilite.debug_referrer = location.href;
+    });
+
+    askbot['urls']['mark_interesting_tag'] = '/s/mark-tag/interesting/';
+    askbot['urls']['mark_ignored_tag'] = '/s/mark-tag/ignored/';
+    askbot['urls']['mark_subscribed_tag'] = '/s/mark-tag/subscribed/';
+    askbot['urls']['unmark_tag'] = '/s/unmark-tag/';
+    askbot['urls']['set_tag_filter_strategy'] = '/s/set-tag-filter-strategy/';
+    askbot['settings']['tag_editor'] = '{\u0022tag_forbidden_first_chars\u0022: \u0022#\u0022, \u0022max_tag_length\u0022: 20, \u0022force_lowercase_tags\u0022: false, \u0022max_tags_per_post\u0022: 5, \u0022messages\u0022: {\u0022wrong_first_char\u0022: \u0022# is not a valid character at the beginning of tags, use only letters and numbers\u0022, \u0022wrong_chars\u0022: \u0022please use letters, numbers and characters \u005C\u0022\u002D+.#\u005C\u0022\u0022, \u0022required\u0022: \u0022tags are required\u0022}, \u0022tags_are_required\u0022: true}';
+
+    if (Modernizr.history) {
+        // history management works!
+    } else {
+        // no history support :(
+        //hash = unescape(window.location.hash).replace('#','').split("?")[0]
+        
+        var hash = History.unescapeHash(window.location.hash).replace('#','').split("?")[0];
+        var questions_url = askbot['urls']['questions'];
+        if (hash.substring(0, questions_url.length) === questions_url) {
+            var url = hash;
+        } else {
+            var url = questions_url + hash;
+        }
+        if (hash !== '' && hash !== undefined && url !== undefined){
+            
+            window.location = document.location.protocol + '//' + window.location.host + url;
+        }
+    }
+    /*]]>*/
+</script> <script type="text/javascript" src="https://answers.gazebosim.org/m/CACHE/js/7d628661765e.js"></script> <script type="text/javascript">
+            for (url_name in askbot['urls']){
+                askbot['urls'][url_name] = cleanUrl(askbot['urls'][url_name]);
+            }
+        </script> </body> </html>

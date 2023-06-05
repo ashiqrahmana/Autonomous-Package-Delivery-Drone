@@ -1,0 +1,3610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eLSI, e-Yantra</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="robotics,iitb,eyrtc,eyrc,elsi,eys,engineering">
+  <meta name="author" content="e-Yantra Web Team">
+  <!-- Bootstrap 3.3.5 CSS -->
+  <!--  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <!-- Bootflat 2.0.4 CSS -->
+  <!--  <link href="bower_components/Bootflat/bootflat/css/bootflat.css" rel="stylesheet">-->
+  <link href="https://www.e-yantra.org/bower_components/Bootflat/bootflat/css/bootflat.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
+<style>
+
+  @media (max-width:786px){
+    .dataTables_wrapper {
+      white-space:nowrap;
+    }
+    .dataTables_filter {
+      display:none;
+    }
+  }
+  .table-responsive {
+    overflow-x: visible;
+  }
+  .paginate_button a:active,
+  .paginate_button a:focus {
+    position:static;
+    top: 0px;
+  }
+</style>
+  <!-- Fonts -->
+  <!--  <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">-->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom CSS -->
+  <link href="https://www.e-yantra.org/css/style.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.e-yantra.org/apple-touch-icon-57x57.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www.e-yantra.org/apple-touch-icon-60x60.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.e-yantra.org/apple-touch-icon-72x72.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.e-yantra.org/apple-touch-icon-76x76.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.e-yantra.org/apple-touch-icon-114x114.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.e-yantra.org/apple-touch-icon-120x120.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.e-yantra.org/apple-touch-icon-144x144.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.e-yantra.org/apple-touch-icon-152x152.png?v2.0.0=JynG3lNP45">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.e-yantra.org/apple-touch-icon-180x180.png?v2.0.0=JynG3lNP45">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-32x32.png?v2.0.0=JynG3lNP45" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/android-chrome-192x192.png?v2.0.0=JynG3lNP45" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-96x96.png?v2.0.0=JynG3lNP45" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://www.e-yantra.org/favicon-16x16.png?v2.0.0=JynG3lNP45" sizes="16x16">
+  <link rel="manifest" href="https://www.e-yantra.org/manifest.json?v2.0.0=JynG3lNP45">
+  <link rel="shortcut icon" href="https://www.e-yantra.org/favicon.ico?v2.0.0=JynG3lNP45">
+  <meta name="msapplication-TileColor" content="#f20000">
+  <meta name="msapplication-TileImage" content="https://www.e-yantra.org/mstile-144x144.png?v2.0.0=JynG3lNP45">
+  <meta name="theme-color" content="#333">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body data-spy="scroll" data-target=".navbar-custom"  data-offset="500">
+  <!-- <nav class="navbar navbar-inverse navbar-custom "> -->
+    <nav class="navbar navbar-inverse navbar-custom ">
+    <div class="container col-md-12">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header col-md-2">
+        <a class="navbar-brand" href="www_e-yantra_default.html">
+          <img alt="Brand" src="https://www.e-yantra.org/img/eYantra_logo.svg" width="170" height="50">
+        </a>
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"><a href="index">Home</a></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button> -->
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 col-md-4">
+        <ul class="nav navbar-nav">
+          <li class="dropdown hidden-xs">
+            <a href="elsi.htm#" aria-haspopup="true" aria-expanded="false"><span class="visible-xs-inline">Initiative </span><span class="sr-only">Initiative</span><span class="glyphicon glyphicon-menu-down"></span></a>
+            <ul class="dropdown-menu">
+              <li ><a href="https://www.e-yantra.org/index">Home</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Direct Links</li>
+              <li class="active"><a href="elsi.htm">e-Yantra Lab Setup Initiative <small class="pull-right">(eLSI)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrc">e-Yantra Robotics Competition <small class="pull-right">(eYRC)</small></a>
+              </li>
+               <li ><a href="eyic.htm">e-Yantra Ideas Competition <small class="pull-right">(eYIC)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eysip">e-Yantra Summer Internship Program <small class="pull-right">(eYSIP)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrtc">e-Yantra Robotics Teacher Competition <small class="pull-right">(eYRTC)</small></a>
+              </li>
+               <!-- <li ><a href="eyic">e-Yantra Ideas Competition <small class="pull-right">(eYIC)</small></a>
+              </li> -->
+              <li ><a href="https://www.e-yantra.org/efsi">e-Yantra Farm Setup Initiative <small class="pull-right">(eFSI)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eyrdc">e-Yantra Resource Development Center<small class="pull-right">(eYRDC)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/eys">e-Yantra Symposium <small class="pull-right">(eYS)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/tbt">Task Based Training<small class="pull-right">(TBT)</small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/workshop">Two-day Workshop  <small class="pull-right"></small></a>
+              </li>
+              <li ><a href="https://www.e-yantra.org/News">News Articles <small class="pull-right"></small></a>
+              </li>
+               <li ><a href="https://www.e-yantra.org/jobs">Careers/Jobs<small class="pull-right"></small></a></li>
+              <!-- <li ><a href="achievements">eLSI College Achievements<small class="pull-right"><br><br></small></a>
+              </li> -->
+            </ul>
+          </li>
+          <li class="nav-small"><a  href="https://www.e-yantra.org/gallery">GALLERY</a> &#8226;<a  href="https://www.e-yantra.org/team">TEAM</a> &#8226;  <a  href="https://www.e-yantra.org/contact-us">CONTACT US</a>  <!-- &#8226; <a  href="faq">FAQ</a>  -->&#8226;
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right col-md-6">
+          <li><a href="https://www.e-yantra.org/index"><i class="fa fa-arrow-left"></i> Back to Home</a>
+          </li>        </ul>
+      </div>
+  <!-- /.navbar-collapse -->
+
+    </div>
+<!-- /.container-fluid -->
+  </nav>
+  <main>
+  <div class="container">
+      <div class="row">
+      <div class="col-lg-12">
+        <h2 class="text-muted">e-Yantra Lab Setup Initiative</h2>
+        <h3 class="space text-muted">eLSI</h3>
+      </div>
+      <div class="col-lg-12">
+        <div class="col-xs-12 col-sm-12 col-md-10">
+          <div class="row">
+            <div class="col-sm-7 text-center">
+              <!-- <div class="row">
+                <div class="col-sm-12 text-center"> -->
+                <br><br><br>
+                <!-- </div>
+              </div> -->
+              <a href="https://www.e-yantra.org/elsifamily" class="btn btn-primary btn-lg" target="blank"><span class="glyphicon glyphicon-home">&nbsp;eLSI Family of Colleges</span></a><!-- <strong><sup style="color: red; font-size: 20px; font-family: cursive;">New</sup></strong> -->
+            </div>
+            <div class="col-md-5">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gYr-ZahMI_4" frameborder="0" allowfullscreen=""></iframe>
+              </div>
+            </div>
+          </div>
+<!-- ---------------------------------------------------------------------------------------------------------
+  <-- ****elSI-2019 **** -->
+          <section id="eLSI-2019" class="group">
+            <h1>eLSI - 2019</h1>
+            <div id="eyrtc_2019_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+                <div class="box-body">
+                <p>12 colleges from following regions participated and inaugurated Robotics labs.</p>
+                <dl class="dl-horizontal">
+                  <dt>Participated Regions</dt>
+                  <dd>Andhra Pradesh</dd>
+                   <dd>Kerala</dd>
+                  <dd>Tamil Nadu</dd>  
+                  <dd>Maharashtra</dd> 
+                  <dd>Gujarat</dd> 
+                  <dd>Karnataka</dd> 
+                  <dd>Rajasthan</dd>
+                  <dd>Uttarakhand</dd>
+                  <dt>Inauguration Date</dt> 
+                  <dd>14<sup>th</sup> March </dd>
+                </dl>
+              </div>
+          <!-- /.box-body -->
+            </div>
+          <!-- /.box -->
+                       <div id="2019" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Andhra Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>VEMU Institute of Technology</td> 
+                                
+                  </tr> 
+                                     <tr>
+                    <td>Sree Rama Engineering College</td> 
+                                
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2019" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Gujarat</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Chandubhai S Patel Institute of Technology</td> 
+                                
+                  </tr> 
+                                     <tr>
+                    <td>Smt. Chandaben Mohanbhai Patel Institute of Computer Applications</td> 
+                                
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2019" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Karnataka</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Karnatak Law Society&#039;s Vishwanathrao Deshpande Institute of Technology, Haliyal</td> 
+                                
+                  </tr> 
+                                     <tr>
+                    <td>CMR Institute of Technology</td> 
+                                
+                  </tr> 
+                                     <tr>
+                    <td>Maharaja Institute of Technology Thandavapura</td> 
+                                
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2019" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Kerala</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Residential Women&#039;s Polytechnic College, Payyanur</td> 
+                                
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2019" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Maharashtra</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Phaltan Education Society&#039;S College Of Engineering Phaltan</td> 
+                                
+                  </tr> 
+                                     <tr>
+                    <td>H.S.B.P.V.T&#039;s Parikrama College of Engineering</td> 
+                                
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2019" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Rajasthan</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>The LNM Institute of Information Technology</td> 
+                                
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2019" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Tamil Nadu</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Ramco Institute of Technology</td> 
+                                
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2019" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Uttarakhand</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Roorkee College of Engineering,Roorkee</td> 
+                                
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                  
+          </section>
+      <!-- ****elSI-2018 **** -->
+          <section id="eLSI-2018" class="group">
+            <h1>eLSI - 2018</h1>
+            <div id="eyrtc_2018_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+          <!-- /.box-header -->
+              <div class="box-body">
+                <p>7 colleges from following regions participated and inaugurated Robotics labs.</p>
+                <dl class="dl-horizontal">
+                  <dt>Participated Regions</dt>
+                  <dd>Gujarat</dd>
+                  <dd>Tamil Nadu</dd>                  
+                  <dd>Kerala</dd>                  
+                  <dd>Nagpur</dd>
+                  <dd>Pune</dd>
+                  <dd>Indore</dd>     
+                  <dd>West Bengal</dd>    
+                   <dd>Mumbai</dd>
+                  <dd>Ahmednagar</dd>
+                  <dd>Jammu Kashmir</dd>     
+                  <dd>Assam</dd>
+                  <dd>Karnataka</dd> 
+                  <dd>Jabalpur</dd>              
+                  <dt>Inauguration Date</dt>
+                  <dd>28<sup>th</sup>February ,</dd>
+                  <dd>27<sup>th</sup> April,</dd>
+                  <dd>3<sup>rd</sup>May,</dd>
+                  <dd>24<sup>th</sup> July,</dd>
+                  <dd>11<sup>th</sup> October,23<sup>rd</sup> October,</dd>
+                  <dd>20<sup>th</sup>,26<sup>th</sup>,28<sup>th</sup> December </dd>
+                </dl>
+              </div>
+          <!-- /.box-body -->
+            </div>
+          <!-- /.box -->
+                       <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Andhra Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Anil Neerukonda Institute of Technology &amp; Sciences</td> 
+                    <!-- <td>Andhra Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>RISE Krishna Sai Prakasam Group of Institution</td> 
+                    <!-- <td>Andhra Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Madanapalle Institute of Technology and Science</td> 
+                    <!-- <td>Andhra Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Geethanjali Institute of Science and Technology</td> 
+                    <!-- <td>Andhra Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Sri Venkateswara College of Engineering, Tirupati</td> 
+                    <!-- <td>Andhra Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>St. Ann&#039;s College of Engineering and Technology</td> 
+                    <!-- <td>Andhra Pradesh</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Assam</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Central Institute of Technology, Kokrajhar</td> 
+                    <!-- <td>Assam</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Delhi</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Maharaja Agrasen Institute of Technology</td> 
+                    <!-- <td>Delhi</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Gujarat</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Babaria Instiute of Technology</td> 
+                    <!-- <td>Gujarat</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Adani Institute of Infrastructure Engineering</td> 
+                    <!-- <td>Gujarat</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Gyanmanjari Institute of Technology</td> 
+                    <!-- <td>Gujarat</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Darshan Institute of Engineering and Technology</td> 
+                    <!-- <td>Gujarat</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Veer Narmad South Gujarat University</td> 
+                    <!-- <td>Gujarat</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>R. N. G. Patel Institute of Technology – RNGPIT ( Previously known as FETR)</td> 
+                    <!-- <td>Gujarat</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Pandit Deendayal Petroleum University</td> 
+                    <!-- <td>Gujarat</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Jammu and Kashmir</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Islamic University Of Science And Technology</td> 
+                    <!-- <td>Jammu and Kashmir</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Bhargava College Of Engineering and Technology</td> 
+                    <!-- <td>Jammu and Kashmir</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Model Institute Of Engineering And Technology</td> 
+                    <!-- <td>Jammu and Kashmir</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Karnataka</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>NIE Institute of Technology</td> 
+                    <!-- <td>Karnataka</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Kerala</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Government Polytechnic College, Muttom</td> 
+                    <!-- <td>Kerala</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Sahrdaya College of Engineering and Technology Kodakara</td> 
+                    <!-- <td>Kerala</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Madhya Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Global Engineering College, Jabalpur</td> 
+                    <!-- <td>Madhya Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Shri Vaishnav Vidyapeeth Vishwavidyalaya Indore</td> 
+                    <!-- <td>Madhya Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Chamelidevi Group of Institutions</td> 
+                    <!-- <td>Madhya Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Sushila Devi Bansal College of Technology</td> 
+                    <!-- <td>Madhya Pradesh</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>G.H. Raisoni University, Saikheda</td> 
+                    <!-- <td>Madhya Pradesh</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Maharashtra</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Deogiri Institute of Engineering and Management Studies</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Amrutvahini College Of Engineering</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Shri Vile Parle Kelavani Mandal&#039;s Institute Of Technology, Dhule</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Army Institute of Technology</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Government College of Engineering, Nagpur</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Government College of Engineering &amp; Research, Avasari Khurd</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Terna Public Charitable Trust&#039;s  College of Engineering Osmanabad</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Vishwaniketan&#039;s Institute of Management Entrepreneurship and Engineering Technology</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Zeal college of Engineering and Research, Pune</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>A. P. Shah Institute of Technology, Thane</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Shah &amp; Anchor Kutchhi Engineering College</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>A.C. Patil College of Engineering</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>TSSM’s Bhivarabai Sawant College of Engineering and Research</td> 
+                    <!-- <td>Maharashtra</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Odisha</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Indira Gandhi Institute of Technology</td> 
+                    <!-- <td>Odisha</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Tamil Nadu</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Dr.N.G.P. Institute of Technology</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Solamalai College of Engineering</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Rudhraveni Muthuswamy Polytechnic College</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Adhiparasakthi College of Engineering</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Erode Sengunthar Engineering College</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>St.Xavier&#039;s College Autonomous</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>PSGR Krishnammal College for Women</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Kings Engineering College</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Arm College of Engineering And Technology</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Panimalar Institute of Technology</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Jerusalem College of Engineering</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>R.M.K Engineering College</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Gnanamani College of Technology</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Sri Sai Ram Institute Of Technology</td> 
+                    <!-- <td>Tamil Nadu</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Telangana</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>G.Narayanamma Institute of Technology &amp; Science</td> 
+                    <!-- <td>Telangana</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Gitam university, Hyderabad</td> 
+                    <!-- <td>Telangana</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>Jyothishmathi Institute Of Technological Sciences</td> 
+                    <!-- <td>Telangana</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2018" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> West Bengal</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                                       <tr>
+                    <td>Bipradas Palchoudhury Institute Of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                     <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                      
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                 
+              <!-- /.box-body -->
+            <!-- </div> -->
+          </section>
+<!-- ------------------------------------------------------------------------------------------------------>
+      <!-- ****elSI-2017 **** -->
+          <section id="eLSI-2017" class="group">
+            <h1>eLSI - 2017</h1>
+
+            <div id="eyrtc_2017_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+          <!-- /.box-header -->
+              <div class="box-body">
+                <p>41 colleges from following regions participated and inaugurated Robotics labs.</p>
+                <dl class="dl-horizontal">
+                  <dt>Participated Regions</dt>
+                  <dd>Bangalore-NC</dd>
+                  <dd>Coimbatore-NC</dd>
+                  <dd>Dehradun</dd>
+                  <dd>Noida</dd>
+                  <dd>Ghaziabad</dd>
+                  <dd>Guntur</dd>
+                  <dd>Gujarat</dd>
+                  <dd>Goa</dd>
+                  <dd>Hyderabad</dd>
+                  <dd>Haryana</dd>
+                  <dd>Kakinada</dd>
+                  <dd>Kanchipuram</dd>
+                  <dd>Kerala</dd>
+                  <dd>Kolkata</dd>
+                  <dd>Mumbai</dd>
+                  <dd>Nagpur</dd>
+                  <dd>Pune</dd>
+                  <dd>Tezpur - Assam</dd>
+                  <dd>West Bengal</dd>
+                  <dt>Inauguration Date</dt>
+                  <dd>February 9<sup>th</sup> & 10<sup>th</sup>, May 11<sup>th</sup> & 12<sup>th</sup>, <dd>August 2<sup>nd</sup></dd><dd>November 30<sup>th</sup></dd>
+                </dl>
+              </div>
+          <!-- /.box-body -->
+            </div>
+          <!-- /.box -->
+
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Andhra Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Gayatri Vidya Parishad College of Engineering (Autonomous)</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sri Vasavi Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>R.V.R. and J.C.College of Engineering,</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>G. Pulla Reddy Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Narayana Engineering College,Gudur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Assam</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Indian Institute of Information Technology, Guwahati</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Assam Agricultural University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Assam Women&#039;s University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Delhi</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Indira Gandhi Delhi Technical University For Women</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Goa</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Goa College of Engineering Farmagudi</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Gujarat</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Atmiya University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Smt. S. R. Patel Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sarvajanik College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Shree Swaminarayan Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Gujarat Power Engineering &amp; Research Institute</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Marwadi Education Foundation&#039;s Group of Institutions</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Haryana</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Deenbandhu Chhotu Ram University of Science and Technology, Murthal</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>University Institute of Engineering and Technology, Kurukshetra University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Himachal Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Jaypee University of Information Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Karnataka</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Sri Venkateshwara College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Tontadarya College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Kerala</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Mar Baselios College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sree Narayana Gurukulam College of Engineering Kadayirippu</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>SCMS School of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Amal Jyothi Engineering College Koovappally</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Federal Institute of Science and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Maharashtra</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Karmavir Dadasaheb Kannamwar College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>R. C. Patel Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Vidya Pratishthan’s College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Defence Institute of Advanced Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dr. J.J. Magdum College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Mukesh Patel School Of Technology Management &amp; Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Pimpri Chinchwad College of Engineering &amp; Research</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Shreeyash College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Poojya Sane Guruji Vidya Prasarak Mandal&#039;s D. N. Patel College Of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Jawaharlal Darda Institute of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Nashik District Maratha Vidya Prasarak Samaj&#039;s Karmaveer Adv. Baburao Ganpatrao Thakare College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>SNJB&#039;s Late Sau. Kantabai Bhavarlalji Jain College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>JSPM&#039;s Rajarshi Shahu College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Mahatma Gandhi Mission College of Engineering And Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Punjab</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Gulzar Group of Institutes</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Tamil Nadu</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>K.S.R. College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Vel Tech</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>J.K.K. Nattraja College of Engineering &amp; Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>M. Kumarasamy College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>PSG Institute of Technology and Applied Research</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>K.Ramakrishnan College of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dr. M.G.R. Educational and Research Institute</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Selvam College of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Telangana</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Vignan Institute of Technology and Science</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Uttar Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Raj Kumar Goel Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>National Institute of Electronics &amp; Information Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>KCC Institute of Technology &amp; Management</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Uttarakhand</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>The ICFAI University, Dehradun</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2017" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> West Bengal</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Acharya Jagadish Chandra Bose Polytechnic West Bengal</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dr. Meghnad Saha Institute Of Technology, Purba Medinipur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>K.G.Engineering Institute</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Ramakrishna Mission Shilpamandira</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Siliguri Government Polytechnic</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+             
+          </section>
+
+      <!-- ****elSI-2016 **** -->
+          <section id="eLSI-2016" class="group">
+            <h1>eLSI - 2016</h1>
+            <div id="eyrtc_2016_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+          <!-- /.box-header -->
+              <div class="box-body">
+                <p>80 colleges from following regions participated and inaugurated Robotics labs.</p>
+                <dl class="dl-horizontal">
+                  <dt>Participated Regions</dt>
+                  <dd>Aurangabad</dd>
+                  <dd>Arunachal Pradesh</dd>
+                  <dd>Assam</dd>
+                  <dd>Bangalore</dd>
+                  <dd>Bhopal</dd>
+                  <dd>Coimbatore</dd>
+                  <dd>Chikodi</dd>
+                  <dd>Dehradun</dd>
+                  <dd>Delhi</dd>
+                  <dd>Erode</dd>                 
+                  <dd>Gujarat</dd>
+                  <dd>Guntur</dd>
+                  <dd>Hyderabad</dd>
+                  <dd>Ichalkaranji</dd>
+                  <dd>Indore</dd>
+                  <dd>Kanchipuram</dd>
+                  <dd>Mathura</dd>
+                  <dd>Mumbai</dd>
+                  <dd>Mysuru</dd>
+                  <dd>Nagpur</dd>
+                  <dd>Noida</dd>
+                  <dd>Pune</dd>
+                  <dd>Rajasthan</dd>
+                  <dd>Sivagangai</dd>
+                  <!-- <dd>Sivakasi</dd> -->
+                  <dd>Vijayawada</dd>
+
+                  <dt>Inauguration Date</dt>
+                  <dd>1<sup>st</sup>to 3<sup>rd</sup> March, 27<sup>th</sup> to 29<sup>th</sup> July, 7<sup>th</sup> & 8<sup>th</sup> September,22<sup>nd</sup> & 23<sup>rd</sup> November</dd> 
+                </dl>
+              </div>
+          <!-- /.box-body -->
+            </div>
+          <!-- /.box -->
+                        <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Andaman and Nicobar Islands</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Dr.B.R.Ambedkar Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Andhra Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Prasad V. Potluri Siddhartha Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sree Venkateswara College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>PSCMR College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Lakireddy Bali Reddy College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Vignan&#039;s Foundation of Science, Technology &amp; Research</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Arunachal Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Rajiv Gandhi University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Assam</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Tezpur University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Gujarat</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>U. V. Patel Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Institute of Infrastructure, Technology, Research and Management</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Haryana</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Asia Pacific Institute of Information Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Karnataka</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>REVA University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Vidyavardhaka College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>PES University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Ballari Institute of Technology &amp; Management</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>GSSS Institute of Engineering and Techonology for Women</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>JSS Science and Technology University (Formerly known as SJCE)</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>KLE College of Engineering &amp; Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Hirasugar Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Vidya Samvardhak Mandal&#039;s Somashekhar R.Kothiwale Institute Of Technology, Nipani</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Kerala</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Government Polytechnic College,Kottayam</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Madhya Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Indore Institute of Science and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Institute of Engineering &amp; Science, IPS Academy</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Maharashtra</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>K. J. Somaiya Institute of Engineering and Information Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Prof Ram Meghe College of Engineering &amp; Management</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>G.H.Raisoni College of Engineering, Nagpur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Shri Ramdeobaba College of Engineering and Management</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>J D College of Engineering and Management</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>St.Vincent Pallotti College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>G H RAISONI College of Engineering and Management, Amravati</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Kavikulguru Institute of Technology and Science</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>P.E.S. College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Rajiv Gandhi College of Engineering, Research and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>G.H.Raisoni College of Engineering And Management, Pune</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>CSMSS Chh. Shahu College of Engineering </td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>G.H.Raisoni Institution of Engineering and Technology, Nagpur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Prof Ram Meghe Institute of Technology &amp; Research</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>G.H.Raisoni Institute of Engineering and Technology, Pune</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>MGM&#039;s Jawaharlal Nehru Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Savitribai Phule Shikshan Prasarak Mandal&#039;s SKN Sinhgad College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sinhgad College of Engineering (SCOE)</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sanjivani College Of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Datta Meghe Institute of Engineering, Technology &amp; Research</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Progressive Education Society&#039;s Modern College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Pimpri Chinchwad Education Trust&#039;s Pimpri Chinchwad College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>G.H. Raisoni Academy of Engineering &amp; Technology, Nagpur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Rajiv Gandhi College of Engineering &amp; Research</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Universal College of Engineering, Thane</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dnyanshree Institute of Engineering and Technology, Satara</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>K.J. Somaiya Polytechnic</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Odisha</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>C. V. Raman College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Punjab</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Malout Institute of Management and Information Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Rajasthan</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Swami Keshvanand Institute of Technology
+Management &amp; Gramothan</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Government Engineering College, Jhalawar</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Government Engineering College, Bharatpur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Tamil Nadu</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>K.L.N. College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>AAA College of Engineering &amp; Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Excel College of Engineering And Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dr G R DAMODARAN COLLEGE OF SCIENCE</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Kumaraguru College of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dhirajlal Gandhi College of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dr. Mahalingam College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Kalaignar Karunanidhi institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sri Chandrasekharendra Saraswathi Viswa Mahavidyalaya</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>The Kavery Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Bannari Amman Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>SNS College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Telangana</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>MLR Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Uttar Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>ABES Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>IEC College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Anand Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>IMS Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>I.T.S Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2016" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Uttarakhand</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Shivalik College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                      </section>
+      <!-- ****elSI-2015 **** -->
+          <section id="eLSI-2015" class="group">
+            <h1>eLSI - 2015</h1>
+            <div id="eyrtc_2015_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+          <!-- /.box-header -->
+              <div class="box-body">
+                <p>17 colleges from following regions participated and inaugurated Robotics labs.</p>
+                <dl class="dl-horizontal">
+                  <dt>Participated Regions</dt>
+                  <dd>Bangalore</dd>
+                  <dd>Bhopal</dd>
+                  <dd>Gujarat</dd>
+                  <dd>Guntur</dd>
+                  <dd>Ichalkaranji</dd>
+                  <dd>Indore</dd>
+                  <dd>Kakinada</dd>
+                  <!-- <dd>Sivakasi</dd> -->
+                  <dt>Inauguration Date</dt>
+                  <dd>October 14<sup>th</sup> to 16<sup>th</sup>, 2015</dd>
+                </dl>
+              </div>
+          <!-- /.box-body -->
+            </div>
+          <!-- /.box -->
+                         <div id="2015" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Andhra Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2015" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Gujarat</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2015" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Karnataka</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2015" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Madhya Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2015" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Maharashtra</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2015" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Puducherry</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2015" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Tamil Nadu</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2015" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Uttar Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>B.P. Poddar Institute of Management and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                    <!-- /.box -->
+          </section>
+
+      <!-- ****elSI-2014 **** -->
+          <section id="eLSI-2014" class="group">
+            <h1>eLSI - 2014</h1>
+            <div id="eyrtc_2014_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <p>51 colleges from following regions participated and inaugurated Robotics labs.</p>
+                <dl class="dl-horizontal">
+                  <dt>Participated Regions</dt>
+                  <dd>Chennai</dd>
+                  <dd>Coimbatore</dd>
+                  <dd>Kolkata</dd>
+                  <dd>Noida</dd>
+                  <dd>Salem</dd>
+                  <dd>Trichy</dd>
+                </dl>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+                         <div id="2014" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Haryana</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Dronacharya College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2014" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Maharashtra</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Sharad Institute of Technology College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2014" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Tamil Nadu</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Government College Of Technology, Coimbatore</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Karpagam Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Arasan Ganesan Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>NPA Centenary Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Er. Perumal Manimekalai College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Knowledge Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sakthi Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Government College Of Engineering, Bargur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sri Annamalai Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sankar Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Thiagarajar Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Mohamed Sathak Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Government Polytechnic College, Thoothukudi</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sona College of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sri Shanmugha College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>University College of Engineering Bharathidasan Institute of Technology Campus, Anna University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Kamaraj College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Saranathan College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Alagappa Chettiar Government College of Engineering &amp; Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>M.A.M.College Of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>P.A.C. Ramasamy Raja Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Periyar Centenary Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Thiagarajar College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Tamilnadu Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Thanthai Periyar Government Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Easwari Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>KCG College of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Ganadipathy Tulsi&#039;s Jain Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Agni College Of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Rajagopal Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>SSN College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Murugappa Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Kongu Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sri Shakthi Institute of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>PSG College of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Nachimuthu Polytechnic College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Coimbatore Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2014" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Uttar Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>ABES Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dronacharya Group of Institution</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Ajay Kumar Garg Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sharda University School of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2014" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> West Bengal</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Acharyya Prafulla Chandra Ray Polytechnic</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Central Calcutta Polytechnic</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>North Calcutta Polytechnic</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Birla Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>M.B.C. Institute of Engineering &amp; Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                       
+          </section>
+
+      <!-- ****2013**** -->
+          <section id="eLSI-2013" class="group">
+            <h1>eLSI - 2013</h1>
+            <div id="eyrtc_2013_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"><i class="fa fa-fw fa-eye"></i> Overview</h2>
+                <hr>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <p>35 colleges from following regions participated and inaugurated Robotics labs.</p>
+                <dl class="dl-horizontal">
+                  <dt>Participated Regions</dt>
+                  <dd>Delhi/Chandigarh - 13 Colleges</dd>
+                  <dd>Ichalkaranji - 11 Colleges</dd>
+                  <dd>Mumbai/Pune - 5 Colleges</dd>
+                  <dd>Shimoga - 6 Colleges</dd>
+                  <dt>Inauguration Date</dt>
+                  <dd>April 11<sup>th</sup>, 2014</dd>
+                </dl>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+                         <div id="2013" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Chandigarh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>University Institute of Engineering and Technology, Panjab University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2013" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Delhi</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Acharya Narendra Dev College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Deen Dayal Upadhyaya College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Maharaja Agrasen College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Miranda House, University College For Women</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Maitreyi College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sri Guru Tegh Bahadur Khalsa College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Shaheed Rajguru College of Applied Sciences For Women</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Cluster Innovation Centre</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Ramanujan College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2013" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Karnataka</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Alva&#039;s Institute of Engineering &amp; Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>BMS College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Jawaharlal Nehru National College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>K.L.E. Institute of Technology, Hubbali</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>PES Institute of Technology and Management</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Shridevi Institute of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2013" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Maharashtra</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Annasaheb Dange College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Ashokrao Mane Group Of Institutions</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Bharati Vidyapeeth College of Engineering, Kolhapur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dattajirao Kadam Technical Education Society&#039;s Textile and Engineering Institute</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Kolhapur Institute of Technology&#039;s College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>K.E. Society&#039;s Rajarambapu Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Sanjeevan Engineering And Technology Institute</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Shivaji University</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Walchand College of Engineering, Sangli</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Tatyasaheb Kore Institute of Engineering and Technology, Kolhapur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Dr. D. Y. Patil Institute Of Technology, Pune</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>MIT Academy of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Pune Institute of Computer Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Thakur College of Engineering &amp; Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Vivekanand Education Society&#039;s Institute of Technology, Chembur</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2013" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Punjab</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Chitkara University Institute of Engineering &amp; Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                         <div id="2013" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Uttar Pradesh</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Mahatma Gandhi Mission&#039;s College of Engineering &amp; Technology, Noida</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Krishna Institute of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                       
+            
+            <!-- /.box -->
+          </section>
+          <!-- ****2013**** -->
+
+          <section id="eLSI-2012" class="group">
+            <h1>eLSI-2012</h1>
+            <div id="eyrtc_2012_overview" class="subgroup panel panel-default box">
+              <div class="box-header with-border">
+                <h2 class="box-title"> Colleges participated in the Pilot phase.</h2>
+              </div>
+              <!-- /.box-header -->
+                           <div id="2013_delhi" class="subgroup panel panel-default box">
+              <div class="box-header">
+                <h2 class="box-title"><i class="fa fa-map-marker"></i> Maharashtra</h2>
+              </div>
+              <!--/.box-header-->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-bordered table-hover table-condensed">
+                  <thead>
+                    <tr><th>College Name</th>
+                        <!-- <th>State</th>  -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                   <tr>
+                    <td>Vidyalankar Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Anjuman-i-Islam&#039;s Kalsekar Technical Campus</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Pillai HOC College of Engineering and Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Yadavrao Tasgaonkar College of Engineering And Management</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Shivajirao S. Jondhale College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>SIES Graduate School of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Terna Engineering College</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Ramrao Adik Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Pillai College of Engineering </td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Bharati Vidyapeeth College of Engineering, Navi Mumbai</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Padmabhushan Vasantdada Patil Pratishthan&#039;s College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Atharva College of Engineering</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>VIVA Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>St. Francis Institute of Technology</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>Fr. Conceicao Rodrigues College of Engineering, Bandra</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                  
+                   <tr>
+                    <td>University of Mumbai, Department of Computer Science</td> 
+                    <!-- <td>West Bengal</td>  -->                 
+                  </tr> 
+                                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+                        <!-- /.box -->
+          </section>
+        </div>
+        <nav class="hidden-xs hidden-sm col-md-2 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked">
+             <li>
+              <a href="elsi.htm#eLSI-2019">eLSI - 2019</a>
+              <ul class="nav nav-stacked">                      
+                <li><a href="elsi.htm#2019_Andhra Pradesh">Andhra Pradesh</a></li>
+                <li><a href="elsi.htm#2019_Kerala">Kerala</a></li>
+                 <li><a href="elsi.htm#2019_Tamil Nadu">Tamil Nadu</a></li>                    
+                <li><a href="elsi.htm#2019_Maharashtra">Maharashtra</a></li>                                          
+                <li><a href="elsi.htm#2019_Gujarat">Gujarat</a></li>
+                <li><a href="elsi.htm#2019_Karnataka">Karnataka</a></li> 
+                 <li><a href="elsi.htm#2019_Uttarakhand">Uttarakhand</a></li>
+                
+                 
+              </ul>
+            </li>
+          <li>
+              <a href="elsi.htm#eLSI-2018">eLSI - 2018</a>
+              <ul class="nav nav-stacked">                      
+                <li><a href="elsi.htm#2018_Gujarat">Gujarat</a></li>
+                <li><a href="elsi.htm#2018_Assam">Assam</a></li>
+                 <li><a href="elsi.htm#2018_Indore">Indore</a></li>                    
+                <li><a href="elsi.htm#2018_Kerala">Kerala</a></li>                                          
+                <li><a href="elsi.htm#2018_Nagpur">Nagpur</a></li>
+                <li><a href="elsi.htm#2018_Pune">Pune</a></li> 
+                 <li><a href="elsi.htm#2018_Mumbai">Mumbai</a></li>
+                <li><a href="elsi.htm#2018_Ahmednagar">Ahmednagar</a></li> 
+                 <li><a href="elsi.htm#2018_JammuKashmir">Jammu Kashmir</a></li>
+                <li><a href="elsi.htm#2018_WestBengal">West Bengal</a></li>                
+                <li><a href="elsi.htm#2018_TamilNadu">Tamil Nadu</a></li>
+                 <li><a href="elsi.htm#2018_Hyderabad">Hyderabad</a></li>
+                 <li><a href="elsi.htm#2018_Karnataka">Karnataka</a></li>
+                 <li><a href="elsi.htm#2018_Odisha">Odisha</a></li>
+                 <li><a href="elsi.htm#2018_AndhraPradesh">Andhra Pradesh</a></li>
+                 <li><a href="elsi.htm#2018_Telangana">Telangana</a></li>
+                
+                
+              </ul>
+            </li>
+            <li>
+              <a href="elsi.htm#eLSI-2017">eLSI - 2017</a>
+              <ul class="nav nav-stacked">                      
+                <li><a href="elsi.htm#2017_Bangalore">Bangalore</a></li>
+                 <li><a href="elsi.htm#2017_Coimbatore">Coimbatore</a></li>  
+                 <li><a href="elsi.htm#2017_Guntur">Guntur</a></li>
+                 <li><a href="elsi.htm#2017_Gujarat">Gujarat</a></li> 
+                <li><a href="elsi.htm#2017_Goa">Goa</a></li> 
+                <li><a href="elsi.htm#2017_Hyderabad">Hyderabad</a></li>  
+                <li><a href="elsi.htm#2017_Haryana">Haryana</a></li>                 
+                <li><a href="elsi.htm#2017_Kakinada">Kakinada</a></li>  
+                <li><a href="elsi.htm#2017_Kerala">Kerala</a></li>              
+                 <li><a href="elsi.htm#2017_Kanchipuram">Kanchipuram</a></li>
+                <li><a href="elsi.htm#2017_Kolkata">Kolkata</a></li>
+                <li><a href="elsi.htm#2017_Mumbai">Mumbai</a></li>                
+                <li><a href="elsi.htm#2017_Nagpur">Nagpur</a></li>
+                <li><a href="elsi.htm#2017_Pune">Pune</a></li>
+                <li><a href="elsi.htm#2017_Punjab">Punjab</a></li>
+                 <li><a href="elsi.htm#2017_Puducherry">Puducherry</a></li>
+                <li><a href="elsi.htm#2017_Tamilnadu">Tamilnadu</a></li>
+                <li><a href="elsi.htm#2017_Tezpur">Tezpur</a></li>
+                <li><a href="elsi.htm#2017_West_Bengal">West Bengal</a></li>   
+              </ul>
+            </li>            
+            <li>
+              <a href="elsi.htm#eLSI-2016">eLSI - 2016</a>
+              <ul class="nav nav-stacked">
+                <li><a href="elsi.htm#2016_Aurangabad">Aurangabad</a>
+                </li>
+                <li><a href="elsi.htm#2016_ArunachalPradesh">Arunachal Pradesh</a>
+                </li>
+                <li><a href="elsi.htm#2016_Assam">Assam</a>
+                </li>
+                <li><a href="elsi.htm#2016_Bangalore">Bangalore</a>
+                </li>
+                <li><a href="elsi.htm#2016_Bhopal">Bhopal</a>
+                </li>
+                <li><a href="elsi.htm#2016_Coimbatore">Coimbatore</a>
+                </li>
+                <li><a href="elsi.htm#2016_Dehradun">Dehradun</a>
+                </li>
+                <li><a href="elsi.htm#2016_Delhi">Delhi</a>
+                </li>
+                <li><a href="elsi.htm#2016_Erode">Erode</a>
+                </li>
+                <li><a href="elsi.htm#2016_Gujarat">Gujarat</a>
+                </li>
+                <li><a href="elsi.htm#2016_Guntur">Guntur</a>
+                </li>
+                <li><a href="elsi.htm#2016_Ichalkaranji">Ichalkaranji</a>
+                </li>
+                <li><a href="elsi.htm#2016_Indore">Indore</a>
+                </li>
+                <li><a href="elsi.htm#2016_Kanchipuram">Kanchipuram</a>
+                </li>
+                <li><a href="elsi.htm#2016_Mathura">Mathura</a>
+                </li>
+                <li><a href="elsi.htm#2016_Mumbai">Mumbai</a>
+                </li>
+                <li><a href="elsi.htm#2016_Mysuru">Mysuru</a>
+                </li>
+                <li><a href="elsi.htm#2016_Nagpur">Nagpur</a>
+                </li>
+                <li><a href="elsi.htm#2016_Noida">Noida</a>
+                </li>
+                <li><a href="elsi.htm#2016_Pune">Pune</a>
+                </li>
+                <li><a href="elsi.htm#2016_Rajasthan">Rajasthan</a>
+                </li>
+                <li><a href="elsi.htm#2016_Sivagangai">Sivagangai</a>
+                </li>
+                <!-- <li><a href="#2016_Sivakasi">Sivakasi</a>
+                </li> -->
+                <li><a href="elsi.htm#2016_Vijayawada">Vijayawada</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="elsi.htm#eLSI-2015">eLSI - 2015</a>
+              <ul class="nav nav-stacked">
+                <li><a href="elsi.htm#2015_Bangalore">Bangalore</a>
+                </li>
+                <li><a href="elsi.htm#2015_Bhopal">Bhopal</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2015_Gujarat">Gujarat</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2015_Guntur">Guntur</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2015_Kakinada">Kakinada</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2015_Sivakasi">Sivakasi</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.e-yantra.org/elsi.htm#eLSI-2014">eLSI - 2014</a>
+              <ul class="nav nav-stacked">
+                <li><a href="https://www.e-yantra.org/elsi.htm#2014_chennai">Chennai</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2014_coimbatore">Coimbatore</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2014_kolkata">Kolkata</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2014_noida">Noida</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2014_salem">Salem</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2014_trichy">Trichy</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.e-yantra.org/elsi.htm#eLSI-2013">eLSI - 2013</a>
+              <ul class="nav nav-stacked">
+                <li><a href="https://www.e-yantra.org/elsi.htm#2013_delhi">Delhi/Chandigarh</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2013_ichalkaranji">Ichalkaranji</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2013_mumbai">Mumbai/Pune</a>
+                </li>
+                <li><a href="https://www.e-yantra.org/elsi.htm#2013_shimoga">Shimoga</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.e-yantra.org/elsi.htm#eLSI-2012">eLSI - 2012</a>
+              <ul class="nav nav-stacked">
+                <li><a href="https://www.e-yantra.org/elsi.htm#eLSI-2012">Mumbai</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- /.col -->
+
+
+  </div>
+    <!-- /.container -->
+    </main>
+
+  <footer class=" foot page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" style="">
+          <!-- <div>
+            <strong><font margin-left:50px; size="4px" style ="height:50px";>VISITORS</font></strong>
+          </div> -->
+          <div class="address-footer">
+                   <!--                        <font size="2px">No of visitors: 1 </font><br>
+
+
+                      
+                      <font size="2px">Unique visitors: 15323 </font><br> -->
+          </div>
+        </div>
+        <div class="col-md-12 text-center">
+          <p>IIT Bombay envisages the <strong>'e-Yantra'</strong> platform to harness the intellectual talent of young India to create utility based robotic applications for usage across variety of applications such as: agriculture, manufacturing, defense, home, city maintenance and services industries. <!-- <a href="http://wwww.iitb.ac.in/CSEYantra/Yantra.html" target="_blank">Read More<i class="fa fa-fw fa-external-link"></i></a> -->
+          </p>
+
+         <!--  <div class="col-sm-3 col-md-3">
+            <img width="200" height="150" src="img/IITBlogo.png" alt="IITB Logo">
+          </div>  -->
+         
+        </div>
+        <div class="col-md-4">
+        <p>
+            <address>
+             <strong>ERTS Lab</strong>
+             SIC 102, KReSIT Building,<br>
+             CSE Department<br>
+             IIT Bombay, Powai,<br>
+             Mumbai - 400076, Maharashtra.
+            </address> 
+        </p>
+             
+              <!-- <address>For eYIC:<a href="mailto:eyic@e-yantra.org">eyic@e-yantra.org</a></address>
+              <address >For eYRC:<a href="mailto:helpdesk@e-yantra.org">helpdesk@e-yantra.org</a></address>
+              <address >For other queries:<a href="mailto:support@e-yantra.org">support@e-yantra.org</a></address>   -->     
+        </div>
+      </div>
+      <!-- e-Yantra Logo in Footer -->
+       <div class="row">
+        <div class="col-md-6 text-center">
+            <!-- <img width="250" height="120" src="img/eYantra_logo.svg" alt="e-Yantra Logo"> -->
+            <img alt="Brand" src="https://www.e-yantra.org/img/MoE.png" width="" >
+        </div>
+        <div class="col-md-6 text-center">
+            <img width="120" height="120" src="https://www.e-yantra.org/img/iitblogo.png" alt="IITB Logo">
+        </div>
+      </div>
+
+     <!--  <div class="row">
+        <div class="col-md-12 text-center">
+          <img alt="Brand" src="img/mhrd.png" width="500" >
+        </div>
+      </div> -->
+      <!-- MHRD and IITB Logo -->
+     
+
+      <div class="row">
+        <div class="col-md-12">
+        <br>
+          <div class="footer-copyright text-center">The e-Yantra name and logo is a trademark of IIT Bombay. The name and logo should not be reproduced without express consent of IIT Bombay.
+          </div>
+          <div class="footer-copyright text-center">Copyright &copy; 2021 e-Yantra. All rights reserved.<br/>
+          <div class="links-footer"><a href="https://www.e-yantra.org/contact-us">CONTACT US</a> &#8226; <a href="https://www.e-yantra.org/team">TEAM</a> <!-- &#8226; <a href="faq">FAQ</a> --> 
+                      </div>  
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+      
+  </footer>
+
+    
+    <!-- jQuery 2.1.4 -->
+    <!--  <script src="bower_components/jquery/dist/jquery.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.5 JS -->
+    <!--  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.table').DataTable({
+      "pagingType": "simple",
+      "bPaginate": false,
+      "bLengthChange": false
+    });
+  } );
+</script>
+    <!-- Custom JS -->
+    <script src="https://www.e-yantra.org/js/script.min.js"></script>
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-65603803-1', 'auto');
+      ga('send', 'pageview');
+
+    </script> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145861739-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-145861739-1');
+    </script>
+</body>
+</html>

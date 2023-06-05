@@ -1,0 +1,3122 @@
+<!doctype html >
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+    <title>Understanding Linux File Permissions - Linux.com</title>
+    <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"981d6c8a9f",applicationID:"176909146"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="https://www.linux.com/xmlrpc.php" />
+    <meta name='robots' content='max-image-preview:large' />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><link rel="icon" type="image/png" href="https://www.linux.com/wp-content/uploads/2019/08/favicon-300x300.png">
+<!-- This site is optimized with the Yoast SEO Premium plugin v11.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="understanding-linux-file-permissions.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Understanding Linux File Permissions - Linux.com" />
+<meta property="og:description" content="Although there are already a lot of good security features built into Linux-based systems, one very important potential vulnerability can exist when local access is granted &#8211; &#8211; that is file permission based issues resulting from a user not assigning the correct permissions to files and directories. So based upon the need for proper permissions, &hellip;" />
+<meta property="og:url" content="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/" />
+<meta property="og:site_name" content="Linux.com" />
+<meta property="article:section" content="Training and Tutorials" />
+<meta property="article:published_time" content="2010-05-18T08:00:00-07:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Although there are already a lot of good security features built into Linux-based systems, one very important potential vulnerability can exist when local access is granted &#8211; &#8211; that is file permission based issues resulting from a user not assigning the correct permissions to files and directories. So based upon the need for proper permissions, [&hellip;]" />
+<meta name="twitter:title" content="Understanding Linux File Permissions - Linux.com" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.linux.com/#website","url":"https://www.linux.com/","name":"Linux.com","potentialAction":{"@type":"SearchAction","target":"https://www.linux.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.linux.com/training-tutorials/understanding-linux-file-permissions/#webpage","url":"https://www.linux.com/training-tutorials/understanding-linux-file-permissions/","inLanguage":"en-US","name":"Understanding Linux File Permissions - Linux.com","isPartOf":{"@id":"https://www.linux.com/#website"},"datePublished":"2010-05-18T08:00:00-07:00","dateModified":"2010-05-18T08:00:00-07:00","author":{"@id":"https://www.linux.com/#/schema/person/6398a137d592824ddabfbe0294b53698"}}]}</script>
+<!-- / Yoast SEO Premium plugin. -->
+
+<link rel='dns-prefetch' href='https://www.linux.com/' />
+<link rel='dns-prefetch' href='https://js.hs-scripts.com/' />
+<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="Linux.com &raquo; Feed" href="https://www.linux.com/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.linux.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='mpp_gutenberg-css'  href='https://www.linux.com/wp-content/plugins/metronet-profile-picture/dist/blocks.style.build.css?ver=2.5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='td-plugin-multi-purpose-css'  href='https://www.linux.com/wp-content/plugins/td-composer/td-multi-purpose/style.css?ver=78be34af347704c29acc8080ee49e259' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-style-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C600%2C700%7CRoboto%3A400%2C500%2C700&#038;display=swap&#038;ver=10.4' type='text/css' media='all' />
+<link rel='stylesheet' id='td-theme-css'  href='https://www.linux.com/wp-content/themes/Newspaper/style.css?ver=10.4' type='text/css' media='all' />
+<style id='td-theme-inline-css' type='text/css'>
+    
+        @media (max-width: 767px) {
+            .td-header-desktop-wrap {
+                display: none;
+            }
+        }
+        @media (min-width: 767px) {
+            .td-header-mobile-wrap {
+                display: none;
+            }
+        }
+    
+	
+</style>
+<link rel='stylesheet' id='td-theme-child-css'  href='https://www.linux.com/wp-content/themes/Newspaper-child/style.css?ver=10.4c' type='text/css' media='all' />
+<link rel='stylesheet' id='td-legacy-framework-front-style-css'  href='https://www.linux.com/wp-content/plugins/td-composer/legacy/Newspaper/assets/css/td_legacy_main.css?ver=78be34af347704c29acc8080ee49e259' type='text/css' media='all' />
+<link rel='stylesheet' id='td-standard-pack-framework-front-style-css'  href='https://www.linux.com/wp-content/plugins/td-standard-pack/Newspaper/assets/css/td_standard_pack_main.css?ver=eccb2c408442ac58c2bcf4360ad09738' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.linux.com/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.linux.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://www.linux.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.11.6' id='gtm4wp-form-move-tracker-js'></script>
+<link rel="https://api.w.org/" href="https://www.linux.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.linux.com/wp-json/wp/v2/posts/504775" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.linux.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.linux.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.7" />
+<link rel='shortlink' href='https://www.linux.com/?p=504775' />
+<link rel="alternate" type="application/json+oembed" href="https://www.linux.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.linux.com%2Ftraining-tutorials%2Funderstanding-linux-file-permissions%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.linux.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.linux.com%2Ftraining-tutorials%2Funderstanding-linux-file-permissions%2F&#038;format=xml" />
+			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v7.52.0-->
+			<script type="text/javascript">
+				var _hsq = _hsq || [];
+				_hsq.push(["setContentType", "blog-post"]);
+			</script>
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+						<script>
+				(function() {
+					var hbspt = window.hbspt = window.hbspt || {};
+					hbspt.forms = hbspt.forms || {};
+					hbspt._wpFormsQueue = [];
+					hbspt.enqueueForm = function(formDef) {
+						if (hbspt.forms && hbspt.forms.create) {
+							hbspt.forms.create(formDef);
+						} else {
+							hbspt._wpFormsQueue.push(formDef);
+						}
+					}
+					if (!window.hbspt.forms.create) {
+						Object.defineProperty(window.hbspt.forms, 'create', {
+							configurable: true,
+							get: function() {
+								return hbspt._wpCreateForm;
+							},
+							set: function(value) {
+								hbspt._wpCreateForm = value;
+								while (hbspt._wpFormsQueue.length) {
+									var formDef = hbspt._wpFormsQueue.shift();
+									if (!document.currentScript) {
+										var formScriptId = 'leadin-forms-v2-js';
+										hubspot.utils.currentScript = document.getElementById(formScriptId);
+									}
+									hbspt._wpCreateForm.call(hbspt.forms, formDef);
+								}
+							},
+						});
+					}
+				})();
+			</script>
+		
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var dataLayer_content = {"pagePostType":"post","pagePostType2":"single-post","pageCategory":["training-tutorials"]};
+	dataLayer.push( dataLayer_content );//]]>
+</script>
+<script data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NXGNZW');//]]>
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+        <script>
+        window.tdb_globals = {"wpRestNonce":"ba49a752df","wpRestUrl":"https:\/\/www.linux.com\/wp-json\/","permalinkStructure":"\/%category%\/%postname%\/","isAjax":false,"isAdminBarShowing":false,"autoloadScrollPercent":50,"postAutoloadStatus":"off","origPostEditUrl":null};
+    </script>
+    			<script>
+				window.tdwGlobal = {"adminUrl":"https:\/\/www.linux.com\/wp-admin\/","wpRestNonce":"ba49a752df","wpRestUrl":"https:\/\/www.linux.com\/wp-json\/","permalinkStructure":"\/%category%\/%postname%\/"};
+			</script>
+			    <script>
+        //         (function() {
+        //     fetch("https://raw.githubusercontent.com/akinuri/js-lib/master/EventListener.js")
+        //         .then(function (response) {
+        //             return response.text();
+        //         })
+        //         .then(function (text) {
+        //             eval(text);
+        //             window.EventListeners = EventListeners;
+        //         });
+        // })(window);
+
+        // ================================================== GLOBAL LISTENER CONTAINER
+        var EventListeners = {
+            listeners : [],
+            forEach : function loopEventListeners(callback) {
+                for (var i = 0; i < EventListeners.listeners.length; i++) {
+                    var listener = EventListeners.listeners[i];
+                    callback(listener, i);
+                }
+            },
+            get : function getEventListeners(selector) {
+                var result = [];
+                EventListeners.forEach(function (listener) {
+                    switch (typeof selector) {
+                        case "object":
+                            if (listener.target == selector) {
+                                result.push(listener);
+                            }
+                            break;
+                        case "string":
+                            if (listener.type == selector) {
+                                result.push(listener);
+                            }
+                            break;
+                    }
+                });
+                return result;
+            },
+            add : function logEventListener(listener) {
+                EventListeners.listeners.push(listener);
+            },
+            remove : function removeEventListener(victimListener) {
+                EventListeners.forEach(function (listener, index) {
+                    if (victimListener.target == listener.target && victimListener.type == listener.type && victimListener.callback == listener.callback) {
+                        EventListeners.listeners.splice(index, 1);
+                    }
+                });
+            },
+        };
+
+
+        // ================================================== EVENT LISTENER OBJECT
+        function EventListener() {
+            this.target         = null;
+            this.type           = null;
+            this.callback       = null;
+            this.options        = null;
+            this.useCapture     = null;
+            this.wantsUntrusted = null;
+            this.parseArgs.apply(this, Array.from(arguments));
+        }
+
+        EventListener.prototype.parseArgs = function parseArgs(target, type, callback) {
+            if (arguments.length < 3) {
+                return;
+            }
+            this.target   = target;
+            this.type     = type;
+            this.callback = callback;
+            switch (arguments.length) {
+                case 4:
+                    switch (typeof arguments[3]) {
+                        case "object":
+                            this.options = arguments[3];
+                            break;
+                        case "boolean":
+                            this.useCapture = arguments[3];
+                            break;
+                    }
+                    break;
+                case 5:
+                    if (typeof args[3] == "boolean") {
+                        this.useCapture = arguments[3];
+                        this.wantsUntrusted = arguments[4];
+                    }
+                    break;
+            }
+        };
+
+        EventListener.prototype.remove = function removeEventListener() {
+            if (this.options) {
+                this.target.removeEventListener(this.type, this.callback, this.options);
+                EventListeners.remove(this);
+            } else if (this.useCapture != null) {
+                if (this.wantsUntrusted != null) {
+                    this.target.removeEventListener(this.type, this.callback, this.useCapture, this.wantsUntrusted);
+                    EventListeners.remove(this);
+                } else {
+                    this.target.removeEventListener(this.type, this.callback, this.useCapture);
+                    EventListeners.remove(this);
+                }
+            } else {
+                this.target.removeEventListener(this.type, this.callback);
+                EventListeners.remove(this);
+            }
+        };
+
+        // ================================================== NATIVE API
+
+        // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+        EventTarget.prototype.addEventListener = function (addEventListener) {
+            //console.warn("EventTarget.prototype.addEventListener() has been modified.");
+            return function () {
+                var evtList = null;
+                switch (arguments.length) {
+                    // EventTarget.addEventListener(type, callback)
+                    case 2:
+                        evtList = new EventListener(this, arguments[0], arguments[1]);
+                        addEventListener.call(evtList.target, evtList.type, evtList.callback);
+                        //console.log(evtList.callback);
+                        EventListeners.add(evtList);
+                        return evtList;
+                    // EventTarget.addEventListener(type, callback, options)
+                    // EventTarget.addEventListener(type, callback, useCapture)
+                    case 3:
+                        evtList = new EventListener(this, arguments[0], arguments[1]);
+                        switch (typeof arguments[2]) {
+                            case "object":
+                                evtList.options = arguments[2];
+                                addEventListener.call(evtList.target, evtList.type, evtList.callback, evtList.options);
+                                EventListeners.add(evtList);
+                                return evtList;
+                            case "boolean":
+                                evtList.useCapture = arguments[2];
+                                addEventListener.call(evtList.target, evtList.type, evtList.callback, evtList.useCapture);
+                                EventListeners.add(evtList);
+                                return evtList;
+                        }
+                        break;
+                    // EventTarget.addEventListener(type, callback, useCapture, wantsUntrusted)
+                    case 4:
+                        evtList = new EventListener(this, arguments[0], arguments[1]);
+                        if (typeof arguments[2] == "boolean") {
+                            evtList.useCapture     = arguments[2];
+                            evtList.wantsUntrusted = arguments[3];
+                            addEventListener.call(evtList.target, evtList.type, evtList.callback, evtList.useCapture, evtList.wantsUntrusted);
+                            EventListeners.add(evtList);
+                            return evtList;
+                        }
+                        break;
+                }
+            }
+        }(EventTarget.prototype.addEventListener);
+
+        // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
+        EventTarget.prototype.removeEventListener = function (removeEventListener) {
+            //console.warn("EventTarget.prototype.removeEventListener() has been modified.");
+            return function () {
+                var evtList = null;
+                switch (arguments.length) {
+                    case 2:
+                        evtList = new EventListener(this, arguments[0], arguments[1]);
+                        removeEventListener.call(evtList.target, evtList.type, evtList.callback);
+                        EventListeners.remove(evtList);
+                        break;
+                    case 3:
+                        evtList = new EventListener(this, arguments[0], arguments[1]);
+                        switch (typeof arguments[2]) {
+                            case "object":
+                                evtList.options = arguments[2];
+                                removeEventListener.call(evtList.target, evtList.type, evtList.callback, evtList.options);
+                                EventListeners.remove(evtList);
+                                break;
+                            case "boolean":
+                                evtList.useCapture = arguments[2];
+                                removeEventListener.call(evtList.target, evtList.type, evtList.callback, evtList.useCapture);
+                                EventListeners.remove(evtList);
+                                break;
+                        }
+                        break;
+                }
+            }
+        }(EventTarget.prototype.removeEventListener);
+
+    </script>
+
+        <script>
+        window.tdaGlobal = {"adminUrl":"https:\/\/www.linux.com\/wp-admin\/","wpRestNonce":"ba49a752df","wpRestUrl":"https:\/\/www.linux.com\/wp-json\/","permalinkStructure":"\/%category%\/%postname%\/","postId":504775};
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/8112310.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+
+<link rel="preload" href="https://www.linux.com/wp-content/themes/Newspaper/images/icons/newspaper.woff" as="font" crossorigin="anonymous">
+<!-- JS generated by theme -->
+
+<script>
+    
+    
+
+	    var tdBlocksArray = []; //here we store all the items for the current page
+
+	    //td_block class - each ajax block uses a object of this class for requests
+	    function tdBlock() {
+		    this.id = '';
+		    this.block_type = 1; //block type id (1-234 etc)
+		    this.atts = '';
+		    this.td_column_number = '';
+		    this.td_current_page = 1; //
+		    this.post_count = 0; //from wp
+		    this.found_posts = 0; //from wp
+		    this.max_num_pages = 0; //from wp
+		    this.td_filter_value = ''; //current live filter value
+		    this.is_ajax_running = false;
+		    this.td_user_action = ''; // load more or infinite loader (used by the animation)
+		    this.header_color = '';
+		    this.ajax_pagination_infinite_stop = ''; //show load more at page x
+	    }
+
+
+        // td_js_generator - mini detector
+        (function(){
+            var htmlTag = document.getElementsByTagName("html")[0];
+
+	        if ( navigator.userAgent.indexOf("MSIE 10.0") > -1 ) {
+                htmlTag.className += ' ie10';
+            }
+
+            if ( !!navigator.userAgent.match(/Trident.*rv\:11\./) ) {
+                htmlTag.className += ' ie11';
+            }
+
+	        if ( navigator.userAgent.indexOf("Edge") > -1 ) {
+                htmlTag.className += ' ieEdge';
+            }
+
+            if ( /(iPad|iPhone|iPod)/g.test(navigator.userAgent) ) {
+                htmlTag.className += ' td-md-is-ios';
+            }
+
+            var user_agent = navigator.userAgent.toLowerCase();
+            if ( user_agent.indexOf("android") > -1 ) {
+                htmlTag.className += ' td-md-is-android';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Mac OS X')  ) {
+                htmlTag.className += ' td-md-is-os-x';
+            }
+
+            if ( /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()) ) {
+               htmlTag.className += ' td-md-is-chrome';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Firefox') ) {
+                htmlTag.className += ' td-md-is-firefox';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Safari') && -1 === navigator.userAgent.indexOf('Chrome') ) {
+                htmlTag.className += ' td-md-is-safari';
+            }
+
+            if( -1 !== navigator.userAgent.indexOf('IEMobile') ){
+                htmlTag.className += ' td-md-is-iemobile';
+            }
+
+        })();
+
+
+
+
+        var tdLocalCache = {};
+
+        ( function () {
+            "use strict";
+
+            tdLocalCache = {
+                data: {},
+                remove: function (resource_id) {
+                    delete tdLocalCache.data[resource_id];
+                },
+                exist: function (resource_id) {
+                    return tdLocalCache.data.hasOwnProperty(resource_id) && tdLocalCache.data[resource_id] !== null;
+                },
+                get: function (resource_id) {
+                    return tdLocalCache.data[resource_id];
+                },
+                set: function (resource_id, cachedData) {
+                    tdLocalCache.remove(resource_id);
+                    tdLocalCache.data[resource_id] = cachedData;
+                }
+            };
+        })();
+
+    
+    
+var td_viewport_interval_list=[{"limitBottom":767,"sidebarWidth":228},{"limitBottom":1018,"sidebarWidth":300},{"limitBottom":1140,"sidebarWidth":324}];
+var tdc_is_installed="yes";
+var td_ajax_url="https:\/\/www.linux.com\/wp-admin\/admin-ajax.php?td_theme_name=Newspaper&v=10.4";
+var td_get_template_directory_uri="https:\/\/www.linux.com\/wp-content\/plugins\/td-composer\/legacy\/common";
+var tds_snap_menu="";
+var tds_logo_on_sticky="";
+var tds_header_style="6";
+var td_please_wait="Please wait...";
+var td_email_user_pass_incorrect="User or password incorrect!";
+var td_email_user_incorrect="Email or username incorrect!";
+var td_email_incorrect="Email incorrect!";
+var tds_more_articles_on_post_enable="";
+var tds_more_articles_on_post_time_to_wait="";
+var tds_more_articles_on_post_pages_distance_from_top=0;
+var tds_theme_color_site_wide="#ff6c0e";
+var tds_smart_sidebar="";
+var tdThemeName="Newspaper";
+var td_magnific_popup_translation_tPrev="Previous (Left arrow key)";
+var td_magnific_popup_translation_tNext="Next (Right arrow key)";
+var td_magnific_popup_translation_tCounter="%curr% of %total%";
+var td_magnific_popup_translation_ajax_tError="The content from %url% could not be loaded.";
+var td_magnific_popup_translation_image_tError="The image #%curr% could not be loaded.";
+var tdBlockNonce="38b02031e9";
+var tdDateNamesI18n={"month_names":["January","February","March","April","May","June","July","August","September","October","November","December"],"month_names_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"day_names":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"day_names_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]};
+var td_ad_background_click_link="";
+var td_ad_background_click_target="";
+</script>
+
+
+<!-- Header style compiled by theme -->
+
+<style>
+    
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > li > a:hover,
+    .td-header-wrap .black-menu .sf-menu > .sfHover > a,
+    .sf-menu > .current-menu-item > a:after,
+    .sf-menu > .current-menu-ancestor > a:after,
+    .sf-menu > .current-category-ancestor > a:after,
+    .sf-menu > li:hover > a:after,
+    .sf-menu > .sfHover > a:after,
+    .header-search-wrap .td-drop-down-search:after,
+    .header-search-wrap .td-drop-down-search .btn:hover,
+    input[type=submit]:hover,
+    .td-read-more a,
+    .td-post-category:hover,
+    .td_top_authors .td-active .td-author-post-count,
+    .td_top_authors .td-active .td-author-comments-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-post-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-comments-count,
+    .td-404-sub-sub-title a:hover,
+    .td-search-form-widget .wpb_button:hover,
+    .td-rating-bar-wrap div,
+    .dropcap,
+    .td_wrapper_video_playlist .td_video_controls_playlist_wrapper,
+    .wpb_default,
+    .wpb_default:hover,
+    .td-left-smart-list:hover,
+    .td-right-smart-list:hover,
+    .woocommerce-checkout .woocommerce input.button:hover,
+    .woocommerce-page .woocommerce a.button:hover,
+    .woocommerce-account div.woocommerce .button:hover,
+    #bbpress-forums button:hover,
+    .bbp_widget_login .button:hover,
+    .td-footer-wrapper .td-post-category,
+    .td-footer-wrapper .widget_product_search input[type="submit"]:hover,
+    .woocommerce .product a.button:hover,
+    .woocommerce .product #respond input#submit:hover,
+    .woocommerce .checkout input#place_order:hover,
+    .woocommerce .woocommerce.widget .button:hover,
+    .single-product .product .summary .cart .button:hover,
+    .woocommerce-cart .woocommerce table.cart .button:hover,
+    .woocommerce-cart .woocommerce .shipping-calculator-form .button:hover,
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    #bbpress-forums .bbp-pagination .current,
+    #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
+    .td-theme-slider:hover .slide-meta-cat a,
+    a.vc_btn-black:hover,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .td-scroll-up,
+    .td-smart-list-button:hover,
+    .td-weather-information:before,
+    .td-weather-week:before,
+    .td_block_exchange .td-exchange-header:before,
+    .td-pulldown-syle-2 .td-subcat-dropdown ul:after,
+    .td_block_template_9 .td-block-title:after,
+    .td_block_template_15 .td-block-title:before,
+    div.wpforms-container .wpforms-form div.wpforms-submit-container button[type=submit] {
+        background-color: #ff6c0e;
+    }
+
+    .td_block_template_4 .td-related-title .td-cur-simple-item:before {
+        border-color: #ff6c0e transparent transparent transparent !important;
+    }
+
+    .woocommerce .woocommerce-message .button:hover,
+    .woocommerce .woocommerce-error .button:hover,
+    .woocommerce .woocommerce-info .button:hover {
+        background-color: #ff6c0e !important;
+    }
+    
+    
+    .td_block_template_4 .td-related-title .td-cur-simple-item,
+    .td_block_template_3 .td-related-title .td-cur-simple-item,
+    .td_block_template_9 .td-related-title:after {
+        background-color: #ff6c0e;
+    }
+
+    .woocommerce .product .onsale,
+    .woocommerce.widget .ui-slider .ui-slider-handle {
+        background: none #ff6c0e;
+    }
+
+    .woocommerce.widget.widget_layered_nav_filters ul li a {
+        background: none repeat scroll 0 0 #ff6c0e !important;
+    }
+
+    a,
+    cite a:hover,
+    .td-page-content blockquote p,
+    .td-post-content blockquote p,
+    .mce-content-body blockquote p,
+    .comment-content blockquote p,
+    .wpb_text_column blockquote p,
+    .td_block_text_with_title blockquote p,
+    .td_module_wrap:hover .entry-title a,
+    .td-subcat-filter .td-subcat-list a:hover,
+    .td-subcat-filter .td-subcat-dropdown a:hover,
+    .td_quote_on_blocks,
+    .dropcap2,
+    .dropcap3,
+    .td_top_authors .td-active .td-authors-name a,
+    .td_top_authors .td_mod_wrap:hover .td-authors-name a,
+    .td-post-next-prev-content a:hover,
+    .author-box-wrap .td-author-social a:hover,
+    .td-author-name a:hover,
+    .td-author-url a:hover,
+    .comment-reply-link:hover,
+    .logged-in-as a:hover,
+    #cancel-comment-reply-link:hover,
+    .td-search-query,
+    .widget a:hover,
+    .td_wp_recentcomments a:hover,
+    .archive .widget_archive .current,
+    .archive .widget_archive .current a,
+    .widget_calendar tfoot a:hover,
+    .woocommerce a.added_to_cart:hover,
+    .woocommerce-account .woocommerce-MyAccount-navigation a:hover,
+    #bbpress-forums li.bbp-header .bbp-reply-content span a:hover,
+    #bbpress-forums .bbp-forum-freshness a:hover,
+    #bbpress-forums .bbp-topic-freshness a:hover,
+    #bbpress-forums .bbp-forums-list li a:hover,
+    #bbpress-forums .bbp-forum-title:hover,
+    #bbpress-forums .bbp-topic-permalink:hover,
+    #bbpress-forums .bbp-topic-started-by a:hover,
+    #bbpress-forums .bbp-topic-started-in a:hover,
+    #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink,
+    .widget_display_replies .bbp-author-name,
+    .widget_display_topics .bbp-author-name,
+    .td-subfooter-menu li a:hover,
+    a.vc_btn-black:hover,
+    .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
+    .td-instagram-user a,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover i,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item,
+    .td_block_template_2 .td-related-title .td-cur-simple-item,
+    .td_block_template_5 .td-related-title .td-cur-simple-item,
+    .td_block_template_6 .td-related-title .td-cur-simple-item,
+    .td_block_template_7 .td-related-title .td-cur-simple-item,
+    .td_block_template_8 .td-related-title .td-cur-simple-item,
+    .td_block_template_9 .td-related-title .td-cur-simple-item,
+    .td_block_template_10 .td-related-title .td-cur-simple-item,
+    .td_block_template_11 .td-related-title .td-cur-simple-item,
+    .td_block_template_12 .td-related-title .td-cur-simple-item,
+    .td_block_template_13 .td-related-title .td-cur-simple-item,
+    .td_block_template_14 .td-related-title .td-cur-simple-item,
+    .td_block_template_15 .td-related-title .td-cur-simple-item,
+    .td_block_template_16 .td-related-title .td-cur-simple-item,
+    .td_block_template_17 .td-related-title .td-cur-simple-item,
+    .td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+    .td-theme-wrap .sf-menu ul .sfHover > a,
+    .td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-menu-item > a,
+    .td_outlined_btn,
+     .td_block_categories_tags .td-ct-item:hover {
+        color: #ff6c0e;
+    }
+
+    a.vc_btn-black.vc_btn_square_outlined:hover,
+    a.vc_btn-black.vc_btn_outlined:hover {
+        color: #ff6c0e !important;
+    }
+
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    #bbpress-forums .bbp-pagination .current,
+    .post .td_quote_box,
+    .page .td_quote_box,
+    a.vc_btn-black:hover,
+    .td_block_template_5 .td-block-title > *,
+    .td_outlined_btn {
+        border-color: #ff6c0e;
+    }
+
+    .td_wrapper_video_playlist .td_video_currently_playing:after {
+        border-color: #ff6c0e !important;
+    }
+
+    .header-search-wrap .td-drop-down-search:before {
+        border-color: transparent transparent #ff6c0e transparent;
+    }
+
+    .block-title > span,
+    .block-title > a,
+    .block-title > label,
+    .widgettitle,
+    .widgettitle:after,
+    .td-trending-now-title,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .wpb_tabs li.ui-tabs-active a,
+    .wpb_tabs li:hover a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab.vc_active > a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab:hover > a,
+    .td_block_template_1 .td-related-title .td-cur-simple-item,
+    .woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+    .td-subcat-filter .td-subcat-dropdown:hover .td-subcat-more, 
+    .td_3D_btn,
+    .td_shadow_btn,
+    .td_default_btn,
+    .td_round_btn, 
+    .td_outlined_btn:hover {
+    	background-color: #ff6c0e;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    	background-color: #ff6c0e !important;
+    }
+
+    .block-title,
+    .td_block_template_1 .td-related-title,
+    .wpb_tabs .wpb_tabs_nav,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container,
+    .woocommerce div.product .woocommerce-tabs ul.tabs:before {
+        border-color: #ff6c0e;
+    }
+    .td_block_wrap .td-subcat-item a.td-cur-simple-item {
+	    color: #ff6c0e;
+	}
+
+
+    
+    .td-grid-style-4 .entry-title
+    {
+        background-color: rgba(255, 108, 14, 0.7);
+    }
+
+
+    
+    @media (max-width: 767px) {
+        body .td-header-wrap .td-header-main-menu {
+            background-color: #ff6c0e !important;
+        }
+    }
+
+
+    
+    .td-menu-background:before,
+    .td-search-background:before {
+        background: #333333;
+        background: -moz-linear-gradient(top, #333333 0%, #333333 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, #333333), color-stop(100%, #333333));
+        background: -webkit-linear-gradient(top, #333333 0%, #333333 100%);
+        background: -o-linear-gradient(top, #333333 0%, #333333 100%);
+        background: -ms-linear-gradient(top, #333333 0%, #333333 100%);
+        background: linear-gradient(to bottom, #333333 0%, #333333 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#333333', GradientType=0 );
+    }
+
+    
+    .td-mobile-content .current-menu-item > a,
+    .td-mobile-content .current-menu-ancestor > a,
+    .td-mobile-content .current-category-ancestor > a,
+    #td-mobile-nav .td-menu-login-section a:hover,
+    #td-mobile-nav .td-register-section a:hover,
+    #td-mobile-nav .td-menu-socials-wrap a:hover i,
+    .td-search-close a:hover i {
+        color: #333333;
+    }
+
+    
+    .td-page-title,
+    .woocommerce-page .page-title,
+    .td-category-title-holder .td-page-title {
+    	text-transform:capitalize;
+	
+    }.td-header-style-12 .td-header-menu-wrap-full,
+    .td-header-style-12 .td-affix,
+    .td-grid-style-1.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td-grid-style-5.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td_category_template_3 .td-current-sub-category,
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+     .td_block_big_grid_9.td-grid-style-1 .td-post-category,
+    .td_block_big_grid_9.td-grid-style-5 .td-post-category,
+    .td-grid-style-6.td-hover-1 .td-module-thumb:after,
+     .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > li > a:hover,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .sfHover > a {
+        background-color: #ff6c0e;
+    }
+    
+    .td_mega_menu_sub_cats .cur-sub-cat,
+    .td-mega-span h3 a:hover,
+    .td_mod_mega_menu:hover .entry-title a,
+    .header-search-wrap .result-msg a:hover,
+    .td-header-top-menu .td-drop-down-search .td_module_wrap:hover .entry-title a,
+    .td-header-top-menu .td-icon-search:hover,
+    .td-header-wrap .result-msg a:hover,
+    .top-header-menu li a:hover,
+    .top-header-menu .current-menu-item > a,
+    .top-header-menu .current-menu-ancestor > a,
+    .top-header-menu .current-category-ancestor > a,
+    .td-social-icon-wrap > a:hover,
+    .td-header-sp-top-widget .td-social-icon-wrap a:hover,
+    .td_mod_related_posts:hover h3 > a,
+    .td-post-template-11 .td-related-title .td-related-left:hover,
+    .td-post-template-11 .td-related-title .td-related-right:hover,
+    .td-post-template-11 .td-related-title .td-cur-simple-item,
+    .td-post-template-11 .td_block_related_posts .td-next-prev-wrap a:hover,
+    .td-category-header .td-pulldown-category-filter-link:hover,
+    .td-category-siblings .td-subcat-dropdown a:hover,
+    .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
+    .footer-text-wrap .footer-email-wrap a,
+    .footer-social-wrap a:hover,
+    .td_module_17 .td-read-more a:hover,
+    .td_module_18 .td-read-more a:hover,
+    .td_module_19 .td-post-author-name a:hover,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .sfHover > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > li > a:hover {
+        color: #ff6c0e;
+    }
+    
+    .td-mega-menu-page .wpb_content_element ul li a:hover,
+    .td-theme-wrap .td-aj-search-results .td_module_wrap:hover .entry-title a,
+    .td-theme-wrap .header-search-wrap .result-msg a:hover {
+        color: #ff6c0e !important;
+    }
+    
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > li > a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .sfHover > a {
+        border-color: #ff6c0e;
+    }
+    
+    
+
+
+    
+    .td-header-wrap .td-header-top-menu-full,
+    .td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-1.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-1.td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-2.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-2.td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-3.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-3.td-header-wrap .top-header-menu .sub-menu {
+        background-color: #ff6c0e;
+    }
+    .td-header-style-8 .td-header-top-menu-full {
+        background-color: transparent;
+    }
+    .td-header-style-8 .td-header-top-menu-full .td-header-top-menu {
+        background-color: #ff6c0e;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+    .td-header-wrap .td-header-top-menu-full {
+        border-bottom: none;
+    }
+
+
+    
+    .td-header-top-menu,
+    .td-header-top-menu a,
+    .td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+    .td-header-wrap .td-header-top-menu-full a,
+    .td-header-style-8 .td-header-top-menu,
+    .td-header-style-8 .td-header-top-menu a,
+    .td-header-top-menu .td-drop-down-search .entry-title a {
+        color: #ffffff;
+    }
+
+    
+    .top-header-menu .current-menu-item > a,
+    .top-header-menu .current-menu-ancestor > a,
+    .top-header-menu .current-category-ancestor > a,
+    .top-header-menu li a:hover,
+    .td-header-sp-top-widget .td-icon-search:hover {
+        color: #ffffff;
+    }
+
+    
+    .td-header-wrap .td-header-sp-top-widget i.td-icon-font:hover {
+        color: #ffffff;
+    }
+
+
+    
+    .td-header-wrap .td-header-menu-wrap-full,
+    .td-header-menu-wrap.td-affix,
+    .td-header-style-3 .td-header-main-menu,
+    .td-header-style-3 .td-affix .td-header-main-menu,
+    .td-header-style-4 .td-header-main-menu,
+    .td-header-style-4 .td-affix .td-header-main-menu,
+    .td-header-style-8 .td-header-menu-wrap.td-affix,
+    .td-header-style-8 .td-header-top-menu-full {
+        background-color: #ff6c0e;
+    }
+    .td-boxed-layout .td-header-style-3 .td-header-menu-wrap,
+    .td-boxed-layout .td-header-style-4 .td-header-menu-wrap,
+    .td-header-style-3 .td_stretch_content .td-header-menu-wrap,
+    .td-header-style-4 .td_stretch_content .td-header-menu-wrap {
+    	background-color: #ff6c0e !important;
+    }
+    @media (min-width: 1019px) {
+        .td-header-style-1 .td-header-sp-recs,
+        .td-header-style-1 .td-header-sp-logo {
+            margin-bottom: 28px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1018px) {
+        .td-header-style-1 .td-header-sp-recs,
+        .td-header-style-1 .td-header-sp-logo {
+            margin-bottom: 14px;
+        }
+    }
+    .td-header-style-7 .td-header-top-menu {
+        border-bottom: none;
+    }
+
+    
+    .block-title > span,
+    .block-title > a,
+    .widgettitle,
+    .td-trending-now-title,
+    .wpb_tabs li a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab > a,
+    .td-theme-wrap .td-related-title a,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li a,
+    .woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+    .td-theme-wrap .td-block-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-theme-slider.iosSlider-col-1 .td-module-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-theme-slider.iosSlider-col-2 .td-module-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-theme-slider.iosSlider-col-3 .td-module-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .homepage-post .td-post-template-8 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+
+
+    
+    .td_module_1 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_2 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_3 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_4 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_5 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_6 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_mx1 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_mx2 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_mx3 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_mx4 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td-big-grid-post.td-big-thumb .td-big-grid-meta,
+    .td-big-thumb .td-big-grid-meta .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-big-grid-post.td-medium-thumb .td-big-grid-meta,
+    .td-medium-thumb .td-big-grid-meta .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-big-grid-post.td-small-thumb .td-big-grid-meta,
+    .td-small-thumb .td-big-grid-meta .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-big-grid-post.td-tiny-thumb .td-big-grid-meta,
+    .td-tiny-thumb .td-big-grid-meta .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    
+    
+    .td-post-template-default .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-template-1 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-template-2 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-template-3 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-template-4 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-content h2 {
+        text-transform:capitalize;
+	
+    }
+.td-header-wrap .black-menu .sf-menu > .current-menu-item > a,
+    .td-header-wrap .black-menu .sf-menu > .current-menu-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > .current-category-ancestor > a,
+    .td-header-wrap .black-menu .sf-menu > li > a:hover,
+    .td-header-wrap .black-menu .sf-menu > .sfHover > a,
+    .sf-menu > .current-menu-item > a:after,
+    .sf-menu > .current-menu-ancestor > a:after,
+    .sf-menu > .current-category-ancestor > a:after,
+    .sf-menu > li:hover > a:after,
+    .sf-menu > .sfHover > a:after,
+    .header-search-wrap .td-drop-down-search:after,
+    .header-search-wrap .td-drop-down-search .btn:hover,
+    input[type=submit]:hover,
+    .td-read-more a,
+    .td-post-category:hover,
+    .td_top_authors .td-active .td-author-post-count,
+    .td_top_authors .td-active .td-author-comments-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-post-count,
+    .td_top_authors .td_mod_wrap:hover .td-author-comments-count,
+    .td-404-sub-sub-title a:hover,
+    .td-search-form-widget .wpb_button:hover,
+    .td-rating-bar-wrap div,
+    .dropcap,
+    .td_wrapper_video_playlist .td_video_controls_playlist_wrapper,
+    .wpb_default,
+    .wpb_default:hover,
+    .td-left-smart-list:hover,
+    .td-right-smart-list:hover,
+    .woocommerce-checkout .woocommerce input.button:hover,
+    .woocommerce-page .woocommerce a.button:hover,
+    .woocommerce-account div.woocommerce .button:hover,
+    #bbpress-forums button:hover,
+    .bbp_widget_login .button:hover,
+    .td-footer-wrapper .td-post-category,
+    .td-footer-wrapper .widget_product_search input[type="submit"]:hover,
+    .woocommerce .product a.button:hover,
+    .woocommerce .product #respond input#submit:hover,
+    .woocommerce .checkout input#place_order:hover,
+    .woocommerce .woocommerce.widget .button:hover,
+    .single-product .product .summary .cart .button:hover,
+    .woocommerce-cart .woocommerce table.cart .button:hover,
+    .woocommerce-cart .woocommerce .shipping-calculator-form .button:hover,
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    #bbpress-forums .bbp-pagination .current,
+    #bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a,
+    .td-theme-slider:hover .slide-meta-cat a,
+    a.vc_btn-black:hover,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .td-scroll-up,
+    .td-smart-list-button:hover,
+    .td-weather-information:before,
+    .td-weather-week:before,
+    .td_block_exchange .td-exchange-header:before,
+    .td-pulldown-syle-2 .td-subcat-dropdown ul:after,
+    .td_block_template_9 .td-block-title:after,
+    .td_block_template_15 .td-block-title:before,
+    div.wpforms-container .wpforms-form div.wpforms-submit-container button[type=submit] {
+        background-color: #ff6c0e;
+    }
+
+    .td_block_template_4 .td-related-title .td-cur-simple-item:before {
+        border-color: #ff6c0e transparent transparent transparent !important;
+    }
+
+    .woocommerce .woocommerce-message .button:hover,
+    .woocommerce .woocommerce-error .button:hover,
+    .woocommerce .woocommerce-info .button:hover {
+        background-color: #ff6c0e !important;
+    }
+    
+    
+    .td_block_template_4 .td-related-title .td-cur-simple-item,
+    .td_block_template_3 .td-related-title .td-cur-simple-item,
+    .td_block_template_9 .td-related-title:after {
+        background-color: #ff6c0e;
+    }
+
+    .woocommerce .product .onsale,
+    .woocommerce.widget .ui-slider .ui-slider-handle {
+        background: none #ff6c0e;
+    }
+
+    .woocommerce.widget.widget_layered_nav_filters ul li a {
+        background: none repeat scroll 0 0 #ff6c0e !important;
+    }
+
+    a,
+    cite a:hover,
+    .td-page-content blockquote p,
+    .td-post-content blockquote p,
+    .mce-content-body blockquote p,
+    .comment-content blockquote p,
+    .wpb_text_column blockquote p,
+    .td_block_text_with_title blockquote p,
+    .td_module_wrap:hover .entry-title a,
+    .td-subcat-filter .td-subcat-list a:hover,
+    .td-subcat-filter .td-subcat-dropdown a:hover,
+    .td_quote_on_blocks,
+    .dropcap2,
+    .dropcap3,
+    .td_top_authors .td-active .td-authors-name a,
+    .td_top_authors .td_mod_wrap:hover .td-authors-name a,
+    .td-post-next-prev-content a:hover,
+    .author-box-wrap .td-author-social a:hover,
+    .td-author-name a:hover,
+    .td-author-url a:hover,
+    .comment-reply-link:hover,
+    .logged-in-as a:hover,
+    #cancel-comment-reply-link:hover,
+    .td-search-query,
+    .widget a:hover,
+    .td_wp_recentcomments a:hover,
+    .archive .widget_archive .current,
+    .archive .widget_archive .current a,
+    .widget_calendar tfoot a:hover,
+    .woocommerce a.added_to_cart:hover,
+    .woocommerce-account .woocommerce-MyAccount-navigation a:hover,
+    #bbpress-forums li.bbp-header .bbp-reply-content span a:hover,
+    #bbpress-forums .bbp-forum-freshness a:hover,
+    #bbpress-forums .bbp-topic-freshness a:hover,
+    #bbpress-forums .bbp-forums-list li a:hover,
+    #bbpress-forums .bbp-forum-title:hover,
+    #bbpress-forums .bbp-topic-permalink:hover,
+    #bbpress-forums .bbp-topic-started-by a:hover,
+    #bbpress-forums .bbp-topic-started-in a:hover,
+    #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink,
+    .widget_display_replies .bbp-author-name,
+    .widget_display_topics .bbp-author-name,
+    .td-subfooter-menu li a:hover,
+    a.vc_btn-black:hover,
+    .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
+    .td-instagram-user a,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover i,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover,
+    .td-block-title-wrap .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item,
+    .td_block_template_2 .td-related-title .td-cur-simple-item,
+    .td_block_template_5 .td-related-title .td-cur-simple-item,
+    .td_block_template_6 .td-related-title .td-cur-simple-item,
+    .td_block_template_7 .td-related-title .td-cur-simple-item,
+    .td_block_template_8 .td-related-title .td-cur-simple-item,
+    .td_block_template_9 .td-related-title .td-cur-simple-item,
+    .td_block_template_10 .td-related-title .td-cur-simple-item,
+    .td_block_template_11 .td-related-title .td-cur-simple-item,
+    .td_block_template_12 .td-related-title .td-cur-simple-item,
+    .td_block_template_13 .td-related-title .td-cur-simple-item,
+    .td_block_template_14 .td-related-title .td-cur-simple-item,
+    .td_block_template_15 .td-related-title .td-cur-simple-item,
+    .td_block_template_16 .td-related-title .td-cur-simple-item,
+    .td_block_template_17 .td-related-title .td-cur-simple-item,
+    .td-theme-wrap .sf-menu ul .td-menu-item > a:hover,
+    .td-theme-wrap .sf-menu ul .sfHover > a,
+    .td-theme-wrap .sf-menu ul .current-menu-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-category-ancestor > a,
+    .td-theme-wrap .sf-menu ul .current-menu-item > a,
+    .td_outlined_btn,
+     .td_block_categories_tags .td-ct-item:hover {
+        color: #ff6c0e;
+    }
+
+    a.vc_btn-black.vc_btn_square_outlined:hover,
+    a.vc_btn-black.vc_btn_outlined:hover {
+        color: #ff6c0e !important;
+    }
+
+    .td-next-prev-wrap a:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-small-box a:hover,
+    .page-nav .current,
+    .page-nav:first-child > div,
+    #bbpress-forums .bbp-pagination .current,
+    .post .td_quote_box,
+    .page .td_quote_box,
+    a.vc_btn-black:hover,
+    .td_block_template_5 .td-block-title > *,
+    .td_outlined_btn {
+        border-color: #ff6c0e;
+    }
+
+    .td_wrapper_video_playlist .td_video_currently_playing:after {
+        border-color: #ff6c0e !important;
+    }
+
+    .header-search-wrap .td-drop-down-search:before {
+        border-color: transparent transparent #ff6c0e transparent;
+    }
+
+    .block-title > span,
+    .block-title > a,
+    .block-title > label,
+    .widgettitle,
+    .widgettitle:after,
+    .td-trending-now-title,
+    .td-trending-now-wrapper:hover .td-trending-now-title,
+    .wpb_tabs li.ui-tabs-active a,
+    .wpb_tabs li:hover a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab.vc_active > a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab:hover > a,
+    .td_block_template_1 .td-related-title .td-cur-simple-item,
+    .woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+    .td-subcat-filter .td-subcat-dropdown:hover .td-subcat-more, 
+    .td_3D_btn,
+    .td_shadow_btn,
+    .td_default_btn,
+    .td_round_btn, 
+    .td_outlined_btn:hover {
+    	background-color: #ff6c0e;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    	background-color: #ff6c0e !important;
+    }
+
+    .block-title,
+    .td_block_template_1 .td-related-title,
+    .wpb_tabs .wpb_tabs_nav,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container,
+    .woocommerce div.product .woocommerce-tabs ul.tabs:before {
+        border-color: #ff6c0e;
+    }
+    .td_block_wrap .td-subcat-item a.td-cur-simple-item {
+	    color: #ff6c0e;
+	}
+
+
+    
+    .td-grid-style-4 .entry-title
+    {
+        background-color: rgba(255, 108, 14, 0.7);
+    }
+
+
+    
+    @media (max-width: 767px) {
+        body .td-header-wrap .td-header-main-menu {
+            background-color: #ff6c0e !important;
+        }
+    }
+
+
+    
+    .td-menu-background:before,
+    .td-search-background:before {
+        background: #333333;
+        background: -moz-linear-gradient(top, #333333 0%, #333333 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, #333333), color-stop(100%, #333333));
+        background: -webkit-linear-gradient(top, #333333 0%, #333333 100%);
+        background: -o-linear-gradient(top, #333333 0%, #333333 100%);
+        background: -ms-linear-gradient(top, #333333 0%, #333333 100%);
+        background: linear-gradient(to bottom, #333333 0%, #333333 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#333333', GradientType=0 );
+    }
+
+    
+    .td-mobile-content .current-menu-item > a,
+    .td-mobile-content .current-menu-ancestor > a,
+    .td-mobile-content .current-category-ancestor > a,
+    #td-mobile-nav .td-menu-login-section a:hover,
+    #td-mobile-nav .td-register-section a:hover,
+    #td-mobile-nav .td-menu-socials-wrap a:hover i,
+    .td-search-close a:hover i {
+        color: #333333;
+    }
+
+    
+    .td-page-title,
+    .woocommerce-page .page-title,
+    .td-category-title-holder .td-page-title {
+    	text-transform:capitalize;
+	
+    }.td-header-style-12 .td-header-menu-wrap-full,
+    .td-header-style-12 .td-affix,
+    .td-grid-style-1.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td-grid-style-5.td-hover-1 .td-big-grid-post:hover .td-post-category,
+    .td_category_template_3 .td-current-sub-category,
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+     .td_block_big_grid_9.td-grid-style-1 .td-post-category,
+    .td_block_big_grid_9.td-grid-style-5 .td-post-category,
+    .td-grid-style-6.td-hover-1 .td-module-thumb:after,
+     .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > li > a:hover,
+    .tdm-menu-active-style5 .td-header-menu-wrap .sf-menu > .sfHover > a {
+        background-color: #ff6c0e;
+    }
+    
+    .td_mega_menu_sub_cats .cur-sub-cat,
+    .td-mega-span h3 a:hover,
+    .td_mod_mega_menu:hover .entry-title a,
+    .header-search-wrap .result-msg a:hover,
+    .td-header-top-menu .td-drop-down-search .td_module_wrap:hover .entry-title a,
+    .td-header-top-menu .td-icon-search:hover,
+    .td-header-wrap .result-msg a:hover,
+    .top-header-menu li a:hover,
+    .top-header-menu .current-menu-item > a,
+    .top-header-menu .current-menu-ancestor > a,
+    .top-header-menu .current-category-ancestor > a,
+    .td-social-icon-wrap > a:hover,
+    .td-header-sp-top-widget .td-social-icon-wrap a:hover,
+    .td_mod_related_posts:hover h3 > a,
+    .td-post-template-11 .td-related-title .td-related-left:hover,
+    .td-post-template-11 .td-related-title .td-related-right:hover,
+    .td-post-template-11 .td-related-title .td-cur-simple-item,
+    .td-post-template-11 .td_block_related_posts .td-next-prev-wrap a:hover,
+    .td-category-header .td-pulldown-category-filter-link:hover,
+    .td-category-siblings .td-subcat-dropdown a:hover,
+    .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
+    .footer-text-wrap .footer-email-wrap a,
+    .footer-social-wrap a:hover,
+    .td_module_17 .td-read-more a:hover,
+    .td_module_18 .td-read-more a:hover,
+    .td_module_19 .td-post-author-name a:hover,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-2 .td-subcat-dropdown:hover .td-subcat-more i,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more span,
+    .td-pulldown-syle-3 .td-subcat-dropdown:hover .td-subcat-more i,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > .sfHover > a,
+    .tdm-menu-active-style3 .tdm-header.td-header-wrap .sf-menu > li > a:hover {
+        color: #ff6c0e;
+    }
+    
+    .td-mega-menu-page .wpb_content_element ul li a:hover,
+    .td-theme-wrap .td-aj-search-results .td_module_wrap:hover .entry-title a,
+    .td-theme-wrap .header-search-wrap .result-msg a:hover {
+        color: #ff6c0e !important;
+    }
+    
+    .td_category_template_8 .td-category-header .td-category a.td-current-sub-category,
+    .td_category_template_4 .td-category-siblings .td-category a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-item > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-menu-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .current-category-ancestor > a,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > li > a:hover,
+    .tdm-menu-active-style4 .tdm-header .sf-menu > .sfHover > a {
+        border-color: #ff6c0e;
+    }
+    
+    
+
+
+    
+    .td-header-wrap .td-header-top-menu-full,
+    .td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-1.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-1.td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-2.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-2.td-header-wrap .top-header-menu .sub-menu,
+    .tdm-header-style-3.td-header-wrap .td-header-top-menu-full,
+    .tdm-header-style-3.td-header-wrap .top-header-menu .sub-menu {
+        background-color: #ff6c0e;
+    }
+    .td-header-style-8 .td-header-top-menu-full {
+        background-color: transparent;
+    }
+    .td-header-style-8 .td-header-top-menu-full .td-header-top-menu {
+        background-color: #ff6c0e;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+    .td-header-wrap .td-header-top-menu-full {
+        border-bottom: none;
+    }
+
+
+    
+    .td-header-top-menu,
+    .td-header-top-menu a,
+    .td-header-wrap .td-header-top-menu-full .td-header-top-menu,
+    .td-header-wrap .td-header-top-menu-full a,
+    .td-header-style-8 .td-header-top-menu,
+    .td-header-style-8 .td-header-top-menu a,
+    .td-header-top-menu .td-drop-down-search .entry-title a {
+        color: #ffffff;
+    }
+
+    
+    .top-header-menu .current-menu-item > a,
+    .top-header-menu .current-menu-ancestor > a,
+    .top-header-menu .current-category-ancestor > a,
+    .top-header-menu li a:hover,
+    .td-header-sp-top-widget .td-icon-search:hover {
+        color: #ffffff;
+    }
+
+    
+    .td-header-wrap .td-header-sp-top-widget i.td-icon-font:hover {
+        color: #ffffff;
+    }
+
+
+    
+    .td-header-wrap .td-header-menu-wrap-full,
+    .td-header-menu-wrap.td-affix,
+    .td-header-style-3 .td-header-main-menu,
+    .td-header-style-3 .td-affix .td-header-main-menu,
+    .td-header-style-4 .td-header-main-menu,
+    .td-header-style-4 .td-affix .td-header-main-menu,
+    .td-header-style-8 .td-header-menu-wrap.td-affix,
+    .td-header-style-8 .td-header-top-menu-full {
+        background-color: #ff6c0e;
+    }
+    .td-boxed-layout .td-header-style-3 .td-header-menu-wrap,
+    .td-boxed-layout .td-header-style-4 .td-header-menu-wrap,
+    .td-header-style-3 .td_stretch_content .td-header-menu-wrap,
+    .td-header-style-4 .td_stretch_content .td-header-menu-wrap {
+    	background-color: #ff6c0e !important;
+    }
+    @media (min-width: 1019px) {
+        .td-header-style-1 .td-header-sp-recs,
+        .td-header-style-1 .td-header-sp-logo {
+            margin-bottom: 28px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1018px) {
+        .td-header-style-1 .td-header-sp-recs,
+        .td-header-style-1 .td-header-sp-logo {
+            margin-bottom: 14px;
+        }
+    }
+    .td-header-style-7 .td-header-top-menu {
+        border-bottom: none;
+    }
+
+    
+    .block-title > span,
+    .block-title > a,
+    .widgettitle,
+    .td-trending-now-title,
+    .wpb_tabs li a,
+    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab > a,
+    .td-theme-wrap .td-related-title a,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li a,
+    .woocommerce .product .products h2:not(.woocommerce-loop-product__title),
+    .td-theme-wrap .td-block-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-theme-slider.iosSlider-col-1 .td-module-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-theme-slider.iosSlider-col-2 .td-module-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-theme-slider.iosSlider-col-3 .td-module-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .homepage-post .td-post-template-8 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+
+
+    
+    .td_module_1 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_2 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_3 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_4 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_5 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_6 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_mx1 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_mx2 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_mx3 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td_module_mx4 .td-module-title {
+    	text-transform:capitalize;
+	
+    }
+    
+    .td-big-grid-post.td-big-thumb .td-big-grid-meta,
+    .td-big-thumb .td-big-grid-meta .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-big-grid-post.td-medium-thumb .td-big-grid-meta,
+    .td-medium-thumb .td-big-grid-meta .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-big-grid-post.td-small-thumb .td-big-grid-meta,
+    .td-small-thumb .td-big-grid-meta .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-big-grid-post.td-tiny-thumb .td-big-grid-meta,
+    .td-tiny-thumb .td-big-grid-meta .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    
+    
+    .td-post-template-default .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-template-1 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-template-2 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-template-3 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-template-4 .td-post-header .entry-title {
+        text-transform:capitalize;
+	
+    }
+    
+    .td-post-content h2 {
+        text-transform:capitalize;
+	
+    }
+</style>
+
+
+
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "WebSite",
+                    "@id": "https://www.linux.com/",
+                    "name": "Home"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                    "item": {
+                    "@type": "WebPage",
+                    "@id": "https://www.linux.com/training-tutorials/",
+                    "name": "Training and Tutorials"
+                }
+            }
+            ,{
+                "@type": "ListItem",
+                "position": 3,
+                    "item": {
+                    "@type": "WebPage",
+                    "@id": "https://www.linux.com/training-tutorials/understanding-linux-file-permissions/",
+                    "name": "Understanding Linux File Permissions"                                
+                }
+            }    
+        ]
+    }
+</script>
+
+<!-- Button style compiled by theme -->
+
+<style>
+    .tdm_block_column_content:hover .tdm-col-content-title-url .tdm-title,
+                .tds-button2 .tdm-btn-text,
+                .tds-button2 i,
+                .tds-button5:hover .tdm-btn-text,
+                .tds-button5:hover i,
+                .tds-button6 .tdm-btn-text,
+                .tds-button6 i,
+                .tdm_block_list .tdm-list-item i,
+                .tdm_block_pricing .tdm-pricing-feature i,
+                body .tdm-social-item i {
+                    color: #ff6c0e;
+                }
+                .tds-button1,
+                .tds-button6:after,
+                .tds-title2 .tdm-title-line:after,
+                .tds-title3 .tdm-title-line:after,
+                .tdm_block_pricing.tdm-pricing-featured:before,
+                .tdm_block_pricing.tds_pricing2_block.tdm-pricing-featured .tdm-pricing-header,
+                .tds-progress-bar1 .tdm-progress-bar:after,
+                .tds-progress-bar2 .tdm-progress-bar:after,
+                .tds-social3 .tdm-social-item {
+                    background-color: #ff6c0e;
+                }
+                .tds-button2:before,
+                .tds-button6:before,
+                .tds-progress-bar3 .tdm-progress-bar:after {
+                  border-color: #ff6c0e;
+                }
+                .tdm-btn-style1 {
+					background-color: #ff6c0e;
+				}
+				.tdm-btn-style2:before {
+				    border-color: #ff6c0e;
+				}
+				.tdm-btn-style2 {
+				    color: #ff6c0e;
+				}
+				.tdm-btn-style3 {
+				    -webkit-box-shadow: 0 2px 16px #ff6c0e;
+                    -moz-box-shadow: 0 2px 16px #ff6c0e;
+                    box-shadow: 0 2px 16px #ff6c0e;
+				}
+				.tdm-btn-style3:hover {
+				    -webkit-box-shadow: 0 4px 26px #ff6c0e;
+                    -moz-box-shadow: 0 4px 26px #ff6c0e;
+                    box-shadow: 0 4px 26px #ff6c0e;
+				}
+</style>
+
+	<style id="tdw-css-placeholder"></style></head>
+
+<body class="post-template-default single single-post postid-504775 single-format-standard td-standard-pack understanding-linux-file-permissions global-block-template-4 single_template_5 td-full-layout" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+
+        <div class="td-scroll-up" style="display:none;"><i class="td-icon-menu-up"></i></div>
+
+    <div class="td-menu-background"></div>
+<div id="td-mobile-nav">
+    <div class="td-mobile-container">
+        <!-- mobile menu top section -->
+        <div class="td-menu-socials-wrap">
+            <!-- socials -->
+            <div class="td-menu-socials">
+                            </div>
+            <!-- close button -->
+            <div class="td-mobile-close">
+                <a href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#" aria-label="Close"><i class="td-icon-close-mobile"></i></a>
+            </div>
+        </div>
+
+        <!-- login section -->
+        
+        <!-- menu section -->
+        <div class="td-mobile-content">
+            <div class="menu-primary-menu-container"><ul id="menu-primary-menu" class="td-mobile-main-menu"><li id="menu-item-579695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-first menu-item-579695"><a href="https://linux.com/">Topic<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-577204" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577204"><a href="https://www.linux.com/topic/ai-ml/">AI/ML</a></li>
+	<li id="menu-item-577207" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577207"><a href="https://www.linux.com/topic/cloud/">Cloud</a></li>
+	<li id="menu-item-577208" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577208"><a href="https://www.linux.com/topic/desktop/">Desktop</a></li>
+	<li id="menu-item-577211" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577211"><a href="https://www.linux.com/topic/embedded-iot/">Embedded/IoT</a></li>
+	<li id="menu-item-577212" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577212"><a href="https://www.linux.com/topic/governance/">Governance</a></li>
+	<li id="menu-item-577213" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577213"><a href="https://www.linux.com/topic/hardware/">Hardware</a></li>
+	<li id="menu-item-577215" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577215"><a href="https://www.linux.com/topic/linux/">Linux</a></li>
+	<li id="menu-item-577216" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577216"><a href="https://www.linux.com/topic/networking/">Networking</a></li>
+	<li id="menu-item-577217" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577217"><a href="https://www.linux.com/topic/open-source/">Open Source</a></li>
+	<li id="menu-item-577219" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577219"><a href="https://www.linux.com/topic/security/">Security</a></li>
+	<li id="menu-item-577221" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577221"><a href="https://www.linux.com/topic/system-administration/">System Administration</a></li>
+</ul>
+</li>
+<li id="menu-item-577276" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-577276"><a href="https://linux.com/">Audience<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-577235" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577235"><a href="https://www.linux.com/audience/developers/">Developers</a></li>
+	<li id="menu-item-577236" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577236"><a href="https://www.linux.com/audience/devops/">DevOps</a></li>
+	<li id="menu-item-577237" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-577237"><a href="https://www.linux.com/audience/enterprise/">Enterprise</a></li>
+	<li id="menu-item-579694" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-579694"><a href="https://www.linux.com/audience/enthusiast/">Enthusiast</a></li>
+</ul>
+</li>
+<li id="menu-item-577257" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-577257"><a href="https://linux.com/">Resources<i class="td-icon-menu-right td-element-after"></i></a>
+<ul class="sub-menu">
+	<li id="menu-item-577289" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577289"><a href="https://www.linux.com/tutorials">Tutorials</a></li>
+	<li id="menu-item-577260" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577260"><a target="_blank" href="https://training.linuxfoundation.org/">Training</a></li>
+	<li id="menu-item-577261" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577261"><a target="_blank" href="https://training.linuxfoundation.org/full-catalog/?_sft_product_type=certification">Certification</a></li>
+	<li id="menu-item-577259" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577259"><a target="_blank" href="https://events.linuxfoundation.org/">Events</a></li>
+	<li id="menu-item-577256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-577256"><a target="_blank" href="https://forum.linuxfoundation.org/">Forums</a></li>
+	<li id="menu-item-577274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577274"><a href="https://www.linux.com/qa/">Q&#038;A</a></li>
+	<li id="menu-item-577268" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577268"><a href="https://www.linux.com/what-is-linux/">What is Linux?</a></li>
+</ul>
+</li>
+<li id="menu-item-577025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577025"><a href="https://www.linux.com/about/">About Us</a></li>
+</ul></div>        </div>
+    </div>
+
+    <!-- register/login section -->
+    </div>    <div class="td-search-background"></div>
+<div class="td-search-wrap-mob">
+	<div class="td-drop-down-search">
+		<form method="get" class="td-search-form" action="https://www.linux.com/">
+			<!-- close button -->
+			<div class="td-search-close">
+				<a href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#"><i class="td-icon-close-mobile"></i></a>
+			</div>
+			<div role="search" class="td-search-input">
+				<span>Search</span>
+				<input id="td-header-search-mob" type="text" value="" name="s" autocomplete="off" />
+			</div>
+		</form>
+		<div id="td-aj-search-mob" class="td-ajax-search-flex"></div>
+	</div>
+</div>
+
+    <div id="td-outer-wrap" class="td-theme-wrap">
+    
+        
+            <div class="tdc-header-wrap ">
+
+            <!--
+Header style 6
+-->
+
+
+<div class="td-header-wrap td-header-style-6 ">
+    
+    <div class="td-header-top-menu-full td-container-wrap ">
+        <div class="td-container td-header-row td-header-top-menu">
+            <!-- LOGIN MODAL -->
+
+                <div  id="login-form" class="white-popup-block mfp-hide mfp-with-anim">
+                    <div class="td-login-wrap">
+                        <a href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#" aria-label="Back" class="td-back-button"><i class="td-icon-modal-back"></i></a>
+                        <div id="td-login-div" class="td-login-form-div td-display-block">
+                            <div class="td-login-panel-title">Sign in</div>
+                            <div class="td-login-panel-descr">Welcome! Log into your account</div>
+                            <div class="td_display_err"></div>
+                            <form action="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#" method="post">
+                            <div class="td-login-inputs"><input class="td-login-input" autocomplete="username" type="text" name="login_email" id="login_email" value="" required><label for="login_email">your username</label></div>
+	                        <div class="td-login-inputs"><input class="td-login-input" autocomplete="current-password" type="password" name="login_pass" id="login_pass" value="" required><label for="login_pass">your password</label></div>
+                            <input type="button" name="login_button" id="login_button" class="wpb_button btn td-login-button" value="Login">
+                            </form>
+                            <div class="td-login-info-text"><a href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#" id="forgot-pass-link">Forgot your password? Get help</a></div>
+                            
+                            
+                            
+                            
+                        </div>
+
+                        
+
+                         <div id="td-forgot-pass-div" class="td-login-form-div td-display-none">
+                            <div class="td-login-panel-title">Password recovery</div>
+                            <div class="td-login-panel-descr">Recover your password</div>
+                            <div class="td_display_err"></div>
+                            <div class="td-login-inputs"><input class="td-login-input" type="text" name="forgot_email" id="forgot_email" value="" required><label for="forgot_email">your email</label></div>
+                            <input type="button" name="forgot_button" id="forgot_button" class="wpb_button btn td-login-button" value="Send My Password">
+                            <div class="td-login-info-text">A password will be e-mailed to you.</div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                        </div>
+    </div>
+
+    <div class="td-header-menu-wrap-full td-container-wrap ">
+        
+        <div class="td-header-menu-wrap ">
+            <div class="td-container td-header-row td-header-main-menu black-menu">
+                
+    <div class="header-search-wrap">
+        <div class="td-search-btns-wrap">
+            <a id="td-header-search-button" href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+            <a id="td-header-search-button-mob" href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+        </div>
+
+        <div class="td-drop-down-search" aria-labelledby="td-header-search-button">
+            <form method="get" class="td-search-form" action="https://www.linux.com/">
+                <div role="search" class="td-head-form-search-wrap">
+                    <input id="td-header-search" type="text" value="" name="s" autocomplete="off" /><input class="wpb_button wpb_btn-inverse btn" type="submit" id="td-header-search-top" value="Search" />
+                </div>
+            </form>
+            <div id="td-aj-search"></div>
+        </div>
+    </div>
+
+<div id="td-header-menu" role="navigation">
+    <div id="td-top-mobile-toggle"><a href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#"><i class="td-icon-font td-icon-mobile"></i></a></div>
+    <div class="td-main-menu-logo td-logo-in-menu">
+                    <a class="td-main-logo" href="https://www.linux.com/">
+                <img src="https://www.linux.com/wp-content/uploads/2019/08/ldc-white-272.png" alt="Linux.com" title="Linux.com" width="272" height="90"/>
+                <span class="td-visual-hidden">Linux.com</span>
+            </a>
+            </div>
+    <div class="menu-primary-menu-container"><ul id="menu-primary-menu-1" class="sf-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-first td-menu-item td-normal-menu menu-item-579695"><a href="https://linux.com/">Topic</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577204"><a href="https://www.linux.com/topic/ai-ml/">AI/ML</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577207"><a href="https://www.linux.com/topic/cloud/">Cloud</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577208"><a href="https://www.linux.com/topic/desktop/">Desktop</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577211"><a href="https://www.linux.com/topic/embedded-iot/">Embedded/IoT</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577212"><a href="https://www.linux.com/topic/governance/">Governance</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577213"><a href="https://www.linux.com/topic/hardware/">Hardware</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577215"><a href="https://www.linux.com/topic/linux/">Linux</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577216"><a href="https://www.linux.com/topic/networking/">Networking</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577217"><a href="https://www.linux.com/topic/open-source/">Open Source</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577219"><a href="https://www.linux.com/topic/security/">Security</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577221"><a href="https://www.linux.com/topic/system-administration/">System Administration</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-577276"><a href="https://linux.com/">Audience</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577235"><a href="https://www.linux.com/audience/developers/">Developers</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577236"><a href="https://www.linux.com/audience/devops/">DevOps</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-577237"><a href="https://www.linux.com/audience/enterprise/">Enterprise</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-579694"><a href="https://www.linux.com/audience/enthusiast/">Enthusiast</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-577257"><a href="https://linux.com/">Resources</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577289"><a href="https://www.linux.com/tutorials">Tutorials</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577260"><a target="_blank" href="https://training.linuxfoundation.org/">Training</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577261"><a target="_blank" href="https://training.linuxfoundation.org/full-catalog/?_sft_product_type=certification">Certification</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577259"><a target="_blank" href="https://events.linuxfoundation.org/">Events</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-577256"><a target="_blank" href="https://forum.linuxfoundation.org/">Forums</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-577274"><a href="https://www.linux.com/qa/">Q&#038;A</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-577268"><a href="https://www.linux.com/what-is-linux/">What is Linux?</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page td-menu-item td-normal-menu menu-item-577025"><a href="https://www.linux.com/about/">About Us</a></li>
+</ul></div></div>            </div>
+        </div>
+    </div>
+
+    
+</div>
+            </div>
+
+            
+<div class="td-main-content-wrap td-container-wrap">
+
+    <div class="td-container td-post-template-5 ">
+        <div class="td-crumb-container"><div class="entry-crumbs"><span><a title="" class="entry-crumb" href="https://www.linux.com/">Home</a></span> <i class="td-icon-right td-bread-sep"></i> <span><a title="View all posts in Training and Tutorials" class="entry-crumb" href="https://www.linux.com/training-tutorials/">Training and Tutorials</a></span> <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i> <span class="td-bred-no-url-last">Understanding Linux File Permissions</span></div></div>
+            <div class="td-pb-row">
+                                        <div class="td-pb-span12 td-main-content" role="main">
+                            <div class="td-ss-main-content">
+                                
+    <article id="post-504775" class="post-504775 post type-post status-publish format-standard category-training-tutorials author-mfillpot type-tutorial" itemscope itemtype="https://schema.org/Article">
+        <div class="td-post-header">
+
+            <ul class="td-category"><li class="entry-category"><a  href="https://www.linux.com/training-tutorials/">Training and Tutorials</a></li></ul>
+            <header class="td-post-title">
+                <h1 class="entry-title">Understanding Linux File Permissions</h1>
+
+                
+
+                <div class="td-module-meta-info">
+                    <div class="td-post-author-name"><div class="td-author-by">By</div> <a href="https://www.linux.com/author/mfillpot/">mfillpot</a><div class="td-author-line"> - </div> </div>                    <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2010-05-18T01:00:00-07:00" >May 18, 2010</time></span>                                        <div class="td-post-views"><i class="td-icon-views"></i><span class="td-nr-views-504775">275995</span></div>                </div>
+
+            </header>
+
+        </div>
+
+        <div class="td-post-sharing-top"><div id="td_social_sharing_article_top" class="td-post-sharing td-ps-border td-ps-border-grey td-ps-notext td-ps-icon-color td-ps-text-color td-post-sharing-style16 ">
+		<style>
+            .td-post-sharing-classic {
+                position: relative;
+                height: 20px;
+            }
+            .td-post-sharing {
+                margin-left: -3px;
+                margin-right: -3px;
+                font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
+                z-index: 2;
+                white-space: nowrap;
+                opacity: 0;
+            }
+            .td-post-sharing.td-social-show-all {
+                white-space: normal;
+            }
+            .td-js-loaded .td-post-sharing {
+                -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s;
+                opacity: 1;
+            }
+            .td-post-sharing-classic + .td-post-sharing {
+                margin-top: 15px;
+                /* responsive portrait phone */
+            }
+            @media (max-width: 767px) {
+                .td-post-sharing-classic + .td-post-sharing {
+                    margin-top: 8px;
+                }
+            }
+            .td-post-sharing-top {
+                margin-bottom: 30px;
+            }
+            @media (max-width: 767px) {
+                .td-post-sharing-top {
+                    margin-bottom: 20px;
+                }
+            }
+            .td-post-sharing-bottom {
+                border-style: solid;
+                border-color: #ededed;
+                border-width: 1px 0;
+                padding: 21px 0;
+                margin-bottom: 42px;
+            }
+            .td-post-sharing-bottom .td-post-sharing {
+                margin-bottom: -7px;
+            }
+            .td-post-sharing-visible,
+            .td-social-sharing-hidden {
+                display: inline-block;
+            }
+            .td-social-sharing-hidden ul {
+                display: none;
+            }
+            .td-social-show-all .td-pulldown-filter-list {
+                display: inline-block;
+            }
+            .td-social-network,
+            .td-social-handler {
+                position: relative;
+                display: inline-block;
+                margin: 0 3px 7px;
+                height: 40px;
+                min-width: 40px;
+                font-size: 11px;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .td-ps-notext .td-social-network .td-social-but-icon,
+            .td-ps-notext .td-social-handler .td-social-but-icon {
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+            }
+            .td-social-network {
+                color: #000;
+                overflow: hidden;
+            }
+            .td-social-network .td-social-but-icon {
+                border-top-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+            }
+            .td-social-network .td-social-but-text {
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+            }
+            .td-social-network:hover {
+                opacity: 0.8 !important;
+            }
+            .td-social-handler {
+                color: #444;
+                border: 1px solid #e9e9e9;
+                border-radius: 2px;
+            }
+            .td-social-handler .td-social-but-text {
+                font-weight: 700;
+            }
+            .td-social-handler .td-social-but-text:before {
+                background-color: #000;
+                opacity: 0.08;
+            }
+            .td-social-share-text {
+                margin-right: 18px;
+            }
+            .td-social-share-text:before,
+            .td-social-share-text:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                left: 100%;
+                width: 0;
+                height: 0;
+                border-style: solid;
+            }
+            .td-social-share-text:before {
+                border-width: 9px 0 9px 11px;
+                border-color: transparent transparent transparent #e9e9e9;
+            }
+            .td-social-share-text:after {
+                border-width: 8px 0 8px 10px;
+                border-color: transparent transparent transparent #fff;
+            }
+            .td-social-but-text,
+            .td-social-but-icon {
+                display: inline-block;
+                position: relative;
+            }
+            .td-social-but-icon {
+                padding-left: 13px;
+                padding-right: 13px;
+                line-height: 40px;
+                z-index: 1;
+            }
+            .td-social-but-icon i {
+                position: relative;
+                top: -1px;
+                vertical-align: middle;
+            }
+            .td-social-but-text {
+                margin-left: -6px;
+                padding-left: 12px;
+                padding-right: 17px;
+                line-height: 40px;
+            }
+            .td-social-but-text:before {
+                content: '';
+                position: absolute;
+                top: 12px;
+                left: 0;
+                width: 1px;
+                height: 16px;
+                background-color: #fff;
+                opacity: 0.2;
+                z-index: 1;
+            }
+            .td-social-handler i,
+            .td-social-facebook i,
+            .td-social-reddit i,
+            .td-social-linkedin i,
+            .td-social-tumblr i,
+            .td-social-stumbleupon i,
+            .td-social-vk i,
+            .td-social-viber i {
+                font-size: 14px;
+            }
+            .td-social-telegram i {
+                font-size: 16px;
+            }
+            .td-social-mail i,
+            .td-social-line i,
+            .td-social-print i {
+                font-size: 15px;
+            }
+            .td-social-handler .td-icon-share {
+                top: -1px;
+                left: -1px;
+            }
+            .td-social-twitter .td-icon-twitter {
+                font-size: 12px;
+            }
+            .td-social-pinterest .td-icon-pinterest {
+                font-size: 13px;
+            }
+            .td-social-whatsapp .td-icon-whatsapp {
+                font-size: 18px;
+            }
+            .td-social-reddit .td-social-but-icon {
+                padding-right: 12px;
+            }
+            .td-social-reddit .td-icon-reddit {
+                left: -1px;
+            }
+            .td-social-telegram .td-social-but-icon {
+                padding-right: 12px;
+            }
+            .td-social-telegram .td-icon-telegram {
+                left: -1px;
+            }
+            .td-social-stumbleupon .td-social-but-icon {
+                padding-right: 11px;
+            }
+            .td-social-stumbleupon .td-icon-stumbleupon {
+                left: -2px;
+            }
+            .td-social-digg .td-social-but-icon {
+                padding-right: 11px;
+            }
+            .td-social-digg .td-icon-digg {
+                left: -2px;
+                font-size: 17px;
+            }
+            .td-social-vk .td-social-but-icon {
+                padding-right: 11px;
+            }
+            .td-social-vk .td-icon-vk {
+                left: -2px;
+            }
+            .td-social-naver .td-icon-naver {
+                left: -1px;
+                font-size: 16px;
+            }
+            .td-social-expand-tabs i {
+                top: -2px;
+                left: -1px;
+                font-size: 16px;
+            }
+            @media (min-width: 767px) {
+                .td-social-line,
+                .td-social-viber {
+                    display: none;
+                }
+            }
+            .td-ps-bg .td-social-network {
+                color: #fff;
+            }
+            .td-ps-bg .td-social-facebook .td-social-but-icon,
+            .td-ps-bg .td-social-facebook .td-social-but-text {
+                background-color: #516eab;
+            }
+            .td-ps-bg .td-social-twitter .td-social-but-icon,
+            .td-ps-bg .td-social-twitter .td-social-but-text {
+                background-color: #29c5f6;
+            }
+            .td-ps-bg .td-social-pinterest .td-social-but-icon,
+            .td-ps-bg .td-social-pinterest .td-social-but-text {
+                background-color: #ca212a;
+            }
+            .td-ps-bg .td-social-whatsapp .td-social-but-icon,
+            .td-ps-bg .td-social-whatsapp .td-social-but-text {
+                background-color: #7bbf6a;
+            }
+            .td-ps-bg .td-social-reddit .td-social-but-icon,
+            .td-ps-bg .td-social-reddit .td-social-but-text {
+                background-color: #f54200;
+            }
+            .td-ps-bg .td-social-mail .td-social-but-icon,
+            .td-ps-bg .td-social-digg .td-social-but-icon,
+            .td-ps-bg .td-social-mail .td-social-but-text,
+            .td-ps-bg .td-social-digg .td-social-but-text {
+                background-color: #000;
+            }
+            .td-ps-bg .td-social-print .td-social-but-icon,
+            .td-ps-bg .td-social-print .td-social-but-text {
+                background-color: #333;
+            }
+            .td-ps-bg .td-social-linkedin .td-social-but-icon,
+            .td-ps-bg .td-social-linkedin .td-social-but-text {
+                background-color: #0266a0;
+            }
+            .td-ps-bg .td-social-tumblr .td-social-but-icon,
+            .td-ps-bg .td-social-tumblr .td-social-but-text {
+                background-color: #3e5a70;
+            }
+            .td-ps-bg .td-social-telegram .td-social-but-icon,
+            .td-ps-bg .td-social-telegram .td-social-but-text {
+                background-color: #179cde;
+            }
+            .td-ps-bg .td-social-stumbleupon .td-social-but-icon,
+            .td-ps-bg .td-social-stumbleupon .td-social-but-text {
+                background-color: #ee4813;
+            }
+            .td-ps-bg .td-social-vk .td-social-but-icon,
+            .td-ps-bg .td-social-vk .td-social-but-text {
+                background-color: #4c75a3;
+            }
+            .td-ps-bg .td-social-line .td-social-but-icon,
+            .td-ps-bg .td-social-line .td-social-but-text {
+                background-color: #00b900;
+            }
+            .td-ps-bg .td-social-viber .td-social-but-icon,
+            .td-ps-bg .td-social-viber .td-social-but-text {
+                background-color: #5d54a4;
+            }
+            .td-ps-bg .td-social-naver .td-social-but-icon,
+            .td-ps-bg .td-social-naver .td-social-but-text {
+                background-color: #3ec729;
+            }
+            .td-ps-dark-bg .td-social-network {
+                color: #fff;
+            }
+            .td-ps-dark-bg .td-social-network .td-social-but-icon,
+            .td-ps-dark-bg .td-social-network .td-social-but-text {
+                background-color: #000;
+            }
+            .td-ps-border .td-social-network .td-social-but-icon,
+            .td-ps-border .td-social-network .td-social-but-text {
+                line-height: 38px;
+                border-width: 1px;
+                border-style: solid;
+            }
+            .td-ps-border .td-social-network .td-social-but-text {
+                border-left-width: 0;
+            }
+            .td-ps-border .td-social-network .td-social-but-text:before {
+                background-color: #000;
+                opacity: 0.08;
+            }
+            .td-ps-border.td-ps-padding .td-social-network .td-social-but-icon {
+                border-right-width: 0;
+            }
+            .td-ps-border.td-ps-padding .td-social-network.td-social-expand-tabs .td-social-but-icon {
+                border-right-width: 1px;
+            }
+            .td-ps-border-grey .td-social-but-icon,
+            .td-ps-border-grey .td-social-but-text {
+                border-color: #e9e9e9;
+            }
+            .td-ps-border-colored .td-social-facebook .td-social-but-icon,
+            .td-ps-border-colored .td-social-facebook .td-social-but-text {
+                border-color: #516eab;
+            }
+            .td-ps-border-colored .td-social-twitter .td-social-but-icon,
+            .td-ps-border-colored .td-social-twitter .td-social-but-text {
+                border-color: #29c5f6;
+            }
+            .td-ps-border-colored .td-social-pinterest .td-social-but-icon,
+            .td-ps-border-colored .td-social-pinterest .td-social-but-text {
+                border-color: #ca212a;
+            }
+            .td-ps-border-colored .td-social-whatsapp .td-social-but-icon,
+            .td-ps-border-colored .td-social-whatsapp .td-social-but-text {
+                border-color: #7bbf6a;
+            }
+            .td-ps-border-colored .td-social-reddit .td-social-but-icon,
+            .td-ps-border-colored .td-social-reddit .td-social-but-text {
+                border-color: #f54200;
+            }
+            .td-ps-border-colored .td-social-mail .td-social-but-icon,
+            .td-ps-border-colored .td-social-digg .td-social-but-icon,
+            .td-ps-border-colored .td-social-mail .td-social-but-text,
+            .td-ps-border-colored .td-social-digg .td-social-but-text {
+                border-color: #000;
+            }
+            .td-ps-border-colored .td-social-print .td-social-but-icon,
+            .td-ps-border-colored .td-social-print .td-social-but-text {
+                border-color: #333;
+            }
+            .td-ps-border-colored .td-social-linkedin .td-social-but-icon,
+            .td-ps-border-colored .td-social-linkedin .td-social-but-text {
+                border-color: #0266a0;
+            }
+            .td-ps-border-colored .td-social-tumblr .td-social-but-icon,
+            .td-ps-border-colored .td-social-tumblr .td-social-but-text {
+                border-color: #3e5a70;
+            }
+            .td-ps-border-colored .td-social-telegram .td-social-but-icon,
+            .td-ps-border-colored .td-social-telegram .td-social-but-text {
+                border-color: #179cde;
+            }
+            .td-ps-border-colored .td-social-stumbleupon .td-social-but-icon,
+            .td-ps-border-colored .td-social-stumbleupon .td-social-but-text {
+                border-color: #ee4813;
+            }
+            .td-ps-border-colored .td-social-vk .td-social-but-icon,
+            .td-ps-border-colored .td-social-vk .td-social-but-text {
+                border-color: #4c75a3;
+            }
+            .td-ps-border-colored .td-social-line .td-social-but-icon,
+            .td-ps-border-colored .td-social-line .td-social-but-text {
+                border-color: #00b900;
+            }
+            .td-ps-border-colored .td-social-viber .td-social-but-icon,
+            .td-ps-border-colored .td-social-viber .td-social-but-text {
+                border-color: #5d54a4;
+            }
+            .td-ps-border-colored .td-social-viber .td-social-but-icon,
+            .td-ps-border-colored .td-social-viber .td-social-but-text {
+                border-color: #3ec729;
+            }
+            .td-ps-icon-bg .td-social-but-icon {
+                height: 100%;
+                border-color: transparent !important;
+            }
+            .td-ps-icon-bg .td-social-network .td-social-but-icon {
+                color: #fff;
+            }
+            .td-ps-icon-bg .td-social-facebook .td-social-but-icon {
+                background-color: #516eab;
+            }
+            .td-ps-icon-bg .td-social-twitter .td-social-but-icon {
+                background-color: #29c5f6;
+            }
+            .td-ps-icon-bg .td-social-pinterest .td-social-but-icon {
+                background-color: #ca212a;
+            }
+            .td-ps-icon-bg .td-social-whatsapp .td-social-but-icon {
+                background-color: #7bbf6a;
+            }
+            .td-ps-icon-bg .td-social-reddit .td-social-but-icon {
+                background-color: #f54200;
+            }
+            .td-ps-icon-bg .td-social-mail .td-social-but-icon,
+            .td-ps-icon-bg .td-social-digg .td-social-but-icon {
+                background-color: #000;
+            }
+            .td-ps-icon-bg .td-social-print .td-social-but-icon {
+                background-color: #333;
+            }
+            .td-ps-icon-bg .td-social-linkedin .td-social-but-icon {
+                background-color: #0266a0;
+            }
+            .td-ps-icon-bg .td-social-tumblr .td-social-but-icon {
+                background-color: #3e5a70;
+            }
+            .td-ps-icon-bg .td-social-telegram .td-social-but-icon {
+                background-color: #179cde;
+            }
+            .td-ps-icon-bg .td-social-stumbleupon .td-social-but-icon {
+                background-color: #ee4813;
+            }
+            .td-ps-icon-bg .td-social-vk .td-social-but-icon {
+                background-color: #4c75a3;
+            }
+            .td-ps-icon-bg .td-social-line .td-social-but-icon {
+                background-color: #00b900;
+            }
+            .td-ps-icon-bg .td-social-viber .td-social-but-icon {
+                background-color: #5d54a4;
+            }
+            .td-ps-icon-bg .td-social-naver .td-social-but-icon {
+                background-color: #3ec729;
+            }
+            .td-ps-icon-bg .td-social-but-text {
+                margin-left: -3px;
+            }
+            .td-ps-icon-bg .td-social-network .td-social-but-text:before {
+                display: none;
+            }
+            .td-ps-icon-arrow .td-social-network .td-social-but-icon:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                left: calc(100% + 1px);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 9px 0 9px 11px;
+                border-color: transparent transparent transparent #000;
+            }
+            .td-ps-icon-arrow .td-social-network .td-social-but-text {
+                padding-left: 20px;
+            }
+            .td-ps-icon-arrow .td-social-network .td-social-but-text:before {
+                display: none;
+            }
+            .td-ps-icon-arrow.td-ps-padding .td-social-network .td-social-but-icon:after {
+                left: 100%;
+            }
+            .td-ps-icon-arrow .td-social-facebook .td-social-but-icon:after {
+                border-left-color: #516eab;
+            }
+            .td-ps-icon-arrow .td-social-twitter .td-social-but-icon:after {
+                border-left-color: #29c5f6;
+            }
+            .td-ps-icon-arrow .td-social-pinterest .td-social-but-icon:after {
+                border-left-color: #ca212a;
+            }
+            .td-ps-icon-arrow .td-social-whatsapp .td-social-but-icon:after {
+                border-left-color: #7bbf6a;
+            }
+            .td-ps-icon-arrow .td-social-reddit .td-social-but-icon:after {
+                border-left-color: #f54200;
+            }
+            .td-ps-icon-arrow .td-social-mail .td-social-but-icon:after,
+            .td-ps-icon-arrow .td-social-digg .td-social-but-icon:after {
+                border-left-color: #000;
+            }
+            .td-ps-icon-arrow .td-social-print .td-social-but-icon:after {
+                border-left-color: #333;
+            }
+            .td-ps-icon-arrow .td-social-linkedin .td-social-but-icon:after {
+                border-left-color: #0266a0;
+            }
+            .td-ps-icon-arrow .td-social-tumblr .td-social-but-icon:after {
+                border-left-color: #3e5a70;
+            }
+            .td-ps-icon-arrow .td-social-telegram .td-social-but-icon:after {
+                border-left-color: #179cde;
+            }
+            .td-ps-icon-arrow .td-social-stumbleupon .td-social-but-icon:after {
+                border-left-color: #ee4813;
+            }
+            .td-ps-icon-arrow .td-social-vk .td-social-but-icon:after {
+                border-left-color: #4c75a3;
+            }
+            .td-ps-icon-arrow .td-social-line .td-social-but-icon:after {
+                border-left-color: #00b900;
+            }
+            .td-ps-icon-arrow .td-social-viber .td-social-but-icon:after {
+                border-left-color: #5d54a4;
+            }
+            .td-ps-icon-arrow .td-social-naver .td-social-but-icon:after {
+                border-left-color: #3ec729;
+            }
+            .td-ps-icon-arrow .td-social-expand-tabs .td-social-but-icon:after {
+                display: none;
+            }
+            .td-ps-icon-color .td-social-facebook .td-social-but-icon {
+                color: #516eab;
+            }
+            .td-ps-icon-color .td-social-twitter .td-social-but-icon {
+                color: #29c5f6;
+            }
+            .td-ps-icon-color .td-social-pinterest .td-social-but-icon {
+                color: #ca212a;
+            }
+            .td-ps-icon-color .td-social-whatsapp .td-social-but-icon {
+                color: #7bbf6a;
+            }
+            .td-ps-icon-color .td-social-reddit .td-social-but-icon {
+                color: #f54200;
+            }
+            .td-ps-icon-color .td-social-mail .td-social-but-icon,
+            .td-ps-icon-color .td-social-digg .td-social-but-icon {
+                color: #000;
+            }
+            .td-ps-icon-color .td-social-print .td-social-but-icon {
+                color: #333;
+            }
+            .td-ps-icon-color .td-social-linkedin .td-social-but-icon {
+                color: #0266a0;
+            }
+            .td-ps-icon-color .td-social-tumblr .td-social-but-icon {
+                color: #3e5a70;
+            }
+            .td-ps-icon-color .td-social-telegram .td-social-but-icon {
+                color: #179cde;
+            }
+            .td-ps-icon-color .td-social-stumbleupon .td-social-but-icon {
+                color: #ee4813;
+            }
+            .td-ps-icon-color .td-social-vk .td-social-but-icon {
+                color: #4c75a3;
+            }
+            .td-ps-icon-color .td-social-line .td-social-but-icon {
+                color: #00b900;
+            }
+            .td-ps-icon-color .td-social-viber .td-social-but-icon {
+                color: #5d54a4;
+            }
+            .td-ps-icon-color .td-social-naver .td-social-but-icon {
+                color: #3ec729;
+            }
+            .td-ps-text-color .td-social-but-text {
+                font-weight: 700;
+            }
+            .td-ps-text-color .td-social-facebook .td-social-but-text {
+                color: #516eab;
+            }
+            .td-ps-text-color .td-social-twitter .td-social-but-text {
+                color: #29c5f6;
+            }
+            .td-ps-text-color .td-social-pinterest .td-social-but-text {
+                color: #ca212a;
+            }
+            .td-ps-text-color .td-social-whatsapp .td-social-but-text {
+                color: #7bbf6a;
+            }
+            .td-ps-text-color .td-social-reddit .td-social-but-text {
+                color: #f54200;
+            }
+            .td-ps-text-color .td-social-mail .td-social-but-text,
+            .td-ps-text-color .td-social-digg .td-social-but-text {
+                color: #000;
+            }
+            .td-ps-text-color .td-social-print .td-social-but-text {
+                color: #333;
+            }
+            .td-ps-text-color .td-social-linkedin .td-social-but-text {
+                color: #0266a0;
+            }
+            .td-ps-text-color .td-social-tumblr .td-social-but-text {
+                color: #3e5a70;
+            }
+            .td-ps-text-color .td-social-telegram .td-social-but-text {
+                color: #179cde;
+            }
+            .td-ps-text-color .td-social-stumbleupon .td-social-but-text {
+                color: #ee4813;
+            }
+            .td-ps-text-color .td-social-vk .td-social-but-text {
+                color: #4c75a3;
+            }
+            .td-ps-text-color .td-social-line .td-social-but-text {
+                color: #00b900;
+            }
+            .td-ps-text-color .td-social-viber .td-social-but-text {
+                color: #5d54a4;
+            }
+            .td-ps-text-color .td-social-naver .td-social-but-text {
+                color: #3ec729;
+            }
+            .td-ps-text-color .td-social-expand-tabs .td-social-but-text {
+                color: #b1b1b1;
+            }
+            .td-ps-notext .td-social-but-icon {
+                width: 40px;
+            }
+            .td-ps-notext .td-social-network .td-social-but-text {
+                display: none;
+            }
+            .td-ps-padding .td-social-network .td-social-but-icon {
+                padding-left: 17px;
+                padding-right: 17px;
+            }
+            .td-ps-padding .td-social-handler .td-social-but-icon {
+                width: 40px;
+            }
+            .td-ps-padding .td-social-reddit .td-social-but-icon,
+            .td-ps-padding .td-social-telegram .td-social-but-icon {
+                padding-right: 16px;
+            }
+            .td-ps-padding .td-social-stumbleupon .td-social-but-icon,
+            .td-ps-padding .td-social-digg .td-social-but-icon,
+            .td-ps-padding .td-social-expand-tabs .td-social-but-icon {
+                padding-right: 13px;
+            }
+            .td-ps-padding .td-social-vk .td-social-but-icon {
+                padding-right: 14px;
+            }
+            .td-ps-padding .td-social-expand-tabs .td-social-but-icon {
+                padding-left: 13px;
+            }
+            .td-ps-rounded .td-social-network .td-social-but-icon {
+                border-top-left-radius: 100px;
+                border-bottom-left-radius: 100px;
+            }
+            .td-ps-rounded .td-social-network .td-social-but-text {
+                border-top-right-radius: 100px;
+                border-bottom-right-radius: 100px;
+            }
+            .td-ps-rounded.td-ps-notext .td-social-network .td-social-but-icon {
+                border-top-right-radius: 100px;
+                border-bottom-right-radius: 100px;
+            }
+            .td-ps-rounded .td-social-expand-tabs {
+                border-radius: 100px;
+            }
+            .td-ps-bar .td-social-network .td-social-but-icon,
+            .td-ps-bar .td-social-network .td-social-but-text {
+                -webkit-box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.31);
+                box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.31);
+            }
+            .td-ps-bar .td-social-mail .td-social-but-icon,
+            .td-ps-bar .td-social-digg .td-social-but-icon,
+            .td-ps-bar .td-social-mail .td-social-but-text,
+            .td-ps-bar .td-social-digg .td-social-but-text {
+                -webkit-box-shadow: inset 0px -3px 0px 0px rgba(255, 255, 255, 0.28);
+                box-shadow: inset 0px -3px 0px 0px rgba(255, 255, 255, 0.28);
+            }
+            .td-ps-bar .td-social-print .td-social-but-icon,
+            .td-ps-bar .td-social-print .td-social-but-text {
+                -webkit-box-shadow: inset 0px -3px 0px 0px rgba(255, 255, 255, 0.2);
+                box-shadow: inset 0px -3px 0px 0px rgba(255, 255, 255, 0.2);
+            }
+            .td-ps-big .td-social-but-icon {
+                display: block;
+                line-height: 60px;
+            }
+            .td-ps-big .td-social-but-icon .td-icon-share {
+                width: auto;
+            }
+            .td-ps-big .td-social-handler .td-social-but-text:before {
+                display: none;
+            }
+            .td-ps-big .td-social-share-text .td-social-but-icon {
+                width: 90px;
+            }
+            .td-ps-big .td-social-expand-tabs .td-social-but-icon {
+                width: 60px;
+            }
+            @media (max-width: 767px) {
+                .td-ps-big .td-social-share-text {
+                    display: none;
+                }
+            }
+            .td-ps-big .td-social-facebook i,
+            .td-ps-big .td-social-reddit i,
+            .td-ps-big .td-social-mail i,
+            .td-ps-big .td-social-linkedin i,
+            .td-ps-big .td-social-tumblr i,
+            .td-ps-big .td-social-stumbleupon i {
+                margin-top: -2px;
+            }
+            .td-ps-big .td-social-facebook i,
+            .td-ps-big .td-social-reddit i,
+            .td-ps-big .td-social-linkedin i,
+            .td-ps-big .td-social-tumblr i,
+            .td-ps-big .td-social-stumbleupon i,
+            .td-ps-big .td-social-vk i,
+            .td-ps-big .td-social-viber i,
+            .td-ps-big .td-social-share-text i {
+                font-size: 22px;
+            }
+            .td-ps-big .td-social-telegram i {
+                font-size: 24px;
+            }
+            .td-ps-big .td-social-mail i,
+            .td-ps-big .td-social-line i,
+            .td-ps-big .td-social-print i {
+                font-size: 23px;
+            }
+            .td-ps-big .td-social-twitter i,
+            .td-ps-big .td-social-expand-tabs i {
+                font-size: 20px;
+            }
+            .td-ps-big .td-social-whatsapp i,
+            .td-ps-big .td-social-naver i {
+                font-size: 26px;
+            }
+            .td-ps-big .td-social-pinterest .td-icon-pinterest {
+                font-size: 21px;
+            }
+            .td-ps-big .td-social-telegram .td-icon-telegram {
+                left: 1px;
+            }
+            .td-ps-big .td-social-stumbleupon .td-icon-stumbleupon {
+                left: -2px;
+            }
+            .td-ps-big .td-social-digg .td-icon-digg {
+                left: -1px;
+                font-size: 25px;
+            }
+            .td-ps-big .td-social-vk .td-icon-vk {
+                left: -1px;
+            }
+            .td-ps-big .td-social-naver .td-icon-naver {
+                left: 0;
+            }
+            .td-ps-big .td-social-but-text {
+                margin-left: 0;
+                padding-top: 0;
+                padding-left: 17px;
+            }
+            .td-ps-big.td-ps-notext .td-social-network,
+            .td-ps-big.td-ps-notext .td-social-handler {
+                height: 60px;
+            }
+            .td-ps-big.td-ps-notext .td-social-network {
+                width: 60px;
+            }
+            .td-ps-big.td-ps-notext .td-social-network .td-social-but-icon {
+                width: 60px;
+            }
+            .td-ps-big.td-ps-notext .td-social-share-text .td-social-but-icon {
+                line-height: 40px;
+            }
+            .td-ps-big.td-ps-notext .td-social-share-text .td-social-but-text {
+                display: block;
+                line-height: 1;
+            }
+            .td-ps-big.td-ps-padding .td-social-network,
+            .td-ps-big.td-ps-padding .td-social-handler {
+                height: 90px;
+                font-size: 13px;
+            }
+            .td-ps-big.td-ps-padding .td-social-network {
+                min-width: 60px;
+            }
+            .td-ps-big.td-ps-padding .td-social-but-icon {
+                border-bottom-left-radius: 0;
+                border-top-right-radius: 2px;
+            }
+            .td-ps-big.td-ps-padding.td-ps-bar .td-social-but-icon {
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+            .td-ps-big.td-ps-padding .td-social-but-text {
+                display: block;
+                padding-bottom: 17px;
+                line-height: 1;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 2px;
+            }
+            .td-ps-big.td-ps-padding .td-social-but-text:before {
+                display: none;
+            }
+            .td-ps-big.td-ps-padding .td-social-expand-tabs i {
+                line-height: 90px;
+            }
+            .td-ps-nogap {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .td-ps-nogap .td-social-network,
+            .td-ps-nogap .td-social-handler {
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 0;
+            }
+            .td-ps-nogap .td-social-network .td-social-but-icon,
+            .td-ps-nogap .td-social-network .td-social-but-text {
+                border-radius: 0;
+            }
+            .td-ps-nogap .td-social-expand-tabs {
+                border-radius: 0;
+            }
+            .td-post-sharing-style7 .td-social-network .td-social-but-icon {
+                height: 100%;
+            }
+            .td-post-sharing-style7 .td-social-network .td-social-but-icon:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.31);
+            }
+            .td-post-sharing-style7 .td-social-network .td-social-but-text {
+                padding-left: 17px;
+            }
+            .td-post-sharing-style7 .td-social-network .td-social-but-text:before {
+                display: none;
+            }
+            .td-post-sharing-style7 .td-social-mail .td-social-but-icon:before,
+            .td-post-sharing-style7 .td-social-digg .td-social-but-icon:before {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            .td-post-sharing-style7 .td-social-print .td-social-but-icon:before {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            @media (max-width: 767px) {
+                .td-post-sharing-style1 .td-social-share-text .td-social-but-text,
+                .td-post-sharing-style3 .td-social-share-text .td-social-but-text,
+                .td-post-sharing-style5 .td-social-share-text .td-social-but-text,
+                .td-post-sharing-style14 .td-social-share-text .td-social-but-text,
+                .td-post-sharing-style16 .td-social-share-text .td-social-but-text {
+                    display: none !important;
+                }
+            }
+            @media (max-width: 767px) {
+                .td-post-sharing-style2 .td-social-share-text,
+                .td-post-sharing-style4 .td-social-share-text,
+                .td-post-sharing-style6 .td-social-share-text,
+                .td-post-sharing-style7 .td-social-share-text,
+                .td-post-sharing-style15 .td-social-share-text,
+                .td-post-sharing-style17 .td-social-share-text,
+                .td-post-sharing-style18 .td-social-share-text,
+                .td-post-sharing-style19 .td-social-share-text,
+                .td-post-sharing-style20 .td-social-share-text {
+                    display: none !important;
+                }
+            }
+
+        </style>
+
+		<div class="td-post-sharing-visible"><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.linux.com%2Ftraining-tutorials%2Funderstanding-linux-file-permissions%2F" title="Facebook" >
+                                        <div class="td-social-but-icon"><i class="td-icon-facebook"></i></div>
+                                        <div class="td-social-but-text">Facebook</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-twitter" href="https://twitter.com/intent/tweet?text=Understanding+Linux+File+Permissions&url=https%3A%2F%2Fwww.linux.com%2Ftraining-tutorials%2Funderstanding-linux-file-permissions%2F&via=Linux.com" title="Twitter" >
+                                        <div class="td-social-but-icon"><i class="td-icon-twitter"></i></div>
+                                        <div class="td-social-but-text">Twitter</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-pinterest" href="https://pinterest.com/pin/create/button/?url=https://www.linux.com/training-tutorials/understanding-linux-file-permissions/&amp;media=&description=Understanding+Linux+File+Permissions" title="Pinterest" >
+                                        <div class="td-social-but-icon"><i class="td-icon-pinterest"></i></div>
+                                        <div class="td-social-but-text">Pinterest</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-whatsapp" href="https://api.whatsapp.com/send?text=Understanding+Linux+File+Permissions %0A%0A https://www.linux.com/training-tutorials/understanding-linux-file-permissions/" title="WhatsApp" >
+                                        <div class="td-social-but-icon"><i class="td-icon-whatsapp"></i></div>
+                                        <div class="td-social-but-text">WhatsApp</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.linux.com/training-tutorials/understanding-linux-file-permissions/&title=Understanding+Linux+File+Permissions" title="Linkedin" >
+                                        <div class="td-social-but-icon"><i class="td-icon-linkedin"></i></div>
+                                        <div class="td-social-but-text">Linkedin</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-reddit" href="https://reddit.com/submit?url=https://www.linux.com/training-tutorials/understanding-linux-file-permissions/&title=Understanding+Linux+File+Permissions" title="ReddIt" >
+                                        <div class="td-social-but-icon"><i class="td-icon-reddit"></i></div>
+                                        <div class="td-social-but-text">ReddIt</div>
+                                    </a><a class="td-social-sharing-button td-social-sharing-button-js td-social-network td-social-mail" href="mailto:?subject=Understanding Linux File Permissions&body=https://www.linux.com/training-tutorials/understanding-linux-file-permissions/" title="Email" >
+                                        <div class="td-social-but-icon"><i class="td-icon-mail"></i></div>
+                                        <div class="td-social-but-text">Email</div>
+                                    </a></div><div class="td-social-sharing-hidden"><ul class="td-pulldown-filter-list"></ul><a class="td-social-sharing-button td-social-handler td-social-expand-tabs" href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#" data-block-uid="td_social_sharing_article_top" title="More">
+                                    <div class="td-social-but-icon"><i class="td-icon-plus td-social-expand-tabs-icon"></i></div>
+                                </a></div></div></div>
+
+        <div class="td-post-content tagdiv-type">
+            <div class="article-content">
+<p><span><span>Although there are already a lot of good security features built into Linux-based systems, one very important potential vulnerability can exist when local access is granted &#8211; &#8211; that is file permission based issues resulting from a user not assigning the correct permissions to files and directories. So based upon the need for proper permissions, I will go over the ways to assign permissions and show you some examples where modification may be necessary.</span></span></p>
+<p><span><strong><span><span>Basic File Permissions</span></span></strong></span></p>
+<p><strong><span><span>Permission Groups</span></span></strong></p>
+<p><span><span>Each file and directory has three user based permission groups:</span></span></p>
+<ul>
+<li><span><span><strong>owner</strong> &#8211; The Owner permissions apply only the owner of the file or directory, they will not impact the actions of other users.</span></span></li>
+<li><span><span><strong>group</strong> &#8211; The Group permissions apply only to the group that has been assigned to the file or directory, they will not effect the actions of other users.</span></span></li>
+<li><span><span><strong>all users</strong> &#8211; The All Users permissions apply to all other users on the system, this is the permission group that you want to watch the most.</span></span></li>
+</ul>
+<h2><span><span>Permission Types</span></span></h2>
+<p><span><span>Each file or directory has three basic permission types:</span></span></p>
+<ul>
+<li><span><span><strong>read</strong> &#8211; The Read permission refers to a user&#8217;s capability to read the contents of the file.</span></span></li>
+<li><span><span><strong>write</strong> &#8211; The Write permissions refer to a user&#8217;s capability to write or modify a file or directory.</span></span></li>
+<li><span><span><strong>execute</strong> &#8211; The Execute permission affects a user&#8217;s capability to execute a file or view the contents of a directory.</span></span></li>
+</ul>
+<p><span><span>Viewing the Permissions</span></span></p>
+<p><span><span>You can view the permissions by checking the file or directory permissions in your favorite GUI File Manager (which I will not cover here) or by reviewing the output of the <em><strong>&#8220;ls -l&#8221;</strong></em> command while in the terminal and while working in the directory which contains the file or folder.</p>
+<p>The permission in the command line is displayed as: <em><strong>_rwxrwxrwx 1 owner:group</strong></em></span></span></p>
+<ol>
+<li><span>User rights/Permissions</span>
+<ol>
+<li><span>The first character that I marked with an underscore is the special permission flag that can vary.</span></li>
+<li><span>The following set of three characters (rwx) is for the owner permissions.</span></li>
+<li><span>The second set of three characters (rwx) is for the Group permissions.</span></li>
+<li><span>The third set of three characters (rwx) is for the All Users permissions.</span></li>
+</ol>
+</li>
+<li><span>Following that grouping since the integer/number displays the number of hardlinks to the file.</span></li>
+<li><span>The last piece is the Owner and Group assignment formatted as Owner:Group.</span></li>
+</ol>
+<p><span><span>Modifying the Permissions</span></span></p>
+<p><span><span>When in the command line, the permissions are edited by using the command <strong><em>chmod</em></strong>. You can assign the permissions explicitly or by using a binary reference as described below.</span></span></p>
+<h2><span><span>Explicitly Defining Permissions</span></span></h2>
+<p><span><span>To explicity define permissions you will need to reference the Permission Group and Permission Types.</p>
+<p>The Permission Groups used are:</span></span></p>
+<p>&nbsp;</p>
+<div style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 12.8px;">
+<div><strong>u </strong>&#8211; Owner</div>
+<div><strong>g</strong> &#8211; Group</div>
+<div><strong>o</strong> &#8211; Others</div>
+</div>
+<div style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 12.8px;"><strong>a</strong> &#8211; All users</div>
+<p><span><span>The potential Assignment Operators are + (plus) and &#8211; (minus); these are used to tell the system whether to add or remove the specific permissions.</p>
+<p>The Permission Types that are used are:</span></span></p>
+<ul>
+<li><span><span><strong>r</strong> &#8211; Read</span></span></li>
+<li><span><span><strong>w</strong> &#8211; Write</span></span></li>
+<li><span><span><strong>x</strong> &#8211; Execute</span></span></li>
+</ul>
+<p><span><span>So for an example, lets say I have a file named file1 that currently has the permissions set to <strong>_rw_rw_rw,</strong> which means that the owner, group and all users have read and write permission. Now we want to remove the read and write permissions from the all users group.</p>
+<p>To make this modification you would invoke the command: <strong><em>chmod a-rw file1</em></strong><br />
+To add the permissions above you would invoke the command: <em><strong>chmod a+rw file1</strong></em></p>
+<p>As you can see, if you want to grant those permissions you would change the minus character to a plus to add those permissions. </span></span></p>
+<h2><span><span><em><em>Using Binary References to Set permissions</em></em></span></span></h2>
+<p><span><span>Now that you understand the permissions groups and types this one should feel natural. To set the permission using binary references you must first understand that the input is done by entering three integers/numbers.</p>
+<p>A sample permission string would be <strong>chmod 640 file1</strong>, which means that the owner has read and write permissions, the group has read permissions, and all other user have no rights to the file.</p>
+<p>The first number represents the Owner permission; the second represents the Group permissions; and the last number represents the permissions for all other users. The numbers are a binary representation of the rwx string. </span></span></p>
+<ul>
+<li><span><span><em><em><strong>r</strong> = 4</em></em></span></span></li>
+<li><span><span><em><em><strong>w</strong> = 2</em></em></span></span></li>
+<li><span><span><em><em><strong>x</strong> = 1</em></em></span></span></li>
+</ul>
+<p><span><span>You add the numbers to get the integer/number representing the permissions you wish to set. You will need to include the binary permissions for each of the three permission groups.</p>
+<p>So to set a file to permissions on file1 to read <strong>_<em>rwxr</em>_____</strong>, you would enter <em><strong>chmod 740 file1</strong></em>. </span></span></p>
+<p><strong><span><span>Owners and Groups</span></span></strong></p>
+<p><span><span>I have made several references to Owners and Groups above, but have not yet told you how to assign or change the Owner and Group assigned to a file or directory.</p>
+<p>You use the chown command to change owner and group assignments, the syntax is simple<em><em><em><strong><em>chown owner:group filename</em></strong><em>, </em></em></em></em>so to change the owner of file1 to user1 and the group to family you would enter <em><em><em><em><strong><em>chown user1:family file1</em></strong><em>. </em></em></em></em></em></span></span></p>
+<p><strong><span><span>Advanced Permissions</span></span></strong></p>
+<p><span><span>The special permissions flag can be marked with any of the following: </span></span></p>
+<ul>
+<li><span><span><strong>_</strong> &#8211; no special permissions</span></span></li>
+<li><span><span><em><strong>d</strong></em> &#8211; directory</span></span></li>
+<li><span><span><em><strong>l</strong></em>&#8211; The file or directory is a symbolic link</span></span></li>
+<li><span><span><em><strong>s</strong></em> &#8211; This indicated the setuid/setgid permissions. This is not set displayed in the special permission part of the permissions display, but is represented as a <strong>s</strong> in the read portion of the owner or group permissions.</span></span></li>
+<li><span><span><em><strong>t</strong></em> &#8211; This indicates the sticky bit permissions. This is not set displayed in the special permission part of the permissions display, but is represented as a <strong>t</strong> in the executable portion of the all users permissions</span></span></li>
+</ul>
+<p><strong><span><span>Setuid/Setgid Special Permissions</span></span></strong></p>
+<p><span><span>The setuid/setguid permissions are used to tell the system to run an executable as the owner with the owner&#8217;s permissions.</p>
+<p>Be careful using setuid/setgid bits in permissions. If you incorrectly assign permissions to a file owned by root with the setuid/setgid bit set, then you can open your system to intrusion.</p>
+<p>You can only assign the setuid/setgid bit by explicitly defining permissions. The character for the setuid/setguid bit is <strong>s</strong>.</p>
+<p>So do set the setuid/setguid bit on file2.sh you would issue the command <em><em><em><em><em><strong><em>chmod g+s file2.sh</em></strong><em>. </em></em></em></em></em></em></span></span></p>
+<p><span><span>Sticky Bit Special Permissions</span></span></p>
+<p><span><span>The sticky bit can be very useful in shared environment because when it has been assigned to the permissions on a directory it sets it so only file owner can rename or delete the said file.</p>
+<p>You can only assign the sticky bit by explicitly defining permissions. The character for the sticky bit is <strong>t</strong>.</p>
+<p>To set the sticky bit on a directory named dir1 you would issue the command <em><em><em><em><em><em><strong><em>chmod +t dir1</em></strong><em>. </em></em></em></em></em></em></em></span></span></p>
+<p><span><span><em><em><em><em><em><em><em>When Permissions Are Important</em></em></em></em></em></em></em></span></span></p>
+<p><span><span>To some users of Mac- or Windows-based computers you don&#8217;t think about permissions, but those environments don&#8217;t focus so aggressively on user based rights on files unless you are in a corporate environment. But now you are running a Linux-based system and permission based security is simplified and can be easily used to restrict access as you please.</p>
+<p>So I will show you some documents and folders that you want to focus on and show you how the optimal permissions should be set.</span></span></p>
+<ul>
+<li><span><span><em><strong>home directories</strong></em>&#8211; The users&#8217; home directories are important because you do not want other users to be able to view and modify the files in another user&#8217;s documents of desktop. To remedy this you will want the directory to have the <strong>drwx______ (700)</strong> permissions, so lets say we want to enforce the correct permissions on the user user1&#8217;s home directory that can be done by issuing the command <strong>chmod 700 /home/user1</strong>.</span></span></li>
+<li><span><span><em><strong>bootloader configuration files</strong></em>&#8211; If you decide to implement password to boot specific operating systems then you will want to remove read and write permissions from the configuration file from all users but root. To do you can change the permissions of the file to 700.</span></span></li>
+<li><span><span><em><strong>system and daemon configuration files</strong></em>&#8211; It is very important to restrict rights to system and daemon configuration files to restrict users from editing the contents, it may not be advisable to restrict read permissions, but restricting write permissions is a must. In these cases it may be best to modify the rights to 644.</span></span></li>
+<li><span><span><em><strong>firewall scripts</strong></em> &#8211; It may not always be necessary to block all users from reading the firewall file, but it is advisable to restrict the users from writing to the file. In this case the firewall script is run by the root user automatically on boot, so all other users need no rights, so you can assign the 700 permissions.</span></span></li>
+</ul>
+<p><span><span>Other examples can be given, but this article is already very lengthy, so if you want to share other examples of needed restrictions please do so in the comments.</span></span></p>
+<p><span><span>Comments Welcome</span></span></p>
+<p><span><span>If you have anything to add or want to make a comment or correction please do so in the comments. I look forward to your feedback and wish you the best in your future with Linux-based systems.</span></span></p>
+</div>
+        </div>
+
+
+        <footer>
+                        
+            <div class="td-post-source-tags">
+                                            </div>
+
+                        <div class="td-block-row td-post-next-prev"><div class="td-block-span6 td-post-prev-post"><div class="td-post-next-prev-content"><span>Previous article</span><a href="https://www.linux.com/news/report-linux-2634-kernel-debuts-new-filesystems/">Report: Linux 2.6.34 Kernel Debuts With New Filesystems</a></div></div><div class="td-next-prev-separator"></div><div class="td-block-span6 td-post-next-post"><div class="td-post-next-prev-content"><span>Next article</span><a href="https://www.linux.com/news/ibm-supercomputer-mixes-intel-nvidia-chips/">IBM Supercomputer Mixes Intel, Nvidia Chips</a></div></div></div>            <div class="author-box-wrap"><a href="https://www.linux.com/author/mfillpot/"><img alt='' src='https://secure.gravatar.com/avatar/?s=96&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo avatar-default' height='96' width='96' loading='lazy'/></a><div class="desc"><div class="td-author-name vcard author"><span class="fn"><a href="https://www.linux.com/author/mfillpot/">mfillpot</a></span></div><div class="td-author-description"></div><div class="td-author-social"></div><div class="clearfix"></div></div></div>            <span class="td-page-meta" itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="mfillpot"></span><meta itemprop="datePublished" content="2010-05-18T01:00:00-07:00"><meta itemprop="dateModified" content="2010-05-18T01:00:00-07:00"><meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/"/><span class="td-page-meta" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span class="td-page-meta" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://www.linux.com/wp-content/uploads/2019/08/ldc-white-272.png"></span><meta itemprop="name" content="Linux.com"></span><meta itemprop="headline " content="Understanding Linux File Permissions"><span class="td-page-meta" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://www.linux.com/wp-content/themes/Newspaper/images/no-thumb/td_meta_replacement.png"><meta itemprop="width" content="1068"><meta itemprop="height" content="580"></span>        </footer>
+
+    </article> <!-- /.post -->
+
+    <div class="td_block_wrap td_block_related_posts td-related-full-width tdi_2 td_with_ajax_pagination td-pb-border-top td_block_template_4"  data-td-block-uid="tdi_2" ><script>var block_tdi_2 = new tdBlock();
+block_tdi_2.id = "tdi_2";
+block_tdi_2.atts = '{"limit":5,"ajax_pagination":"next_prev","live_filter":"cur_post_same_categories","td_ajax_filter_type":"td_custom_related","class":"td-related-full-width tdi_2","td_column_number":5,"block_type":"td_block_related_posts","live_filter_cur_post_id":504775,"live_filter_cur_post_author":"0","block_template_id":"","header_color":"","ajax_pagination_infinite_stop":"","offset":"","td_ajax_preloading":"","td_filter_default_txt":"","td_ajax_filter_ids":"","el_class":"","color_preset":"","border_top":"","css":"","tdc_css":"","tdc_css_class":"tdi_2","tdc_css_class_style":"tdi_2_rand_style"}';
+block_tdi_2.td_column_number = "5";
+block_tdi_2.block_type = "td_block_related_posts";
+block_tdi_2.post_count = "5";
+block_tdi_2.found_posts = "5824";
+block_tdi_2.header_color = "";
+block_tdi_2.ajax_pagination_infinite_stop = "";
+block_tdi_2.max_num_pages = "1165";
+tdBlocksArray.push(block_tdi_2);
+</script><h4 class="td-related-title td-block-title"><a id="tdi_3" class="td-related-left td-cur-simple-item" data-td_filter_value="" data-td_block_id="tdi_2" href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#">RELATED ARTICLES</a><a id="tdi_4" class="td-related-right" data-td_filter_value="td_related_more_from_author" data-td_block_id="tdi_2" href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#">MORE FROM AUTHOR</a></h4><div id=tdi_2 class="td_block_inner">
+
+	<div class="td-related-row">
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/thelinuxfoundation/five-practical-guides-for-managing-linux-terminal-and-commands/" rel="bookmark" class="td-image-wrap " title="Five practical guides for managing Linux terminal and commands" ><img width="218" height="150" class="entry-thumb" src="https://www.linux.com/wp-content/plugins/td-composer/legacy/Newspaper/assets/images/no-thumb/td_218x150.png"  alt="" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/thelinuxfoundation/five-practical-guides-for-managing-linux-terminal-and-commands/" rel="bookmark" title="Five practical guides for managing Linux terminal and commands">Five practical guides for managing Linux terminal and commands</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/news/registration-opens-for-entry-level-linux-foundation-certified-it-associate-exam/" rel="bookmark" class="td-image-wrap " title="Registration Opens for Entry Level Linux Foundation Certified IT Associate Exam" ><img width="218" height="111" class="entry-thumb" src="https://www.linux.com/wp-content/uploads/2019/08/monitor-crop_1920_0.jpg"  srcset="https://www.linux.com/wp-content/uploads/2019/08/monitor-crop_1920_0.jpg 1258w, https://www.linux.com/wp-content/uploads/2019/08/monitor-crop_1920_0-300x153.jpg 300w, https://www.linux.com/wp-content/uploads/2019/08/monitor-crop_1920_0-768x391.jpg 768w, https://www.linux.com/wp-content/uploads/2019/08/monitor-crop_1920_0-1024x522.jpg 1024w, https://www.linux.com/wp-content/uploads/2019/08/monitor-crop_1920_0-360x183.jpg 360w" sizes="(max-width: 218px) 100vw, 218px"  alt="" title="Registration Opens for Entry Level Linux Foundation Certified IT Associate Exam" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/news/registration-opens-for-entry-level-linux-foundation-certified-it-associate-exam/" rel="bookmark" title="Registration Opens for Entry Level Linux Foundation Certified IT Associate Exam">Registration Opens for Entry Level Linux Foundation Certified IT Associate Exam</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/audience/linux-foundation-discounts-instructor-led-courses/" rel="bookmark" class="td-image-wrap " title="Linux Foundation Discounts Instructor-Led Courses" ><img width="218" height="150" class="entry-thumb" src="https://www.linux.com/wp-content/uploads/2020/11/Training_Promo_November20_V2_901x501-1-218x150.png"  srcset="https://www.linux.com/wp-content/uploads/2020/11/Training_Promo_November20_V2_901x501-1-218x150.png 218w, https://www.linux.com/wp-content/uploads/2020/11/Training_Promo_November20_V2_901x501-1-100x70.png 100w" sizes="(max-width: 218px) 100vw, 218px"  alt="" title="Linux Foundation Discounts Instructor-Led Courses" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/audience/linux-foundation-discounts-instructor-led-courses/" rel="bookmark" title="Linux Foundation Discounts Instructor-Led Courses">Linux Foundation Discounts Instructor-Led Courses</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/news/cncf-releases-free-training-course-covering-basics-of-service-mesh-with-linkerd/" rel="bookmark" class="td-image-wrap " title="CNCF Releases Free Training Course Covering Basics of Service Mesh with Linkerd" ><img width="218" height="106" class="entry-thumb" src="https://www.linux.com/wp-content/uploads/2019/08/mesh_1920.jpg"  srcset="https://www.linux.com/wp-content/uploads/2019/08/mesh_1920.jpg 1500w, https://www.linux.com/wp-content/uploads/2019/08/mesh_1920-300x146.jpg 300w, https://www.linux.com/wp-content/uploads/2019/08/mesh_1920-768x375.jpg 768w, https://www.linux.com/wp-content/uploads/2019/08/mesh_1920-1024x500.jpg 1024w, https://www.linux.com/wp-content/uploads/2019/08/mesh_1920-360x176.jpg 360w" sizes="(max-width: 218px) 100vw, 218px"  alt="" title="CNCF Releases Free Training Course Covering Basics of Service Mesh with Linkerd" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/news/cncf-releases-free-training-course-covering-basics-of-service-mesh-with-linkerd/" rel="bookmark" title="CNCF Releases Free Training Course Covering Basics of Service Mesh with Linkerd">CNCF Releases Free Training Course Covering Basics of Service Mesh with Linkerd</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://www.linux.com/featured/linux-and-open-source-jobs-are-in-high-demand/" rel="bookmark" class="td-image-wrap " title="Linux and open source jobs are in high demand" ><img width="218" height="131" class="entry-thumb" src="https://www.linux.com/wp-content/uploads/2019/08/open-source-times.jpg"  srcset="https://www.linux.com/wp-content/uploads/2019/08/open-source-times.jpg 1500w, https://www.linux.com/wp-content/uploads/2019/08/open-source-times-300x181.jpg 300w, https://www.linux.com/wp-content/uploads/2019/08/open-source-times-768x463.jpg 768w, https://www.linux.com/wp-content/uploads/2019/08/open-source-times-1024x617.jpg 1024w, https://www.linux.com/wp-content/uploads/2019/08/open-source-times-360x217.jpg 360w" sizes="(max-width: 218px) 100vw, 218px"  alt="" title="Linux and open source jobs are in high demand" /></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://www.linux.com/featured/linux-and-open-source-jobs-are-in-high-demand/" rel="bookmark" title="Linux and open source jobs are in high demand">Linux and open source jobs are in high demand</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 --></div><!--./row-fluid--></div><div class="td-next-prev-wrap"><a href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#" class="td-ajax-prev-page ajax-page-disabled" aria-label="prev-page" id="prev-page-tdi_2" data-td_block_id="tdi_2"><i class="td-next-prev-icon td-icon-font td-icon-menu-left"></i></a><a href="https://www.linux.com/training-tutorials/understanding-linux-file-permissions/understanding-linux-file-permissions.html#"  class="td-ajax-next-page" aria-label="next-page" id="next-page-tdi_2" data-td_block_id="tdi_2"><i class="td-next-prev-icon td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block -->
+                            </div>
+                        </div>
+                                    </div> <!-- /.td-pb-row -->
+    </div> <!-- /.td-container -->
+</div> <!-- /.td-main-content-wrap -->
+
+<!-- Instagram -->
+
+	
+	
+            <div class="tdc-footer-wrap ">
+
+                <!-- Footer -->
+				
+                <!-- Sub Footer -->
+				    <div class="td-sub-footer-container td-container-wrap ">
+        <div class="td-container">
+            <div class="td-pb-row">
+                <div class="td-pb-span td-sub-footer-menu">
+                                    </div>
+
+                <div class="td-pb-span td-sub-footer-copy">
+                    Copyright © 2021 The Linux Foundation®. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage">Trademark Usage</a> page. Linux is a registered trademark of Linus Torvalds.                </div>
+            </div>
+        </div>
+    </div>
+            </div><!--close td-footer-wrap-->
+			
+</div><!--close td-outer-wrap-->
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXGNZW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!--
+
+        Theme: Newspaper by tagDiv.com 2021
+        Version: 10.4 (rara)
+        Deploy mode: deploy
+        
+        uid: 606bf53d0f544
+    -->
+
+    
+<!-- Custom css from theme panel -->
+<style type="text/css" media="screen">
+/* custom css theme panel */
+.td-grid-style-2 .td-big-grid-post-0 .td-module-thumb a:last-child:before, .td-grid-style-3 .td-big-grid-post-0 .td-module-thumb a:last-child:before {
+    background: linear-gradient(45deg, #4db2ec 0%, #4a8f5e 100%);
+    
+}
+
+.td-grid-style-3 .td-module-thumb a:last-child:before {
+    opacity: 0.2;
+}
+</style>
+
+<script type='text/javascript' src='https://www.linux.com/wp-content/plugins/metronet-profile-picture/js/mpp-frontend.js?ver=2.5.0' id='mpp_gutenberg_tabs-js'></script>
+<script type='text/javascript' id='leadin-script-loader-js-js-extra'>
+/* <![CDATA[ */
+var leadin_wordpress = {"userRole":"visitor","pageType":"post","leadinPluginVersion":"7.52.0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://js.hs-scripts.com/8112310.js?integration=WordPress' async defer id='hs-script-loader'></script>
+<script type='text/javascript' src='https://www.linux.com/wp-includes/js/underscore.min.js?ver=1.8.3' id='underscore-js'></script>
+<script type='text/javascript' src='https://www.linux.com/wp-content/plugins/td-cloud-library/assets/js/js_posts_autoload.min.js?ver=9cac60bff796053a9968481412a5897a' id='tdb_js_posts_autoload-js'></script>
+<script type='text/javascript' src='https://www.linux.com/wp-content/plugins/td-composer/legacy/Newspaper/js/tagdiv_theme.min.js?ver=10.4' id='td-site-min-js'></script>
+<script type='text/javascript' src='https://www.linux.com/wp-content/plugins/td-cloud-library/assets/js/js_files_for_front.min.js?ver=9cac60bff796053a9968481412a5897a' id='tdb_js_files_for_front-js'></script>
+<script type='text/javascript' src='https://www.linux.com/wp-includes/js/wp-embed.min.js?ver=5.7' id='wp-embed-js'></script>
+
+<!-- JS generated by theme -->
+
+<script>
+    
+
+                jQuery().ready(function jQuery_ready() {
+                    tdAjaxCount.tdGetViewsCountsAjax("post","[504775]");
+                });
+            
+</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"981d6c8a9f","applicationID":"176909146","transactionName":"ZwZWMhNZXxcFABFaXF5MdQUVUV4KSxAMXVRcBmsSBFVBCAUXAGwG","queueTime":0,"applicationTime":377,"atts":"S0FVRFtDTBk=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
